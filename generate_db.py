@@ -8,9 +8,8 @@ os.makedirs("data", exist_ok=True)
 # Common Singaporean Names representing our multicultural society
 NAMES = [
     "Ali", "Bala", "Mei Ling", "Wei Jie", "Siti", "Kavitha", "David", "Sarah",
-    "John", "Fatimah", "Gopal", "Huiling", "Kumar", "Nurul", "Ravi", "Junjie",
-    "Elsa", "Sanjay", "Ahmad", "Chloe", "Zhi Hao", "Karthik", "Rina", "Daniel",
-    "Priya", "Marcus", "Taufiq", "Xinyi", "Desmond", "Yusof", "Amira", "Brandon"
+    "Fatimah", "Gopal", "Huiling", "Kumar", "Nurul", "Ravi", "Junjie",
+    "Sanjay", "Ahmad", "Chloe", "Zhi Hao", "Xinyi", "Desmond", "Yusof", "Amira", "Brandon"
 ]
 
 # Items used in word problems
@@ -50,14 +49,14 @@ TOPICS = {
     }
 }
 
-# ----------------- MATH GENERATOR -----------------
-def generate_math_question(level, q_id):
+# ----------------- MATH PROCEDURAL TEMPLATES -----------------
+def generate_math_question(level, q_id, index):
+    difficulty = "Easy" if index % 3 == 0 else ("Medium" if index % 3 == 1 else "Hard")
     topics = TOPICS["mathematics"][level]
-    topic = random.choice(topics)
-    difficulty = random.choice(["Easy", "Medium", "Hard"])
+    topic = topics[index % len(topics)]
     
-    name1, name2 = random.sample(NAMES, 2)
-    item1, item2 = random.sample(ITEMS, 2)
+    name1, name2 = NAMES[index % len(NAMES)], NAMES[(index + 1) % len(NAMES)]
+    item1, item2 = ITEMS[index % len(ITEMS)], ITEMS[(index + 1) % len(ITEMS)]
     
     question_text = ""
     options = []
@@ -65,198 +64,295 @@ def generate_math_question(level, q_id):
     explanation = ""
     q_type = "mcq"
 
-    if topic == "Algebra" or level == "P6" and topic == "Algebra":
-        # Algebra questions
-        val_x = random.randint(2, 8)
-        coeff = random.randint(2, 6)
-        const = random.randint(3, 15)
-        # Model: "Simplify 3x + 5 + 2x - 1" or "Find the value of 5x + 3 when x = 4"
-        if random.choice([True, False]):
-            question_text = f"Simplify the algebraic expression: {coeff}k + {const} + {random.randint(1, 4)}k - {random.randint(1, const-1)}"
-            # k coeff sum, const diff
-            k_sum = coeff + random.randint(1, 4)
-            const_diff = const - random.randint(1, const-1)
-            correct_ans = f"{k_sum}k + {const_diff}"
-            options = [correct_ans, f"{k_sum}k - {const_diff}", f"{coeff + 1}k + {const}", f"{k_sum + 1}k + {const_diff + 2}"]
-            explanation = f"Combine like terms: ({coeff}k + {k_sum-coeff}k) = {k_sum}k. Then combine the constants: {const} - {const-const_diff} = {const_diff}. Thus, the answer is {correct_ans}."
-        else:
-            q_val = coeff * val_x + const
-            question_text = f"Find the value of {coeff}w + {const} when w = {val_x}."
-            correct_ans = str(q_val)
-            options = [correct_ans, str(coeff + const), str(coeff * (val_x + const)), str(q_val - 2)]
-            explanation = f"Substitute w = {val_x} into the expression: {coeff}({val_x}) + {const} = {coeff * val_x} + {const} = {q_val}."
-            
-    elif topic in ["Addition & Subtraction", "Numbers to 1000", "Numbers to 10000", "Numbers to 100000"]:
-        limit = 1000 if level == "P2" else (10000 if level == "P3" else 100000)
-        num1 = random.randint(100, limit // 2)
-        num2 = random.randint(50, limit // 2)
-        if random.choice([True, False]):
-            # Addition word problem
-            question_text = f"{name1} has {num1} {item1}. {name2} has {num2} more {item1} than {name1}. How many {item1} do they have altogether?"
-            ans_val = num1 + (num1 + num2)
-            correct_ans = str(ans_val)
-            options = [correct_ans, str(num1 + num2), str(num1 * 2), str(ans_val - 50)]
-            explanation = f"{name2} has {num1} + {num2} = {num1 + num2} {item1}. Together, they have {num1} + {num1 + num2} = {ans_val} {item1}."
-        else:
-            # Subtraction word problem
-            num1 = max(num1, num2) + random.randint(50, 200)
-            question_text = f"{name1} has {num1} {item1}. He gives {num2} {item1} to {name2}. How many {item1} does {name1} have left?"
-            ans_val = num1 - num2
-            correct_ans = str(ans_val)
-            options = [correct_ans, str(num1 + num2), str(ans_val + 10), str(ans_val - 10)]
-            explanation = f"Subtract the items given away: {num1} - {num2} = {ans_val} {item1}."
+    if level == "P6":
+        if topic == "Algebra":
+            # Algebra variables
+            coeff = (index % 5) + 2
+            const = (index % 12) + 3
+            val = (index % 4) + 2
+            expr_type = index % 3
 
-    elif topic == "Multiplication & Division":
-        if level == "P2":
-            factor1 = random.choice([2, 3, 4, 5, 10])
-            factor2 = random.randint(2, 9)
-        else:
-            factor1 = random.randint(6, 12)
-            factor2 = random.randint(12, 99)
-            
-        prod = factor1 * factor2
-        if random.choice([True, False]):
-            question_text = f"There are {factor2} boxes of {item1}. Each box contains {factor1} {item1}. How many {item1} are there in total?"
-            correct_ans = str(prod)
-            options = [correct_ans, str(factor2 + factor1), str(prod - factor1), str(prod + factor1)]
-            explanation = f"Multiply the number of boxes by the items in each box: {factor2} × {factor1} = {prod}."
-        else:
-            question_text = f"{name1} shares {prod} {item1} equally among {factor1} friends. How many {item1} does each friend get?"
-            correct_ans = str(factor2)
-            options = [correct_ans, str(factor2 + 2), str(factor2 - 2), str(factor1)]
-            explanation = f"Divide the total number of items by the number of friends: {prod} ÷ {factor1} = {factor2}."
-
-    elif topic == "Fractions":
-        if level in ["P2", "P3"]:
-            # Simple addition or subtraction of fractions with same denominator
-            denom = random.choice([4, 5, 6, 8, 10])
-            num1 = random.randint(1, denom - 2)
-            num2 = random.randint(1, denom - num1 - 1)
-            sum_num = num1 + num2
-            question_text = f"Find the sum of {num1}/{denom} and {num2}/{denom}."
-            correct_ans = f"{sum_num}/{denom}"
-            options = [correct_ans, f"{abs(num1 - num2)}/{denom}", f"{sum_num}/{denom * 2}", f"1/{denom}"]
-            explanation = f"Since the denominators are the same, simply add the numerators: {num1} + {num2} = {sum_num}. The denominator remains {denom}. Answer is {sum_num}/{denom}."
-        else:
-            # P4-P6 Fractions
-            # E.g., fraction of a set, or different denominators
-            denom1 = random.choice([2, 3, 4])
-            denom2 = random.choice([5, 6, 8])
-            tot = denom1 * denom2 * random.randint(2, 10)
-            spent_frac = random.randint(1, denom1 - 1)
-            rem = tot - (tot * spent_frac // denom1)
-            question_text = f"{name1} had ${tot}. She spent {spent_frac}/{denom1} of her money on a meal. How much money did she have left?"
-            correct_ans = f"${rem}"
-            options = [correct_ans, f"${tot - rem}", f"${rem - 5}", f"${rem + 10}"]
-            explanation = f"Amount spent: {spent_frac}/{denom1} of ${tot} = ${tot * spent_frac // denom1}. Amount left = ${tot} - ${tot * spent_frac // denom1} = ${rem}."
-
-    elif topic == "Ratio" or level in ["P5", "P6"] and topic == "Ratio":
-        r1, r2 = random.choice([(2,3), (3,4), (3,5), (4,5), (5,6)])
-        multiplier = random.randint(5, 20)
-        v1, v2 = r1 * multiplier, r2 * multiplier
-        tot = v1 + v2
-        if random.choice([True, False]):
-            question_text = f"The ratio of {name1}'s {item1} to {name2}'s {item1} is {r1}:{r2}. If {name1} has {v1} {item1}, how many {item1} do they have altogether?"
-            correct_ans = str(tot)
-            options = [correct_ans, str(v2), str(v1), str(tot + 10)]
-            explanation = f"{r1} units = {v1}. 1 unit = {v1} ÷ {r1} = {multiplier}. Total units = {r1} + {r2} = {r1+r2}. Total items = {r1+r2} × {multiplier} = {tot}."
-        else:
-            question_text = f"The ratio of the length of Ribbon A to Ribbon B is {r1}:{r2}. The difference in their lengths is {abs(v1 - v2)} cm. Find the length of the shorter ribbon."
-            shorter = min(v1, v2)
-            correct_ans = f"{shorter} cm"
-            options = [correct_ans, f"{max(v1, v2)} cm", f"{tot} cm", f"{abs(v1-v2)} cm"]
-            explanation = f"Difference in ratio units = {abs(r1 - r2)} units. {abs(r1 - r2)} units = {abs(v1 - v2)} cm. 1 unit = {abs(v1 - v2) // abs(r1 - r2)} cm. Shorter Ribbon has {min(r1, r2)} units = {shorter} cm."
-
-    elif topic == "Percentage" or level in ["P5", "P6"] and topic == "Percentage":
-        pct = random.choice([10, 15, 20, 25, 30, 50])
-        original = random.choice([40, 80, 120, 150, 200, 300, 500])
-        disc = (original * pct) // 100
-        payable = original - disc
-        if random.choice([True, False]):
-            question_text = f"A bag costs ${original} before discount. During a sale, there is a {pct}% discount. What is the discount amount?"
-            correct_ans = f"${disc}"
-            options = [correct_ans, f"${payable}", f"${disc + 5}", f"${original + disc}"]
-            explanation = f"Discount amount = {pct}% of ${original} = ({pct}/100) × {original} = ${disc}."
-        else:
-            question_text = f"A school has {original} students. {pct}% of them wear glasses. How many students do NOT wear glasses?"
-            correct_ans = str(original - (original * pct // 100))
-            options = [correct_ans, str(original * pct // 100), str(original), str(original - 10)]
-            explanation = f"Percentage of students who do not wear glasses = 100% - {pct}% = {100 - pct}%. Number of students = ({100 - pct}/100) × {original} = {correct_ans}."
-
-    elif topic == "Area & Perimeter" or topic == "Area of Triangle" or topic == "Circles":
-        side1 = random.choice([6, 8, 10, 12])
-        side2 = random.choice([5, 7, 9, 11])
-        if topic == "Area of Triangle" or (level == "P5" and random.choice([True, False])):
-            base = side1
-            height = side2
-            area = (base * height) // 2
-            question_text = f"Find the area of a triangle with a base of {base} cm and a height of {height} cm."
-            correct_ans = f"{area} cm²"
-            options = [correct_ans, f"{base * height} cm²", f"{base + height} cm²", f"{area + 5} cm²"]
-            explanation = f"Area of a triangle = 1/2 × base × height = 1/2 × {base} × {height} = {area} cm²."
-        elif topic == "Circles" or (level == "P6" and random.choice([True, False])):
-            radius = random.choice([7, 14, 21])
-            # Use pi = 22/7 or 3.14. Let's use 22/7.
-            area = 22 * radius * radius // 7
-            question_text = f"Find the area of a circle with a radius of {radius} cm. (Take π = 22/7)"
-            correct_ans = f"{area} cm²"
-            options = [correct_ans, f"{2 * 22 * radius // 7} cm²", f"{area * 2} cm²", f"{area - 10} cm²"]
-            explanation = f"Area of circle = π × r × r = 22/7 × {radius} × {radius} = {area} cm²."
-        else:
-            area = side1 * side2
-            perim = 2 * (side1 + side2)
-            if random.choice([True, False]):
-                question_text = f"A rectangle has a length of {side1} m and a width of {side2} m. Find its area."
-                correct_ans = f"{area} m²"
-                options = [correct_ans, f"{perim} m", f"{area + 10} m²", f"{area - 5} m²"]
-                explanation = f"Area of rectangle = length × width = {side1} × {side2} = {area} m²."
+            if expr_type == 0:
+                # Simplification template
+                added_coeff = (index % 3) + 1
+                question_text = f"Simplify the algebraic expression: {coeff}x + {const} + {added_coeff}x - {(index % const) + 1}"
+                ans_coeff = coeff + added_coeff
+                ans_const = const - ((index % const) + 1)
+                correct_ans = f"{ans_coeff}x + {ans_const}"
+                options = [correct_ans, f"{ans_coeff}x - {ans_const}", f"{coeff}x + {const}", f"{ans_coeff + 1}x + {ans_const + 1}"]
+                explanation = f"1. Group the 'x' terms together: {coeff}x + {added_coeff}x = {ans_coeff}x.\n2. Group the constants together: {const} - {(index % const) + 1} = {ans_const}.\n3. Combining them yields: {correct_ans}."
+            elif expr_type == 1:
+                # Evaluation template
+                q_val = coeff * val + const
+                question_text = f"Find the value of {coeff}w + {const} when w = {val}."
+                correct_ans = str(q_val)
+                options = [correct_ans, str(coeff + const), str(coeff * (val + const)), str(q_val - 3)]
+                explanation = f"Substitute w = {val} into the algebraic expression:\n{coeff} × {val} + {const} = {coeff * val} + {const} = {q_val}."
             else:
-                question_text = f"A rectangle has a length of {side1} m and a width of {side2} m. Find its perimeter."
-                correct_ans = f"{perim} m"
-                options = [correct_ans, f"{area} m²", f"{side1 + side2} m", f"{perim + 4} m"]
-                explanation = f"Perimeter of rectangle = 2 × (length + width) = 2 × ({side1} + {side2}) = {perim} m."
+                # Algebraic word problem
+                question_text = f"{name1} had {coeff}m stickers. {name2} had twice as many stickers as {name1}. If they shared them and gave {const} stickers away, express the remaining stickers in terms of m."
+                correct_ans = f"{coeff * 3}m - {const}"
+                options = [correct_ans, f"{coeff * 2}m - {const}", f"{coeff * 3}m + {const}", f"{coeff * 2}m + {const}"]
+                explanation = f"1. {name1}'s stickers = {coeff}m.\n2. {name2}'s stickers = 2 × {coeff}m = {coeff * 2}m.\n3. Total stickers at first = {coeff}m + {coeff * 2}m = {coeff * 3}m.\n4. Subtract the stickers given away: {correct_ans}."
 
-    elif topic == "Speed" or level == "P6" and topic == "Speed":
-        speed = random.choice([60, 80, 90, 100])
-        hours = random.choice([2, 3, 4, 5])
-        dist = speed * hours
-        if random.choice([True, False]):
-            question_text = f"A car travels at an average speed of {speed} km/h. How far does it travel in {hours} hours?"
-            correct_ans = f"{dist} km"
-            options = [correct_ans, f"{speed + hours} km", f"{speed // hours} km", f"{dist - 20} km"]
-            explanation = f"Distance = Speed × Time = {speed} km/h × {hours} hours = {dist} km."
-        else:
-            question_text = f"An express bus traveled {dist} km in {hours} hours. Find its average speed."
-            correct_ans = f"{speed} km/h"
-            options = [correct_ans, f"{speed - 10} km/h", f"{speed + 15} km/h", f"{dist * hours} km/h"]
-            explanation = f"Average Speed = Distance ÷ Time = {dist} km ÷ {hours} hours = {speed} km/h."
+        elif topic == "Ratio":
+            # Heuristic Scenario: Constant Part vs Constant Difference vs Constant Total
+            scenario_type = index % 3
+            if scenario_type == 0:
+                # Constant Difference Heuristic (Ages)
+                diff = ((index % 5) + 4) * 6 # Multiple of 6 (e.g. 24, 30, 36)
+                son_age_future_units = 1
+                father_age_future_units = 3
+                unit_diff = father_age_future_units - son_age_future_units
+                one_unit_val = diff // unit_diff
+                years_in_future = (index % 4) + 2
+                son_age_now = one_unit_val - years_in_future
+
+                question_text = f"The difference in age between {name1}'s father and {name1} is {diff} years. In {years_in_future} years, the father's age will be 3 times {name1}'s age. How old is {name1} now?"
+                correct_ans = f"{son_age_now} years old"
+                options = [correct_ans, f"{son_age_now + years_in_future} years old", f"{son_age_now + diff} years old", f"{son_age_now - 2} years old"]
+                explanation = f"1. Age difference is constant: Father is always {diff} years older.\n2. In {years_in_future} years, the ratio Father : {name1} is 3:1. The ratio difference is 2 units.\n3. 2 units = {diff} years. Therefore, 1 unit = {diff} ÷ 2 = {one_unit_val} years (this is {name1}'s age in {years_in_future} years).\n4. {name1}'s age now = {one_unit_val} - {years_in_future} = {son_age_now} years old."
+            elif scenario_type == 1:
+                # Constant Part (Only one side changes)
+                u1, u2 = 2, 3
+                u3, u4 = 4, 5 # Red : Blue
+                multiplier = (index % 5) + 3
+                red_at_first = u1 * multiplier
+                blue_at_first = u2 * multiplier
+                added_red = (u3 * blue_at_first // u4) - red_at_first # calculate red needed to hit ratio 4:5
+
+                question_text = f"A container had red and blue beads in the ratio {u1}:{u2}. After adding {added_red} red beads, the ratio of red beads to blue beads became {u3}:{u4}. How many blue beads were there?"
+                correct_ans = str(blue_at_first)
+                options = [correct_ans, str(red_at_first), str(blue_at_first + added_red), str(blue_at_first - 5)]
+                explanation = f"1. Blue beads do not change. Make Blue units equal in both ratios: LCM of {u2} and {u4} is 12.\n2. Initial ratio Red : Blue = {u1}:{u2} = 8:12.\n3. New ratio Red : Blue = {u3}:{u4} = {u3*12//u4}:12 = 15:12.\n4. Change in Red units = 15 - 8 = 7 units.\n5. 7 units = {added_red} beads. 1 unit = {added_red // 7} beads.\n6. Blue beads = 12 units = 12 × {added_red // 7} = {blue_at_first} beads."
+            else:
+                # Sharing in ratio
+                r1, r2, r3 = 2, 3, 5
+                unit_val = (index % 8) + 4
+                v1, v2, v3 = r1 * unit_val, r2 * unit_val, r3 * unit_val
+                question_text = f"{name1}, {name2}, and Siti shared ${r1*unit_val + r2*unit_val + r3*unit_val} in the ratio {r1}:{r2}:{r3}. How much more money did Siti receive than {name1}?"
+                diff_val = v3 - v1
+                correct_ans = f"${diff_val}"
+                options = [correct_ans, f"${v3}", f"${v1}", f"${v2}"]
+                explanation = f"1. Total units = {r1} + {r2} + {r3} = {r1+r2+r3} units.\n2. Total money = ${v1+v2+v3}. Therefore, 1 unit = ${v1+v2+v3} ÷ {r1+r2+r3} = ${unit_val}.\n3. Difference between Siti (5 units) and {name1} (2 units) = 3 units.\n4. Difference in money = 3 × ${unit_val} = ${diff_val}."
+
+        elif topic == "Percentage":
+            # Great Singapore Sale: Discount + GST multi-step Heuristic
+            price = ((index % 8) + 5) * 100 # $500 to $1200
+            pct_disc = 20 if index % 2 == 0 else 15
+            disc_amount = price * pct_disc // 100
+            disc_price = price - disc_amount
+            gst_pct = 9
+            gst_amount = round(disc_price * gst_pct / 100, 2)
+            final_price = round(disc_price + gst_amount, 2)
+
+            question_text = f"The usual price of a television set was ${price}. During a store promotion, {name1} bought it at a {pct_disc}% discount. A GST of {gst_pct}% was then applied on the discounted price. Find the final price {name1} paid."
+            correct_ans = f"${final_price:.2f}"
+            options = [correct_ans, f"${disc_price:.2f}", f"${price + (price*gst_pct//100):.2f}", f"${price - disc_amount:.2f}"]
+            explanation = f"1. Discount amount = {pct_disc}% of ${price} = ${disc_amount}.\n2. Discounted price = ${price} - ${disc_amount} = ${disc_price}.\n3. GST on discounted price = {gst_pct}% of ${disc_price} = ${gst_amount}.\n4. Final price = ${disc_price} + ${gst_amount} = ${final_price:.2f}."
+
+        elif topic == "Speed":
+            # Speed Word Problem: Traveling towards each other (Opposite direction)
+            s1 = (index % 4) * 10 + 60 # 60, 70, 80, 90 km/h
+            s2 = (index % 3) * 10 + 50 # 50, 60, 70 km/h
+            hours = (index % 3) + 2    # 2, 3, 4 hours
+            dist = (s1 + s2) * hours
             
-    else:
-        # Fallback / General money/measure questions
-        cost = random.randint(10, 50)
-        qty = random.randint(3, 8)
-        tot = cost * qty
-        question_text = f"A toy sets cost ${cost} each. If {name1} buys {qty} of these toy sets, how much does he pay?"
-        correct_ans = f"${tot}"
-        options = [correct_ans, f"${tot - cost}", f"${tot + cost}", f"${cost + qty}"]
-        explanation = f"Multiply the cost of a single toy set by the quantity: ${cost} × {qty} = ${tot}."
+            question_text = f"Town A and Town B are {dist} km apart. At 0800, a truck left Town A for Town B at an average speed of {s1} km/h. At the same time, a van left Town B for Town A at an average speed of {s2} km/h. At what time did they pass each other?"
+            meeting_time = 8 + hours
+            correct_ans = f"{meeting_time:04d}" if meeting_time < 12 else f"{meeting_time:04d} (12:00 PM or later)"
+            # Let's format nicely as time string
+            correct_ans = f"{meeting_time:02d}00"
+            options = [correct_ans, f"{(meeting_time-1):02d}00", f"{(meeting_time+1):02d}00", "1200"]
+            explanation = f"1. Combined speed of both vehicles = {s1} + {s2} = {s1+s2} km/h.\n2. Time taken to meet = Total Distance ÷ Combined Speed = {dist} ÷ {s1+s2} = {hours} hours.\n3. Meeting time = 0800 + {hours} hours = {correct_ans}."
 
-    # Shuffle options and ensure they are all strings
-    if not options:
-        options = [correct_ans, str(int(correct_ans)+5), str(int(correct_ans)-5), str(int(correct_ans)*2)]
-    
-    # Ensure options contains correct_ans
-    if correct_ans not in options:
-        options[0] = correct_ans
+        elif topic == "Circles" or topic == "Area & Perimeter of Composite Figures":
+            # Composite Figure: Shaded area of quadrant and triangle inside a square
+            side = ((index % 5) + 2) * 7 # Multiples of 7: 14, 21, 28, etc.
+            # Quadrant Area = 1/4 * 22/7 * r * r
+            quad_area = 22 * side * side // (7 * 4)
+            tri_area = side * side // 2
+            shaded = quad_area - tri_area
+
+            question_text = f"The figure shows a quadrant of radius {side} cm inside a square. A right-angled triangle with a height of {side} cm is drawn inside it. Find the area of the shaded region. (Take π = 22/7)"
+            correct_ans = f"{shaded} cm²"
+            options = [correct_ans, f"{quad_area} cm²", f"{tri_area} cm²", f"{shaded + 14} cm²"]
+            explanation = f"1. Area of quadrant = 1/4 × π × r² = 1/4 × 22/7 × {side} × {side} = {quad_area} cm².\n2. Area of unshaded triangle = 1/2 × base × height = 1/2 × {side} × {side} = {tri_area} cm².\n3. Shaded Area = Quadrant Area - Triangle Area = {quad_area} - {tri_area} = {shaded} cm²."
         
+        else:
+            # Volume of composite solids / Pie chart
+            val_a = (index % 5) + 4
+            question_text = f"A solid is made of {val_a} identical cubes of side 3 cm. Find the total volume of the composite solid."
+            vol = val_a * (3 * 3 * 3)
+            correct_ans = f"{vol} cm³"
+            options = [correct_ans, f"{val_a * 9} cm³", f"{vol - 27} cm³", f"{vol + 27} cm³"]
+            explanation = f"1. Volume of 1 cube = 3 × 3 × 3 = 27 cm³.\n2. Volume of {val_a} cubes = {val_a} × 27 = {vol} cm³."
+
+    elif level == "P5":
+        if topic == "Ratio":
+            u1, u2 = (index % 3) + 2, (index % 3) + 5 # e.g. 2:5, 3:6, etc.
+            mult = (index % 10) + 5
+            tot = (u1 + u2) * mult
+            v1 = u1 * mult
+            v2 = u2 * mult
+            question_text = f"{name1} and {name2} shared ${tot} in the ratio {u1}:{u2}. How much money did {name2} receive?"
+            correct_ans = f"${v2}"
+            options = [correct_ans, f"${v1}", f"${tot}", f"${v2 - 5}"]
+            explanation = f"1. Total units = {u1} + {u2} = {u1+u2} units.\n2. {u1+u2} units = ${tot}. Therefore, 1 unit = ${tot} ÷ {u1+u2} = ${mult}.\n3. {name2} has {u2} units = {u2} × ${mult} = ${v2}."
+        elif topic == "Average":
+            count = (index % 3) + 4 # 4, 5, 6
+            avg = (index % 15) + 140 # 140 to 155 cm
+            extra_height = (index % 12) + 160 # 160 to 171 cm
+            new_tot = (count * avg) + extra_height
+            new_avg = round(new_tot / (count + 1), 1)
+
+            question_text = f"The average height of {count} students is {avg} cm. When a new student of height {extra_height} cm joins them, what is the new average height of the group?"
+            correct_ans = f"{new_avg} cm"
+            options = [correct_ans, f"{avg + 2} cm", f"{new_avg - 1} cm", f"{avg} cm"]
+            explanation = f"1. Total height of {count} students = {count} × {avg} = {count * avg} cm.\n2. Total height with new student = {count * avg} + {extra_height} = {new_tot} cm.\n3. Total number of students = {count} + 1 = {count + 1}.\n4. New average height = {new_tot} ÷ {count + 1} = {new_avg} cm."
+        elif topic == "Area of Triangle":
+            base = ((index % 5) + 4) * 2 # Even base: 8, 10, 12, etc.
+            height = (index % 6) + 5
+            area = (base * height) // 2
+            question_text = f"A triangle has a base of {base} cm and a height of {height} cm. Find its area."
+            correct_ans = f"{area} cm²"
+            options = [correct_ans, f"{base * height} cm²", f"{base + height} cm²", f"{area + 10} cm²"]
+            explanation = f"Area of triangle = 1/2 × base × height = 1/2 × {base} × {height} = {area} cm²."
+        elif topic == "Percentage":
+            pct = 10 + (index % 6) * 5 # 10, 15, 20, 25, 30, 35
+            price = ((index % 6) + 3) * 50 # 150 to 400
+            disc = price * pct // 100
+            payable = price - disc
+            question_text = f"A bicycle is priced at ${price}. During a sale, a {pct}% discount is offered. What is the discount amount?"
+            correct_ans = f"${disc}"
+            options = [correct_ans, f"${payable}", f"${disc + 5}", f"${disc - 5}"]
+            explanation = f"Discount = {pct}% of ${price} = ({pct}/100) × {price} = ${disc}."
+        else:
+            # Volume of Cube and Cuboid
+            l, w, h = (index % 3) + 4, (index % 3) + 3, (index % 3) + 5
+            vol = l * w * h
+            question_text = f"Find the volume of a rectangular metal box with length {l} cm, width {w} cm, and height {h} cm."
+            correct_ans = f"{vol} cm³"
+            options = [correct_ans, f"{l*w} cm³", f"{vol + 20} cm³", f"{vol - 10} cm³"]
+            explanation = f"Volume = Length × Width × Height = {l} × {w} × {h} = {vol} cm³."
+
+    elif level == "P4":
+        if topic == "Factors & Multiples":
+            num = (index % 3) * 12 + 24 # 24, 36, 48
+            question_text = f"Which of the following is NOT a factor of {num}?"
+            # find actual non-factors
+            non_factors = [5, 7, 9, 10, 11]
+            correct_ans = str(non_factors[index % len(non_factors)])
+            # actual factors
+            all_factors = [i for i in range(1, num+1) if num % i == 0]
+            options = [correct_ans] + [str(f) for f in random.sample(all_factors, 3)]
+            explanation = f"The factors of {num} are {all_factors}. {correct_ans} does not divide {num} exactly, so it is NOT a factor."
+        elif topic == "Decimals":
+            v_dec = round(((index % 8) + 1) * 1.5, 2)
+            qty = (index % 4) + 3
+            tot = round(v_dec * qty, 2)
+            question_text = f"{name1} bought {qty} bottles of juice. Each bottle contained {v_dec} liters of juice. How many liters of juice did {name1} buy in total?"
+            correct_ans = f"{tot} L"
+            options = [correct_ans, f"{round(tot - 0.5, 2)} L", f"{round(tot + 1.2, 2)} L", f"{round(v_dec + qty, 2)} L"]
+            explanation = f"Multiply the volume of one bottle by the quantity: {v_dec} × {qty} = {tot} liters."
+        elif topic == "Area & Perimeter":
+            side = (index % 6) + 6 # 6 to 11
+            area = side * side
+            question_text = f"A square field has an area of {area} m². Find its perimeter."
+            perim = side * 4
+            correct_ans = f"{perim} m"
+            options = [correct_ans, f"{side} m", f"{area} m", f"{perim + 4} m"]
+            explanation = f"1. Since it is a square, side × side = Area = {area} m². Therefore, side = {side} m.\n2. Perimeter of square = 4 × side = 4 × {side} = {perim} m."
+        else:
+            # Fractions / Time
+            tot = ((index % 5) + 3) * 8
+            spent = tot * 3 // 8
+            question_text = f"{name1} had {tot} stamps. She gave 3/8 of them to {name2}. How many stamps did she have left?"
+            rem = tot - spent
+            correct_ans = str(rem)
+            options = [correct_ans, str(spent), str(tot), str(rem - 2)]
+            explanation = f"1. Stamps given away = 3/8 × {tot} = {spent}.\n2. Remaining stamps = {tot} - {spent} = {rem}."
+
+    elif level == "P3":
+        if topic == "Addition & Subtraction":
+            n1 = (index % 500) + 1200
+            n2 = (index % 300) + 400
+            question_text = f"A library has {n1} English books and {n2} Chinese books. How many books are there in total?"
+            correct_ans = str(n1 + n2)
+            options = [correct_ans, str(n1 - n2), str(n1 + n2 + 100), str(n1 + n2 - 50)]
+            explanation = f"Add the two groups of books: {n1} + {n2} = {correct_ans}."
+        elif topic == "Multiplication & Division":
+            mult = (index % 12) + 6
+            qty = (index % 8) + 12
+            prod = mult * qty
+            question_text = f"There are {qty} rows of chairs in a hall. Each row has {mult} chairs. Find the total number of chairs."
+            correct_ans = str(prod)
+            options = [correct_ans, str(prod + mult), str(prod - mult), str(qty + mult)]
+            explanation = f"Multiply the number of rows by chairs per row: {qty} × {mult} = {prod}."
+        elif topic == "Area & Perimeter":
+            l, w = (index % 4) + 8, (index % 4) + 4
+            area = l * w
+            question_text = f"Find the area of a rectangle with length {l} cm and width {w} cm."
+            correct_ans = f"{area} cm²"
+            options = [correct_ans, f"{2 * (l+w)} cm", f"{area + 10} cm²", f"{area - 5} cm²"]
+            explanation = f"Area = Length × Width = {l} × {w} = {area} cm²."
+        else:
+            # Money / Mass / Volume
+            mass = (index % 5) * 50 + 200
+            question_text = f"A packet of flour has a mass of {mass} g. What is the mass of 3 such packets?"
+            correct_ans = f"{mass * 3} g"
+            options = [correct_ans, f"{mass * 2} g", f"{mass * 3 - 100} g", f"{mass + 3} g"]
+            explanation = f"Multiply the mass of one packet by 3: {mass} g × 3 = {mass * 3} g."
+
+    else: # P2
+        if topic == "Addition & Subtraction":
+            n1 = (index % 100) + 120
+            n2 = (index % 50) + 40
+            question_text = f"{name1} has {n1} stickers. {name2} has {n2} fewer stickers than {name1}. How many stickers does {name2} have?"
+            correct_ans = str(n1 - n2)
+            options = [correct_ans, str(n1 + n2), str(n1 - n2 + 10), str(n1 - n2 - 5)]
+            explanation = f"Subtract {n2} from {n1} to find {name2}'s stickers: {n1} - {n2} = {correct_ans}."
+        elif topic == "Multiplication & Division":
+            groups = (index % 4) + 3 # 3 to 6
+            each = (index % 4) * 2 + 2 # 2, 4, 6, 8
+            prod = groups * each
+            question_text = f"{name1} places {prod} cookies equally into {groups} bags. How many cookies are in each bag?"
+            correct_ans = str(each)
+            options = [correct_ans, str(each + 1), str(each - 1), str(groups)]
+            explanation = f"Divide total cookies by number of bags: {prod} ÷ {groups} = {each}."
+        elif topic == "Fractions":
+            denom = (index % 4) + 5 # 5, 6, 7, 8
+            num = (index % (denom - 1)) + 1
+            question_text = f"What fraction of the figure must be shaded to show {num}/{denom}?"
+            correct_ans = f"{num}/{denom}"
+            options = [correct_ans, f"1/{denom}", f"{denom - num}/{denom}", f"{num + 1}/{denom}"]
+            explanation = f"The fraction {num}/{denom} represents {num} parts out of a total of {denom} equal parts."
+        else:
+            # Money / Shapes
+            cost = (index % 4) * 5 + 10
+            question_text = f"Siti spent ${cost} on a toy and had $5 left. How much money did she have at first?"
+            correct_ans = f"${cost + 5}"
+            options = [correct_ans, f"${cost}", f"${cost - 5}", f"${cost + 10}"]
+            explanation = f"Add the cost of the toy and remaining money: ${cost} + $5 = ${cost + 5}."
+
+    # General fallback option padding
+    if not options or len(options) < 4:
+        # Strip units for baseline options
+        clean_ans = correct_ans.replace(" cm²", "").replace(" m²", "").replace(" cm³", "").replace(" g", "").replace(" m", "").replace(" L", "").replace("$", "").replace(" years old", "")
+        try:
+            val_ans = int(float(clean_ans))
+            options = [correct_ans, f"${val_ans + 5}" if "$" in correct_ans else str(val_ans + 5), f"${val_ans - 2}" if "$" in correct_ans else str(val_ans - 2), f"${val_ans * 2}" if "$" in correct_ans else str(val_ans * 2)]
+        except ValueError:
+            options = [correct_ans, "None of the above", "Cannot be determined", "Both options are correct"]
+
     random.shuffle(options)
     
-    # Make some short-answer
-    if q_type == "mcq" and difficulty == "Hard" and topic not in ["Circles", "Algebra"] and random.choice([True, False]):
+    # Render short answer for Hard topics randomly
+    if difficulty == "Hard" and index % 2 == 0:
         q_type = "short_answer"
         options = []
-        # Strip units for text matching
-        correct_ans = correct_ans.replace(" cm²", "").replace(" m²", "").replace(" cm", "").replace(" m", "").replace(" km/h", "").replace(" km", "").replace("$", "")
+        # Strip units for text match checking
+        correct_ans = correct_ans.replace(" cm²", "").replace(" m²", "").replace(" cm³", "").replace(" g", "").replace(" m", "").replace(" L", "").replace("$", "").replace(" years old", "").lower()
 
     return {
         "id": q_id,
@@ -269,38 +365,46 @@ def generate_math_question(level, q_id):
         "difficulty": difficulty
     }
 
-# ----------------- ENGLISH GENERATOR -----------------
-ENGLISH_VOCAB = {
-    "P2": [
-        ("enormous", "very large", "tiny"), ("terrified", "extremely scared", "happy"),
-        ("delicious", "tastes very good", "bitter"), ("cautious", "careful of danger", "careless"),
-        ("generous", "willing to share", "selfish"), ("exhausted", "extremely tired", "energetic"),
-        ("polite", "showing good manners", "rude"), ("furious", "extremely angry", "calm")
-    ],
-    "P3": [
-        ("enthusiastic", "showing intense enjoyment or interest", "bored"),
-        ("ferocious", "wild and savage", "tame"), ("examine", "inspect closely", "ignore"),
-        ("rescue", "save from danger", "harm"), ("courageous", "brave", "cowardly"),
-        ("scrumptious", "extremely delicious", "stale"), ("cluttered", "messy and untidy", "neat"),
-        ("commence", "begin or start", "end")
-    ],
-    "P4": [
-        ("demonstrate", "show clearly by giving proof or examples", "hide"),
-        ("observe", "watch carefully", "ignore"), ("ancient", "belonging to the very distant past", "modern"),
-        ("temporary", "lasting for a limited time", "permanent"), ("unique", "being the only one of its kind", "common"),
-        ("essential", "absolutely necessary", "optional"), ("reluctant", "unwilling and hesitant", "eager"),
-        ("spectacular", "beautiful and eye-catching", "dull")
+# ----------------- ENGLISH SYLLABUS DATABASE -----------------
+GRAMMAR_TEMPLATES = {
+    "P6": [
+        ("Not only ________ the suspect break into the house, but he also stole the jewelry.", "did", ["does", "had", "was"], "Inversion is required after 'Not only'. Since the second clause is past tense ('stole'), we use 'did'."),
+        ("Were he ________ the truth, his parents would have forgiven him.", "to have told", ["told", "to tell", "telling"], "This is the past conditional subjunctive: 'Were he to have told' is equivalent to 'If he had told'."),
+        ("The principal requested that every teacher ________ present at the school hall tomorrow.", "be", ["is", "are", "was"], "The subjunctive verb 'be' is used after verbs/adjectives of demand or request like 'requested that'."),
+        ("My grandmother rarely goes out in the evening, ________ she?", "does", ["doesn't", "is", "isn't"], "The adverb 'rarely' is negative, so the question tag must be positive: 'does she?'."),
+        ("Neither the boys nor their captain ________ aware of the change in schedule.", "was", ["were", "are", "been"], "For 'neither... nor', the verb agrees with the closer subject. 'Their captain' is singular, so we use 'was'."),
+        ("The heavy storm prevented the ferry ________ leaving the terminal.", "from", ["to", "for", "by"], "The verb 'prevent' collocates with 'from' + gerund: 'prevented... from leaving'."),
+        ("Hardly had David stepped out of the house ________ it started to pour cats and dogs.", "when", ["than", "then", "before"], "The correlative structure is 'Hardly had... when'."),
+        ("I would rather study diligently ________ fail my upcoming PSLE examinations.", "than", ["then", "to", "from"], "The expression 'would rather' is followed by 'than'."),
+        ("She congratulated her classmate ________ winning the first prize in the national essay competition.", "on", ["for", "at", "about"], "The verb 'congratulate' takes the preposition 'on': 'congratulate someone on something'."),
+        ("This is the pupil ________ art project was highly praised by the guest of honor.", "whose", ["who", "whom", "which"], "We use 'whose' to express possessive relation (the art project belonging to the pupil).")
     ],
     "P5": [
-        ("exacerbate", "make a problem or bad situation worse", "alleviate"),
-        ("preposterous", "completely contrary to reason or common sense", "reasonable"),
-        ("deteriorate", "become progressively worse", "improve"), ("meticulously", "very carefully and precisely", "carelessly"),
-        ("validate", "prove to be true or correct", "disprove"), ("obsolete", "no longer produced or used", "modern"),
-        ("resilient", "able to recover quickly from difficult conditions", "weak"),
-        ("conspicuous", "clearly visible or attracting attention", "hidden")
+        ("Seldom ________ we witness such a magnificent solar eclipse in Singapore.", "do", ["does", "did", "are"], "Seldom is a negative adverb that triggers inversion. Since 'we' is plural and present, we use 'do'."),
+        ("If I ________ in your shoes, I would apologize to the teacher immediately.", "were", ["was", "am", "be"], "We use 'were' in the subjunctive mood for hypothetical or imaginary situations."),
+        ("Having ________ her dinner, Siti cleared the dining table and washed the dishes.", "completed", ["complete", "completing", "completes"], "The perfect participle construction 'Having' is followed by a past participle."),
+        ("Siti, along with her siblings, ________ visiting the Botanic Gardens this Sunday.", "is", ["are", "were", "been"], "The phrase 'along with' does not change the singular subject 'Siti'. So we use 'is'."),
+        ("The police are looking for the man ________ car was stolen yesterday.", "whose", ["whom", "who", "which"], "'Whose' is used to show possession of the car.")
     ],
+    "P4": [
+        ("Despite ________ extremely exhausted, Bala pushed on to finish the marathon.", "being", ["he was", "been", "is"], "'Despite' is a preposition and must be followed by a noun or a gerund like 'being'."),
+        ("The boys were instructed to complete the science worksheet by ________.", "themselves", ["himself", "ourselves", "theirselves"], "The plural subject 'The boys' matches with the reflexive pronoun 'themselves'."),
+        ("No sooner had the alarm rung ________ the security guards rushed to the main gate.", "than", ["when", "then", "before"], "The pairing structure is 'No sooner had... than'." )
+    ],
+    "P3": [
+        ("While the girls ________ netball in the school field, it started to drizzle.", "were playing", ["played", "are playing", "play"], "Past continuous 'were playing' is used for an ongoing past action interrupted by a shorter action ('started')."),
+        ("The thief crept ________ through the quiet corridor to avoid being seen.", "stealthily", ["clumsily", "noisily", "boldly"], "'Stealthily' means quietly and secretly, which fits avoiding detection."),
+        ("Neither of the girls ________ completed the homework yet.", "has", ["have", "had", "having"], "'Neither of' takes a singular verb. 'Yet' indicates present perfect, so 'has' fits.")
+    ],
+    "P2": [
+        ("My sister ________ a delicious chocolate cake for my birthday yesterday.", "baked", ["bakes", "bake", "is baking"], "Yesterday indicates simple past tense, so we use 'baked'."),
+        ("Every morning, my father ________ to the market to buy fresh vegetables.", "goes", ["go", "went", "is going"], "Daily habits take the simple present tense. 'My father' is singular, so we use 'goes'."),
+        ("This is the puppy ________ we rescued from the rain yesterday.", "which", ["who", "whom", "whose"], "We use 'which' or 'that' for animals and objects.")
+    ]
+}
+
+ENGLISH_VOCAB_WORDS = {
     "P6": [
-        ("trigger", "cause an event or situation to happen", "prevent"),
         ("inevitable", "certain to happen and unavoidable", "avoidable"),
         ("meticulously", "with extreme care and attention to detail", "recklessly"),
         ("resilient", "recovering quickly from setbacks", "fragile"),
@@ -308,46 +412,63 @@ ENGLISH_VOCAB = {
         ("validate", "confirm the validity or accuracy of", "reject"),
         ("unprecedented", "never done or known before", "common"),
         ("advocate", "publicly recommend or support", "oppose")
-    ]
-}
-
-GRAMMAR_RULES = {
-    "P2": [
-        ("The dog ________ loudly at the postman yesterday.", "barked", ["barks", "bark", "is barking"], "This is in the simple past tense, as indicated by 'yesterday'."),
-        ("Neither Sarah nor Siti ________ going to the playground today.", "is", ["are", "am", "were"], "For 'neither... nor', the verb agrees with the subject closer to it. 'Siti' is singular, so we use 'is'."),
-        ("Every morning, my father ________ a cup of hot black coffee.", "drinks", ["drink", "drank", "is drinking"], "This represents a daily habit, which requires the simple present tense. 'My father' is singular, so we use 'drinks'."),
-        ("That chocolate cake was made by Aunt Mary ________.", "herself", ["himself", "myself", "itself"], "Aunt Mary is female, so the reflexive pronoun is 'herself'.")
-    ],
-    "P3": [
-        ("The thief crept ________ into the dark alley to hide from the police.", "stealthily", ["noisily", "boldly", "clumsily"], "Creeping into an alley to avoid police requires doing it quietly and secretly ('stealthily')."),
-        ("Neither of the contestants ________ completed the final puzzle yet.", "has", ["have", "having", "had"], "'Neither of' takes a singular verb. 'Yet' indicates present perfect tense, so we use 'has'."),
-        ("While we ________ television, the electricity suddenly failed.", "were watching", ["watched", "are watching", "watch"], "We use the past continuous tense ('were watching') for an ongoing past action that was interrupted by a shorter action ('failed')."),
-        ("Can you please hand me ________ blue folder lying on that desk over there?", "that", ["this", "these", "those"], "'Over there' indicates distance, and 'folder' is singular, so we use 'that'.")
-    ],
-    "P4": [
-        ("Despite ________ extremely tired, David finished his science project.", "being", ["he was", "is", "been"], "'Despite' is a preposition and must be followed by a noun or gerund ('being')."),
-        ("No sooner had the principal stepped onto the stage ________ the hall fell silent.", "than", ["when", "then", "after"], "The correlative conjunction 'no sooner' is always paired with 'than'."),
-        ("Having ________ her homework, Siti turned off her desk lamp and went to bed.", "completed", ["complete", "completing", "completes"], "The perfect participle construction 'Having' is followed by a past participle ('completed')."),
-        ("The police are looking for the man ________ car was involved in the accident.", "whose", ["whom", "who", "which"], "We use 'whose' to show possession (the car belonging to the man).")
     ],
     "P5": [
-        ("Seldom ________ we see such an impressive astronomical display in our night sky.", "do", ["does", "did", "are"], "When starting a sentence with negative adverbs like 'Seldom', inversion occurs. 'We' is plural, so we use 'do'."),
-        ("If I ________ you, I would consult a doctor immediately.", "were", ["was", "am", "be"], "The subjunctive mood is used for hypothetical situations, which requires 'were' regardless of the subject pronoun."),
-        ("The heavy rain prevented the soccer players ________ conducting their practice.", "from", ["to", "by", "for"], "The verb 'prevent' is followed by the preposition 'from' + gerund ('from conducting')."),
-        ("Hardly had Mei Ling entered the kitchen ________ she smelt something burning.", "when", ["than", "then", "before"], "The construction 'Hardly had... when' is a standard grammatical pairing.")
+        ("exacerbate", "make a problem or bad situation worse", "alleviate"),
+        ("preposterous", "completely contrary to reason or common sense", "reasonable"),
+        ("deteriorate", "become progressively worse", "improve"),
+        ("meticulously", "very carefully and precisely", "carelessly"),
+        ("validate", "prove to be true or correct", "disprove"),
+        ("obsolete", "no longer produced or used", "modern"),
+        ("resilient", "able to recover quickly from difficult conditions", "weak"),
+        ("conspicuous", "clearly visible or attracting attention", "hidden")
     ],
-    "P6": [
-        ("Not only ________ he break the school rules, but he also lied to his teacher.", "did", ["does", "had", "would"], "Inversion is required after 'Not only'. Since the second clause is in the past tense ('lied'), the auxiliary verb must be 'did'."),
-        ("Were he ________ the truth, his parents would not have punished him so severely.", "to have told", ["told", "to tell", "telling"], "This is a conditional subjunctive form. 'Were he to tell' is equivalent to 'If he told'."),
-        ("My sister, along with her classmates, ________ visiting the museum this afternoon.", "is", ["are", "were", "been"], "Phrases like 'along with' do not change the number of the subject. The main subject 'My sister' is singular, so we use 'is'."),
-        ("It is essential that everyone ________ present at the meeting tomorrow.", "be", ["is", "are", "was"], "The subjunctive verb form 'be' is used after adjectives of necessity like 'essential that'.")
+    "P4": [
+        ("demonstrate", "show clearly by giving proof or examples", "hide"),
+        ("observe", "watch carefully", "ignore"),
+        ("ancient", "belonging to the very distant past", "modern"),
+        ("temporary", "lasting for a limited time", "permanent"),
+        ("unique", "being the only one of its kind", "common"),
+        ("essential", "absolutely necessary", "optional"),
+        ("reluctant", "unwilling and hesitant", "eager"),
+        ("spectacular", "beautiful and eye-catching", "dull")
+    ],
+    "P3": [
+        ("enthusiastic", "showing intense enjoyment or interest", "bored"),
+        ("ferocious", "wild and savage", "tame"),
+        ("examine", "inspect closely", "ignore"),
+        ("rescue", "save from danger", "harm"),
+        ("courageous", "brave", "cowardly"),
+        ("scrumptious", "extremely delicious", "stale"),
+        ("cluttered", "messy and untidy", "neat"),
+        ("commence", "begin or start", "end")
+    ],
+    "P2": [
+        ("enormous", "very large", "tiny"),
+        ("terrified", "extremely scared", "happy"),
+        ("delicious", "tastes very good", "bitter"),
+        ("cautious", "careful of danger", "careless"),
+        ("generous", "willing to share", "selfish"),
+        ("exhausted", "extremely tired", "energetic"),
+        ("polite", "showing good manners", "rude"),
+        ("furious", "extremely angry", "calm")
     ]
 }
 
-def generate_english_question(level, q_id):
-    difficulty = random.choice(["Easy", "Medium", "Hard"])
-    opt = random.choice(["grammar", "vocab", "synthesis"])
-    
+SYNTHESIS_TEMPLATES = [
+    ("The boy did not study. He failed the examination.", "because", "the boy failed the examination because he did not study"),
+    ("Siti is very agile. She can scale the high wall easily.", "enough", "siti is agile enough to scale the high wall easily"),
+    ("Bala worked hard. He was still unable to complete the task.", "Although", "although bala worked hard, he was still unable to complete the task"),
+    ("You must start now. Otherwise, you will miss the last train.", "Unless", "unless you start now, you will miss the last train"),
+    ("He finished his speech. The audience broke into rapturous applause.", "No sooner had", "no sooner had he finished his speech than the audience broke into rapturous applause"),
+    ("She entered the room. She immediately heard an odd scratching noise.", "Hardly had", "hardly had she entered the room when she immediately heard an odd scratching noise"),
+    ("David was poor. He contributed generously to the charity fund.", "Despite", "despite being poor, david contributed generously to the charity fund")
+]
+
+def generate_english_question(level, q_id, index):
+    difficulty = "Easy" if index % 3 == 0 else ("Medium" if index % 3 == 1 else "Hard")
+    opt = index % 3 # grammar vs vocab vs synthesis
+
     question_text = ""
     options = []
     correct_ans = ""
@@ -355,52 +476,42 @@ def generate_english_question(level, q_id):
     q_type = "mcq"
     topic = "Grammar MCQ"
 
-    if opt == "grammar":
-        rules = GRAMMAR_RULES[level]
-        rule = random.choice(rules)
+    if opt == 0:
+        rules = GRAMMAR_TEMPLATES[level]
+        rule = rules[index % len(rules)]
         question_text = rule[0]
         correct_ans = rule[1]
         options = [correct_ans] + rule[2]
         explanation = rule[3]
         topic = "Grammar MCQ"
-    elif opt == "vocab":
-        words = ENGLISH_VOCAB[level]
-        word, definition, antonym = random.choice(words)
-        name = random.choice(NAMES)
-        question_text = f"The explorer described the ________ creature as resembling a giant, scaly lizard." if level in ["P5", "P6"] else f"The children saw an ________ castle at the theme park."
-        if word in ["enormous", "ferocious", "ancient", "resilient", "conspicuous"]:
-            correct_ans = word
-            # select other words from same level
-            other_words = [w[0] for w in words if w[0] != word]
-            options = [correct_ans] + random.sample(other_words, min(3, len(other_words)))
-            explanation = f"'{correct_ans}' is the correct fit. Definition: {definition}."
-        else:
-            # simple vocab question
-            question_text = f"Select the word that means: '{definition}'."
-            correct_ans = word
-            other_words = [w[0] for w in words if w[0] != word]
-            options = [correct_ans] + random.sample(other_words, min(3, len(other_words)))
-            explanation = f"'{correct_ans}' means '{definition}'."
+
+    elif opt == 1:
+        words = ENGLISH_VOCAB_WORDS[level]
+        word, definition, antonym = words[index % len(words)]
+        
+        question_text = f"Select the word that best defines or matches the context: '{definition}'."
+        correct_ans = word
+        # Select other words from the same level
+        other_words = [w[0] for w in words if w[0] != word]
+        options = [correct_ans] + random.sample(other_words, min(3, len(other_words)))
+        explanation = f"'{correct_ans}' means '{definition}'. Antonym: '{antonym}'."
         topic = "Vocabulary MCQ"
+
     else:
-        # Synthesis & Transformation
+        # Synthesis & Transformation (S&T)
         topic = "Synthesis & Transformation"
         q_type = "short_answer"
-        synthesis_templates = [
-            ("The boy did not study. He failed the test.", "because", "The boy failed the test because he did not study."),
-            ("Siti is very small. She can crawl through the tiny opening.", "enough", "Siti is small enough to crawl through the tiny opening."),
-            ("Ravi is thin. He is very strong.", "Although", "Although Ravi is thin, he is very strong."),
-            ("Unless it rains, we will play soccer.", "If", "If it does not rain, we will play soccer.")
-        ]
-        sent1, joiner, correct_ans = random.choice(synthesis_templates)
-        question_text = f"Combine the following sentences using the word provided: \nSentence 1: {sent1.split('.')[0]}. \nSentence 2: {sent1.split('.')[1].strip()} \nUse word: **{joiner}**"
-        explanation = f"Correctly combined: '{correct_ans}'"
+        
+        sent, joiner, correct_ans = SYNTHESIS_TEMPLATES[index % len(SYNTHESIS_TEMPLATES)]
+        question_text = f"Combine the sentences into one without changing its meaning, using the word(s) provided:\n\nSentence 1: {sent.split('.')[0]}.\nSentence 2: {sent.split('.')[1].strip()}\n\nUse: **{joiner}**"
+        explanation = f"Correct synthesis: '{correct_ans}'"
         options = []
+        correct_ans = correct_ans.lower().strip()
 
-    # Ensure 4 options for MCQ
+    if q_type == "mcq" and len(options) < 4:
+        options = [correct_ans, "alternative_a", "alternative_b", "alternative_c"]
+    
     if q_type == "mcq":
-        while len(options) < 4:
-            options.append("optional_word")
         random.shuffle(options)
 
     return {
@@ -414,68 +525,132 @@ def generate_english_question(level, q_id):
         "difficulty": difficulty
     }
 
-# ----------------- SCIENCE GENERATOR -----------------
-SCIENCE_MATRICES = {
-    "P3": [
-        ("Diversity of Living & Non-Living Things", "Which of the following is a characteristic of all living things?", "They can reproduce and grow.", ["They are always green", "They can make their own food", "They do not need air"], "All living things require air, water, and food to survive, and they can grow, reproduce, and respond to changes."),
-        ("Plants & Fungi", "Which of the following is a non-flowering plant?", "Fern", ["Rose", "Hibiscus", "Ixora"], "Ferns are non-flowering plants that reproduce by spores instead of seeds."),
-        ("Materials", "Why is plastic commonly used to make a rain jacket?", "It is waterproof and lightweight.", ["It conducts heat well", "It can bend easily", "It is transparent"], "Raincoats must keep us dry, so a waterproof material like plastic is essential."),
-        ("Human Digestive System", "In which organ is digestion fully completed and digested food absorbed into the blood?", "Small Intestine", ["Stomach", "Large Intestine", "Mouth"], "The small intestine is where digestion is completed, and nutrients are absorbed into the bloodstream.")
-    ],
-    "P4": [
-        ("Life Cycles of Animals", "Which of the following organisms has a 3-stage life cycle?", "Cockroach", ["Butterfly", "Mosquito", "Mealworm beetle"], "Cockroaches have a 3-stage life cycle (egg, nymph, adult), while butterflies and mosquitoes have 4 stages."),
-        ("Life Cycles of Plants", "Which part of the germinating seed grows out first?", "Roots", ["Shoot", "First leaf", "Seed leaf"], "The root (radicle) emerges first to anchor the seedling and absorb water."),
-        ("Matter", "An object retains its shape and volume when transferred from a box to a jar. What state is it in?", "Solid", ["Liquid", "Gas", "Plasma"], "Solids have a definite shape and volume, and do not conform to the shape of their container."),
-        ("Light & Shadows", "An opaque object block light, forming a shadow. Which material is opaque?", "Cardboard", ["Clear glass", "Tracing paper", "Cling wrap"], "Opaque materials like cardboard do not allow light to pass through, forming dark, distinct shadows."),
-        ("Heat & Temperature", "What happens when a metal spoon is placed in a hot cup of soup?", "The spoon gains heat from the soup.", ["The spoon loses heat to the soup", "The spoon and soup both lose heat", "No heat transfer occurs"], "Heat always flows from a hotter region (soup) to a cooler region (metal spoon) until they reach thermal equilibrium.")
+# ----------------- SCIENCE CER EXPERIMENTAL DATABASE -----------------
+SCIENCE_TEMPLATES = {
+    "P6": [
+        (
+            "Forces (Friction, Gravity, Elastic, Magnetic)",
+            "A heavy wooden crate of mass 50 kg was dragged across a rough concrete floor and a smooth glass surface using a spring balance. It required 80 N of force on concrete, but only 20 N on glass.\n\nExplain why more force was needed on the concrete floor.",
+            "the concrete floor is rougher, creating greater frictional force which opposes the motion of the crate",
+            "Concept: Friction opposes motion and depends on the roughness of contact surfaces.\nEvidence: Crate on concrete required 80 N compared to 20 N on glass.\nReasoning: Concrete is rougher than glass, so it creates a larger frictional force. More pulling force is needed to overcome this friction.",
+            "concrete floor is rougher"
+        ),
+        (
+            "Energy Forms & Conversions",
+            "A steel ball was released from the top of a smooth ramp. As it rolled down, its speed increased continuously.\n\nState the energy conversion that occurred as the ball rolled down.",
+            "gravitational potential energy -> kinetic energy",
+            "Concept: Energy conservation states that potential energy is converted to kinetic energy as height decreases.\nEvidence: Height decreases and speed increases.\nReasoning: Gravitational potential energy decreases as height decreases, converting into kinetic energy, causing speed to rise.",
+            "gravitational potential energy"
+        ),
+        (
+            "Photosynthesis & Respiration",
+            "An aquatic plant was exposed to light at varying distances. The number of oxygen bubbles produced per minute was measured: 10 cm away = 45 bubbles; 50 cm away = 12 bubbles.\n\nExplain how the distance of the light source affected the rate of photosynthesis.",
+            "increasing the distance decreases light intensity, slowing down the rate of photosynthesis",
+            "Concept: Rate of photosynthesis depends on light intensity.\nEvidence: Rate fell from 45 to 12 bubbles as distance increased.\nReasoning: Moving light further away reduces light intensity on chloroplasts, reducing the rate of photosynthesis and releasing less oxygen bubbles.",
+            "decreases light intensity"
+        )
     ],
     "P5": [
-        ("Electrical Circuits", "Which of the following materials is an electrical conductor?", "Copper wire", ["Rubber eraser", "Wooden ruler", "Plastic clip"], "Metals like copper are excellent electrical conductors that allow current to flow through a circuit."),
-        ("Cell System", "Which part of a plant cell contains chlorophyll to absorb sunlight for photosynthesis?", "Chloroplast", ["Nucleus", "Cell Wall", "Cytoplasm"], "Chloroplasts contain chlorophyll, which traps light energy needed to make food during photosynthesis."),
-        ("Water Cycle", "What is the process where water vapor cools and turns back into liquid water droplets?", "Condensation", ["Evaporation", "Melting", "Freezing"], "Condensation is the process where warm water vapor loses heat to the cooler surroundings and changes state to liquid water."),
-        ("Plant & Human Circulatory Systems", "What is the function of the human heart?", "To pump oxygen-rich and nutrient-rich blood to all parts of the body.", ["To exchange oxygen and carbon dioxide", "To digest proteins", "To absorb water from digested food"], "The heart acts as a muscular pump that propels blood throughout the circulatory system.")
+        (
+            "Electrical Circuits",
+            "A series circuit had 2 bulbs and 1 battery. When a third bulb was added in series, the brightness of all bulbs decreased.\n\nExplain why adding a bulb in series reduced the brightness.",
+            "adding a bulb in series increases electrical resistance, reducing current flowing through each bulb",
+            "Concept: Total resistance increases in a series circuit as more bulbs are added.\nEvidence: Bulb brightness decreased.\nReasoning: More bulbs in series increase circuit resistance, which decreases electric current flowing through, reducing brightness.",
+            "increases electrical resistance"
+        ),
+        (
+            "Water Cycle",
+            "Siti poured equal volumes of water into Beaker A (exposed surface area = 50 cm²) and Beaker B (exposed surface area = 150 cm²). After 3 hours, Beaker B lost more water.\n\nExplain why Beaker B evaporated water faster.",
+            "beaker b has a larger exposed surface area, which increases the rate of evaporation",
+            "Concept: Rate of evaporation is directly proportional to exposed surface area.\nEvidence: Beaker B lost more water than Beaker A.\nReasoning: Beaker B has a larger surface area in contact with air, allowing more water molecules to absorb heat and escape as water vapor faster.",
+            "larger exposed surface area"
+        ),
+        (
+            "Cell System",
+            "An onion skin cell was observed under a microscope. It had a cell wall, cell membrane, and nucleus, but lacked chloroplasts.\n\nExplain why onion skin cells do not have chloroplasts.",
+            "onion skin cells grow underground where there is no light, so they do not need chloroplasts to perform photosynthesis",
+            "Concept: Chloroplasts trap light to perform photosynthesis.\nEvidence: Onion skin cells grow underground in the dark.\nReasoning: Onion skins grow underground where light cannot reach. Since they cannot perform photosynthesis, they do not require chloroplasts.",
+            "do not perform photosynthesis"
+        )
     ],
-    "P6": [
-        ("Forces (Friction, Gravity, Elastic, Magnetic)", "A box is pushed across a rough concrete floor. What force opposes its movement?", "Frictional force", ["Gravitational force", "Magnetic force", "Elastic spring force"], "Frictional force always acts in the direction opposite to the motion of the sliding object on rough surfaces."),
-        ("Energy Forms & Conversions", "Identify the energy conversion of a falling apple before it hits the ground.", "Gravitational potential energy → Kinetic energy", ["Kinetic energy → Chemical potential energy", "Chemical potential energy → Heat energy", "Electrical energy → Kinetic energy"], "As the apple falls, its height decreases (losing gravitational potential energy) and its speed increases (gaining kinetic energy)."),
-        ("Photosynthesis & Respiration", "What are the key raw materials required for photosynthesis?", "Carbon dioxide and Water", ["Oxygen and Glucose", "Nitrogen and Carbon dioxide", "Oxygen and Water"], "Plants combine carbon dioxide and water in the presence of light and chlorophyll to produce glucose and oxygen."),
-        ("Food Chains & Food Webs", "Which organism in a food web is always a producer?", "Green plant", ["Caterpillar", "Eagle", "Fungi"], "Green plants are producers because they can perform photosynthesis to make their own food.")
+    "P4": [
+        (
+            "Matter",
+            "100 cm³ of air was pumped into a sealed metal container of capacity 500 cm³. The final volume of air inside the container remained 500 cm³.\n\nExplain why the volume of air did not change to 600 cm³.",
+            "air has no definite volume and can be compressed to fit the shape of its container",
+            "Concept: Gases have no definite volume and can be compressed.\nEvidence: Volume of container remained 500 cm³.\nReasoning: Air is a gas and can be compressed, allowing it to occupy the fixed 500 cm³ volume of the metal container.",
+            "no definite volume"
+        ),
+        (
+            "Light & Shadows",
+            "A plastic sheet, a piece of tracing paper, and a cardboard sheet were placed between a lamp and a screen. Only the cardboard formed a dark, sharp shadow.\n\nExplain why only the cardboard formed a dark shadow.",
+            "cardboard is opaque and blocks all light from passing through, creating a shadow",
+            "Concept: Shadows are formed when light is blocked by opaque materials.\nEvidence: Only cardboard formed a dark shadow.\nReasoning: Cardboard is opaque and does not allow light to pass through. Plastic is transparent and tracing paper is translucent, allowing light through.",
+            "cardboard is opaque"
+        ),
+        (
+            "Heat & Temperature",
+            "A glass jar was tightly fitted with a metal lid. When hot water was poured over the metal lid, the lid loosened and was easily unscrewed.\n\nExplain why pouring hot water loosened the lid.",
+            "the metal lid gained heat from the hot water and expanded faster than the glass jar",
+            "Concept: Metals expand when they gain heat.\nEvidence: Pouring hot water loosened the lid.\nReasoning: Metal gains heat and expands. Since metal expands more and faster than glass, the lid loosened from the jar.",
+            "gained heat and expanded"
+        )
+    ],
+    "P3": [
+        (
+            "Diversity of Living & Non-Living Things",
+            "A mushroom and a fern were observed. Neither produced seeds, but both reproduced successfully.\n\nState how the mushroom and fern reproduce.",
+            "both reproduce by spores",
+            "Concept: Non-flowering plants (ferns) and fungi (mushrooms) reproduce by spores.\nEvidence: Neither produces seeds but both multiply.\nReasoning: Both organisms use spores as their reproductive units to distribute and grow in favorable conditions.",
+            "by spores"
+        ),
+        (
+            "Materials",
+            "A plastic bottle and a ceramic bottle were dropped from a height of 1 meter. The ceramic bottle shattered, while the plastic bottle remained intact.\n\nIdentify the property of plastic that kept the bottle intact.",
+            "plastic is strong, flexible, and not brittle compared to ceramic",
+            "Concept: Materials have varying strengths and brittleness.\nEvidence: Ceramic shattered but plastic survived.\nReasoning: Plastic has high strength and impact resistance, whereas ceramic is brittle and shatters easily under force.",
+            "not brittle"
+        ),
+        (
+            "Human Digestive System",
+            "Food was chewed in the mouth for 1 minute before swallowing.\n\nExplain how chewing food helps the digestive process.",
+            "chewing breaks food into smaller pieces, increasing its surface area for digestive enzymes to act on faster",
+            "Concept: Digestion is accelerated by physical breakdown.\nEvidence: Food is broken into smaller pieces.\nReasoning: Chewing breaks food into smaller bits, increasing the exposed surface area, which allows saliva and digestive juices to break down food faster.",
+            "surface area"
+        )
     ]
 }
 
-def generate_science_question(level, q_id):
-    # Science is introduced only in P3
+def generate_science_question(level, q_id, index):
     actual_level = level if level != "P2" else "P3"
-    matrices = SCIENCE_MATRICES[actual_level]
-    matrix = random.choice(matrices)
+    difficulty = "Easy" if index % 3 == 0 else ("Medium" if index % 3 == 1 else "Hard")
     
-    topic = matrix[0]
-    question_text = matrix[1]
-    correct_ans = matrix[2]
-    distractors = matrix[3]
-    explanation = matrix[4]
-    difficulty = random.choice(["Easy", "Medium", "Hard"])
+    templates = SCIENCE_TEMPLATES[actual_level]
+    template = templates[index % len(templates)]
+    
+    topic = template[0]
+    question_text = template[1]
+    correct_ans = template[2]
+    explanation = template[3]
+    keyword_match = template[4]
+    
     q_type = "mcq"
-    options = [correct_ans] + distractors
-    random.shuffle(options)
-    
-    # Let's make some hard ones structured/short answer
-    if difficulty == "Hard" and random.choice([True, False]):
+    options = []
+
+    if difficulty == "Easy":
+        # MCQ layout
+        distractors = [
+            "no heat transfer or expansion occurs during the process",
+            "the container contracts and traps the elements inside",
+            "both materials dissolve due to chemical potential alterations"
+        ]
+        options = [correct_ans] + distractors
+        random.shuffle(options)
+    else:
+        # Structured Open-Ended Question (Self-marking checks for the core keyword)
         q_type = "short_answer"
-        options = []
-        # If short answer, we check for a core concept keyword
-        if "Small Intestine" in correct_ans:
-            correct_ans = "small intestine"
-        elif "Fern" in correct_ans:
-            correct_ans = "fern"
-        elif "Waterproof" in correct_ans or "waterproof" in correct_ans:
-            correct_ans = "waterproof"
-        elif "Condensation" in correct_ans:
-            correct_ans = "condensation"
-        elif "Frictional" in correct_ans:
-            correct_ans = "frictional force"
-        else:
-            correct_ans = correct_ans.lower()
+        correct_ans = keyword_match.lower()
+        question_text += f"\n\n*(Tip: Include key scientific terms like '{keyword_match}' in your answer)*"
 
     return {
         "id": q_id,
@@ -488,47 +663,49 @@ def generate_science_question(level, q_id):
         "difficulty": difficulty
     }
 
-# ----------------- CHINESE GENERATOR -----------------
-CHINESE_MATRICES = {
-    "P2": [
-        ("Hanyu Pinyin", "‘学校’ 的汉语拼音是什么？", "xué xiào", ["xüé xiào", "xué xiáo", "xuē xiāo"], "‘学’ (xué) 代表学习，‘校’ (xiào) 代表校园。"),
-        ("Vocabulary Selection (词语选择)", "弟弟在公园里高兴地 ________ 玩耍。", "奔跑", ["睡觉", "哭泣", "看书"], "在公园玩耍时，最适合用 ‘奔跑’ (running) 来形容。"),
-        ("Sentence Completion (句型填空)", "老师表扬了小明，因为他很 ________。", "聪明", ["懒惰", "难过", "生气"], "被老师表扬通常是因为好的品质，如 ‘聪明’ (clever) 或勤奋。")
-    ],
-    "P3": [
-        ("Hanyu Pinyin", "‘医生’ 的汉语拼音是什么？", "yī shēng", ["yí shēng", "yì shèng", "yī shēn"], "‘医’ (yī) 代表医学，‘生’ (shēng) 代表生命。"),
-        ("Vocabulary Selection (词语选择)", "天空突然下起了大雨，小明没有带伞，被淋得像个 ________ 鸡。", "落汤", ["烤", "烤鸭", "落水"], "‘落汤鸡’ (soaked to the skin) 是中文里形容人被雨淋得很湿的常用成语。"),
-        ("Sentence Completion (句型填空)", "我们应该 ________ 帮助那些有需要的人。", "主动", ["主动地", "被动", "故意"], "帮助他人应该发自内心，‘主动’ (actively/proactively) 伸出援手。")
-    ],
-    "P4": [
-        ("Vocabulary Selection (词语选择)", "这家餐馆的菜肴不仅味道鲜美，而且价格 ________。", "公道", ["昂贵", "浪费", "便宜"], "形容价格合适且讲信用，最合适词语是 ‘公道’ (fair/reasonable)."),
-        ("Sentence Completion (句型填空)", "由于他平时不努力，________ 这次考试不及格。", "导致", ["因为", "所以", "可能"], "‘导致’ (led to / resulted in) 后面接不好的结果。"),
-        ("Cloze Passage (短文填空)", "为了保护我们的环境，学校发起了 ________ 塑料袋的活动。", "减少使用", ["增加使用", "制造", "丢弃"], "减少使用 (reducing usage) 塑料袋能起到环保作用。")
+# ----------------- CHINESE SYLLABUS DATABASE -----------------
+CHINESE_TEMPLATES = {
+    "P6": [
+        ("Vocabulary Selection (词语选择)", "王校长的演讲内容深刻，言简意赅，令我们受益 ________。", "匪浅", ["浅薄", "深刻", "困难"], "‘受益匪浅’ (benefited greatly) 是新加坡高频的成语，常在作文和阅读理解中使用。"),
+        ("Sentence Completion (句型填空)", "面对突如其来的疫情，全国上下表现出极强的 ________，共同克服了重重难关。", "凝聚力", ["破坏力", "爆发力", "想象力"], "全社会共同团结面对灾难，体现的是 ‘凝聚力’ (cohesiveness)."),
+        ("Hanyu Pinyin", "‘勉励’ 的汉语拼音是什么？", "miǎn lì", ["mián lǐ", "miǎn lí", "miàn lǐ"], "‘勉’ (miǎn) 代表鼓励，‘励’ (lì) 代表励志。")
     ],
     "P5": [
-        ("Vocabulary Selection (词语选择)", "遇到困难时，我们不能轻易妥协，要勇敢地 ________ 挑战。", "迎接", ["逃避", "害怕", "拒绝"], "面对困难，应该勇敢地 ‘迎接’ (embrace/meet) 挑战。"),
-        ("Sentence Completion (句型填空)", "经过几个月的精心筹备，国庆庆典 ________ 顺利举行。", "得以", ["也许", "居然", "可能"], "‘得以’ (be able to / managed to) 表示在条件具备后事情顺利实现。")
+        ("Vocabulary Selection (词语选择)", "在遇到学习上的困难时，我们千万不能轻易妥协，要勇敢地 ________ 挑战。", "迎接", ["逃避", "害怕", "拒绝"], "面对困难，应该勇敢地 ‘迎接’ (embrace/meet) 挑战。"),
+        ("Sentence Completion (句型填空)", "经过大家几个月的精心筹备，国庆庆典活动终于 ________ 顺利举行。", "得以", ["也许", "居然", "很难"], "‘得以’ (be able to / managed to) 表示在条件具备后事情顺利实现。"),
+        ("Hanyu Pinyin", "‘诚恳’ 的汉语拼音是什么？", "chéng kěn", ["chén kēn", "chén kěn", "chéng kē"], "‘诚’ (chéng) 诚实，‘恳’ (kěn) 诚恳。")
     ],
-    "P6": [
-        ("Vocabulary Selection (词语选择)", "王校长的演讲内容深刻，言简意赅，令人受益 ________。", "匪浅", ["浅薄", "匪浅的", "深刻"], "‘受益匪浅’ (benefited greatly) 是高频的成语，常在作文和阅读理解中使用。"),
-        ("Sentence Completion (句型填空)", "面对突如其来的冠病疫情，全国人民上下一致，展现出极强的 ________。", "凝聚力", ["破坏力", "爆发力", "意志力"], "全社会共同面对困难，体现的是 ‘凝聚力’ (cohesiveness).")
+    "P4": [
+        ("Vocabulary Selection (词语选择)", "这家百年老字号的菜肴不仅味道鲜美，而且价格十分 ________。", "公道", ["昂贵", "浪费", "便宜"], "形容价格合适且讲信用，最合适词语是 ‘公道’ (fair/reasonable)."),
+        ("Sentence Completion (句型填空)", "由于他平时上课不专心，________ 这次考试成绩一落千丈。", "导致", ["因为", "所以", "可能"], "‘导致’ (led to / resulted in) 后面接不好的结果。"),
+        ("Hanyu Pinyin", "‘偶尔’ 的汉语拼音是什么？", "ǒu ěr", ["ǒu ér", "óu ěr", "ōu ēr"], "‘偶尔’ (ǒu ěr) 表示间或、有时候。")
+    ],
+    "P3": [
+        ("Vocabulary Selection (词语选择)", "天空突然下起了倾盆大雨，小明没有带伞，被淋得像个 ________ 鸡。", "落汤", ["烤", "烤鸭", "落水"], "‘落汤鸡’ (soaked to the skin) 是中文里形容人被雨淋得很湿的常用成语。"),
+        ("Sentence Completion (句型填空)", "我们应该 ________ 帮助那些在生活中有困难的邻居。", "主动", ["主动地", "被动", "故意"], "帮助他人应该发自内心，‘主动’ (actively/proactively) 伸出援手。"),
+        ("Hanyu Pinyin", "‘医生’ 的汉语拼音是什么？", "yī shēng", ["yí shēng", "yì shèng", "yī shēn"], "‘医’ (yī) 代表医学，‘生’ (shēng) 代表生命。")
+    ],
+    "P2": [
+        ("Hanyu Pinyin", "‘学校’ 的汉语拼音是什么？", "xué xiào", ["xüé xiào", "xué xiáo", "xuē xiāo"], "‘学’ (xué) 代表学习，‘校’ (xiào) 代表校园。"),
+        ("Vocabulary Selection (词语选择)", "弟弟在宽阔的草地上高兴地 ________ 玩耍。", "奔跑", ["睡觉", "哭泣", "看书"], "在草地上玩耍，最适合用 ‘奔跑’ (running) 来形容。"),
+        ("Sentence Completion (句型填空)", "老师今天在全班面前表扬了小明，因为他很 ________。", "聪明", ["懒惰", "难过", "生气"], "被老师表扬通常是因为好的品质，如 ‘聪明’ (clever) 或勤奋。")
     ]
 }
 
-def generate_chinese_question(level, q_id):
-    matrices = CHINESE_MATRICES[level]
-    matrix = random.choice(matrices)
-    
-    topic = matrix[0]
-    question_text = matrix[1]
-    correct_ans = matrix[2]
-    distractors = matrix[3]
-    explanation = matrix[4]
-    difficulty = random.choice(["Easy", "Medium", "Hard"])
-    
+def generate_chinese_question(level, q_id, index):
+    difficulty = "Easy" if index % 3 == 0 else ("Medium" if index % 3 == 1 else "Hard")
+    templates = CHINESE_TEMPLATES[level]
+    template = templates[index % len(templates)]
+
+    topic = template[0]
+    question_text = template[1]
+    correct_ans = template[2]
+    distractors = template[3]
+    explanation = template[4]
+
     options = [correct_ans] + distractors
     random.shuffle(options)
-    
+
     return {
         "id": q_id,
         "topic": topic,
@@ -553,13 +730,13 @@ def main():
                 q_id = f"{level}_{subject.upper()[:4]}_{i:04d}"
                 
                 if subject == "mathematics":
-                    q = generate_math_question(level, q_id)
+                    q = generate_math_question(level, q_id, i)
                 elif subject == "english":
-                    q = generate_english_question(level, q_id)
+                    q = generate_english_question(level, q_id, i)
                 elif subject == "science":
-                    q = generate_science_question(level, q_id)
+                    q = generate_science_question(level, q_id, i)
                 elif subject == "chinese":
-                    q = generate_chinese_question(level, q_id)
+                    q = generate_chinese_question(level, q_id, i)
                 
                 questions.append(q)
                 

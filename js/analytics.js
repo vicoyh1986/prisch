@@ -13,7 +13,7 @@ export class AnalyticsManager {
     this.xp = 0;
     this.streak = 3; // Seed standard streak
     this.questionsDone = 42;
-    this.accuracySum = 3696; // 88% avg
+    this.questionsCorrect = 37; // 37/42 = 88% avg
     this.essaysWritten = 2;
     
     // Subject mastery caches
@@ -37,7 +37,7 @@ export class AnalyticsManager {
         this.xp = state.xp ?? 450;
         this.streak = state.streak ?? 3;
         this.questionsDone = state.questionsDone ?? 42;
-        this.accuracySum = state.accuracySum ?? 3696;
+        this.questionsCorrect = state.questionsCorrect ?? 37;
         this.essaysWritten = state.essaysWritten ?? 2;
         this.mastery = state.mastery ?? this.mastery;
         this.unlockedBadges = state.unlockedBadges ?? this.unlockedBadges;
@@ -54,7 +54,7 @@ export class AnalyticsManager {
       xp: this.xp,
       streak: this.streak,
       questionsDone: this.questionsDone,
-      accuracySum: this.accuracySum,
+      questionsCorrect: this.questionsCorrect,
       essaysWritten: this.essaysWritten,
       mastery: this.mastery,
       unlockedBadges: this.unlockedBadges
@@ -70,8 +70,8 @@ export class AnalyticsManager {
 
   recordQuiz(score, total, subject) {
     this.questionsDone += total;
+    this.questionsCorrect += score;
     const accuracy = Math.round((score / total) * 100);
-    this.accuracySum += accuracy;
     
     // Update mastery metric
     const currentMastery = this.mastery[subject] || 50;
@@ -174,7 +174,7 @@ export class AnalyticsManager {
     // Populate summary stats in Dashboard
     document.getElementById("stats-questions-done").innerText = this.questionsDone;
     
-    const avgAccuracy = this.questionsDone > 0 ? Math.round(this.accuracySum / (this.questionsDone / 10)) : 88;
+    const avgAccuracy = this.questionsDone > 0 ? Math.round((this.questionsCorrect / this.questionsDone) * 100) : 88;
     document.getElementById("stats-avg-accuracy").innerText = `${avgAccuracy}%`;
     document.getElementById("stats-essays-written").innerText = this.essaysWritten;
 
