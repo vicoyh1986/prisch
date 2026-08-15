@@ -12,13 +12,11 @@ NAMES = [
     "Sanjay", "Ahmad", "Chloe", "Zhi Hao", "Xinyi", "Desmond", "Yusof", "Amira", "Brandon"
 ]
 
-# Items used in word problems
 ITEMS = [
     "marbles", "pencils", "stickers", "stamps", "sweets", "toy cars", "colored beads",
     "books", "erasers", "rulers", "paper clips", "balloons", "cards", "cupcakes", "cookies"
 ]
 
-# Subject topics by level
 TOPICS = {
     "mathematics": {
         "P2": ["Numbers to 1000", "Addition & Subtraction", "Multiplication & Division", "Length", "Mass", "Money", "Time", "Fractions", "Shapes", "Picture Graphs"],
@@ -49,31 +47,31 @@ TOPICS = {
     }
 }
 
-# ----------------- MATH PROCEDURAL TEMPLATES -----------------
 def generate_math_question(level, q_id, index):
     difficulty = "Easy" if index % 3 == 0 else ("Medium" if index % 3 == 1 else "Hard")
     topics = TOPICS["mathematics"][level]
     topic = topics[index % len(topics)]
     
     name1, name2 = NAMES[index % len(NAMES)], NAMES[(index + 1) % len(NAMES)]
-    item1, item2 = ITEMS[index % len(ITEMS)], ITEMS[(index + 1) % len(ITEMS)]
+    item1 = ITEMS[index % len(ITEMS)]
     
     question_text = ""
     options = []
     correct_ans = ""
     explanation = ""
     q_type = "mcq"
+    heuristic_id = "constant-part"
+    bar_model = None
 
     if level == "P6":
         if topic == "Algebra":
-            # Algebra variables
+            heuristic_id = "algebra"
             coeff = (index % 5) + 2
             const = (index % 12) + 3
             val = (index % 4) + 2
             expr_type = index % 3
 
             if expr_type == 0:
-                # Simplification template
                 added_coeff = (index % 3) + 1
                 question_text = f"Simplify the algebraic expression: {coeff}x + {const} + {added_coeff}x - {(index % const) + 1}"
                 ans_coeff = coeff + added_coeff
@@ -82,25 +80,22 @@ def generate_math_question(level, q_id, index):
                 options = [correct_ans, f"{ans_coeff}x - {ans_const}", f"{coeff}x + {const}", f"{ans_coeff + 1}x + {ans_const + 1}"]
                 explanation = f"1. Group the 'x' terms together: {coeff}x + {added_coeff}x = {ans_coeff}x.\n2. Group the constants together: {const} - {(index % const) + 1} = {ans_const}.\n3. Combining them yields: {correct_ans}."
             elif expr_type == 1:
-                # Evaluation template
                 q_val = coeff * val + const
                 question_text = f"Find the value of {coeff}w + {const} when w = {val}."
                 correct_ans = str(q_val)
                 options = [correct_ans, str(coeff + const), str(coeff * (val + const)), str(q_val - 3)]
                 explanation = f"Substitute w = {val} into the algebraic expression:\n{coeff} × {val} + {const} = {coeff * val} + {const} = {q_val}."
             else:
-                # Algebraic word problem
                 question_text = f"{name1} had {coeff}m stickers. {name2} had twice as many stickers as {name1}. If they shared them and gave {const} stickers away, express the remaining stickers in terms of m."
                 correct_ans = f"{coeff * 3}m - {const}"
                 options = [correct_ans, f"{coeff * 2}m - {const}", f"{coeff * 3}m + {const}", f"{coeff * 2}m + {const}"]
                 explanation = f"1. {name1}'s stickers = {coeff}m.\n2. {name2}'s stickers = 2 × {coeff}m = {coeff * 2}m.\n3. Total stickers at first = {coeff}m + {coeff * 2}m = {coeff * 3}m.\n4. Subtract the stickers given away: {correct_ans}."
 
         elif topic == "Ratio":
-            # Heuristic Scenario: Constant Part vs Constant Difference vs Constant Total
             scenario_type = index % 3
             if scenario_type == 0:
-                # Constant Difference Heuristic (Ages)
-                diff = ((index % 5) + 4) * 6 # Multiple of 6 (e.g. 24, 30, 36)
+                heuristic_id = "constant-difference"
+                diff = ((index % 5) + 4) * 6
                 son_age_future_units = 1
                 father_age_future_units = 3
                 unit_diff = father_age_future_units - son_age_future_units
@@ -112,21 +107,37 @@ def generate_math_question(level, q_id, index):
                 correct_ans = f"{son_age_now} years old"
                 options = [correct_ans, f"{son_age_now + years_in_future} years old", f"{son_age_now + diff} years old", f"{son_age_now - 2} years old"]
                 explanation = f"1. Age difference is constant: Father is always {diff} years older.\n2. In {years_in_future} years, the ratio Father : {name1} is 3:1. The ratio difference is 2 units.\n3. 2 units = {diff} years. Therefore, 1 unit = {diff} ÷ 2 = {one_unit_val} years (this is {name1}'s age in {years_in_future} years).\n4. {name1}'s age now = {one_unit_val} - {years_in_future} = {son_age_now} years old."
+                bar_model = {
+                    "title": f"Constant Difference: {diff} Years",
+                    "bars": [
+                        {"name": "Father", "units": 3, "color": "#4facfe"},
+                        {"name": name1, "units": 1, "color": "#00f2fe"}
+                    ],
+                    "bracketText": f"2 units difference = {diff} years. 1 unit = {one_unit_val} years."
+                }
             elif scenario_type == 1:
-                # Constant Part (Only one side changes)
+                heuristic_id = "constant-part"
                 u1, u2 = 2, 3
-                u3, u4 = 4, 5 # Red : Blue
+                u3, u4 = 4, 5
                 multiplier = (index % 5) + 3
                 red_at_first = u1 * multiplier
                 blue_at_first = u2 * multiplier
-                added_red = (u3 * blue_at_first // u4) - red_at_first # calculate red needed to hit ratio 4:5
+                added_red = (u3 * blue_at_first // u4) - red_at_first
 
                 question_text = f"A container had red and blue beads in the ratio {u1}:{u2}. After adding {added_red} red beads, the ratio of red beads to blue beads became {u3}:{u4}. How many blue beads were there?"
                 correct_ans = str(blue_at_first)
                 options = [correct_ans, str(red_at_first), str(blue_at_first + added_red), str(blue_at_first - 5)]
-                explanation = f"1. Blue beads do not change. Make Blue units equal in both ratios: LCM of {u2} and {u4} is 12.\n2. Initial ratio Red : Blue = {u1}:{u2} = 8:12.\n3. New ratio Red : Blue = {u3}:{u4} = {u3*12//u4}:12 = 15:12.\n4. Change in Red units = 15 - 8 = 7 units.\n5. 7 units = {added_red} beads. 1 unit = {added_red // 7} beads.\n6. Blue beads = 12 units = 12 × {added_red // 7} = {blue_at_first} beads."
+                explanation = f"1. Blue beads do not change. Make Blue units equal in both ratios: LCM of {u2} and {u4} is 12.\n2. Initial ratio Red : Blue = {u1}:{u2} = 8:12.\n3. New ratio Red : Blue = {u3}:{u4} = 15:12.\n4. Change in Red units = 15 - 8 = 7 units.\n5. 7 units = {added_red} beads. 1 unit = {added_red // 7} beads.\n6. Blue beads = 12 units = 12 × {added_red // 7} = {blue_at_first} beads."
+                bar_model = {
+                    "title": "Constant Part (Blue Beads Constant)",
+                    "bars": [
+                        {"name": "Red (After)", "units": 5, "color": "#ff6b6b", "highlightUnits": 2, "highlightColor": "#ffd166"},
+                        {"name": "Blue (Fixed)", "units": 4, "color": "#4facfe"}
+                    ],
+                    "bracketText": f"Blue units are unchanged. Added Red = {added_red} beads."
+                }
             else:
-                # Sharing in ratio
+                heuristic_id = "constant-total"
                 r1, r2, r3 = 2, 3, 5
                 unit_val = (index % 8) + 4
                 v1, v2, v3 = r1 * unit_val, r2 * unit_val, r3 * unit_val
@@ -135,10 +146,19 @@ def generate_math_question(level, q_id, index):
                 correct_ans = f"${diff_val}"
                 options = [correct_ans, f"${v3}", f"${v1}", f"${v2}"]
                 explanation = f"1. Total units = {r1} + {r2} + {r3} = {r1+r2+r3} units.\n2. Total money = ${v1+v2+v3}. Therefore, 1 unit = ${v1+v2+v3} ÷ {r1+r2+r3} = ${unit_val}.\n3. Difference between Siti (5 units) and {name1} (2 units) = 3 units.\n4. Difference in money = 3 × ${unit_val} = ${diff_val}."
+                bar_model = {
+                    "title": "Ratio Model (Sharing)",
+                    "bars": [
+                        {"name": name1, "units": r1, "color": "#00f2fe"},
+                        {"name": name2, "units": r2, "color": "#4facfe"},
+                        {"name": "Siti", "units": r3, "color": "#a855f7"}
+                    ],
+                    "bracketText": f"Total = ${v1+v2+v3}. 1 unit = ${unit_val}."
+                }
 
         elif topic == "Percentage":
-            # Great Singapore Sale: Discount + GST multi-step Heuristic
-            price = ((index % 8) + 5) * 100 # $500 to $1200
+            heuristic_id = "number-value"
+            price = ((index % 8) + 5) * 100
             pct_disc = 20 if index % 2 == 0 else 15
             disc_amount = price * pct_disc // 100
             disc_price = price - disc_amount
@@ -152,24 +172,29 @@ def generate_math_question(level, q_id, index):
             explanation = f"1. Discount amount = {pct_disc}% of ${price} = ${disc_amount}.\n2. Discounted price = ${price} - ${disc_amount} = ${disc_price}.\n3. GST on discounted price = {gst_pct}% of ${disc_price} = ${gst_amount}.\n4. Final price = ${disc_price} + ${gst_amount} = ${final_price:.2f}."
 
         elif topic == "Speed":
-            # Speed Word Problem: Traveling towards each other (Opposite direction)
-            s1 = (index % 4) * 10 + 60 # 60, 70, 80, 90 km/h
-            s2 = (index % 3) * 10 + 50 # 50, 60, 70 km/h
-            hours = (index % 3) + 2    # 2, 3, 4 hours
+            heuristic_id = "speed-circles"
+            s1 = (index % 4) * 10 + 60
+            s2 = (index % 3) * 10 + 50
+            hours = (index % 3) + 2
             dist = (s1 + s2) * hours
             
             question_text = f"Town A and Town B are {dist} km apart. At 0800, a truck left Town A for Town B at an average speed of {s1} km/h. At the same time, a van left Town B for Town A at an average speed of {s2} km/h. At what time did they pass each other?"
             meeting_time = 8 + hours
-            correct_ans = f"{meeting_time:04d}" if meeting_time < 12 else f"{meeting_time:04d} (12:00 PM or later)"
-            # Let's format nicely as time string
             correct_ans = f"{meeting_time:02d}00"
             options = [correct_ans, f"{(meeting_time-1):02d}00", f"{(meeting_time+1):02d}00", "1200"]
             explanation = f"1. Combined speed of both vehicles = {s1} + {s2} = {s1+s2} km/h.\n2. Time taken to meet = Total Distance ÷ Combined Speed = {dist} ÷ {s1+s2} = {hours} hours.\n3. Meeting time = 0800 + {hours} hours = {correct_ans}."
+            bar_model = {
+                "title": f"Speed: Opposite Directions ({dist} km)",
+                "bars": [
+                    {"name": "Truck", "units": 4, "color": "#00f2fe", "totalLabel": f"{s1} km/h"},
+                    {"name": "Van", "units": 3, "color": "#ffd166", "totalLabel": f"{s2} km/h"}
+                ],
+                "bracketText": f"Combined Speed = {s1+s2} km/h. Time = {hours} hrs."
+            }
 
         elif topic == "Circles" or topic == "Area & Perimeter of Composite Figures":
-            # Composite Figure: Shaded area of quadrant and triangle inside a square
-            side = ((index % 5) + 2) * 7 # Multiples of 7: 14, 21, 28, etc.
-            # Quadrant Area = 1/4 * 22/7 * r * r
+            heuristic_id = "speed-circles"
+            side = ((index % 5) + 2) * 7
             quad_area = 22 * side * side // (7 * 4)
             tri_area = side * side // 2
             shaded = quad_area - tri_area
@@ -180,7 +205,6 @@ def generate_math_question(level, q_id, index):
             explanation = f"1. Area of quadrant = 1/4 × π × r² = 1/4 × 22/7 × {side} × {side} = {quad_area} cm².\n2. Area of unshaded triangle = 1/2 × base × height = 1/2 × {side} × {side} = {tri_area} cm².\n3. Shaded Area = Quadrant Area - Triangle Area = {quad_area} - {tri_area} = {shaded} cm²."
         
         else:
-            # Volume of composite solids / Pie chart
             val_a = (index % 5) + 4
             question_text = f"A solid is made of {val_a} identical cubes of side 3 cm. Find the total volume of the composite solid."
             vol = val_a * (3 * 3 * 3)
@@ -190,7 +214,8 @@ def generate_math_question(level, q_id, index):
 
     elif level == "P5":
         if topic == "Ratio":
-            u1, u2 = (index % 3) + 2, (index % 3) + 5 # e.g. 2:5, 3:6, etc.
+            heuristic_id = "constant-total"
+            u1, u2 = (index % 3) + 2, (index % 3) + 5
             mult = (index % 10) + 5
             tot = (u1 + u2) * mult
             v1 = u1 * mult
@@ -199,10 +224,19 @@ def generate_math_question(level, q_id, index):
             correct_ans = f"${v2}"
             options = [correct_ans, f"${v1}", f"${tot}", f"${v2 - 5}"]
             explanation = f"1. Total units = {u1} + {u2} = {u1+u2} units.\n2. {u1+u2} units = ${tot}. Therefore, 1 unit = ${tot} ÷ {u1+u2} = ${mult}.\n3. {name2} has {u2} units = {u2} × ${mult} = ${v2}."
+            bar_model = {
+                "title": f"Ratio Model (${tot})",
+                "bars": [
+                    {"name": name1, "units": u1, "color": "#00f2fe"},
+                    {"name": name2, "units": u2, "color": "#4facfe"}
+                ],
+                "bracketText": f"{u1+u2} units = ${tot}. 1 unit = ${mult}."
+            }
         elif topic == "Average":
-            count = (index % 3) + 4 # 4, 5, 6
-            avg = (index % 15) + 140 # 140 to 155 cm
-            extra_height = (index % 12) + 160 # 160 to 171 cm
+            heuristic_id = "number-value"
+            count = (index % 3) + 4
+            avg = (index % 15) + 140
+            extra_height = (index % 12) + 160
             new_tot = (count * avg) + extra_height
             new_avg = round(new_tot / (count + 1), 1)
 
@@ -211,7 +245,7 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, f"{avg + 2} cm", f"{new_avg - 1} cm", f"{avg} cm"]
             explanation = f"1. Total height of {count} students = {count} × {avg} = {count * avg} cm.\n2. Total height with new student = {count * avg} + {extra_height} = {new_tot} cm.\n3. Total number of students = {count} + 1 = {count + 1}.\n4. New average height = {new_tot} ÷ {count + 1} = {new_avg} cm."
         elif topic == "Area of Triangle":
-            base = ((index % 5) + 4) * 2 # Even base: 8, 10, 12, etc.
+            base = ((index % 5) + 4) * 2
             height = (index % 6) + 5
             area = (base * height) // 2
             question_text = f"A triangle has a base of {base} cm and a height of {height} cm. Find its area."
@@ -219,8 +253,8 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, f"{base * height} cm²", f"{base + height} cm²", f"{area + 10} cm²"]
             explanation = f"Area of triangle = 1/2 × base × height = 1/2 × {base} × {height} = {area} cm²."
         elif topic == "Percentage":
-            pct = 10 + (index % 6) * 5 # 10, 15, 20, 25, 30, 35
-            price = ((index % 6) + 3) * 50 # 150 to 400
+            pct = 10 + (index % 6) * 5
+            price = ((index % 6) + 3) * 50
             disc = price * pct // 100
             payable = price - disc
             question_text = f"A bicycle is priced at ${price}. During a sale, a {pct}% discount is offered. What is the discount amount?"
@@ -228,7 +262,6 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, f"${payable}", f"${disc + 5}", f"${disc - 5}"]
             explanation = f"Discount = {pct}% of ${price} = ({pct}/100) × {price} = ${disc}."
         else:
-            # Volume of Cube and Cuboid
             l, w, h = (index % 3) + 4, (index % 3) + 3, (index % 3) + 5
             vol = l * w * h
             question_text = f"Find the volume of a rectangular metal box with length {l} cm, width {w} cm, and height {h} cm."
@@ -238,12 +271,10 @@ def generate_math_question(level, q_id, index):
 
     elif level == "P4":
         if topic == "Factors & Multiples":
-            num = (index % 3) * 12 + 24 # 24, 36, 48
+            num = (index % 3) * 12 + 24
             question_text = f"Which of the following is NOT a factor of {num}?"
-            # find actual non-factors
             non_factors = [5, 7, 9, 10, 11]
             correct_ans = str(non_factors[index % len(non_factors)])
-            # actual factors
             all_factors = [i for i in range(1, num+1) if num % i == 0]
             options = [correct_ans] + [str(f) for f in random.sample(all_factors, 3)]
             explanation = f"The factors of {num} are {all_factors}. {correct_ans} does not divide {num} exactly, so it is NOT a factor."
@@ -256,7 +287,7 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, f"{round(tot - 0.5, 2)} L", f"{round(tot + 1.2, 2)} L", f"{round(v_dec + qty, 2)} L"]
             explanation = f"Multiply the volume of one bottle by the quantity: {v_dec} × {qty} = {tot} liters."
         elif topic == "Area & Perimeter":
-            side = (index % 6) + 6 # 6 to 11
+            side = (index % 6) + 6
             area = side * side
             question_text = f"A square field has an area of {area} m². Find its perimeter."
             perim = side * 4
@@ -264,7 +295,6 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, f"{side} m", f"{area} m", f"{perim + 4} m"]
             explanation = f"1. Since it is a square, side × side = Area = {area} m². Therefore, side = {side} m.\n2. Perimeter of square = 4 × side = 4 × {side} = {perim} m."
         else:
-            # Fractions / Time
             tot = ((index % 5) + 3) * 8
             spent = tot * 3 // 8
             question_text = f"{name1} had {tot} stamps. She gave 3/8 of them to {name2}. How many stamps did she have left?"
@@ -297,7 +327,6 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, f"{2 * (l+w)} cm", f"{area + 10} cm²", f"{area - 5} cm²"]
             explanation = f"Area = Length × Width = {l} × {w} = {area} cm²."
         else:
-            # Money / Mass / Volume
             mass = (index % 5) * 50 + 200
             question_text = f"A packet of flour has a mass of {mass} g. What is the mass of 3 such packets?"
             correct_ans = f"{mass * 3} g"
@@ -313,31 +342,28 @@ def generate_math_question(level, q_id, index):
             options = [correct_ans, str(n1 + n2), str(n1 - n2 + 10), str(n1 - n2 - 5)]
             explanation = f"Subtract {n2} from {n1} to find {name2}'s stickers: {n1} - {n2} = {correct_ans}."
         elif topic == "Multiplication & Division":
-            groups = (index % 4) + 3 # 3 to 6
-            each = (index % 4) * 2 + 2 # 2, 4, 6, 8
+            groups = (index % 4) + 3
+            each = (index % 4) * 2 + 2
             prod = groups * each
             question_text = f"{name1} places {prod} cookies equally into {groups} bags. How many cookies are in each bag?"
             correct_ans = str(each)
             options = [correct_ans, str(each + 1), str(each - 1), str(groups)]
             explanation = f"Divide total cookies by number of bags: {prod} ÷ {groups} = {each}."
         elif topic == "Fractions":
-            denom = (index % 4) + 5 # 5, 6, 7, 8
+            denom = (index % 4) + 5
             num = (index % (denom - 1)) + 1
             question_text = f"What fraction of the figure must be shaded to show {num}/{denom}?"
             correct_ans = f"{num}/{denom}"
             options = [correct_ans, f"1/{denom}", f"{denom - num}/{denom}", f"{num + 1}/{denom}"]
             explanation = f"The fraction {num}/{denom} represents {num} parts out of a total of {denom} equal parts."
         else:
-            # Money / Shapes
             cost = (index % 4) * 5 + 10
             question_text = f"Siti spent ${cost} on a toy and had $5 left. How much money did she have at first?"
             correct_ans = f"${cost + 5}"
             options = [correct_ans, f"${cost}", f"${cost - 5}", f"${cost + 10}"]
             explanation = f"Add the cost of the toy and remaining money: ${cost} + $5 = ${cost + 5}."
 
-    # General fallback option padding
     if not options or len(options) < 4:
-        # Strip units for baseline options
         clean_ans = correct_ans.replace(" cm²", "").replace(" m²", "").replace(" cm³", "").replace(" g", "").replace(" m", "").replace(" L", "").replace("$", "").replace(" years old", "")
         try:
             val_ans = int(float(clean_ans))
@@ -347,11 +373,9 @@ def generate_math_question(level, q_id, index):
 
     random.shuffle(options)
     
-    # Render short answer for Hard topics randomly
     if difficulty == "Hard" and index % 2 == 0:
         q_type = "short_answer"
         options = []
-        # Strip units for text match checking
         correct_ans = correct_ans.replace(" cm²", "").replace(" m²", "").replace(" cm³", "").replace(" g", "").replace(" m", "").replace(" L", "").replace("$", "").replace(" years old", "").lower()
 
     return {
@@ -362,10 +386,11 @@ def generate_math_question(level, q_id, index):
         "options": options,
         "answer": correct_ans,
         "explanation": explanation,
-        "difficulty": difficulty
+        "difficulty": difficulty,
+        "heuristicId": heuristic_id,
+        "barModel": bar_model
     }
 
-# ----------------- ENGLISH SYLLABUS DATABASE -----------------
 GRAMMAR_TEMPLATES = {
     "P6": [
         ("Not only ________ the suspect break into the house, but he also stole the jewelry.", "did", ["does", "had", "was"], "Inversion is required after 'Not only'. Since the second clause is past tense ('stole'), we use 'did'."),
@@ -467,7 +492,7 @@ SYNTHESIS_TEMPLATES = [
 
 def generate_english_question(level, q_id, index):
     difficulty = "Easy" if index % 3 == 0 else ("Medium" if index % 3 == 1 else "Hard")
-    opt = index % 3 # grammar vs vocab vs synthesis
+    opt = index % 3
 
     question_text = ""
     options = []
@@ -491,14 +516,12 @@ def generate_english_question(level, q_id, index):
         
         question_text = f"Select the word that best defines or matches the context: '{definition}'."
         correct_ans = word
-        # Select other words from the same level
         other_words = [w[0] for w in words if w[0] != word]
         options = [correct_ans] + random.sample(other_words, min(3, len(other_words)))
         explanation = f"'{correct_ans}' means '{definition}'. Antonym: '{antonym}'."
         topic = "Vocabulary MCQ"
 
     else:
-        # Synthesis & Transformation (S&T)
         topic = "Synthesis & Transformation"
         q_type = "short_answer"
         
@@ -525,7 +548,6 @@ def generate_english_question(level, q_id, index):
         "difficulty": difficulty
     }
 
-# ----------------- SCIENCE CER EXPERIMENTAL DATABASE -----------------
 SCIENCE_TEMPLATES = {
     "P6": [
         (
@@ -638,7 +660,6 @@ def generate_science_question(level, q_id, index):
     options = []
 
     if difficulty == "Easy":
-        # MCQ layout
         distractors = [
             "no heat transfer or expansion occurs during the process",
             "the container contracts and traps the elements inside",
@@ -647,7 +668,6 @@ def generate_science_question(level, q_id, index):
         options = [correct_ans] + distractors
         random.shuffle(options)
     else:
-        # Structured Open-Ended Question (Self-marking checks for the core keyword)
         q_type = "short_answer"
         correct_ans = keyword_match.lower()
         question_text += f"\n\n*(Tip: Include key scientific terms like '{keyword_match}' in your answer)*"
@@ -663,7 +683,6 @@ def generate_science_question(level, q_id, index):
         "difficulty": difficulty
     }
 
-# ----------------- CHINESE SYLLABUS DATABASE -----------------
 CHINESE_TEMPLATES = {
     "P6": [
         ("Vocabulary Selection (词语选择)", "王校长的演讲内容深刻，言简意赅，令我们受益 ________。", "匪浅", ["浅薄", "深刻", "困难"], "‘受益匪浅’ (benefited greatly) 是新加坡高频的成语，常在作文和阅读理解中使用。"),
@@ -717,15 +736,13 @@ def generate_chinese_question(level, q_id, index):
         "difficulty": difficulty
     }
 
-# ----------------- MAIN COMPILER LOOP -----------------
 def main():
-    print("Compiling Singapore Primary School Database (19,000 Questions)...")
+    print("Compiling Singapore Primary School Database with Visual Bar Models (19,000 Questions)...")
     for subject, levels in TOPICS.items():
         for level in levels:
             file_name = f"data/{level.lower()}_{subject}.json"
             questions = []
             
-            # Generate exactly 1,000 unique questions
             for i in range(1, 1001):
                 q_id = f"{level}_{subject.upper()[:4]}_{i:04d}"
                 
@@ -740,12 +757,11 @@ def main():
                 
                 questions.append(q)
                 
-            # Write to JSON
             with open(file_name, "w", encoding="utf-8") as f:
                 json.dump(questions, f, ensure_ascii=False, indent=2)
             print(f"  -> Generated {file_name} (1,000 questions)")
 
-    print("Success! Database fully built. Total questions generated: 19,000.")
+    print("Success! Database fully compiled with Bar Models. Total: 19,000 questions.")
 
 if __name__ == "__main__":
     main()

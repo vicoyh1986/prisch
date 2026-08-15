@@ -896,3 +896,90 @@ body.light-theme .stat-item {
   gap: 24px;
   transition: opacity 0.5s ease;
 }
+
+/* Nav Category Headers */
+.nav-category-header {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  margin: 16px 0 6px 8px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+.nav-link.active {
+  background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.05));
+  color: var(--primary);
+  font-weight: 700;
+  border-left: 3px solid var(--primary);
+}
+.nav-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quick launch card hover effects */
+.quick-launch-card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s, border-color 0.2s;
+}
+.quick-launch-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary) !important;
+  box-shadow: var(--glow-primary);
+}
+
+/* Mistake Notebook cards */
+.nb-card {
+  transition: all 0.2s;
+}
+.nb-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* OMR option selections */
+.exam-option-row:hover {
+  border-color: var(--primary);
+  background: rgba(0, 242, 254, 0.06);
+}
+
+/* Bar model styling enhancements */
+.bar-model-container {
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Print Stylesheet */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .sidebar, .top-header, .splash, #confetti-canvas {
+    display: none !important;
+  }
+  .main-content {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
+

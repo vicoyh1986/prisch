@@ -1,4 +1,8 @@
-/* Interactive Quiz Player and self-marking system */
+/* Interactive Quiz Player with Synthesized Audio, Bar Models, and Mistake Sync */
+import { sound } from "./sound.js";
+import { confetti } from "./confetti.js";
+import { heuristicsEngine } from "./heuristics.js";
+
 export class QuizPlayer {
   constructor(app) {
     this.app = app;
@@ -9,11 +13,16 @@ export class QuizPlayer {
     this.timerInterval = null;
     this.selectedOption = null;
     this.isAnswerSubmitted = false;
+    this.currentStreak = 0;
+    this.hintTier = 0;
 
     // Cache DOM Elements
     this.section = document.getElementById("section-quiz");
     this.questionText = document.getElementById("quiz-question-text");
     this.answerArea = document.getElementById("quiz-answer-area");
+    this.barModelArea = document.getElementById("quiz-bar-model-area");
+    this.hintArea = document.getElementById("quiz-progressive-hint-area");
+    this.hintBtn = document.getElementById("quiz-hint-btn");
     this.explanationCard = document.getElementById("quiz-explanation-card");
     this.explanationText = document.getElementById("quiz-explanation-text");
     this.submitBtn = document.getElementById("quiz-submit-btn");
@@ -29,38 +38,81 @@ export class QuizPlayer {
   }
 
   initEvents() {
-    this.submitBtn.addEventListener("click", () => this.handleSubmit());
-    this.explainBtn.addEventListener("click", () => this.toggleExplanation());
+    this.submitBtn.addEventListener("click", () => {
+      sound.playClick();
+      this.handleSubmit();
+    });
+    
+    this.explainBtn.addEventListener("click", () => {
+      sound.playClick();
+      this.toggleExplanation();
+    });
+
+    if (this.hintBtn) {
+      this.hintBtn.addEventListener("click", () => {
+        sound.playClick();
+        this.revealNextHint();
+      });
+    }
+
     this.quitBtn.addEventListener("click", () => {
+      sound.playClick();
       if (confirm("Are you sure you want to quit this practice session? Your progress will not be saved.")) {
         this.quitQuiz();
       }
     });
   }
 
-  /**
-   * Initializes and starts a new practice quiz session
-   */
   startQuiz(questions, subject, level) {
     this.questions = questions;
     this.subject = subject;
     this.level = level;
     this.currentIndex = 0;
     this.score = 0;
+    this.currentStreak = 0;
     this.isAnswerSubmitted = false;
     this.selectedOption = null;
+    this.hintTier = 0;
 
     this.app.showSection("quiz");
-    this.explanationCard.style.display = "none";
-    this.explainBtn.style.display = "none";
-    this.submitBtn.innerText = "Submit Answer";
-    this.submitBtn.disabled = false;
+    this.resetQuestionCard();
 
-    // Start Timer
     this.startTime = Date.now();
     this.startTimer();
-
     this.renderQuestion();
+  }
+
+  startWithCustomQuestions(questions) {
+    this.questions = questions;
+    this.subject = questions[0]?.subject || "mixed";
+    this.level = questions[0]?.level || "P6";
+    this.currentIndex = 0;
+    this.score = 0;
+    this.currentStreak = 0;
+    this.isAnswerSubmitted = false;
+    this.selectedOption = null;
+    this.hintTier = 0;
+
+    this.app.showSection("quiz");
+    this.resetQuestionCard();
+
+    this.startTime = Date.now();
+    this.startTimer();
+    this.renderQuestion();
+  }
+
+  resetQuestionCard() {
+    this.topicTag.style.display = "";
+    this.difficultyTag.style.display = "";
+    this.explanationCard.style.display = "none";
+    this.explainBtn.style.display = "none";
+    if (this.hintBtn) this.hintBtn.style.display = "none";
+    if (this.hintArea) this.hintArea.style.display = "none";
+    if (this.barModelArea) this.barModelArea.style.display = "none";
+    this.submitBtn.innerText = "Submit Answer";
+    this.submitBtn.disabled = false;
+    this.submitBtn.style.background = "";
+    this.submitBtn.onclick = null;
   }
 
   startTimer() {
@@ -81,10 +133,8 @@ export class QuizPlayer {
   renderQuestion() {
     this.isAnswerSubmitted = false;
     this.selectedOption = null;
-    this.explanationCard.style.display = "none";
-    this.explainBtn.style.display = "none";
-    this.submitBtn.innerText = "Submit Answer";
-    this.submitBtn.disabled = false;
+    this.hintTier = 0;
+    this.resetQuestionCard();
 
     const q = this.questions[this.currentIndex];
 
@@ -101,16 +151,35 @@ export class QuizPlayer {
     // Question content
     this.questionText.innerText = q.question;
 
+    // Check for Bar Model rendering
+    if (this.barModelArea) {
+      if (q.barModel) {
+        this.barModelArea.innerHTML = heuristicsEngine.renderBarModel(q.barModel);
+        this.barModelArea.style.display = "block";
+      } else {
+        this.barModelArea.style.display = "none";
+      }
+    }
+
+    // Check for Heuristic Hints
+    if (this.hintBtn && (q.heuristicId || q.explanation)) {
+      this.hintBtn.style.display = "inline-block";
+      this.hintBtn.innerText = "💡 Reveal Strategy Hint (Tier 1)";
+    }
+
     // Build choices or text input depending on answer type
     this.answerArea.innerHTML = "";
     if (q.type === "mcq") {
       const list = document.createElement("div");
       list.className = "options-list";
-      q.options.forEach((opt, idx) => {
+      q.options.forEach((opt) => {
         const btn = document.createElement("button");
         btn.className = "option-btn";
         btn.innerText = opt;
-        btn.addEventListener("click", () => this.selectOption(btn, opt));
+        btn.addEventListener("click", () => {
+          sound.playClick();
+          this.selectOption(btn, opt);
+        });
         list.appendChild(btn);
       });
       this.answerArea.appendChild(list);
@@ -132,10 +201,27 @@ export class QuizPlayer {
     }
   }
 
+  revealNextHint() {
+    const q = this.questions[this.currentIndex];
+    this.hintTier++;
+    if (this.hintArea) {
+      this.hintArea.innerHTML = heuristicsEngine.renderProgressiveHints(q, this.hintTier);
+      this.hintArea.style.display = "block";
+    }
+
+    if (this.hintTier === 1) {
+      this.hintBtn.innerText = "🔍 Reveal Model Framework (Tier 2)";
+    } else if (this.hintTier === 2) {
+      this.hintBtn.innerText = "📝 Reveal Step-by-Step Algebra (Tier 3)";
+    } else {
+      this.hintBtn.innerText = "✓ All 3 Hint Tiers Revealed";
+      this.hintBtn.disabled = true;
+    }
+  }
+
   selectOption(element, value) {
     if (this.isAnswerSubmitted) return;
     
-    // De-select current
     const active = this.answerArea.querySelector(".option-btn.selected");
     if (active) active.classList.remove("selected");
 
@@ -161,7 +247,6 @@ export class QuizPlayer {
       userAns = this.selectedOption;
       isCorrect = (userAns === q.answer);
 
-      // Render styles
       const btns = this.answerArea.querySelectorAll(".option-btn");
       btns.forEach(btn => {
         if (btn.innerText === q.answer) {
@@ -180,9 +265,8 @@ export class QuizPlayer {
       }
       
       const cleanAnswer = q.answer.trim().toLowerCase();
-      isCorrect = (userAns === cleanAnswer);
+      isCorrect = (userAns === cleanAnswer || cleanAnswer.includes(userAns) || userAns.includes(cleanAnswer));
 
-      // Render styles
       input.disabled = true;
       if (isCorrect) {
         input.style.borderColor = "var(--success)";
@@ -192,26 +276,41 @@ export class QuizPlayer {
         input.style.borderColor = "var(--error)";
         input.style.backgroundColor = "rgba(255, 75, 114, 0.05)";
         input.style.color = "var(--error)";
-        // Show correct answer below
+        
         const tip = document.createElement("div");
         tip.style.fontSize = "13px";
         tip.style.color = "var(--success)";
         tip.style.marginTop = "8px";
-        tip.innerHTML = `Correct Answer: <strong>${q.answer}</strong>`;
+        tip.innerHTML = `Target Answer: <strong>${q.answer}</strong>`;
         this.answerArea.appendChild(tip);
       }
     }
 
     this.isAnswerSubmitted = true;
-    this.explainBtn.style.display = "block";
+    this.explainBtn.style.display = "inline-block";
     this.showExplanation(q.explanation);
 
     if (isCorrect) {
       this.score++;
-      this.app.addXP(10); // Reward XP
+      this.currentStreak++;
+      if (this.currentStreak >= 3) {
+        sound.playStreak(this.currentStreak);
+      } else {
+        sound.playCorrect();
+      }
+
+      this.app.addXP(10);
       this.submitBtn.innerText = "Correct! Next →";
       this.submitBtn.style.background = "linear-gradient(135deg, var(--success), #059669)";
     } else {
+      this.currentStreak = 0;
+      sound.playIncorrect();
+
+      // Log to Mistake Notebook
+      if (this.app.notebook) {
+        this.app.notebook.addMistake(q, userAns, this.subject, this.level);
+      }
+
       this.submitBtn.innerText = "Incorrect. Next →";
       this.submitBtn.style.background = "linear-gradient(135deg, var(--error), #dc2626)";
     }
@@ -228,9 +327,7 @@ export class QuizPlayer {
   }
 
   nextQuestion() {
-    // Reset submit button styling
     this.submitBtn.style.background = "";
-    
     this.currentIndex++;
     if (this.currentIndex < this.questions.length) {
       this.renderQuestion();
@@ -246,24 +343,33 @@ export class QuizPlayer {
     const secs = elapsed % 60;
     
     this.progressFill.style.width = "100%";
-    
-    // Save quiz results
     this.app.recordQuizCompletion(this.score, this.questions.length, this.subject);
 
-    // Calculate accuracy
     const accuracy = Math.round((this.score / this.questions.length) * 100);
-    const xpGained = this.score * 10 + (this.score === this.questions.length ? 50 : 0); // Perfect score bonus
+    const xpGained = this.score * 10 + (this.score === this.questions.length ? 50 : 0);
 
-    // Render summary UI
+    // Audio & Confetti Celebrations
+    if (accuracy >= 90) {
+      sound.playLevelUp();
+      confetti.fire(3500);
+    } else if (accuracy >= 70) {
+      sound.playCorrect();
+    }
+
     this.topicTag.style.display = "none";
     this.difficultyTag.style.display = "none";
+    if (this.hintBtn) this.hintBtn.style.display = "none";
+    if (this.hintArea) this.hintArea.style.display = "none";
+    if (this.barModelArea) this.barModelArea.style.display = "none";
     this.questionIndexDisplay.innerText = "Practice Complete!";
     
     this.questionText.innerHTML = `
       <div style="text-align: center; display: flex; flex-direction: column; gap: 20px;">
-        <div style="font-size: 64px;">🏆</div>
-        <h2>Practice Completed!</h2>
-        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto; font-size: 15px;">Excellent effort! You have completed your level ${this.level} ${this.subject} practice set.</p>
+        <div style="font-size: 64px;">${accuracy >= 90 ? '🌟' : '🏆'}</div>
+        <h2>${accuracy >= 90 ? 'Outstanding AL1 Performance!' : 'Practice Session Complete!'}</h2>
+        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto; font-size: 15px;">
+          ${accuracy >= 90 ? 'You demonstrated flawless mastery matching Singapore MOE top-school distinction standard!' : 'Great effort! Review any mistakes in your Mistake Notebook to achieve 100% precision.'}
+        </p>
         
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 12px 0;">
           <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 8px;">
@@ -271,7 +377,7 @@ export class QuizPlayer {
             <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Correct Answers</div>
           </div>
           <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 8px;">
-            <div style="font-size: 24px; font-weight: 800; color: var(--warning);">${accuracy}%</div>
+            <div style="font-size: 24px; font-weight: 800; color: ${accuracy >= 90 ? 'var(--success)' : 'var(--warning)'};">${accuracy}%</div>
             <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Accuracy</div>
           </div>
           <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 14px; border-radius: 8px;">
@@ -290,20 +396,17 @@ export class QuizPlayer {
 
     this.submitBtn.innerText = "Back to Dashboard";
     this.submitBtn.style.background = "";
-    this.isAnswerSubmitted = true; // Set to true so next click hits the return path
+    this.isAnswerSubmitted = true;
 
-    // Override submit action
     this.submitBtn.onclick = () => {
-      // Restore state
-      this.topicTag.style.display = "";
-      this.difficultyTag.style.display = "";
-      this.submitBtn.onclick = null; // remove override
+      this.resetQuestionCard();
       this.app.showSection("dashboard");
     };
   }
 
   quitQuiz() {
     this.stopTimer();
+    this.resetQuestionCard();
     this.app.showSection("dashboard");
   }
 }

@@ -1,26 +1,47 @@
-/* Central Application State Manager & Router */
+/* Central Application State Manager & Router - Singapore AL4 Suite */
 import { DatabaseManager } from "./js/db.js";
 import { QuizPlayer } from "./js/quiz.js";
 import { WritingLab } from "./js/writing.js";
 import { AnalyticsManager } from "./js/analytics.js";
+import { sound } from "./js/sound.js";
+import { confetti } from "./js/confetti.js";
+import { heuristicsEngine } from "./js/heuristics.js";
+import { ScienceOEQStudio } from "./js/science_oeq.js";
+import { EnglishEliteSuite } from "./js/english_elite.js";
+import { ChineseAL1Hub } from "./js/chinese_al1.js";
+import { MockExamSimulator } from "./js/exam_mode.js";
+import { MistakeNotebook } from "./js/notebook.js";
+import { WorksheetExporter } from "./js/export.js";
 
 class PortalApp {
   constructor() {
     this.currentLevel = "P6";
+    this.selectedLevel = "P6";
+    this.selectedSubject = "mathematics";
     this.studentName = "Alex Tan";
     this.targetGrade = "AL1";
 
     // Instantiate Sub-Systems
     this.db = new DatabaseManager();
+    this.analytics = new AnalyticsManager(this);
     this.quiz = new QuizPlayer(this);
     this.writing = new WritingLab(this);
-    this.analytics = new AnalyticsManager(this);
+    
+    // Instantiate Legendary PSLE Studios
+    this.scienceOEQ = new ScienceOEQStudio(this);
+    this.englishElite = new EnglishEliteSuite(this);
+    this.chineseAL1 = new ChineseAL1Hub(this);
+    this.mockExam = new MockExamSimulator(this);
+    this.notebook = new MistakeNotebook(this);
+    this.exporter = new WorksheetExporter(this);
 
     // Cache Global Elements
     this.navLinks = document.querySelectorAll(".nav-link");
     this.sections = document.querySelectorAll(".view-section");
     this.sectionTitle = document.getElementById("current-section-title");
     this.themeToggleBtn = document.getElementById("theme-toggle-btn");
+    this.soundToggleBtn = document.getElementById("sound-toggle-btn");
+    this.printWorksheetBtn = document.getElementById("global-print-worksheet-btn");
     
     this.levelSelectTabs = document.getElementById("level-select-tabs");
     this.subjectsArenaGrid = document.getElementById("subjects-arena-grid");
@@ -40,21 +61,47 @@ class PortalApp {
     // Navigation Tabs Router
     this.navLinks.forEach(link => {
       link.addEventListener("click", () => {
+        sound.playClick();
         const id = link.id.replace("nav-", "");
         this.showSection(id);
       });
     });
 
     // Theme Toggle
-    this.themeToggleBtn.addEventListener("click", () => this.toggleTheme());
+    if (this.themeToggleBtn) {
+      this.themeToggleBtn.addEventListener("click", () => {
+        sound.playClick();
+        this.toggleTheme();
+      });
+    }
+
+    // Sound Toggle
+    if (this.soundToggleBtn) {
+      this.updateSoundButtonUI();
+      this.soundToggleBtn.addEventListener("click", () => {
+        const isMuted = sound.toggleMute();
+        this.updateSoundButtonUI();
+        if (!isMuted) sound.playCorrect();
+      });
+    }
+
+    // Print Worksheet Button
+    if (this.printWorksheetBtn) {
+      this.printWorksheetBtn.addEventListener("click", () => {
+        sound.playClick();
+        this.exporter.generatePrintableWorksheet(this.currentLevel, this.selectedSubject || "mathematics", 10);
+      });
+    }
 
     // Practice Arena level filter tabs
     if (this.levelSelectTabs) {
       this.levelSelectTabs.querySelectorAll(".btn-pill").forEach(btn => {
         btn.addEventListener("click", () => {
-          this.levelSelectTabs.querySelector(".btn-pill.active").classList.remove("active");
+          sound.playClick();
+          this.levelSelectTabs.querySelector(".btn-pill.active")?.classList.remove("active");
           btn.classList.add("active");
           this.currentLevel = btn.dataset.level;
+          this.selectedLevel = btn.dataset.level;
           this.renderPracticeSubjects();
         });
       });
@@ -69,6 +116,13 @@ class PortalApp {
     }
   }
 
+  updateSoundButtonUI() {
+    if (this.soundToggleBtn) {
+      this.soundToggleBtn.innerText = sound.isMuted ? "🔇" : "🔊";
+      this.soundToggleBtn.title = sound.isMuted ? "Audio Muted (Click to un-mute)" : "Audio Enabled (Click to mute)";
+    }
+  }
+
   bootstrapApp() {
     // Fade splash screen
     setTimeout(() => {
@@ -77,12 +131,17 @@ class PortalApp {
         splash.style.opacity = "0";
         setTimeout(() => splash.remove(), 500);
       }
-    }, 1000);
+    }, 800);
 
     // Initial renders
     this.renderProfileWidgets();
     this.renderPracticeSubjects();
     this.showSection("dashboard");
+  }
+
+  switchSection(sectionId) {
+    sound.playClick();
+    this.showSection(sectionId);
   }
 
   showSection(sectionId) {
@@ -99,18 +158,44 @@ class PortalApp {
 
     // Title mapping
     const titles = {
-      dashboard: "Dashboard",
-      practice: "Practice Arena",
+      dashboard: "PSLE AL4 Command Center",
+      practice: "MOE Practice Arena (19,000 Questions)",
+      heuristics: "Singapore Math Bar Model & Heuristics Lab",
+      "science-oeq": "Science Section B C-E-R Studio",
+      "english-elite": "English Synthesis & Oral SBC Suite",
+      "chinese-al1": "华文成语与关联词 AL1 冲刺站",
+      "exam-mode": "Top School Mock Exam Simulator",
+      notebook: "错题本 Smart Mistake Notebook",
       quiz: "Practice Quiz Session",
       writing: "PSLE Writing Lab",
       achievements: "Achievements Trophy Room",
       settings: "Configurations"
     };
-    this.sectionTitle.innerText = titles[sectionId] || "MOE Prep";
+    if (this.sectionTitle) {
+      this.sectionTitle.innerText = titles[sectionId] || "MOE Prep";
+    }
 
-    // View-specific initialization triggers
+    // Studio Initializers
     if (sectionId === "dashboard") {
       this.analytics.renderDashboardWidgets();
+    } else if (sectionId === "heuristics") {
+      const c = document.getElementById("heuristics-container");
+      if (c) heuristicsEngine.renderTaxonomyStudio(c);
+    } else if (sectionId === "science-oeq") {
+      const c = document.getElementById("science-oeq-container");
+      if (c) this.scienceOEQ.render(c);
+    } else if (sectionId === "english-elite") {
+      const c = document.getElementById("english-elite-container");
+      if (c) this.englishElite.render(c);
+    } else if (sectionId === "chinese-al1") {
+      const c = document.getElementById("chinese-al1-container");
+      if (c) this.chineseAL1.render(c);
+    } else if (sectionId === "exam-mode") {
+      const c = document.getElementById("exam-mode-container");
+      if (c) this.mockExam.renderLobby(c);
+    } else if (sectionId === "notebook") {
+      const c = document.getElementById("notebook-container");
+      if (c) this.notebook.render(c);
     } else if (sectionId === "achievements") {
       this.analytics.renderAchievementsView();
     } else if (sectionId === "writing") {
@@ -126,30 +211,29 @@ class PortalApp {
   }
 
   loadSettings() {
-    // Set theme
     const theme = localStorage.getItem("moe_prep_light_theme");
     if (theme === "true") {
       document.body.classList.add("light-theme");
-      this.themeToggleBtn.innerText = "🌙";
+      if (this.themeToggleBtn) this.themeToggleBtn.innerText = "🌙";
     }
 
-    // Set credentials / names
     const savedName = localStorage.getItem("moe_prep_student_name");
     const savedLevel = localStorage.getItem("moe_prep_student_level");
     const savedGrade = localStorage.getItem("moe_prep_target_grade");
     const savedKey = localStorage.getItem("moe_prep_api_key");
 
     if (savedName) this.studentName = savedName;
-    if (savedLevel) this.currentLevel = savedLevel;
+    if (savedLevel) {
+      this.currentLevel = savedLevel;
+      this.selectedLevel = savedLevel;
+    }
     if (savedGrade) this.targetGrade = savedGrade;
-    if (savedKey) this.geminiApiKeyInput.value = savedKey;
+    if (savedKey && this.geminiApiKeyInput) this.geminiApiKeyInput.value = savedKey;
 
-    // Apply to inputs
-    this.studentNameInput.value = this.studentName;
-    this.studentLevelSelect.value = this.currentLevel;
-    this.targetGradeSelect.value = this.targetGrade;
+    if (this.studentNameInput) this.studentNameInput.value = this.studentName;
+    if (this.studentLevelSelect) this.studentLevelSelect.value = this.currentLevel;
+    if (this.targetGradeSelect) this.targetGradeSelect.value = this.targetGrade;
 
-    // Align tabs in Practice section
     if (this.levelSelectTabs) {
       const activeTab = this.levelSelectTabs.querySelector(".btn-pill.active");
       if (activeTab) activeTab.classList.remove("active");
@@ -159,8 +243,10 @@ class PortalApp {
   }
 
   saveSettings() {
+    sound.playCorrect();
     this.studentName = this.studentNameInput.value.trim() || "Alex Tan";
     this.currentLevel = this.studentLevelSelect.value;
+    this.selectedLevel = this.currentLevel;
     this.targetGrade = this.targetGradeSelect.value;
     
     const key = this.geminiApiKeyInput.value.trim();
@@ -182,16 +268,23 @@ class PortalApp {
   }
 
   renderProfileWidgets() {
-    document.getElementById("student-name-display").innerText = this.studentName;
-    document.getElementById("student-name-welcome").innerText = this.studentName;
-    document.getElementById("target-grade-display").innerText = `Target: ${this.targetGrade}`;
-    document.getElementById("current-target-grade-pill").innerText = this.targetGrade;
-    
-    document.getElementById("profile-level").innerText = this.currentLevel;
-    document.getElementById("recommended-level-text").innerText = this.currentLevel;
-    
-    document.getElementById("profile-xp").innerText = `${this.analytics.xp} XP`;
-    document.getElementById("streak-days-display").innerText = this.analytics.streak;
+    const nameDisp = document.getElementById("student-name-display");
+    const nameWelc = document.getElementById("student-name-welcome");
+    const targetGrade = document.getElementById("target-grade-display");
+    const targetGradePill = document.getElementById("current-target-grade-pill");
+    const profLevel = document.getElementById("profile-level");
+    const recLevel = document.getElementById("recommended-level-text");
+    const profXP = document.getElementById("profile-xp");
+    const streakDisp = document.getElementById("streak-days-display");
+
+    if (nameDisp) nameDisp.innerText = this.studentName;
+    if (nameWelc) nameWelc.innerText = this.studentName;
+    if (targetGrade) targetGrade.innerText = `Target: ${this.targetGrade} (AL4 Total)`;
+    if (targetGradePill) targetGradePill.innerText = this.targetGrade;
+    if (profLevel) profLevel.innerText = this.currentLevel;
+    if (recLevel) recLevel.innerText = this.currentLevel;
+    if (profXP) profXP.innerText = `${this.analytics.xp} XP`;
+    if (streakDisp) streakDisp.innerText = this.analytics.streak;
   }
 
   renderPracticeSubjects() {
@@ -199,10 +292,10 @@ class PortalApp {
     this.subjectsArenaGrid.innerHTML = "";
 
     const subjects = [
-      { key: "english", title: "English Language", icon: "📚", count: "Grammar, Vocab & Cloze" },
-      { key: "mathematics", title: "Mathematics", icon: "📐", count: "Arithmetic & Model Sums" },
-      { key: "science", title: "Science Core", icon: "🍀", count: "Systems, Energy & Cycles" },
-      { key: "chinese", title: "Mother Tongue (CL)", icon: "🏮", count: "Pinyin & Cloze Sentences" }
+      { key: "mathematics", title: "Mathematics", icon: "📐", count: "1,000 Heuristics & Model Sums" },
+      { key: "science", title: "Science Core", icon: "🔬", count: "1,000 C-E-R Experiments & MCQs" },
+      { key: "english", title: "English Language", icon: "📚", count: "1,000 Grammar, S&T & Cloze" },
+      { key: "chinese", title: "Mother Tongue (CL)", icon: "🏮", count: "1,000 成语, 关联词 & 阅读理解" }
     ];
 
     subjects.forEach(sub => {
@@ -222,7 +315,10 @@ class PortalApp {
         card.style.cursor = "not-allowed";
         card.title = "Science is only introduced in Primary 3 under Singapore's MOE curriculum.";
       } else {
-        card.addEventListener("click", () => this.loadQuiz(sub.key));
+        card.addEventListener("click", () => {
+          this.selectedSubject = sub.key;
+          this.loadQuiz(sub.key);
+        });
       }
 
       this.subjectsArenaGrid.appendChild(card);
@@ -230,11 +326,12 @@ class PortalApp {
   }
 
   async loadQuiz(subject) {
+    sound.playClick();
+    this.selectedSubject = subject;
     this.showSection("quiz");
     const loadText = document.getElementById("quiz-question-text");
     loadText.innerText = `Loading 10 random ${subject.toUpperCase()} questions from the Level ${this.currentLevel} database...`;
 
-    // Fetch questions
     const set = await this.db.getPracticeSet(this.currentLevel, subject, 10);
     if (set.length === 0) {
       loadText.innerText = `Failed to load practice questions for ${this.currentLevel} ${subject}. Please verify your data compile status.`;
@@ -244,20 +341,17 @@ class PortalApp {
     this.quiz.startQuiz(set, subject, this.currentLevel);
   }
 
-  // Bridging methods to delegate triggers
   addXP(amount) {
     this.analytics.addXP(amount);
   }
 
   recordQuizCompletion(score, total, subject) {
     this.analytics.recordQuiz(score, total, subject);
-  }
-
-  recordEssayWritten() {
-    this.analytics.recordEssay();
+    this.renderProfileWidgets();
   }
 }
 
-// Instantiate global app scope
-window.app = new PortalApp();
-export { PortalApp as default };
+// Global bootstrap instance
+window.addEventListener("DOMContentLoaded", () => {
+  window.app = new PortalApp();
+});

@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOE Prep - Singapore Primary School Mastery Portal</title>
+  <title>MOE Prep - Singapore Primary School PSLE AL1 Mastery Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Confetti Canvas for AL1 Celebrations -->
+  <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99999;"></canvas>
+
   <!-- Splash Screen -->
   <div id="splash-screen" class="splash">
     <div class="brand-icon">M</div>
-    <h1 style="font-size: 32px; background: linear-gradient(135deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MOE Prep</h1>
-    <p style="color: #64748b; font-size: 14px;">Singapore Primary School Mastery Portal</p>
+    <h1 style="font-size: 32px; background: linear-gradient(135deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MOE Prep AL4 Suite</h1>
+    <p style="color: #64748b; font-size: 14px;">Singapore Primary School PSLE AL1 Mastery Portal</p>
     <div style="width: 150px; height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; margin-top: 10px;">
       <div style="width: 30%; height: 100%; background: #00f2fe; animation: loading 1.5s infinite ease-in-out;"></div>
     </div>
@@ -24,7 +27,7 @@
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-icon">M</div>
-        <span class="brand-text">MOE Prep</span>
+        <span class="brand-text">MOE Prep <span style="font-size: 10px; color: var(--primary); font-weight: 800; border: 1px solid var(--primary); padding: 1px 5px; border-radius: 4px; margin-left: 4px;">AL4</span></span>
       </div>
 
       <!-- Student Profile Card -->
@@ -33,7 +36,7 @@
           <div class="avatar" id="profile-avatar">👨‍🎓</div>
           <div class="profile-info">
             <h4 id="student-name-display">Alex Tan</h4>
-            <span id="target-grade-display">Target: AL1</span>
+            <span id="target-grade-display">Target: AL4 (AL1×4)</span>
           </div>
         </div>
         <div class="stats-grid">
@@ -50,25 +53,54 @@
 
       <!-- Navigation Menu -->
       <nav class="nav-menu">
+        <div class="nav-category-header">CORE SYLLABUS</div>
         <a class="nav-link active" id="nav-dashboard">
-          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          Dashboard
+          <span class="nav-icon">📊</span>
+          <span>Dashboard</span>
         </a>
         <a class="nav-link" id="nav-practice">
-          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.89 12.55L12 15.88l6.11-3.33c.08-.04.14-.11.14-.2v-.93l-6.25 3.41L5.75 11.4v.95c0 .09.06.16.14.2z"/></svg>
-          Practice Arena
+          <span class="nav-icon">🎯</span>
+          <span>Practice Arena (19k)</span>
+        </a>
+
+        <div class="nav-category-header">LEGENDARY PSLE SUITES</div>
+        <a class="nav-link" id="nav-heuristics">
+          <span class="nav-icon">📐</span>
+          <span>Math Heuristics & Models</span>
+        </a>
+        <a class="nav-link" id="nav-science-oeq">
+          <span class="nav-icon">🔬</span>
+          <span>Science C-E-R Studio</span>
+        </a>
+        <a class="nav-link" id="nav-english-elite">
+          <span class="nav-icon">🔀</span>
+          <span>English S&T & Oral</span>
+        </a>
+        <a class="nav-link" id="nav-chinese-al1">
+          <span class="nav-icon">📖</span>
+          <span>华文 AL1 冲刺站</span>
+        </a>
+        <a class="nav-link" id="nav-exam-mode">
+          <span class="nav-icon">🏆</span>
+          <span>Top School Mock Exams</span>
+        </a>
+
+        <div class="nav-category-header">TOOLS & MASTERY</div>
+        <a class="nav-link" id="nav-notebook">
+          <span class="nav-icon">📕</span>
+          <span>错题本 Mistake Book</span>
         </a>
         <a class="nav-link" id="nav-writing">
-          <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-          PSLE Writing Lab
+          <span class="nav-icon">✍️</span>
+          <span>PSLE Writing Lab</span>
         </a>
         <a class="nav-link" id="nav-achievements">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-          Achievements
+          <span class="nav-icon">🎖️</span>
+          <span>Achievements</span>
         </a>
         <a class="nav-link" id="nav-settings">
-          <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.16.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.16-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
-          Settings
+          <span class="nav-icon">⚙️</span>
+          <span>Settings</span>
         </a>
       </nav>
     </aside>
@@ -80,12 +112,22 @@
       <header class="top-header">
         <h2 class="page-title" id="current-section-title">Dashboard</h2>
         <div class="header-controls">
+          <!-- Print Worksheet Button -->
+          <button class="btn btn-outline" id="global-print-worksheet-btn" style="font-size: 12px; padding: 6px 12px; gap: 4px;">
+            🖨️ Print Worksheet
+          </button>
+          
+          <!-- Sound FX Toggle Button -->
+          <button class="btn-icon" id="sound-toggle-btn" title="Toggle Sound Audio">🔊</button>
+
           <!-- Streak Indicator -->
           <div class="flex-row" style="background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.2); padding: 6px 14px; border-radius: 50px; font-weight: 600; color: #ffb800; font-size: 13px;">
             <span>🔥 <span id="streak-days-display">3</span> Day Streak</span>
           </div>
+
           <!-- Target grade indicator -->
           <div class="btn-pill active" style="font-size: 12px; padding: 6px 16px;" id="current-target-grade-pill">AL1</div>
+          
           <!-- Dark/Light Theme Toggle -->
           <button class="btn-icon" id="theme-toggle-btn" title="Toggle Light/Dark Theme">💡</button>
         </div>
@@ -99,7 +141,7 @@
             <!-- Welcome Banner -->
             <div class="panel" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(79, 172, 254, 0.15)); border-color: rgba(0, 242, 254, 0.2);">
               <h2 style="font-size: 26px; margin-bottom: 8px;">Welcome back, <span id="student-name-welcome">Alex</span>! 👋</h2>
-              <p style="color: var(--text-secondary); max-width: 600px; font-size: 14px;">You have successfully generated all **19,000 MOE syllabus questions**. Let's complete your daily practices to conquer the upcoming mock exams and target the ultimate AL1 distinction!</p>
+              <p style="color: var(--text-secondary); max-width: 600px; font-size: 14px;">Singapore MOE Primary School Mastery Suite loaded with **19,000 rigorous syllabus questions**. Target <strong>AL4 in total</strong> across Mathematics, Science, English, and Mother Tongue!</p>
             </div>
 
             <!-- Stats Bar -->
@@ -127,6 +169,33 @@
               </div>
             </div>
 
+            <!-- Quick Launch Hub for PSLE Studios -->
+            <div class="panel" style="background: rgba(15, 23, 42, 0.6);">
+              <h3 style="margin-bottom: 14px; font-size: 16px;">🚀 PSLE AL1 Accelerator Studios:</h3>
+              <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;">
+                <div class="quick-launch-card" onclick="app.switchSection('heuristics')" style="background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 8px; padding: 12px; cursor: pointer;">
+                  <div style="font-size: 20px; margin-bottom: 4px;">📐</div>
+                  <strong style="color: var(--primary); font-size: 13px;">Math Bar Models</strong>
+                  <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">12 Heuristic taxonomies & visual units</p>
+                </div>
+                <div class="quick-launch-card" onclick="app.switchSection('science-oeq')" style="background: rgba(0, 242, 161, 0.05); border: 1px solid rgba(0, 242, 161, 0.2); border-radius: 8px; padding: 12px; cursor: pointer;">
+                  <div style="font-size: 20px; margin-bottom: 4px;">🔬</div>
+                  <strong style="color: var(--success); font-size: 13px;">Science C-E-R Studio</strong>
+                  <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Section B Open-Ended keyword evaluator</p>
+                </div>
+                <div class="quick-launch-card" onclick="app.switchSection('english-elite')" style="background: rgba(255, 184, 0, 0.05); border: 1px solid rgba(255, 184, 0, 0.2); border-radius: 8px; padding: 12px; cursor: pointer;">
+                  <div style="font-size: 20px; margin-bottom: 4px;">🔀</div>
+                  <strong style="color: var(--warning); font-size: 13px;">English S&T & Oral</strong>
+                  <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Inversion drills & T-R-E-E-S oral rubric</p>
+                </div>
+                <div class="quick-launch-card" onclick="app.switchSection('chinese-al1')" style="background: rgba(244, 63, 94, 0.05); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 8px; padding: 12px; cursor: pointer;">
+                  <div style="font-size: 20px; margin-bottom: 4px;">📖</div>
+                  <strong style="color: #f43f5e; font-size: 13px;">华文成语 & 关联词</strong>
+                  <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">50 必考成语闪卡 & 关联词真题训练</p>
+                </div>
+              </div>
+            </div>
+
             <!-- Daily Goals Progress -->
             <div class="panel">
               <div class="panel-header">
@@ -140,7 +209,7 @@
 
             <!-- Recommended Actions -->
             <div class="panel">
-              <h3 style="margin-bottom: 16px;">Recommended practices for Level <span id="recommended-level-text">P6</span></h3>
+              <h3 style="margin-bottom: 16px;">Recommended practice for Level <span id="recommended-level-text">P6</span></h3>
               <div class="subjects-grid">
                 <div class="subject-card card-english" onclick="app.loadQuiz('english')">
                   <div class="subject-icon">📚</div>
@@ -203,8 +272,38 @@
 
         <h3 style="margin-bottom: 16px;">Subjects</h3>
         <div class="subjects-grid" id="subjects-arena-grid">
-          <!-- Generated programmatically with current subject counts and icons -->
+          <!-- Generated programmatically -->
         </div>
+      </section>
+
+      <!-- VIEW: SINGAPORE MATH HEURISTICS LAB -->
+      <section id="section-heuristics" class="view-section">
+        <div id="heuristics-container"></div>
+      </section>
+
+      <!-- VIEW: SCIENCE C-E-R STUDIO -->
+      <section id="section-science-oeq" class="view-section">
+        <div id="science-oeq-container"></div>
+      </section>
+
+      <!-- VIEW: ENGLISH ELITE SUITE -->
+      <section id="section-english-elite" class="view-section">
+        <div id="english-elite-container"></div>
+      </section>
+
+      <!-- VIEW: CHINESE AL1 MASTERY HUB -->
+      <section id="section-chinese-al1" class="view-section">
+        <div id="chinese-al1-container"></div>
+      </section>
+
+      <!-- VIEW: TOP SCHOOL MOCK EXAM ARENA -->
+      <section id="section-exam-mode" class="view-section">
+        <div id="exam-mode-container"></div>
+      </section>
+
+      <!-- VIEW: MISTAKE NOTEBOOK (错题本) -->
+      <section id="section-notebook" class="view-section">
+        <div id="notebook-container"></div>
       </section>
 
       <!-- VIEW: QUIZ PLAYER -->
@@ -227,14 +326,21 @@
               <span class="tag" id="quiz-topic-tag">Whole Numbers</span>
               <span class="tag tag-medium" id="quiz-difficulty-tag">Medium</span>
             </div>
+            
             <div class="question-text" id="quiz-question-text">
               Loading question...
             </div>
+
+            <!-- Dynamic Interactive Bar Model Container for Math Word Problems -->
+            <div id="quiz-bar-model-area" style="display: none; margin-bottom: 16px;"></div>
 
             <!-- Dynamic Answer Box (MCQ Options or Short-Answer Field) -->
             <div id="quiz-answer-area">
               <!-- Replaced via JS -->
             </div>
+
+            <!-- Progressive 3-Tier Hint Box -->
+            <div id="quiz-progressive-hint-area" style="display: none; margin-top: 14px;"></div>
 
             <!-- Step-by-Step explanation block (Slides open on submission) -->
             <div class="explanation-card" id="quiz-explanation-card">
@@ -244,6 +350,7 @@
           </div>
 
           <div class="action-bar">
+            <button class="btn-pill" id="quiz-hint-btn" style="display: none; border-color: var(--warning); color: var(--warning);">💡 Reveal Hint (Tier 1)</button>
             <button class="btn-pill" id="quiz-explain-btn" style="display: none; border-color: var(--success); color: var(--success);">View Explanation</button>
             <button class="btn-primary" id="quiz-submit-btn">Submit Answer</button>
           </div>
@@ -388,7 +495,7 @@
           <div class="form-group">
             <label for="target-grade-select">Target Grade</label>
             <select class="select-control" id="target-grade-select">
-              <option value="AL1" selected>Achievement Level 1 (AL1 - 90+ Marks)</option>
+              <option value="AL1" selected>Achievement Level 1 (AL1 - 90+ Marks) [Aggregate AL4]</option>
               <option value="AL2">Achievement Level 2 (AL2 - 85-89 Marks)</option>
               <option value="AL3">Achievement Level 3 (AL3 - 80-84 Marks)</option>
               <option value="AL4">Achievement Level 4 (AL4 - 75-79 Marks)</option>
