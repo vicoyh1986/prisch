@@ -1,4 +1,4 @@
-/* Central Application State Manager & Router - Singapore AL4 Suite */
+/* Central Application State Manager & Router - Singapore AL1 Anti-Cram Suite */
 import { DatabaseManager } from "./js/db.js";
 import { QuizPlayer } from "./js/quiz.js";
 import { WritingLab } from "./js/writing.js";
@@ -12,6 +12,7 @@ import { ChineseAL1Hub } from "./js/chinese_al1.js";
 import { MockExamSimulator } from "./js/exam_mode.js";
 import { MistakeNotebook } from "./js/notebook.js";
 import { WorksheetExporter } from "./js/export.js";
+import { MasteryCoach } from "./js/coach.js";
 
 class PortalApp {
   constructor() {
@@ -27,13 +28,15 @@ class PortalApp {
     this.quiz = new QuizPlayer(this);
     this.writing = new WritingLab(this);
     
-    // Instantiate Legendary PSLE Studios
+    // Legendary PSLE Studios
     this.scienceOEQ = new ScienceOEQStudio(this);
     this.englishElite = new EnglishEliteSuite(this);
     this.chineseAL1 = new ChineseAL1Hub(this);
     this.mockExam = new MockExamSimulator(this);
     this.notebook = new MistakeNotebook(this);
     this.exporter = new WorksheetExporter(this);
+    this.coach = new MasteryCoach(this);
+    heuristicsEngine.app = this;
 
     // Cache Global Elements
     this.navLinks = document.querySelectorAll(".nav-link");
@@ -58,7 +61,6 @@ class PortalApp {
   }
 
   initCoreEvents() {
-    // Navigation Tabs Router
     this.navLinks.forEach(link => {
       link.addEventListener("click", () => {
         sound.playClick();
@@ -67,7 +69,6 @@ class PortalApp {
       });
     });
 
-    // Theme Toggle
     if (this.themeToggleBtn) {
       this.themeToggleBtn.addEventListener("click", () => {
         sound.playClick();
@@ -75,7 +76,6 @@ class PortalApp {
       });
     }
 
-    // Sound Toggle
     if (this.soundToggleBtn) {
       this.updateSoundButtonUI();
       this.soundToggleBtn.addEventListener("click", () => {
@@ -85,7 +85,6 @@ class PortalApp {
       });
     }
 
-    // Print Worksheet Button
     if (this.printWorksheetBtn) {
       this.printWorksheetBtn.addEventListener("click", () => {
         sound.playClick();
@@ -93,7 +92,6 @@ class PortalApp {
       });
     }
 
-    // Practice Arena level filter tabs
     if (this.levelSelectTabs) {
       this.levelSelectTabs.querySelectorAll(".btn-pill").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -107,13 +105,19 @@ class PortalApp {
       });
     }
 
-    // Settings Submit
     if (this.settingsForm) {
       this.settingsForm.addEventListener("submit", (e) => {
         e.preventDefault();
         this.saveSettings();
       });
     }
+
+    // Dashboard smart session CTA
+    document.getElementById("dash-start-smart-btn")?.addEventListener("click", () => {
+      sound.playClick();
+      this.showSection("coach");
+      this.coach.startSmartSession();
+    });
   }
 
   updateSoundButtonUI() {
@@ -124,7 +128,6 @@ class PortalApp {
   }
 
   bootstrapApp() {
-    // Fade splash screen
     setTimeout(() => {
       const splash = document.getElementById("splash-screen");
       if (splash) {
@@ -133,7 +136,6 @@ class PortalApp {
       }
     }, 800);
 
-    // Initial renders
     this.renderProfileWidgets();
     this.renderPracticeSubjects();
     this.showSection("dashboard");
@@ -145,28 +147,26 @@ class PortalApp {
   }
 
   showSection(sectionId) {
-    // Hide all sections & deactivate all links
     this.sections.forEach(sec => sec.classList.remove("active"));
     this.navLinks.forEach(link => link.classList.remove("active"));
 
-    // Activate selected
     const activeSec = document.getElementById(`section-${sectionId}`);
     const activeLink = document.getElementById(`nav-${sectionId}`);
 
     if (activeSec) activeSec.classList.add("active");
     if (activeLink) activeLink.classList.add("active");
 
-    // Title mapping
     const titles = {
-      dashboard: "PSLE AL4 Command Center",
-      practice: "MOE Practice Arena (19,000 Questions)",
+      dashboard: "PSLE Mastery Command Center",
+      coach: "Anti-Cram Mastery Coach",
+      practice: "MOE Practice Arena",
       heuristics: "Singapore Math Bar Model & Heuristics Lab",
       "science-oeq": "Science Section B C-E-R Studio",
       "english-elite": "English Synthesis & Oral SBC Suite",
       "chinese-al1": "华文成语与关联词 AL1 冲刺站",
       "exam-mode": "Top School Mock Exam Simulator",
       notebook: "错题本 Smart Mistake Notebook",
-      quiz: "Practice Quiz Session",
+      quiz: "Deliberate Practice Session",
       writing: "PSLE Writing Lab",
       achievements: "Achievements Trophy Room",
       settings: "Configurations"
@@ -175,9 +175,11 @@ class PortalApp {
       this.sectionTitle.innerText = titles[sectionId] || "MOE Prep";
     }
 
-    // Studio Initializers
     if (sectionId === "dashboard") {
       this.analytics.renderDashboardWidgets();
+    } else if (sectionId === "coach") {
+      const c = document.getElementById("coach-container");
+      if (c) this.coach.render(c);
     } else if (sectionId === "heuristics") {
       const c = document.getElementById("heuristics-container");
       if (c) heuristicsEngine.renderTaxonomyStudio(c);
@@ -200,6 +202,8 @@ class PortalApp {
       this.analytics.renderAchievementsView();
     } else if (sectionId === "writing") {
       this.writing.startWritingSession();
+    } else if (sectionId === "practice") {
+      this.renderPracticeSubjects();
     }
   }
 
@@ -250,11 +254,8 @@ class PortalApp {
     this.targetGrade = this.targetGradeSelect.value;
     
     const key = this.geminiApiKeyInput.value.trim();
-    if (key) {
-      localStorage.setItem("moe_prep_api_key", key);
-    } else {
-      localStorage.removeItem("moe_prep_api_key");
-    }
+    if (key) localStorage.setItem("moe_prep_api_key", key);
+    else localStorage.removeItem("moe_prep_api_key");
 
     localStorage.setItem("moe_prep_student_name", this.studentName);
     localStorage.setItem("moe_prep_student_level", this.currentLevel);
@@ -279,7 +280,7 @@ class PortalApp {
 
     if (nameDisp) nameDisp.innerText = this.studentName;
     if (nameWelc) nameWelc.innerText = this.studentName;
-    if (targetGrade) targetGrade.innerText = `Target: ${this.targetGrade} (AL4 Total)`;
+    if (targetGrade) targetGrade.innerText = `Target: ${this.targetGrade} · No-Cram Path`;
     if (targetGradePill) targetGradePill.innerText = this.targetGrade;
     if (profLevel) profLevel.innerText = this.currentLevel;
     if (recLevel) recLevel.innerText = this.currentLevel;
@@ -287,27 +288,43 @@ class PortalApp {
     if (streakDisp) streakDisp.innerText = this.analytics.streak;
   }
 
-  renderPracticeSubjects() {
+  async renderPracticeSubjects() {
     if (!this.subjectsArenaGrid) return;
     this.subjectsArenaGrid.innerHTML = "";
 
     const subjects = [
-      { key: "mathematics", title: "Mathematics", icon: "📐", count: "1,000 Heuristics & Model Sums" },
-      { key: "science", title: "Science Core", icon: "🔬", count: "1,000 C-E-R Experiments & MCQs" },
-      { key: "english", title: "English Language", icon: "📚", count: "1,000 Grammar, S&T & Cloze" },
-      { key: "chinese", title: "Mother Tongue (CL)", icon: "🏮", count: "1,000 成语, 关联词 & 阅读理解" }
+      { key: "mathematics", title: "Mathematics", icon: "📐", count: "Heuristics, models & word problems" },
+      { key: "science", title: "Science Core", icon: "🔬", count: "C-E-R experiments & concept MCQs" },
+      { key: "english", title: "English Language", icon: "📚", count: "Grammar, S&T, cloze & vocab" },
+      { key: "chinese", title: "Mother Tongue (CL)", icon: "🏮", count: "成语, 关联词 & 阅读理解" }
     ];
 
-    subjects.forEach(sub => {
+    for (const sub of subjects) {
       const card = document.createElement("div");
       card.className = `subject-card card-${sub.key}`;
       
       const isScienceDisabled = (this.currentLevel === "P2" && sub.key === "science");
+      let topicsHtml = "";
+      if (!isScienceDisabled) {
+        try {
+          const topics = await this.db.getTopics(this.currentLevel, sub.key);
+          const top = topics.slice(0, 4).map(t => t.topic).join(" · ");
+          topicsHtml = `<div style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;">${top}</div>`;
+        } catch (_) { /* ignore */ }
+      }
 
       card.innerHTML = `
         <div class="subject-icon">${sub.icon}</div>
         <h4 class="subject-title">${sub.title}</h4>
-        <span class="subject-count">${isScienceDisabled ? 'Starts in Primary 3' : sub.count}</span>
+        <span class="subject-count">${isScienceDisabled ? "Starts in Primary 3" : sub.count}</span>
+        ${topicsHtml}
+        ${!isScienceDisabled ? `
+          <div style="display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap;">
+            <button class="btn-pill practice-mode-btn" data-mode="adaptive" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">🧠 Adaptive</button>
+            <button class="btn-pill practice-mode-btn" data-mode="random" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">🎲 Mixed</button>
+            <button class="btn-pill practice-mode-btn" data-mode="topics" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">📂 By Topic</button>
+          </div>
+        ` : ""}
       `;
 
       if (isScienceDisabled) {
@@ -315,30 +332,73 @@ class PortalApp {
         card.style.cursor = "not-allowed";
         card.title = "Science is only introduced in Primary 3 under Singapore's MOE curriculum.";
       } else {
-        card.addEventListener("click", () => {
+        card.querySelectorAll(".practice-mode-btn").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            this.selectedSubject = sub.key;
+            this.startPracticeMode(sub.key, btn.dataset.mode);
+          });
+        });
+        card.addEventListener("click", (e) => {
+          if (e.target.classList.contains("practice-mode-btn")) return;
           this.selectedSubject = sub.key;
-          this.loadQuiz(sub.key);
+          this.startPracticeMode(sub.key, "adaptive");
         });
       }
 
       this.subjectsArenaGrid.appendChild(card);
-    });
+    }
   }
 
-  async loadQuiz(subject) {
+  async startPracticeMode(subject, mode) {
     sound.playClick();
     this.selectedSubject = subject;
-    this.showSection("quiz");
-    const loadText = document.getElementById("quiz-question-text");
-    loadText.innerText = `Loading 10 random ${subject.toUpperCase()} questions from the Level ${this.currentLevel} database...`;
 
-    const set = await this.db.getPracticeSet(this.currentLevel, subject, 10);
-    if (set.length === 0) {
-      loadText.innerText = `Failed to load practice questions for ${this.currentLevel} ${subject}. Please verify your data compile status.`;
+    if (mode === "topics") {
+      const topics = await this.db.getTopics(this.currentLevel, subject);
+      const pick = prompt(`Type a topic exactly to drill:\n\n${topics.map(t => t.topic).join("\n")}`, topics[0]?.topic || "");
+      if (!pick) return;
+      this.showSection("quiz");
+      const set = await this.db.getPracticeSet(this.currentLevel, subject, 10, {
+        topic: pick,
+        excludeIds: this.coach?.state?.seenIds?.slice(-100) || []
+      });
+      if (!set.length) {
+        alert("No questions found for that topic.");
+        return;
+      }
+      this.quiz.startQuiz(set, subject, this.currentLevel);
       return;
     }
 
+    this.showSection("quiz");
+    const loadText = document.getElementById("quiz-question-text");
+    if (loadText) loadText.innerText = `Building a ${mode} set for ${subject} (${this.currentLevel})...`;
+
+    let set = [];
+    if (mode === "adaptive") {
+      set = await this.db.getAdaptiveSet(
+        this.currentLevel,
+        subject,
+        10,
+        this.coach?.state?.topicMastery || {},
+        this.coach?.state?.seenIds?.slice(-150) || []
+      );
+    } else {
+      set = await this.db.getPracticeSet(this.currentLevel, subject, 10, {
+        excludeIds: this.coach?.state?.seenIds?.slice(-100) || []
+      });
+    }
+
+    if (!set.length) {
+      if (loadText) loadText.innerText = `Failed to load practice questions for ${this.currentLevel} ${subject}.`;
+      return;
+    }
     this.quiz.startQuiz(set, subject, this.currentLevel);
+  }
+
+  async loadQuiz(subject) {
+    return this.startPracticeMode(subject, "adaptive");
   }
 
   addXP(amount) {
@@ -351,7 +411,6 @@ class PortalApp {
   }
 }
 
-// Global bootstrap instance
 window.addEventListener("DOMContentLoaded", () => {
   window.app = new PortalApp();
 });

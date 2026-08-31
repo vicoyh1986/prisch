@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOE Prep - Singapore Primary School PSLE AL1 Mastery Portal</title>
+  <title>MOE Prep - Best-Ever PSLE Anti-Cram Mastery Kit</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +14,8 @@
   <!-- Splash Screen -->
   <div id="splash-screen" class="splash">
     <div class="brand-icon">M</div>
-    <h1 style="font-size: 32px; background: linear-gradient(135deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MOE Prep AL4 Suite</h1>
-    <p style="color: #64748b; font-size: 14px;">Singapore Primary School PSLE AL1 Mastery Portal</p>
+    <h1 style="font-size: 32px; background: linear-gradient(135deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MOE Prep · Anti-Cram</h1>
+    <p style="color: #64748b; font-size: 14px;">Singapore PSLE mastery that replaces tuition marathons</p>
     <div style="width: 150px; height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; margin-top: 10px;">
       <div style="width: 30%; height: 100%; background: #00f2fe; animation: loading 1.5s infinite ease-in-out;"></div>
     </div>
@@ -27,7 +27,7 @@
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-icon">M</div>
-        <span class="brand-text">MOE Prep <span style="font-size: 10px; color: var(--primary); font-weight: 800; border: 1px solid var(--primary); padding: 1px 5px; border-radius: 4px; margin-left: 4px;">AL4</span></span>
+        <span class="brand-text">MOE Prep <span style="font-size: 10px; color: var(--success); font-weight: 800; border: 1px solid var(--success); padding: 1px 5px; border-radius: 4px; margin-left: 4px;">NO CRAM</span></span>
       </div>
 
       <!-- Student Profile Card -->
@@ -36,7 +36,7 @@
           <div class="avatar" id="profile-avatar">👨‍🎓</div>
           <div class="profile-info">
             <h4 id="student-name-display">Alex Tan</h4>
-            <span id="target-grade-display">Target: AL4 (AL1×4)</span>
+            <span id="target-grade-display">Target: AL1 · No-Cram Path</span>
           </div>
         </div>
         <div class="stats-grid">
@@ -45,7 +45,7 @@
             <div class="stat-label">Level</div>
           </div>
           <div class="stat-item">
-            <div class="stat-val" id="profile-xp">450 XP</div>
+            <div class="stat-val" id="profile-xp">0 XP</div>
             <div class="stat-label">Experience</div>
           </div>
         </div>
@@ -58,9 +58,13 @@
           <span class="nav-icon">📊</span>
           <span>Dashboard</span>
         </a>
+        <a class="nav-link" id="nav-coach">
+          <span class="nav-icon">🧠</span>
+          <span>Anti-Cram Coach</span>
+        </a>
         <a class="nav-link" id="nav-practice">
           <span class="nav-icon">🎯</span>
-          <span>Practice Arena (19k)</span>
+          <span>Practice Arena</span>
         </a>
 
         <div class="nav-category-header">LEGENDARY PSLE SUITES</div>
@@ -122,7 +126,7 @@
 
           <!-- Streak Indicator -->
           <div class="flex-row" style="background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.2); padding: 6px 14px; border-radius: 50px; font-weight: 600; color: #ffb800; font-size: 13px;">
-            <span>🔥 <span id="streak-days-display">3</span> Day Streak</span>
+            <span>🔥 <span id="streak-days-display">0</span> Day Streak</span>
           </div>
 
           <!-- Target grade indicator -->
@@ -141,7 +145,14 @@
             <!-- Welcome Banner -->
             <div class="panel" style="background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(79, 172, 254, 0.15)); border-color: rgba(0, 242, 254, 0.2);">
               <h2 style="font-size: 26px; margin-bottom: 8px;">Welcome back, <span id="student-name-welcome">Alex</span>! 👋</h2>
-              <p style="color: var(--text-secondary); max-width: 600px; font-size: 14px;">Singapore MOE Primary School Mastery Suite loaded with **19,000 rigorous syllabus questions**. Target <strong>AL4 in total</strong> across Mathematics, Science, English, and Mother Tongue!</p>
+              <p style="color: var(--text-secondary); max-width: 640px; font-size: 14px; line-height: 1.6;">
+                The best PSLE kit is not more worksheets — it is <strong>mastery without cramming</strong>.
+                Use the Anti-Cram Coach for a ~25 minute daily plan with spaced repetition, weak-spot drills, and interleaved practice across Math, Science, English, and Mother Tongue.
+              </p>
+              <div style="margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                <button class="btn btn-primary" id="dash-start-smart-btn">🚀 Start Today's Smart Session</button>
+                <span id="dashboard-coach-teaser" style="font-size: 12.5px; color: var(--text-secondary);"></span>
+              </div>
             </div>
 
             <!-- Stats Bar -->
@@ -149,21 +160,21 @@
               <div class="summary-card">
                 <div class="summary-icon" style="background: rgba(0, 242, 161, 0.1); color: var(--success);">✔</div>
                 <div class="summary-text">
-                  <h3 id="stats-questions-done">42</h3>
+                  <h3 id="stats-questions-done">0</h3>
                   <p>Questions Done</p>
                 </div>
               </div>
               <div class="summary-card">
                 <div class="summary-icon" style="background: rgba(0, 242, 254, 0.1); color: var(--primary);">🎯</div>
                 <div class="summary-text">
-                  <h3 id="stats-avg-accuracy">88%</h3>
+                  <h3 id="stats-avg-accuracy">0%</h3>
                   <p>Average Accuracy</p>
                 </div>
               </div>
               <div class="summary-card">
                 <div class="summary-icon" style="background: rgba(255, 75, 114, 0.1); color: var(--error);">✍</div>
                 <div class="summary-text">
-                  <h3 id="stats-essays-written">2</h3>
+                  <h3 id="stats-essays-written">0</h3>
                   <p>Essays Graded</p>
                 </div>
               </div>
@@ -199,27 +210,28 @@
             <!-- Daily Goals Progress -->
             <div class="panel">
               <div class="panel-header">
-                <h3>Daily Study Goal</h3>
-                <span id="daily-goal-fraction" style="font-size: 14px; font-weight: 600; color: var(--primary);">6 / 10 Practiced</span>
+                <h3>Daily Focus Goal (not a cram quota)</h3>
+                <span id="daily-goal-fraction" style="font-size: 14px; font-weight: 600; color: var(--primary);">0 / 10 Focus Blocks</span>
               </div>
               <div class="progress-bar-bg" style="height: 12px; border-radius: 6px;">
-                <div class="progress-bar-fill" id="daily-goal-fill" style="width: 60%; border-radius: 6px;"></div>
+                <div class="progress-bar-fill" id="daily-goal-fill" style="width: 0%; border-radius: 6px;"></div>
               </div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px; line-height: 1.5;">Stop near 25 focused minutes. Sleep and consistency beat extra tuition papers.</p>
             </div>
 
             <!-- Recommended Actions -->
             <div class="panel">
-              <h3 style="margin-bottom: 16px;">Recommended practice for Level <span id="recommended-level-text">P6</span></h3>
+              <h3 style="margin-bottom: 16px;">Quick adaptive practice · Level <span id="recommended-level-text">P6</span></h3>
               <div class="subjects-grid">
                 <div class="subject-card card-english" onclick="app.loadQuiz('english')">
                   <div class="subject-icon">📚</div>
                   <h4 class="subject-title">English</h4>
-                  <span class="subject-count">Grammar & Synthesis</span>
+                  <span class="subject-count">Adaptive weak-spot set</span>
                 </div>
                 <div class="subject-card card-mathematics" onclick="app.loadQuiz('mathematics')">
                   <div class="subject-icon">📐</div>
                   <h4 class="subject-title">Mathematics</h4>
-                  <span class="subject-count">Topical word problems</span>
+                  <span class="subject-count">Adaptive heuristics set</span>
                 </div>
               </div>
             </div>
@@ -238,25 +250,17 @@
             <div class="panel">
               <h3 style="margin-bottom: 16px;">Activity Log</h3>
               <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px;" id="activity-log-container">
-                <div style="display: flex; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border-color);">
-                  <span style="font-size: 16px;">📝</span>
-                  <div>
-                    <div style="font-weight: 600;">Scored 9/10 in P6 Mathematics</div>
-                    <div style="color: var(--text-muted); font-size: 11px;">1 hour ago</div>
-                  </div>
-                </div>
-                <div style="display: flex; gap: 10px;">
-                  <span style="font-size: 16px;">✍</span>
-                  <div>
-                    <div style="font-weight: 600;">Drafted essay 'A Difficult Decision'</div>
-                    <div style="color: var(--text-muted); font-size: 11px;">Yesterday</div>
-                  </div>
-                </div>
+                <!-- Filled by analytics -->
               </div>
             </div>
           </div>
 
         </div>
+      </section>
+
+      <!-- VIEW: ANTI-CRAM MASTERY COACH -->
+      <section id="section-coach" class="view-section">
+        <div id="coach-container"></div>
       </section>
 
       <!-- VIEW: PRACTICE ARENA -->

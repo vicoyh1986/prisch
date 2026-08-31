@@ -61,6 +61,10 @@ export class MistakeNotebook {
     if (item) {
       item.mastered = true;
       this.saveMistakes();
+      const masteredCount = this.mistakes.filter(m => m.mastered).length;
+      if (masteredCount >= 10 && this.app.analytics) {
+        this.app.analytics.unlockBadge("mistake-master");
+      }
     }
   }
 

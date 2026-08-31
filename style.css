@@ -983,3 +983,57 @@ body.light-theme .stat-item {
   }
 }
 
+
+/* ===== Anti-Cram Mastery Coach ===== */
+.coach-wrapper { animation: fadeIn 0.35s ease; }
+
+.coach-stat {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: center;
+}
+.coach-stat-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: 'Outfit', sans-serif;
+}
+.coach-stat-lbl {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.coach-block:hover {
+  border-color: rgba(0, 242, 254, 0.35);
+  transform: translateY(-1px);
+  transition: var(--transition-smooth);
+}
+
+.coach-hero .btn { box-shadow: var(--glow-primary); }
+
+.heuristic-pick.active {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  background: rgba(0, 242, 254, 0.08);
+}
+
+.subject-card .practice-mode-btn {
+  opacity: 0.85;
+}
+.subject-card .practice-mode-btn:hover {
+  opacity: 1;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 960px) {
+  .coach-wrapper > div[style*="grid-template-columns: 1.4fr 1fr"],
+  .heuristics-studio > div[style*="grid-template-columns: 280px 1fr"] {
+    display: block !important;
+  }
+}

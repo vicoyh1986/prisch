@@ -351,3 +351,5 @@ export class HeuristicsEngine {
     b3.addEventListener("click", () => showTier(3));
   }
 }
+
+export const heuristicsEngine = new HeuristicsEngine(null);

@@ -74,6 +74,11 @@ export class ScienceOEQStudio {
     this.currentIdx = 0;
   }
 
+  /** App router calls render(); keep renderStudio as the implementation */
+  render(container) {
+    this.renderStudio(container);
+  }
+
   renderStudio(container) {
     const q = SCIENCE_OEQ_QUESTIONS[this.currentIdx];
 
