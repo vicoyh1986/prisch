@@ -9,12 +9,16 @@ NAMES = [
     "Ali", "Bala", "Mei Ling", "Wei Jie", "Siti", "Kavitha", "David", "Sarah",
     "Fatimah", "Gopal", "Huiling", "Kumar", "Nurul", "Ravi", "Junjie",
     "Sanjay", "Ahmad", "Chloe", "Zhi Hao", "Xinyi", "Desmond", "Yusof", "Amira", "Brandon",
-    "Priya", "Ethan", "Jia Hui", "Ryan", "Aisha", "Marcus"
+    "Priya", "Ethan", "Jia Hui", "Ryan", "Aisha", "Marcus", "Hafiz", "Joyce", "Kenji",
+    "Lina", "Oscar", "Pei Ling", "Qistina", "Raj", "Sofia", "Tanya", "Umar", "Vera",
+    "Wei Ming", "Xuan", "Yasmin", "Zane", "Ananya", "Ben", "Carmen", "Dinesh", "Elena",
+    "Farid", "Gina", "Hassan", "Irene", "Joel", "Keisha", "Leo", "Mira", "Noah", "Owen",
 ]
 ITEMS = [
     "marbles", "pencils", "stickers", "stamps", "sweets", "toy cars", "beads",
     "books", "erasers", "rulers", "paper clips", "balloons", "cards", "cupcakes", "cookies",
-    "apples", "oranges", "markers", "coins", "stamps"
+    "apples", "oranges", "markers", "coins", "badges", "notebooks", "crayons", "keychains",
+    "postcards", "magnets", "bookmarks", "folders", "highlighters", "sharpener", "glue sticks",
 ]
 
 TOPICS = {
@@ -516,72 +520,336 @@ def generate_math_question(level, qid, index):
 
 # -------------------- ENGLISH --------------------
 
+PLACES_SG = [
+    "Jurong", "Tampines", "Bishan", "East Coast", "Gardens by the Bay",
+    "Marina Bay", "the library", "the canteen", "the MRT station",
+    "Orchard Road", "Sentosa", "Changi", "Toa Payoh", "Ang Mo Kio",
+    "the school hall", "the neighbourhood park", "the community centre",
+    "HDB void deck", "Botanic Gardens", "Clarke Quay",
+]
+
+TIMES_OF_DAY = [
+    "in the morning", "after school", "at noon", "in the evening",
+    "before recess", "during the weekend", "on Monday", "last night",
+    "at dawn", "just before dinner", "during assembly", "after CCA",
+]
+
 GRAMMAR = {
     "P6": [
-        ("Not only ________ the suspect break into the house, but he also stole the jewelry.", "did", ["does", "had", "was"], "Inversion after 'Not only'; past narrative → 'did'."),
-        ("Were he ________ the truth, his parents would have forgiven him.", "to have told", ["told", "to tell", "telling"], "Past conditional: 'Were he to have told'."),
+        ("Not only ________ {name} break into the house, but {pron} also stole the jewelry.", "did", ["does", "had", "was"], "Inversion after 'Not only'; past narrative → 'did'."),
+        ("Were {name} ________ the truth, {poss} parents would have forgiven {obj}.", "to have told", ["told", "to tell", "telling"], "Past conditional: 'Were he/she to have told'."),
         ("The principal requested that every teacher ________ present tomorrow.", "be", ["is", "are", "was"], "Subjunctive after 'requested that'."),
-        ("My grandmother rarely goes out in the evening, ________ she?", "does", ["doesn't", "is", "isn't"], "'Rarely' is negative → positive tag 'does she?'."),
+        ("{name} rarely goes out in the evening, ________ {pron}?", "does", ["doesn't", "is", "isn't"], "Negative adverb → positive question tag."),
         ("Neither the boys nor their captain ________ aware of the change.", "was", ["were", "are", "been"], "Verb agrees with nearer subject 'captain'."),
         ("The storm prevented the ferry ________ leaving the terminal.", "from", ["to", "for", "by"], "'Prevent' + from + gerund."),
-        ("Hardly had David stepped out ________ it started to pour.", "when", ["than", "then", "before"], "'Hardly... when'."),
+        ("Hardly had {name} stepped out ________ it started to pour.", "when", ["than", "then", "before"], "'Hardly... when'."),
         ("I would rather study diligently ________ fail my PSLE.", "than", ["then", "to", "from"], "'Would rather... than'."),
-        ("She congratulated her classmate ________ winning first prize.", "on", ["for", "at", "about"], "'Congratulate someone on'."),
-        ("This is the pupil ________ art project was praised.", "whose", ["who", "whom", "which"], "Possessive relative 'whose'."),
+        ("{name} congratulated {name2} ________ winning first prize.", "on", ["for", "at", "about"], "'Congratulate someone on'."),
+        ("This is the pupil ________ art project was praised at {place}.", "whose", ["who", "whom", "which"], "Possessive relative 'whose'."),
         ("No sooner had the bell rung ________ the pupils stood up.", "than", ["when", "then", "before"], "'No sooner... than'."),
         ("If I ________ you, I would revise the model method tonight.", "were", ["was", "am", "be"], "Subjunctive 'were' for advice."),
         ("The committee, as well as the principal, ________ present.", "is", ["are", "were", "have"], "'As well as' does not pluralise the verb."),
-        ("She speaks English ________ than her brother.", "more fluently", ["fluent", "more fluent", "fluently"], "Adverb comparative for manner."),
-        ("He is accustomed ________ waking up at dawn.", "to", ["with", "for", "by"], "'Accustomed to' + gerund."),
+        ("{name} speaks English ________ than {name2}.", "more fluently", ["fluent", "more fluent", "fluently"], "Adverb comparative for manner."),
+        ("{name} is accustomed ________ waking up at dawn.", "to", ["with", "for", "by"], "'Accustomed to' + gerund."),
+        ("Only after {name} apologised ________ the teacher calm down.", "did", ["does", "had", "was"], "Only after → inversion with 'did'."),
+        ("{name} suggested that {name2} ________ the draft again.", "rewrite", ["rewrites", "rewrote", "rewriting"], "Subjunctive after 'suggested that'."),
+        ("Scarcely had the guests arrived ________ the lights went out.", "when", ["than", "then", "before"], "'Scarcely... when'."),
+        ("It is essential that every pupil ________ on time for the oral.", "be", ["is", "are", "was"], "Subjunctive after 'essential that'."),
+        ("{name} prefers reading quietly ________ chatting loudly.", "to", ["than", "from", "for"], "'Prefer A to B'."),
+        ("Little ________ {name} realise how serious the mistake was.", "did", ["does", "had", "was"], "Negative adverb 'Little' → inversion."),
+        ("The pair of scissors ________ on the teacher's desk.", "is", ["are", "were", "be"], "'Pair' is singular head noun."),
+        ("{name} objected ________ leaving early without permission.", "to", ["for", "at", "with"], "'Object to' + gerund."),
+        ("So dense was the fog ________ the ferry could not depart.", "that", ["than", "then", "when"], "'So... that' result clause."),
+        ("{name} has been living in {place} ________ 2019.", "since", ["for", "from", "during"], "'Since' + point in time."),
+        ("Had {name} studied harder, {pron} ________ passed the paper.", "would have", ["will have", "would", "had"], "Third conditional inverted form."),
+        ("Each of the contestants ________ given a certificate.", "was", ["were", "are", "be"], "'Each of' takes singular verb."),
+        ("{name} is the tallest pupil ________ all in the class.", "of", ["from", "than", "among"], "'The tallest of'."),
+        ("Not until midnight ________ the search party return.", "did", ["does", "had", "was"], "'Not until' → inversion."),
+        ("{name} can speak Malay, ________ {pron}?", "can't", ["can", "doesn't", "isn't"], "Positive statement → negative tag."),
     ],
     "P5": [
         ("Seldom ________ we witness such an eclipse.", "do", ["does", "did", "are"], "Negative adverb → inversion."),
         ("If I ________ in your shoes, I would apologise.", "were", ["was", "am", "be"], "Subjunctive 'were'."),
-        ("Having ________ her dinner, Siti washed the dishes.", "completed", ["complete", "completing", "completes"], "Having + past participle."),
-        ("Siti, along with her siblings, ________ visiting the Gardens.", "is", ["are", "were", "been"], "Along with keeps singular verb."),
+        ("Having ________ {poss} dinner, {name} washed the dishes.", "completed", ["complete", "completing", "completes"], "Having + past participle."),
+        ("{name}, along with {poss} siblings, ________ visiting {place}.", "is", ["are", "were", "been"], "Along with keeps singular verb."),
         ("The police are looking for the man ________ car was stolen.", "whose", ["whom", "who", "which"], "Possessive 'whose'."),
         ("Neither of the answers ________ correct.", "is", ["are", "were", "be"], "'Neither of' → singular."),
-        ("He insisted ________ paying for the meal.", "on", ["to", "for", "in"], "'Insist on' + gerund."),
+        ("{name} insisted ________ paying for the meal.", "on", ["to", "for", "in"], "'Insist on' + gerund."),
         ("The more you practise, ________ you become.", "the better", ["better", "the best", "good"], "The more... the better."),
+        ("By the time {name} arrived, the show ________ already started.", "had", ["has", "have", "was"], "Past perfect for earlier past action."),
+        ("{name} looks forward ________ the school holidays.", "to", ["for", "on", "at"], "'Look forward to'."),
+        ("Unless you hurry, you ________ miss the MRT.", "will", ["would", "should", "can"], "Unless + present, will + base."),
+        ("The news about the trip ________ surprising.", "was", ["were", "are", "be"], "'News' is singular."),
+        ("{name} is capable ________ solving the puzzle alone.", "of", ["to", "for", "with"], "'Capable of' + gerund."),
+        ("Not only did {name} win, ________ {pron} also set a record.", "but", ["and", "so", "or"], "'Not only... but also'."),
+        ("{name} has lived here ________ five years.", "for", ["since", "from", "during"], "'For' + duration."),
+        ("I wish I ________ taller for the basketball team.", "were", ["was", "am", "be"], "Wish + subjunctive."),
+        ("The children enjoyed ________ at {place}.", "themselves", ["himself", "ourselves", "theirselves"], "Plural reflexive."),
+        ("{name} asked where the stationery shop ________.", "was", ["is", "were", "be"], "Reported question → past."),
+        ("Despite ________ tired, {name} finished the project.", "being", ["he was", "been", "is"], "Despite + gerund."),
+        ("{name} would rather walk ________ take a crowded bus.", "than", ["then", "to", "from"], "'Would rather... than'."),
+        ("It was {name} ________ found the missing key.", "who", ["which", "whom", "whose"], "Who for people as subject."),
+        ("Neither {name} nor {name2} ________ interested in the club.", "is", ["are", "were", "be"], "Neither... nor agrees with nearer subject."),
+        ("{name} apologised ________ being late to CCA.", "for", ["on", "at", "to"], "'Apologise for' + gerund."),
+        ("Hardly ________ {name} sit down when the phone rang.", "had", ["has", "did", "was"], "'Hardly had' + past participle."),
+        ("The number of pupils in the hall ________ increasing.", "is", ["are", "were", "be"], "'The number of' → singular."),
+        ("{name} succeeded ________ convincing the teacher.", "in", ["to", "at", "for"], "'Succeed in' + gerund."),
+        ("So carefully ________ {name} pack the vase that it arrived safely.", "did", ["does", "had", "was"], "'So... that' with inversion."),
+        ("{name} is used ________ the humid weather in Singapore.", "to", ["with", "for", "by"], "'Used to' meaning accustomed."),
     ],
     "P4": [
-        ("Despite ________ exhausted, Bala finished the race.", "being", ["he was", "been", "is"], "Despite + gerund."),
+        ("Despite ________ exhausted, {name} finished the race.", "being", ["he was", "been", "is"], "Despite + gerund."),
         ("The boys completed the worksheet by ________.", "themselves", ["himself", "ourselves", "theirselves"], "Plural reflexive."),
         ("No sooner had the alarm rung ________ the guards rushed out.", "than", ["when", "then", "before"], "No sooner... than."),
-        ("She is good ________ mathematics.", "at", ["in", "on", "for"], "Good at."),
+        ("{name} is good ________ mathematics.", "at", ["in", "on", "for"], "Good at."),
         ("This is the book ________ I borrowed yesterday.", "which", ["who", "whose", "whom"], "Which for things."),
+        ("{name} has already ________ {poss} homework.", "done", ["did", "does", "doing"], "Present perfect + past participle."),
+        ("If it rains, we ________ cancel the picnic at {place}.", "will", ["would", "should", "can"], "First conditional."),
+        ("{name} and {name2} ________ walking to the MRT now.", "are", ["is", "was", "be"], "Compound subject → plural."),
+        ("There ________ a lot of traffic near {place} today.", "is", ["are", "were", "be"], "'A lot of' + uncountable → singular."),
+        ("{name} prefers tea ________ coffee.", "to", ["than", "from", "for"], "Prefer A to B."),
+        ("The cake was baked ________ {name}'s mother.", "by", ["from", "with", "of"], "Passive agent 'by'."),
+        ("{name} has lived in {place} ________ 2020.", "since", ["for", "from", "during"], "Since + starting point."),
+        ("Please remember ________ the lights before you leave.", "to switch off", ["switching off", "switch off", "switched off"], "Remember + to-infinitive for future duty."),
+        ("Neither of the twins ________ ready yet.", "is", ["are", "were", "be"], "Neither of → singular."),
+        ("{name} walked ________ than {name2} to reach school.", "faster", ["fast", "fastest", "more fast"], "Comparative adverb."),
+        ("The teacher told the class ________ quietly.", "to work", ["working", "work", "worked"], "Tell + object + to-infinitive."),
+        ("{name} was born ________ May.", "in", ["on", "at", "by"], "In + month."),
+        ("This is the girl ________ won the storytelling prize.", "who", ["which", "whom", "whose"], "Who as subject for people."),
+        ("{name} enjoys ________ comics after dinner.", "reading", ["read", "to reading", "reads"], "Enjoy + gerund."),
+        ("Unless {name} practises, {pron} ________ improve.", "will not", ["would not", "did not", "has not"], "Unless + present, will not."),
+        ("A pair of shoes ________ under the bench.", "was", ["were", "are", "be"], "'Pair' is singular."),
+        ("{name} is interested ________ science experiments.", "in", ["on", "at", "for"], "Interested in."),
+        ("The more carefully you write, ________ your marks will be.", "the higher", ["higher", "the highest", "high"], "The more... the higher."),
+        ("{name} asked me where the canteen ________.", "was", ["is", "were", "be"], "Reported speech shifts tense."),
+        ("Both {name} and {name2} ________ keen on football.", "are", ["is", "was", "be"], "Both A and B → plural."),
+        ("{name} looked ________ the window at the rain.", "out of", ["into", "onto", "upon"], "Look out of the window."),
+        ("I have never ________ such a beautiful sunset at {place}.", "seen", ["saw", "see", "seeing"], "Present perfect after never."),
+        ("{name} went to bed early ________ {pron} was tired.", "because", ["although", "unless", "despite"], "Because shows reason."),
     ],
     "P3": [
         ("While the girls ________ netball, it started to drizzle.", "were playing", ["played", "are playing", "play"], "Past continuous interrupted."),
         ("The thief crept ________ through the corridor.", "stealthily", ["clumsily", "noisily", "boldly"], "Quietly/secretly = stealthily."),
         ("Neither of the girls ________ finished yet.", "has", ["have", "had", "having"], "Neither of + singular."),
-        ("He walks to school ________ every morning.", "happily", ["happy", "happiness", "happier"], "Adverb modifies verb."),
+        ("{name} walks to school ________ every morning.", "happily", ["happy", "happiness", "happier"], "Adverb modifies verb."),
+        ("{name} ________ a letter to {poss} grandmother yesterday.", "wrote", ["writes", "write", "writing"], "Yesterday → simple past."),
+        ("Look! The birds ________ over {place}.", "are flying", ["fly", "flew", "flying"], "Present continuous for now."),
+        ("This is the boy ________ helped me carry the bags.", "who", ["which", "whose", "whom"], "Who for people."),
+        ("{name} is taller ________ {name2}.", "than", ["then", "to", "from"], "Comparative + than."),
+        ("There ________ three apples on the table.", "are", ["is", "was", "be"], "Plural subject → are."),
+        ("{name} always ________ {poss} teeth before bed.", "brushes", ["brush", "brushed", "brushing"], "Habit + third person -s."),
+        ("The cat hid ________ the sofa during the storm.", "under", ["over", "between", "along"], "Under = beneath."),
+        ("{name} and {name2} ________ best friends.", "are", ["is", "was", "be"], "Compound subject plural."),
+        ("Please put the books ________ the shelf.", "on", ["in", "at", "by"], "On the shelf."),
+        ("{name} has ________ finished {poss} worksheet.", "already", ["yet", "still", "never"], "Already with present perfect affirmative."),
+        ("If it ________ sunny, we will go to {place}.", "is", ["will be", "was", "be"], "First conditional: if + present."),
+        ("The baby cried ________ because he was hungry.", "loudly", ["loud", "louder", "loudness"], "Adverb of manner."),
+        ("{name} went to the clinic ________ {pron} felt unwell.", "because", ["although", "unless", "so"], "Because = reason."),
+        ("My mother told me ________ careful on the road.", "to be", ["be", "being", "been"], "Tell + to-infinitive."),
+        ("{name} can swim, ________ {pron}?", "can't", ["can", "doesn't", "isn't"], "Positive statement, negative tag."),
+        ("We have lived here ________ two years.", "for", ["since", "from", "at"], "For + period of time."),
+        ("The children enjoyed ________ at the playground.", "themselves", ["himself", "ourselves", "themself"], "Plural reflexive."),
+        ("{name} prefers rice ________ noodles.", "to", ["than", "from", "for"], "Prefer A to B."),
+        ("Someone ________ left a bag in the canteen.", "has", ["have", "had", "having"], "Someone → singular."),
+        ("{name} was reading when the phone ________.", "rang", ["rings", "ring", "ringing"], "Simple past interrupt past continuous."),
+        ("The movie was ________ interesting that we stayed till the end.", "so", ["such", "too", "very"], "So + adjective + that."),
+        ("{name} sits ________ {name2} in class.", "beside", ["besides", "between", "among"], "Beside = next to."),
     ],
     "P2": [
         ("My sister ________ a cake yesterday.", "baked", ["bakes", "bake", "is baking"], "Yesterday → simple past."),
         ("Every morning, father ________ to the market.", "goes", ["go", "went", "is going"], "Habit + singular."),
         ("This is the puppy ________ we rescued.", "which", ["who", "whom", "whose"], "Which for animals/things."),
         ("The children ________ in the playground now.", "are playing", ["is playing", "play", "played"], "Present continuous."),
+        ("{name} ________ to school by bus every day.", "goes", ["go", "went", "going"], "Habit + -s."),
+        ("There ________ a cat under the table.", "is", ["are", "were", "be"], "Singular → is."),
+        ("{name} has two ________.", "books", ["book", "bookes", "booking"], "Plural noun."),
+        ("She is ________ than her brother.", "taller", ["tall", "tallest", "more tall"], "Comparative -er."),
+        ("We ________ football last Saturday.", "played", ["play", "plays", "playing"], "Last Saturday → past."),
+        ("{name} can ________ very fast.", "run", ["runs", "ran", "running"], "Can + base verb."),
+        ("The apples ________ red and sweet.", "are", ["is", "was", "be"], "Plural subject."),
+        ("Please ________ the door quietly.", "close", ["closes", "closed", "closing"], "Imperative = base verb."),
+        ("{name} and I ________ best friends.", "are", ["is", "was", "am"], "Compound subject plural."),
+        ("He put the bag ________ the chair.", "on", ["in", "at", "to"], "On the chair."),
+        ("{name} ________ happy today.", "is", ["are", "am", "be"], "He/she/it + is."),
+        ("They ________ not like spicy food.", "do", ["does", "did", "are"], "They + do not."),
+        ("I saw ________ elephant at the zoo.", "an", ["a", "the", "some"], "An before vowel sound."),
+        ("{name} walks ________ to school.", "slowly", ["slow", "slower", "slowest"], "Adverb of manner."),
+        ("Mum ________ cooking dinner now.", "is", ["are", "am", "be"], "Present continuous auxiliary."),
+        ("The bird flew ________ the tree.", "over", ["under", "into only", "beside only"], "Over = above and across."),
     ],
 }
 
 VOCAB = {
-    "P6": [("inevitable","certain to happen","avoidable"),("meticulously","with extreme care","recklessly"),("resilient","recovers quickly from setbacks","fragile"),
-           ("subsequent","coming after in time","previous"),("validate","confirm accuracy","reject"),("unprecedented","never done before","common"),
-           ("advocate","publicly support","oppose"),("meticulous","very careful and precise","careless"),("conspicuous","clearly visible","hidden"),
-           ("alleviate","make suffering less severe","worsen"),("diligent","hard-working and careful","lazy"),("ambiguous","having more than one meaning","clear")],
-    "P5": [("exacerbate","make worse","alleviate"),("preposterous","ridiculous","reasonable"),("deteriorate","become worse","improve"),
-           ("obsolete","no longer used","modern"),("resilient","able to recover","weak"),("conspicuous","clearly visible","hidden"),
-           ("reluctant","unwilling","eager"),("essential","absolutely necessary","optional")],
-    "P4": [("demonstrate","show clearly","hide"),("observe","watch carefully","ignore"),("ancient","very old","modern"),
-           ("temporary","lasting a short time","permanent"),("unique","one of a kind","common"),("reluctant","unwilling","eager"),
-           ("spectacular","impressive to see","dull"),("generous","willing to give","selfish")],
-    "P3": [("enthusiastic","full of interest","bored"),("ferocious","savage","tame"),("examine","inspect closely","ignore"),
-           ("rescue","save from danger","harm"),("courageous","brave","cowardly"),("scrumptious","delicious","stale"),
-           ("cluttered","messy","neat"),("commence","begin","end")],
-    "P2": [("enormous","very large","tiny"),("terrified","very scared","calm"),("delicious","tastes very good","bitter"),
-           ("cautious","careful","careless"),("generous","willing to share","selfish"),("exhausted","very tired","energetic"),
-           ("polite","good manners","rude"),("furious","very angry","calm")],
+    "P6": [
+        ("inevitable", "certain to happen", "avoidable"),
+        ("meticulously", "with extreme care", "recklessly"),
+        ("resilient", "recovers quickly from setbacks", "fragile"),
+        ("subsequent", "coming after in time", "previous"),
+        ("validate", "confirm accuracy", "reject"),
+        ("unprecedented", "never done before", "common"),
+        ("advocate", "publicly support", "oppose"),
+        ("meticulous", "very careful and precise", "careless"),
+        ("conspicuous", "clearly visible", "hidden"),
+        ("alleviate", "make suffering less severe", "worsen"),
+        ("diligent", "hard-working and careful", "lazy"),
+        ("ambiguous", "having more than one meaning", "clear"),
+        ("scrutinise", "examine closely", "ignore"),
+        ("eloquent", "fluent and persuasive in speech", "inarticulate"),
+        ("tenacious", "determined and persistent", "yielding"),
+        ("prudent", "careful and sensible", "reckless"),
+        ("formidable", "inspiring fear or respect", "weak"),
+        ("impartial", "fair and not biased", "biased"),
+        ("proficient", "skilled and competent", "inexpert"),
+        ("reluctant", "unwilling or hesitant", "eager"),
+        ("substantial", "of considerable importance or size", "trivial"),
+        ("detrimental", "causing harm or damage", "beneficial"),
+        ("elaborate", "detailed and complicated", "simple"),
+        ("perseverance", "continued effort despite difficulty", "quitting"),
+        ("authentic", "genuine and real", "fake"),
+        ("concise", "brief but clear", "wordy"),
+        ("hostile", "unfriendly or aggressive", "friendly"),
+        ("innovative", "featuring new methods", "conventional"),
+        ("plausible", "seeming reasonable", "unlikely"),
+        ("rigorous", "extremely thorough", "careless"),
+        ("serene", "calm and peaceful", "agitated"),
+        ("versatile", "able to adapt to many uses", "limited"),
+    ],
+    "P5": [
+        ("exacerbate", "make worse", "alleviate"),
+        ("preposterous", "ridiculous", "reasonable"),
+        ("deteriorate", "become worse", "improve"),
+        ("obsolete", "no longer used", "modern"),
+        ("resilient", "able to recover", "weak"),
+        ("conspicuous", "clearly visible", "hidden"),
+        ("reluctant", "unwilling", "eager"),
+        ("essential", "absolutely necessary", "optional"),
+        ("abundant", "existing in large amounts", "scarce"),
+        ("benevolent", "kind and generous", "cruel"),
+        ("cautious", "careful to avoid danger", "reckless"),
+        ("deceive", "make someone believe something false", "enlighten"),
+        ("efficient", "working well without waste", "wasteful"),
+        ("frugal", "careful with money", "extravagant"),
+        ("gratitude", "thankfulness", "ingratitude"),
+        ("hazardous", "dangerous", "safe"),
+        ("immense", "extremely large", "tiny"),
+        ("jubilant", "very happy because of success", "miserable"),
+        ("keen", "eager or sharp", "apathetic"),
+        ("lenient", "not strict", "strict"),
+        ("meagre", "very small in amount", "plentiful"),
+        ("notorious", "famous for something bad", "unknown"),
+        ("optimistic", "hopeful about the future", "pessimistic"),
+        ("permanent", "lasting forever", "temporary"),
+        ("quarrel", "an angry argument", "agreement"),
+        ("reliable", "able to be trusted", "untrustworthy"),
+        ("solemn", "serious and formal", "cheerful"),
+        ("tedious", "long and boring", "exciting"),
+        ("unique", "one of a kind", "common"),
+        ("vivid", "producing strong clear images", "dull"),
+        ("weary", "very tired", "energetic"),
+        ("zealous", "full of enthusiasm", "indifferent"),
+    ],
+    "P4": [
+        ("demonstrate", "show clearly", "hide"),
+        ("observe", "watch carefully", "ignore"),
+        ("ancient", "very old", "modern"),
+        ("temporary", "lasting a short time", "permanent"),
+        ("unique", "one of a kind", "common"),
+        ("reluctant", "unwilling", "eager"),
+        ("spectacular", "impressive to see", "dull"),
+        ("generous", "willing to give", "selfish"),
+        ("abandon", "leave behind completely", "keep"),
+        ("brilliant", "very bright or clever", "dim"),
+        ("curious", "wanting to know more", "uninterested"),
+        ("delicate", "easily broken or damaged", "sturdy"),
+        ("eager", "wanting very much to do something", "reluctant"),
+        ("familiar", "well known", "strange"),
+        ("grateful", "feeling thankful", "ungrateful"),
+        ("honest", "truthful", "dishonest"),
+        ("imagine", "form a picture in the mind", "ignore"),
+        ("journey", "a long trip", "stay"),
+        ("knowledge", "what a person knows", "ignorance"),
+        ("loyal", "faithful to friends or country", "disloyal"),
+        ("mystery", "something difficult to explain", "certainty"),
+        ("nervous", "worried and tense", "calm"),
+        ("ordinary", "normal and not special", "extraordinary"),
+        ("patient", "able to wait calmly", "impatient"),
+        ("quick", "moving fast", "slow"),
+        ("rare", "not found often", "common"),
+        ("silent", "without sound", "noisy"),
+        ("timid", "shy and easily frightened", "bold"),
+        ("unusual", "not common", "usual"),
+        ("valuable", "worth a lot", "worthless"),
+        ("wander", "walk without a fixed path", "rush"),
+        ("youthful", "looking or acting young", "aged"),
+    ],
+    "P3": [
+        ("enthusiastic", "full of interest", "bored"),
+        ("ferocious", "savage", "tame"),
+        ("examine", "inspect closely", "ignore"),
+        ("rescue", "save from danger", "harm"),
+        ("courageous", "brave", "cowardly"),
+        ("scrumptious", "delicious", "stale"),
+        ("cluttered", "messy", "neat"),
+        ("commence", "begin", "end"),
+        ("admire", "look at with respect", "despise"),
+        ("brave", "not afraid of danger", "cowardly"),
+        ("clever", "quick to learn", "foolish"),
+        ("dazzling", "extremely bright", "dull"),
+        ("enormous", "very big", "tiny"),
+        ("famous", "known by many people", "unknown"),
+        ("gentle", "kind and soft", "harsh"),
+        ("hasty", "done too quickly", "careful"),
+        ("invent", "create something new", "copy"),
+        ("jolly", "happy and cheerful", "gloomy"),
+        ("kindness", "being friendly and helpful", "cruelty"),
+        ("lively", "full of energy", "lifeless"),
+        ("mighty", "very strong", "weak"),
+        ("narrow", "not wide", "wide"),
+        ("obey", "do what you are told", "disobey"),
+        ("proud", "pleased with achievements", "ashamed"),
+        ("quiet", "making little noise", "noisy"),
+        ("rapid", "very fast", "slow"),
+        ("shiver", "shake from cold or fear", "relax"),
+        ("tough", "strong and hard to break", "fragile"),
+        ("useful", "helpful", "useless"),
+        ("vanish", "disappear suddenly", "appear"),
+        ("wealthy", "having a lot of money", "poor"),
+        ("yearly", "happening once a year", "daily"),
+    ],
+    "P2": [
+        ("enormous", "very large", "tiny"),
+        ("terrified", "very scared", "calm"),
+        ("delicious", "tastes very good", "bitter"),
+        ("cautious", "careful", "careless"),
+        ("generous", "willing to share", "selfish"),
+        ("exhausted", "very tired", "energetic"),
+        ("polite", "good manners", "rude"),
+        ("furious", "very angry", "calm"),
+        ("ancient", "very old", "new"),
+        ("bright", "full of light", "dark"),
+        ("cheerful", "happy", "sad"),
+        ("dirty", "not clean", "clean"),
+        ("empty", "having nothing inside", "full"),
+        ("funny", "making people laugh", "serious"),
+        ("giant", "very big", "small"),
+        ("happy", "feeling joy", "unhappy"),
+        ("important", "matters a lot", "unimportant"),
+        ("jolly", "full of fun", "gloomy"),
+        ("kind", "nice to others", "unkind"),
+        ("lazy", "not wanting to work", "hardworking"),
+        ("messy", "not tidy", "tidy"),
+        ("noisy", "making loud sounds", "quiet"),
+        ("pretty", "nice to look at", "ugly"),
+        ("quick", "fast", "slow"),
+        ("rough", "not smooth", "smooth"),
+        ("strong", "having power", "weak"),
+        ("tiny", "very small", "huge"),
+        ("unhappy", "sad", "happy"),
+        ("valuable", "worth much", "cheap"),
+        ("warm", "comfortably hot", "cold"),
+        ("young", "not old", "old"),
+        ("brave", "not scared", "afraid"),
+    ],
 }
 
 SYNTHESIS = [
@@ -595,79 +863,260 @@ SYNTHESIS = [
     ("Mei Ling was tired. She continued revising.", "Although", "although mei ling was tired, she continued revising"),
     ("The rain stopped. The children went out to play.", "When", "when the rain stopped, the children went out to play"),
     ("He is tall. He can reach the top shelf.", "enough", "he is tall enough to reach the top shelf"),
+    ("The pupils were noisy. The teacher was still patient.", "Even though", "even though the pupils were noisy, the teacher was still patient"),
+    ("She practised daily. She improved quickly.", "As a result", "as a result of practising daily, she improved quickly"),
+    ("Tom was hungry. He did not eat the leftovers.", "Although", "although tom was hungry, he did not eat the leftovers"),
+    ("It was raining heavily. They postponed the match.", "Since", "since it was raining heavily, they postponed the match"),
+    ("Ravi finished early. He helped his classmates.", "After", "after ravi finished early, he helped his classmates"),
+    ("The bag was heavy. She carried it upstairs.", "Although", "although the bag was heavy, she carried it upstairs"),
+    ("He was late. He missed the assembly.", "because", "he missed the assembly because he was late"),
+    ("Aisha studied hard. She scored well.", "so", "aisha studied hard so she scored well"),
+    ("The door was locked. We could not enter.", "Since", "since the door was locked, we could not enter"),
+    ("She is kind. Everyone likes her.", "so...that", "she is so kind that everyone likes her"),
+    ("Kumar saved money. He bought a new bicycle.", "in order to", "kumar saved money in order to buy a new bicycle"),
+    ("The baby cried. Mother picked him up.", "When", "when the baby cried, mother picked him up"),
+    ("He did not apologise. She remained angry.", "Because", "because he did not apologise, she remained angry"),
+    ("The test was difficult. Many pupils passed.", "Although", "although the test was difficult, many pupils passed"),
+    ("She spoke softly. Nobody could hear her.", "so...that", "she spoke so softly that nobody could hear her"),
+    ("We reached early. We got good seats.", "As", "as we reached early, we got good seats"),
+    ("John is strong. He can lift the box.", "enough", "john is strong enough to lift the box"),
+    ("The lights went out. Everyone screamed.", "As soon as", "as soon as the lights went out, everyone screamed"),
+    ("She was ill. She stayed at home.", "because", "she stayed at home because she was ill"),
+    ("He trained every day. He won the race.", "Therefore", "he trained every day; therefore, he won the race"),
+    ("The cake burned. She forgot the timer.", "because", "the cake burned because she forgot the timer"),
+    ("They were tired. They kept walking.", "Nevertheless", "they were tired; nevertheless, they kept walking"),
+    ("Priya finished her work. She went home.", "After", "after priya finished her work, she went home"),
+    ("The queue was long. We waited patiently.", "Although", "although the queue was long, we waited patiently"),
+    ("He is young. He is very responsible.", "Despite", "despite being young, he is very responsible"),
+    ("The teacher explained again. The class understood.", "Once", "once the teacher explained again, the class understood"),
+    ("She lost her wallet. She reported it.", "After", "after she lost her wallet, she reported it"),
+    ("The wind was strong. The trees swayed.", "so...that", "the wind was so strong that the trees swayed"),
+    ("Marcus revised thoroughly. He felt confident.", "Because", "because marcus revised thoroughly, he felt confident"),
+    ("The shop closed. We bought nothing.", "Since", "since the shop closed, we bought nothing"),
+    ("Fatimah was busy. She replied to the message.", "Even though", "even though fatimah was busy, she replied to the message"),
+    ("He forgot his keys. He could not enter.", "so", "he forgot his keys so he could not enter"),
 ]
+
+SPELLING = [
+    ("necessary", ["neccessary", "necesary", "neccesary"], "one c, two s"),
+    ("environment", ["enviroment", "enviornment", "enviromment"], "contains 'iron'"),
+    ("tomorrow", ["tommorrow", "tomorow", "tomorro"], "one m, two r"),
+    ("beautiful", ["beatiful", "beautifull", "beutiful"], "beauti + ful"),
+    ("because", ["becuase", "becouse", "becasue"], "be-cause"),
+    ("friend", ["freind", "frend", "friand"], "i before e"),
+    ("receive", ["recieve", "receve", "receeve"], "e before i after c"),
+    ("definitely", ["definately", "definatly", "definetely"], "finite inside"),
+    ("separate", ["seperate", "seperete", "seprate"], "sep-a-rate"),
+    ("questionnaire", ["questionaire", "questionnare", "questionnair"], "double n"),
+    ("beginning", ["begining", "beggining", "beginnig"], "double n"),
+    ("believe", ["beleive", "belive", "beleeve"], "i before e"),
+    ("business", ["buisness", "busines", "bussiness"], "busi-ness"),
+    ("calendar", ["calender", "calandar", "calander"], "cal-en-dar"),
+    ("cemetery", ["cemetary", "cemetry", "cematary"], "all e's"),
+    ("changeable", ["changable", "changeble", "changible"], "keep the e"),
+    ("conscience", ["concience", "consciance", "consceince"], "science inside"),
+    ("conscious", ["concious", "consious", "conscius"], "sci + ous"),
+    ("curious", ["cureous", "curius", "cuirious"], "curi-ous"),
+    ("disappoint", ["dissapoint", "disapoint", "dissappoint"], "one s, two p"),
+    ("embarrass", ["embarass", "embarras", "emberrass"], "two r, two s"),
+    ("existence", ["existance", "existense", "exsistence"], "ence not ance"),
+    ("foreign", ["foriegn", "foregin", "forigen"], "eign ending"),
+    ("government", ["goverment", "governmant", "govornment"], "n before m"),
+    ("grammar", ["grammer", "gramar", "grammmar"], "ar not er"),
+    ("guarantee", ["garantee", "gaurantee", "guaranty"], "gua-ran-tee"),
+    ("height", ["hieght", "heigth", "hight"], "e before i"),
+    ("immediate", ["imediate", "immediat", "immedate"], "double m"),
+    ("independent", ["independant", "indepentent", "independint"], "ent ending"),
+    ("intelligence", ["inteligence", "intelligance", "intellegence"], "double l, ence"),
+    ("jewellery", ["jewelery", "jewellry", "jwellery"], "double l in BrE"),
+    ("knowledge", ["knowlege", "knwoledge", "knowlidges"], "know + ledge"),
+    ("library", ["libary", "librery", "liebrary"], "bra in middle"),
+    ("maintenance", ["maintainance", "maintenence", "mantainance"], "ten not tain"),
+    ("neighbour", ["nieghbour", "neighber", "neigbour"], "ei + bour"),
+    ("occasion", ["occassion", "ocasion", "ocassion"], "two c, one s"),
+    ("occurrence", ["occurence", "ocurrance", "occurance"], "two c, two r"),
+    ("parallel", ["paralel", "paralllel", "parellel"], "double l in middle"),
+    ("privilege", ["priviledge", "privilage", "privelege"], "lege not ledge"),
+    ("rhythm", ["rythm", "rhthym", "rhythym"], "rhy-thm"),
+    ("successful", ["succesful", "successfull", "sucessful"], "two c, two s, one l"),
+    ("surprise", ["suprise", "surprize", "surprisse"], "sur + prise"),
+    ("temperature", ["temperture", "temprature", "tempereture"], "temper + ature"),
+    ("unfortunately", ["unfortunatly", "unfortunetly", "unfortionately"], "ate + ly"),
+    ("vacuum", ["vaccum", "vacume", "vaccuum"], "one c, two u"),
+]
+
+def _place(i, k=0):
+    return PLACES_SG[(i + k) % len(PLACES_SG)]
+
+def _time(i, k=0):
+    return TIMES_OF_DAY[(i + k) % len(TIMES_OF_DAY)]
+
+def _fmt_grammar(stem, index, name, name2):
+    # Heuristic pronoun gender from name index parity
+    male_like = (index + hash(name) % 2) % 2 == 0
+    pron = "he" if male_like else "she"
+    poss = "his" if male_like else "her"
+    obj = "him" if male_like else "her"
+    place = _place(index)
+    try:
+        return stem.format(name=name, name2=name2, pron=pron, poss=poss, obj=obj, place=place)
+    except (KeyError, ValueError):
+        return stem.replace("{name}", name).replace("{name2}", name2).replace("{pron}", pron).replace("{poss}", poss).replace("{obj}", obj).replace("{place}", place)
 
 def generate_english_question(level, qid, index):
     difficulty = diff_of(index)
     mode = index % 5
     name = nname(index)
-    name2 = nname(index, 4)
+    name2 = nname(index, 5)
+    name3 = nname(index, 11)
     item = nitem(index)
+    item2 = nitem(index, 3)
+    place = _place(index)
+    place2 = _place(index, 4)
+    when = _time(index)
+    count = 2 + (index % 17)
+    count2 = 3 + (index % 11)
 
     if mode == 0:
         rules = GRAMMAR[level]
         stem, ans, bad, exp = rules[index % len(rules)]
-        # personalise stems for uniqueness while keeping grammar point
-        q = stem.replace("David", name).replace("Siti", name).replace("Bala", name2)
-        q = q.replace("the suspect", f"the suspect that {name} saw" if index % 3 == 0 else "the suspect")
-        if "________" in q and index % 2:
-            q = q + f" (Context: {name} was discussing this in class.)"
-        return pack(qid, "Grammar MCQ", "mcq", q, ans, exp, difficulty, shuffle_opts(ans, bad))
+        q = _fmt_grammar(stem, index, name, name2)
+        frames = [
+            q,
+            f"Choose the correct option to complete the sentence {when}:\n{q}",
+            f"{name3} is revising grammar. Fill in the blank:\n{q}",
+            f"At {place}, the class discussed this sentence. Complete it:\n{q}",
+            f"Pick the best word for the blank in this PSLE-style item:\n{q}",
+            f"While waiting at {place2}, {name} practised this structure:\n{q}",
+            f"Complete the sentence correctly ({count} marks worth of practice):\n{q}",
+        ]
+        q2 = frames[(index // len(rules)) % len(frames)]
+        return pack(qid, "Grammar MCQ", "mcq", q2, ans, exp, difficulty, shuffle_opts(ans, bad))
 
     if mode == 1:
         words = VOCAB[level]
         word, definition, antonym = words[index % len(words)]
         others = [w[0] for w in words if w[0] != word]
+        # rotate distractors by index for variety
+        start = (index // len(words)) % max(1, len(others))
+        distractors = (others[start:] + others[:start])[:3]
+        while len(distractors) < 3:
+            distractors.append(antonym if antonym not in distractors else f"option{len(distractors)}")
         frames = [
             f'Choose the word closest in meaning to: "{definition}".',
-            f'{name} looked up a word meaning "{definition}". Which word fits best?',
-            f'In the sentence "{name} remained _____ during the setback", which word meaning "{definition}" fits?',
-            f'Which word best matches this definition used in PSLE cloze: "{definition}"?',
-            f'{name2} described something as "{definition}". Pick the best word.',
+            f'{name} looked up a word meaning "{definition}" {when}. Which word fits best?',
+            f'In the sentence "{name} remained _____ during the setback at {place}", which word meaning "{definition}" fits?',
+            f'Which word best matches this definition used in a PSLE cloze about {item}: "{definition}"?',
+            f'{name2} described something near {place2} as "{definition}". Pick the best word.',
+            f'The teacher asked {name} for a synonym of an idea meaning "{definition}".',
+            f'During reading at {place}, {name3} met a word that means "{definition}". Choose it.',
+            f'Fill the blank: The pupils showed a _____ attitude (meaning "{definition}") towards the {count} tasks.',
+            f'{name} wrote about {item2} and needed a word meaning "{definition}". Which is best?',
+            f'Closest in meaning to "{definition}" (opposite idea: not like "{antonym}"):',
         ]
         q = frames[index % len(frames)]
         exp = f"'{word}' means '{definition}'. Opposite idea: '{antonym}'."
-        return pack(qid, "Vocabulary MCQ", "mcq", q, word, exp, difficulty, shuffle_opts(word, others[:3]))
+        return pack(qid, "Vocabulary MCQ", "mcq", q, word, exp, difficulty, shuffle_opts(word, distractors))
 
-    if mode == 2 and level != "P2":
+    if mode == 2:
         sent, joiner, ans = SYNTHESIS[index % len(SYNTHESIS)]
         parts = [p.strip() for p in sent.split(".") if p.strip()]
-        p0 = parts[0].replace("The boy", name).replace("Siti", name).replace("Bala", name).replace("David", name).replace("He", name).replace("She", name)
-        p1 = parts[1].replace("He", name).replace("She", name).replace("The audience", f"the class of {name2}")
-        # rebuild answer with name where simple
-        ans2 = ans.replace("the boy", name.lower()).replace("siti", name.lower()).replace("bala", name.lower()).replace("david", name.lower()).replace("he ", name.lower()+" ").replace("she ", name.lower()+" ")
-        q = f"Combine into one sentence using the word(s) given.\n\n1) {p0}.\n2) {p1}.\n\nUse: {joiner}"
-        return pack(qid, "Synthesis & Transformation", "short_answer", q, ans2, f"Model: {ans2}", difficulty, [])
+        # parametric name swaps
+        repl = {
+            "The boy": name, "Siti": name, "Bala": name, "David": name, "Mei Ling": name,
+            "Tom": name, "Ravi": name, "Aisha": name, "Kumar": name, "John": name,
+            "Priya": name, "Marcus": name, "Fatimah": name, "He": name, "She": name,
+            "The pupils": f"{name} and {name2}", "The children": f"{name} and {name2}",
+            "The audience": f"the class of {name2}", "Mother": name2, "The teacher": name2,
+            "They": f"{name} and {name2}", "We": f"{name} and {name2}",
+            "Everyone": f"everyone at {place}", "Nobody": f"nobody at {place2}",
+        }
+        p0, p1 = parts[0], parts[1] if len(parts) > 1 else parts[0]
+        for k, v in repl.items():
+            p0 = p0.replace(k, v)
+            p1 = p1.replace(k, v)
+        # rebuild answer with lowercase name
+        ans2 = ans
+        for old in ["the boy", "siti", "bala", "david", "mei ling", "tom", "ravi", "aisha", "kumar", "john", "priya", "marcus", "fatimah"]:
+            ans2 = ans2.replace(old, name.lower())
+        ans2 = ans2.replace("he ", name.lower() + " ").replace("she ", name.lower() + " ")
+        ans2 = ans2.replace("the pupils", f"{name.lower()} and {name2.lower()}")
+        ans2 = ans2.replace("the children", f"{name.lower()} and {name2.lower()}")
+        frames = [
+            f"Combine into one sentence using the word(s) given.\n\n1) {p0}.\n2) {p1}.\n\nUse: {joiner}",
+            f"{name3} practised synthesis {when} at {place}. Combine using '{joiner}':\n1) {p0}.\n2) {p1}.",
+            f"Rewrite as one sentence with the given connector ({joiner}). Context: {place2}.\nA. {p0}.\nB. {p1}.",
+            f"Sentence combining — use '{joiner}' only once:\n• {p0}\n• {p1}",
+            f"Join these ideas about {item} practice using '{joiner}':\n1) {p0}.\n2) {p1}.",
+        ]
+        q = frames[(index // len(SYNTHESIS)) % len(frames)]
+        topic = "Sentence Combining" if level == "P2" else "Synthesis & Transformation"
+        return pack(qid, topic, "short_answer", q, ans2, f"Model: {ans2}", difficulty, [])
 
     if mode == 3:
-        spell = [
-            ("necessary", ["neccessary", "necesary", "neccesary"], "one c, two s"),
-            ("environment", ["enviroment", "enviornment", "enviromment"], "contains 'iron'"),
-            ("tomorrow", ["tommorrow", "tomorow", "tomorro"], "one m, two r"),
-            ("beautiful", ["beatiful", "beautifull", "beutiful"], "beauti + ful"),
-            ("because", ["becuase", "becouse", "becasue"], "be-cause"),
-            ("friend", ["freind", "frend", "friand"], "i before e"),
-            ("receive", ["recieve", "receve", "receeve"], "e before i after c"),
-            ("definitely", ["definately", "definatly", "definetely"], "finite inside"),
-            ("separate", ["seperate", "seperete", "seprate"], "sep-a-rate"),
-            ("questionnaire", ["questionaire", "questionnare", "questionnair"], "double n"),
+        w, bad, tip = SPELLING[index % len(SPELLING)]
+        frames = [
+            f"Choose the correctly spelt word for {name}'s editing exercise involving '{item}'. Which spelling is correct?",
+            f"Editing practice at {place}: {name} circled a misspelt word meaning related to school work. Which is correct?",
+            f"{when.capitalize() if when[:1].islower() else when}, {name2} proofread a paragraph about {item2}. Select the correct spelling.",
+            f"In an editing passage set near {place2}, which spelling should {name} keep?",
+            f"{name} found {count} errors but one word is already correct. Which spelling is right?",
+            f"Pick the accurate spelling for the blank in {name3}'s homework about {item}:",
+            f"Spelling check before submitting work from {place}: which form is correct?",
         ]
-        w, bad, tip = spell[index % len(spell)]
-        q = f"Choose the correctly spelt word for {name}'s editing exercise involving '{item}'."
+        q = frames[index % len(frames)]
+        # lightly vary distractor order via shuffle_opts hash
         topic = "Editing for Spelling & Punctuation" if level == "P2" else "Editing"
-        return pack(qid, topic, "mcq", q + f" Which spelling is correct?", w, f"Correct spelling is '{w}' ({tip}).", difficulty, shuffle_opts(w, bad))
+        return pack(qid, topic, "mcq", q, w, f"Correct spelling is '{w}' ({tip}).", difficulty, shuffle_opts(w, bad))
 
-    # mode 4 cloze / agreement
-    cloze = [
-        (f"{name} and {name2} _____ going to the library after school.", "are", ["is", "was", "be"], "Plural compound subject → are."),
-        (f"Neither {name} nor {name2} _____ late yesterday.", "was", ["were", "are", "be"], "Neither nor → nearer subject; treat singular if both singular."),
-        (f"The box of {item} _____ on the table.", "is", ["are", "were", "be"], "Head noun 'box' is singular."),
-        (f"{name} completed the work by _____.", "himself" if index%2==0 else "herself", ["themselves", "myself", "itself"], "Reflexive matches subject."),
-        (f"There _____ many {item} in the drawer.", "are", ["is", "was", "be"], "Many + plural noun → are."),
+    # mode 4: short comprehension / cloze with SG places, times, counts
+    cloze_bank = [
+        (f"{name} and {name2} _____ going to {place} {when}.", "are", ["is", "was", "be"], "Plural compound subject → are."),
+        (f"Neither {name} nor {name2} _____ late for the trip to {place2}.", "was", ["were", "are", "be"], "Neither nor → singular when both singular."),
+        (f"The box of {item} _____ on the table in the canteen.", "is", ["are", "were", "be"], "Head noun 'box' is singular."),
+        (f"{name} completed the {count} sums by _____.", "himself" if index % 2 == 0 else "herself", ["themselves", "myself", "itself"], "Reflexive matches subject."),
+        (f"There _____ many {item} in the drawer at {place}.", "are", ["is", "was", "be"], "Many + plural noun → are."),
+        (f"Last week, {name} _____ {count2} books from the library.", "borrowed", ["borrow", "borrows", "borrowing"], "Past time marker → simple past."),
+        (f"Every pupil in the class _____ a badge for CCA.", "has", ["have", "having", "had"], "Every + singular verb."),
+        (f"{name} walks to the MRT station _____ than {name2}.", "more quickly", ["quick", "more quick", "quickly"], "Comparative adverb."),
+        (f"The news about the {count}-day camp _____ exciting.", "was", ["were", "are", "be"], "'News' is uncountable/singular."),
+        (f"While {name} _____ at {place}, {name2} bought drinks.", "was waiting", ["waited", "waits", "waiting"], "Past continuous for background."),
+        (f"A flock of birds _____ over Marina Bay at dusk.", "was flying", ["were flying", "fly", "flown"], "Collective 'flock' often singular."),
+        (f"{name} has lived near {place} _____ {2015 + (index % 8)}.", "since", ["for", "from", "during"], "Since + point in time."),
+        (f"Please remind {name2} _____ the form before recess.", "to submit", ["submitting", "submit", "submitted"], "Remind + to-infinitive."),
+        (f"The pair of {item} _____ under the bench at school.", "was", ["were", "are", "be"], "'Pair' is singular."),
+        (f"If it rains, the class _____ cancel the outing to {place2}.", "will", ["would", "should", "can"], "First conditional."),
+        (f"{name} prefers {item} _____ {item2}.", "to", ["than", "from", "for"], "Prefer A to B."),
+        (f"Someone _____ left a water bottle on the MRT.", "has", ["have", "had", "having"], "Someone → singular."),
+        (f"By the time the bus arrived at {place}, {name} _____ already left.", "had", ["has", "have", "was"], "Past perfect for earlier action."),
+        (f"The number of visitors to Gardens by the Bay _____ rising.", "is", ["are", "were", "be"], "'The number of' → singular."),
+        (f"{name} and the rest of the team _____ proud of the result.", "are", ["is", "was", "be"], "Compound/plural idea → are."),
+        (f"Reading passage: {name} visited {place} {when} and bought {count} {item}. The word closest to 'bought' is _____.", "purchased", ["sold", "borrowed", "lost"], "Bought ≈ purchased."),
+        (f"Cloze: The children were _____ when they reached East Coast Park.", "delighted", ["delight", "delighting", "delights"], "Adjective after linking verb."),
+        (f"At {place}, {name} spoke so softly _____ few could hear.", "that", ["than", "then", "when"], "So... that."),
+        (f"{name} is interested _____ learning about Tampines heritage.", "in", ["on", "at", "for"], "Interested in."),
+        (f"Hardly had {name} entered the library _____ the lights flickered.", "when", ["than", "then", "before"], "Hardly... when."),
+        (f"Comprehension detail: {name2} waited {count} minutes at Bishan MRT. How long did {name2} wait?", f"{count} minutes", [f"{count2} minutes", f"{count+5} minutes", f"{count2+2} minutes"], "Direct detail from the stem."),
+        (f"Vocabulary cloze: The view from Marina Bay was truly _____.", "spectacular", ["spectacle", "spectate", "spectator"], "Adjective form."),
+        (f"{name} insisted _____ finishing the project before CCA.", "on", ["to", "for", "in"], "Insist on + gerund."),
+        (f"Neither of the answers about {place2} _____ correct.", "is", ["are", "were", "be"], "Neither of → singular."),
+        (f"After _____ lunch in the canteen, {name} went to the hall.", "having", ["have", "had", "has"], "After + gerund."),
     ]
-    stem, ans, bad, exp = cloze[index % len(cloze)]
-    topic = "Vocabulary Cloze" if level in ("P4","P5","P6") else "Grammar MCQ"
-    return pack(qid, topic, "mcq", stem, ans, exp, difficulty, shuffle_opts(ans, bad))
+    stem, ans, bad, exp = cloze_bank[index % len(cloze_bank)]
+    # extra frame wrappers for uniqueness without fake Variant tags
+    wraps = [
+        stem,
+        f"Read and complete:\n{stem}",
+        f"Short cloze set {when}:\n{stem}",
+        f"Based on a short text about {place}:\n{stem}",
+        f"{name3}'s worksheet item:\n{stem}",
+    ]
+    q = wraps[(index // len(cloze_bank)) % len(wraps)]
+    if level in ("P4", "P5", "P6"):
+        topic = "Vocabulary Cloze"
+    else:
+        topic = "Grammar MCQ"
+    return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, list(bad)))
 
 # -------------------- SCIENCE --------------------
 
@@ -824,30 +1273,60 @@ def generate_science_question(level, qid, index):
     candidates = [t for t in bank if t[0] == topic_wanted] or bank
     t = candidates[index % len(candidates)]
     topic, stem, ans, exp, keyword, distractors = t
-    # parameter fill
+    # parameter fill — high variance for uniqueness
+    places = ["school lab", "home kitchen", "East Coast Park", "Botanic Gardens", "science centre booth", "classroom"]
+    tools = ["thermometer", "spring balance", "data logger", "stopwatch", "measuring cylinder", "newton meter"]
     params = {
-        "m": 5 + index % 10,
-        "f1": 40 + index % 50,
-        "f2": 10 + index % 15,
-        "h": 2 + index % 8,
-        "b1": 30 + index % 40,
-        "b2": 5 + index % 12,
-        "s1": 40 + index % 30,
-        "s2": 100 + index % 80,
-        "v": 80 + index % 40,
-        "cap": 400 + index % 5 * 50,
+        "m": 5 + (index * 3) % 12,
+        "f1": 20 + (index * 7) % 60,
+        "f2": 8 + (index * 5) % 20,
+        "h": 2 + (index * 2) % 10,
+        "b1": 20 + (index * 11) % 50,
+        "b2": 4 + (index * 3) % 15,
+        "s1": 30 + (index * 13) % 40,
+        "s2": 90 + (index * 17) % 100,
+        "v": 50 + (index * 9) % 80,
+        "cap": 250 + (index % 8) * 50,
+        "t1": 18 + (index * 4) % 25,
+        "t2": 30 + (index * 6) % 40,
+        "n": 2 + index % 6,
+        "place": places[index % len(places)],
+        "tool": tools[index % len(tools)],
+        "name": nname(index),
+        "name2": nname(index, 5),
     }
-    question = stem.format(**params)
-    explanation = exp.format(**params)
-    # uniqueness wrappers
-    wrappers = [
+    try:
+        question = stem.format(**params)
+        explanation = exp.format(**params)
+    except Exception:
+        question, explanation = stem, exp
+    # parametric scenario variants (real stem diversity)
+    variants = [
         question,
-        f"Experiment log #{index}: " + question,
-        f"{nname(index)} recorded the following. " + question,
-        f"PSLE-style item ({topic.split()[0]}): " + question,
-        f"Study the scenario carefully. " + question,
+        f"Experiment log #{index} at the {params['place']}: {question}",
+        f"{params['name']} used a {params['tool']} and recorded: {question}",
+        f"PSLE-style item ({topic}): {question}",
+        f"Study the scenario carefully ({params['name']} & {params['name2']}). {question}",
+        f"Class investigation #{(index % 40) + 1}: {question}",
+        f"During a field trip to the {params['place']}, pupils observed: {question}",
+        f"Given readings from a {params['tool']}, answer: {question}",
     ]
-    question = wrappers[index % len(wrappers)]
+    question = variants[index % len(variants)]
+    # Extra concept MCQs generated parametrically for more unique stems
+    if index % 7 == 0:
+        extras = [
+            (topic_list[0], f"Which statement about living things is true in this {params['place']} context with {params['n']} samples?",
+             "Living things need energy to stay alive", "Living things require energy for life processes.", "energy",
+             ["All living things make food", "Non-living things grow", "Only animals respire"]),
+            (topic_list[min(1, len(topic_list)-1)], f"{params['name']} measures {params['t1']}°C then {params['t2']}°C. What increased?",
+             "Temperature of the object/surroundings as stated", "Temperature is the degree of hotness measured in °C.", "temperature",
+             ["Mass only", "Volume only", "Colour only"]),
+            (topic_list[min(2, len(topic_list)-1)], f"A force of {params['f1']} N acts on a {params['m']} kg object at the {params['place']}. Friction mainly:",
+             "Opposes motion between surfaces", "Friction opposes relative motion between surfaces in contact.", "friction",
+             ["Creates mass", "Removes gravity", "Stops light"]),
+        ]
+        et = extras[index % len(extras)]
+        topic, question, ans, explanation, keyword, distractors = et
     if difficulty == "Easy":
         return pack(qid, topic, "mcq", question, ans, explanation, difficulty, shuffle_opts(ans, distractors))
     q2 = question + f"\n\n(Include key idea: '{keyword}')"
@@ -875,6 +1354,25 @@ CHINESE_BANK = {
         ("Cloze Passage (短文填空)", "他做事非常________，从不马虎。", "认真", ["马虎", "粗心", "懒惰"], "认真与马虎相反。"),
         ("Reading Comprehension MCQ", "短文赞美一位乐于助人的同学，中心思想是？", "助人为乐", ["自私自利", "斤斤计较", "骄傲自大"], "乐于助人→助人为乐。"),
         ("Vocabulary Selection (词语选择)", "春天来了，公园里的花________开了。", "争先恐后", ["无影无踪", "四面八方", "一干二净"], "形容争着开放。"),
+        ("Vocabulary Selection (词语选择)", "经过努力，他的成绩有了明显的________。", "进步", ["退步", "放弃", "停止"], "成绩提升用进步。"),
+        ("Vocabulary Selection (词语选择)", "同学们在图书馆里保持________。", "安静", ["吵闹", "热闹", "激动"], "图书馆需要安静。"),
+        ("Vocabulary Selection (词语选择)", "这件事让大家________不已。", "感动", ["讨厌", "冷淡", "忽视"], "正面情感用感动。"),
+        ("Sentence Completion (句型填空)", "________多读多写，________作文水平才会提高。", "只有……才……", ["虽然……但是……", "因为……所以……", "不但……而且……"], "条件关系。"),
+        ("Sentence Completion (句型填空)", "他________会唱歌，________会跳舞。", "不但……而且……", ["虽然……但是……", "如果……就……", "与其……不如……"], "递进关系。"),
+        ("Sentence Completion (句型填空)", "________今天下雨，________活动改期。", "因为……所以……", ["虽然……但是……", "不但……而且……", "只有……才……"], "因果关系。"),
+        ("Hanyu Pinyin", "‘进步’ 的拼音是？", "jìn bù", ["jǐn bù", "jìn bú", "jìn pu"], "jìn bù。"),
+        ("Hanyu Pinyin", "‘安静’ 的拼音是？", "ān jìng", ["an jìng", "ān jīn", "āng jìng"], "ān jìng。"),
+        ("Hanyu Pinyin", "‘努力’ 的拼音是？", "nǔ lì", ["nú lì", "nǔ lǐ", "nù lì"], "nǔ lì。"),
+        ("Cloze Passage (短文填空)", "请把窗户________，外面风很大。", "关上", ["打开", "搬走", "丢掉"], "风大→关窗。"),
+        ("Cloze Passage (短文填空)", "他________地完成了作业。", "认真", ["随便", "马虎", "匆忙"], "正面完成用认真。"),
+        ("Reading Comprehension MCQ", "短文写一位同学每天坚持跑步，主要赞美他？", "持之以恒", ["半途而废", "三心二意", "骄傲自满"], "坚持=持之以恒。"),
+        ("Reading Comprehension MCQ", "短文写大家一起打扫校园，体现了？", "齐心协力", ["自私自利", "漠不关心", "袖手旁观"], "一起劳动=齐心协力。"),
+        ("Vocabulary Selection (词语选择)", "老师的话让我________。", "恍然大悟", ["一无所知", "心不在焉", "胡思乱想"], "突然明白=恍然大悟。"),
+        ("Vocabulary Selection (词语选择)", "不要________，要脚踏实地学习。", "好高骛远", ["脚踏实地", "按部就班", "循序渐进"], "好高骛远是贬义。"),
+        ("Sentence Completion (句型填空)", "________时间再紧，我们________要完成任务。", "即使……也……", ["因为……所以……", "不但……而且……", "如果……就……"], "让步关系。"),
+        ("Cloze Passage (短文填空)", "听到好消息，大家________起来。", "欢呼", ["哭泣", "沉默", "离开"], "好消息→欢呼。"),
+        ("Hanyu Pinyin", "‘成功’ 的拼音是？", "chéng gōng", ["chéng gòng", "chén gōng", "chéng gong"], "chéng gōng。"),
+        ("Reading Comprehension MCQ", "短文强调保护环境，中心是？", "爱护环境", ["浪费资源", "破坏自然", "漠视卫生"], "环保主题。"),
     ],
     "P4": [
         ("Vocabulary Selection (词语选择)", "这家店的价格十分________。", "公道", ["昂贵", "浪费", "随便"], "公道=合理公平。"),

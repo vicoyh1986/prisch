@@ -337,7 +337,7 @@
     "id": "P5_MATH_0021",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 12037 pencils. Brandon has 2113 pencils. How many pencils do they have altogether?",
+    "question": "Yusof has 12037 crayons. Brandon has 2113 crayons. How many crayons do they have altogether?",
     "options": [
       "14145",
       "14160",
@@ -352,7 +352,7 @@
     "id": "P5_MATH_0022",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of stickers with 10 in each row. What is the total?",
+    "question": "There are 7 rows of keychains with 10 in each row. What is the total?",
     "options": [
       "70",
       "77",
@@ -504,7 +504,7 @@
     "id": "P5_MATH_0031",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 13007 balloons. Wei Jie has 2643 balloons. How many balloons do they have altogether?",
+    "question": "Joyce has 13007 pencils. Lina has 2643 pencils. How many pencils do they have altogether?",
     "options": [
       "15660",
       "10364",
@@ -519,7 +519,7 @@
     "id": "P5_MATH_0032",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 8 rows of cards with 4 in each row. What is the total?",
+    "question": "There are 8 rows of stickers with 4 in each row. What is the total?",
     "options": [
       "40",
       "32",
@@ -549,7 +549,7 @@
     "id": "P5_MATH_0034",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
+    "question": "Oscar bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -579,7 +579,7 @@
     "id": "P5_MATH_0036",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?",
+    "question": "Qistina and Sofia shared $55 in the ratio 2:3. How much did Sofia get?",
     "options": [
       "$33",
       "$55",
@@ -587,19 +587,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Sofia = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Qistina",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Sofia",
           "units": 3,
           "color": "#4facfe"
         }
@@ -671,7 +671,7 @@
     "id": "P5_MATH_0041",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 13977 pencils. Ravi has 3173 pencils. How many pencils do they have altogether?",
+    "question": "Vera has 13977 balloons. Xuan has 3173 balloons. How many balloons do they have altogether?",
     "options": [
       "10804",
       "17160",
@@ -686,7 +686,7 @@
     "id": "P5_MATH_0042",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 9 rows of stickers with 6 in each row. What is the total?",
+    "question": "There are 9 rows of cards with 6 in each row. What is the total?",
     "options": [
       "48",
       "54",
@@ -716,7 +716,7 @@
     "id": "P5_MATH_0044",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
+    "question": "Yasmin bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -746,7 +746,7 @@
     "id": "P5_MATH_0046",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?",
+    "question": "Ananya and Carmen shared $88 in the ratio 3:5. How much did Carmen get?",
     "options": [
       "$50",
       "$33",
@@ -754,19 +754,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Carmen = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Ananya",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Carmen",
           "units": 5,
           "color": "#4facfe"
         }
@@ -838,7 +838,7 @@
     "id": "P5_MATH_0051",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 14947 balloons. Brandon has 3703 balloons. How many balloons do they have altogether?",
+    "question": "Farid has 14947 crayons. Hassan has 3703 crayons. How many crayons do they have altogether?",
     "options": [
       "18645",
       "18650",
@@ -853,7 +853,7 @@
     "id": "P5_MATH_0052",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of cards with 8 in each row. What is the total?",
+    "question": "There are 10 rows of keychains with 8 in each row. What is the total?",
     "options": [
       "72",
       "80",
@@ -883,7 +883,7 @@
     "id": "P5_MATH_0054",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
+    "question": "Irene bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -913,7 +913,7 @@
     "id": "P5_MATH_0056",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?",
+    "question": "Keisha and Mira shared $77 in the ratio 4:3. How much did Mira get?",
     "options": [
       "$77",
       "$44",
@@ -921,19 +921,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Mira = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Keisha",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Mira",
           "units": 3,
           "color": "#4facfe"
         }
@@ -1005,7 +1005,7 @@
     "id": "P5_MATH_0061",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 15917 pencils. Wei Jie has 4233 pencils. How many pencils do they have altogether?",
+    "question": "Ali has 15917 pencils. Mei Ling has 4233 pencils. How many pencils do they have altogether?",
     "options": [
       "20160",
       "11684",
@@ -1050,7 +1050,7 @@
     "id": "P5_MATH_0064",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
+    "question": "Wei Jie bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -1077,10 +1077,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0066_v2",
+    "id": "P5_MATH_0066",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 2)",
+    "question": "Kavitha and Sarah shared $77 in the ratio 2:5. How much did Sarah get?",
     "options": [
       "$55",
       "$77",
@@ -1088,19 +1088,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Sarah = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Kavitha",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Sarah",
           "units": 5,
           "color": "#4facfe"
         }
@@ -1172,7 +1172,7 @@
     "id": "P5_MATH_0071",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 16887 balloons. Ravi has 4763 balloons. How many balloons do they have altogether?",
+    "question": "Huiling has 16887 balloons. Nurul has 4763 balloons. How many balloons do they have altogether?",
     "options": [
       "21645",
       "12124",
@@ -1217,7 +1217,7 @@
     "id": "P5_MATH_0074",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
+    "question": "Ravi bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -1244,10 +1244,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0076_v2",
+    "id": "P5_MATH_0076",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 2)",
+    "question": "Sanjay and Chloe shared $66 in the ratio 3:3. How much did Chloe get?",
     "options": [
       "$33",
       "$66",
@@ -1255,19 +1255,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Chloe = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Sanjay",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Chloe",
           "units": 3,
           "color": "#4facfe"
         }
@@ -1339,7 +1339,7 @@
     "id": "P5_MATH_0081",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 17857 pencils. Brandon has 5293 pencils. How many pencils do they have altogether?",
+    "question": "Desmond has 17857 crayons. Amira has 5293 crayons. How many crayons do they have altogether?",
     "options": [
       "23145",
       "12564",
@@ -1354,7 +1354,7 @@
     "id": "P5_MATH_0082",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of stickers with 6 in each row. What is the total?",
+    "question": "There are 4 rows of keychains with 6 in each row. What is the total?",
     "options": [
       "28",
       "10",
@@ -1384,7 +1384,7 @@
     "id": "P5_MATH_0084",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
+    "question": "Brandon bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -1411,10 +1411,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0086_v2",
+    "id": "P5_MATH_0086",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 2)",
+    "question": "Ethan and Ryan shared $99 in the ratio 4:5. How much did Ryan get?",
     "options": [
       "$44",
       "$55",
@@ -1422,19 +1422,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Ryan = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Ethan",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Ryan",
           "units": 5,
           "color": "#4facfe"
         }
@@ -1506,7 +1506,7 @@
     "id": "P5_MATH_0091",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 18827 balloons. Wei Jie has 5823 balloons. How many balloons do they have altogether?",
+    "question": "Hafiz has 18827 pencils. Kenji has 5823 pencils. How many pencils do they have altogether?",
     "options": [
       "24650",
       "13004",
@@ -1521,7 +1521,7 @@
     "id": "P5_MATH_0092",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 5 rows of cards with 8 in each row. What is the total?",
+    "question": "There are 5 rows of stickers with 8 in each row. What is the total?",
     "options": [
       "40",
       "32",
@@ -1551,7 +1551,7 @@
     "id": "P5_MATH_0094",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
+    "question": "Lina bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -1578,10 +1578,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0096_v2",
+    "id": "P5_MATH_0096",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 2)",
+    "question": "Pei Ling and Raj shared $55 in the ratio 2:3. How much did Raj get?",
     "options": [
       "$33",
       "$55",
@@ -1589,19 +1589,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Raj = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Pei Ling",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Raj",
           "units": 3,
           "color": "#4facfe"
         }
@@ -1673,7 +1673,7 @@
     "id": "P5_MATH_0101",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 19797 pencils. Ravi has 6353 pencils. How many pencils do they have altogether?",
+    "question": "Umar has 19797 balloons. Wei Ming has 6353 balloons. How many balloons do they have altogether?",
     "options": [
       "26145",
       "13444",
@@ -1688,7 +1688,7 @@
     "id": "P5_MATH_0102",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 6 rows of stickers with 10 in each row. What is the total?",
+    "question": "There are 6 rows of cards with 10 in each row. What is the total?",
     "options": [
       "60",
       "16",
@@ -1718,7 +1718,7 @@
     "id": "P5_MATH_0104",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
+    "question": "Xuan bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -1745,10 +1745,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0106_v2",
+    "id": "P5_MATH_0106",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 2)",
+    "question": "Zane and Ben shared $88 in the ratio 3:5. How much did Ben get?",
     "options": [
       "$50",
       "$33",
@@ -1756,19 +1756,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Ben = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Zane",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Ben",
           "units": 5,
           "color": "#4facfe"
         }
@@ -1840,7 +1840,7 @@
     "id": "P5_MATH_0111",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 20767 balloons. Brandon has 6883 balloons. How many balloons do they have altogether?",
+    "question": "Elena has 20767 crayons. Gina has 6883 crayons. How many crayons do they have altogether?",
     "options": [
       "13884",
       "27660",
@@ -1855,7 +1855,7 @@
     "id": "P5_MATH_0112",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of cards with 4 in each row. What is the total?",
+    "question": "There are 7 rows of keychains with 4 in each row. What is the total?",
     "options": [
       "11",
       "35",
@@ -1885,7 +1885,7 @@
     "id": "P5_MATH_0114",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
+    "question": "Hassan bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -1912,10 +1912,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0116_v2",
+    "id": "P5_MATH_0116",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 2)",
+    "question": "Joel and Leo shared $77 in the ratio 4:3. How much did Leo get?",
     "options": [
       "$77",
       "$44",
@@ -1923,19 +1923,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Leo = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Joel",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Leo",
           "units": 3,
           "color": "#4facfe"
         }
@@ -2007,7 +2007,7 @@
     "id": "P5_MATH_0121",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 21737 pencils. Wei Jie has 7413 pencils. How many pencils do they have altogether?",
+    "question": "Owen has 21737 pencils. Bala has 7413 pencils. How many pencils do they have altogether?",
     "options": [
       "29160",
       "14324",
@@ -2049,10 +2049,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0124_v2",
+    "id": "P5_MATH_0124",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Mei Ling bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -2079,10 +2079,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0126_v3",
+    "id": "P5_MATH_0126",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 3)",
+    "question": "Siti and David shared $77 in the ratio 2:5. How much did David get?",
     "options": [
       "$55",
       "$77",
@@ -2090,19 +2090,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. David = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Siti",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "David",
           "units": 5,
           "color": "#4facfe"
         }
@@ -2174,7 +2174,7 @@
     "id": "P5_MATH_0131",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 22707 balloons. Ravi has 7943 balloons. How many balloons do they have altogether?",
+    "question": "Gopal has 22707 balloons. Kumar has 7943 balloons. How many balloons do they have altogether?",
     "options": [
       "30650",
       "14764",
@@ -2216,10 +2216,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0134_v2",
+    "id": "P5_MATH_0134",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Nurul bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -2246,10 +2246,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0136_v3",
+    "id": "P5_MATH_0136",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 3)",
+    "question": "Junjie and Ahmad shared $66 in the ratio 3:3. How much did Ahmad get?",
     "options": [
       "$33",
       "$66",
@@ -2257,19 +2257,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Ahmad = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Junjie",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Ahmad",
           "units": 3,
           "color": "#4facfe"
         }
@@ -2341,7 +2341,7 @@
     "id": "P5_MATH_0141",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 23677 pencils. Brandon has 8473 pencils. How many pencils do they have altogether?",
+    "question": "Xinyi has 23677 crayons. Yusof has 8473 crayons. How many crayons do they have altogether?",
     "options": [
       "32160",
       "15204",
@@ -2356,7 +2356,7 @@
     "id": "P5_MATH_0142",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of stickers with 10 in each row. What is the total?",
+    "question": "There are 10 rows of keychains with 10 in each row. What is the total?",
     "options": [
       "110",
       "90",
@@ -2383,10 +2383,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0144_v2",
+    "id": "P5_MATH_0144",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Amira bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -2413,10 +2413,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0146_v3",
+    "id": "P5_MATH_0146",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 3)",
+    "question": "Priya and Jia Hui shared $99 in the ratio 4:5. How much did Jia Hui get?",
     "options": [
       "$44",
       "$55",
@@ -2424,19 +2424,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Jia Hui = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Priya",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Jia Hui",
           "units": 5,
           "color": "#4facfe"
         }
@@ -2508,7 +2508,7 @@
     "id": "P5_MATH_0151",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 24647 balloons. Wei Jie has 9003 balloons. How many balloons do they have altogether?",
+    "question": "Marcus has 24647 pencils. Joyce has 9003 pencils. How many pencils do they have altogether?",
     "options": [
       "33645",
       "33660",
@@ -2523,7 +2523,7 @@
     "id": "P5_MATH_0152",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 11 rows of cards with 4 in each row. What is the total?",
+    "question": "There are 11 rows of stickers with 4 in each row. What is the total?",
     "options": [
       "44",
       "55",
@@ -2550,10 +2550,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0154_v2",
+    "id": "P5_MATH_0154",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Kenji bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -2580,10 +2580,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0156_v3",
+    "id": "P5_MATH_0156",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 3)",
+    "question": "Oscar and Qistina shared $55 in the ratio 2:3. How much did Qistina get?",
     "options": [
       "$33",
       "$55",
@@ -2591,19 +2591,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Qistina = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Oscar",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Qistina",
           "units": 3,
           "color": "#4facfe"
         }
@@ -2675,7 +2675,7 @@
     "id": "P5_MATH_0161",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 25617 pencils. Ravi has 9533 pencils. How many pencils do they have altogether?",
+    "question": "Tanya has 25617 balloons. Vera has 9533 balloons. How many balloons do they have altogether?",
     "options": [
       "35160",
       "16084",
@@ -2690,7 +2690,7 @@
     "id": "P5_MATH_0162",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 3 rows of stickers with 6 in each row. What is the total?",
+    "question": "There are 3 rows of cards with 6 in each row. What is the total?",
     "options": [
       "18",
       "9",
@@ -2717,10 +2717,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0164_v2",
+    "id": "P5_MATH_0164",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Wei Ming bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -2747,10 +2747,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0166_v3",
+    "id": "P5_MATH_0166",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 3)",
+    "question": "Yasmin and Ananya shared $88 in the ratio 3:5. How much did Ananya get?",
     "options": [
       "$50",
       "$33",
@@ -2758,19 +2758,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Ananya = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Yasmin",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Ananya",
           "units": 5,
           "color": "#4facfe"
         }
@@ -2842,7 +2842,7 @@
     "id": "P5_MATH_0171",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 26587 balloons. Brandon has 1063 balloons. How many balloons do they have altogether?",
+    "question": "Dinesh has 26587 crayons. Farid has 1063 crayons. How many crayons do they have altogether?",
     "options": [
       "27650",
       "27660",
@@ -2857,7 +2857,7 @@
     "id": "P5_MATH_0172",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of cards with 8 in each row. What is the total?",
+    "question": "There are 4 rows of keychains with 8 in each row. What is the total?",
     "options": [
       "36",
       "24",
@@ -2884,10 +2884,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0174_v2",
+    "id": "P5_MATH_0174",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Gina bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -2914,10 +2914,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0176_v3",
+    "id": "P5_MATH_0176",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 3)",
+    "question": "Irene and Keisha shared $77 in the ratio 4:3. How much did Keisha get?",
     "options": [
       "$77",
       "$44",
@@ -2925,19 +2925,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Keisha = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Irene",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Keisha",
           "units": 3,
           "color": "#4facfe"
         }
@@ -3009,7 +3009,7 @@
     "id": "P5_MATH_0181",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 27557 pencils. Wei Jie has 1593 pencils. How many pencils do they have altogether?",
+    "question": "Noah has 27557 pencils. Ali has 1593 pencils. How many pencils do they have altogether?",
     "options": [
       "25964",
       "29160",
@@ -3051,10 +3051,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0184_v2",
+    "id": "P5_MATH_0184",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Bala bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -3081,10 +3081,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0186_v4",
+    "id": "P5_MATH_0186",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 4)",
+    "question": "Wei Jie and Kavitha shared $77 in the ratio 2:5. How much did Kavitha get?",
     "options": [
       "$55",
       "$77",
@@ -3092,19 +3092,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Kavitha = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Wei Jie",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Kavitha",
           "units": 5,
           "color": "#4facfe"
         }
@@ -3176,7 +3176,7 @@
     "id": "P5_MATH_0191",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 28527 balloons. Ravi has 2123 balloons. How many balloons do they have altogether?",
+    "question": "Fatimah has 28527 balloons. Huiling has 2123 balloons. How many balloons do they have altogether?",
     "options": [
       "30650",
       "30660",
@@ -3218,10 +3218,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0194_v2",
+    "id": "P5_MATH_0194",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Kumar bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -3248,10 +3248,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0196_v4",
+    "id": "P5_MATH_0196",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 4)",
+    "question": "Ravi and Sanjay shared $66 in the ratio 3:3. How much did Sanjay get?",
     "options": [
       "$33",
       "$66",
@@ -3259,19 +3259,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Sanjay = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Ravi",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Sanjay",
           "units": 3,
           "color": "#4facfe"
         }
@@ -3343,7 +3343,7 @@
     "id": "P5_MATH_0201",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 29497 pencils. Brandon has 2653 pencils. How many pencils do they have altogether?",
+    "question": "Zhi Hao has 29497 crayons. Desmond has 2653 crayons. How many crayons do they have altogether?",
     "options": [
       "32150",
       "26844",
@@ -3358,7 +3358,7 @@
     "id": "P5_MATH_0202",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of stickers with 6 in each row. What is the total?",
+    "question": "There are 7 rows of keychains with 6 in each row. What is the total?",
     "options": [
       "13",
       "49",
@@ -3385,10 +3385,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0204_v2",
+    "id": "P5_MATH_0204",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Yusof bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -3415,10 +3415,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0206_v4",
+    "id": "P5_MATH_0206",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 4)",
+    "question": "Brandon and Ethan shared $99 in the ratio 4:5. How much did Ethan get?",
     "options": [
       "$44",
       "$55",
@@ -3426,19 +3426,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Ethan = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Brandon",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Ethan",
           "units": 5,
           "color": "#4facfe"
         }
@@ -3510,7 +3510,7 @@
     "id": "P5_MATH_0211",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 30467 balloons. Wei Jie has 3183 balloons. How many balloons do they have altogether?",
+    "question": "Aisha has 30467 pencils. Hafiz has 3183 pencils. How many pencils do they have altogether?",
     "options": [
       "33650",
       "33660",
@@ -3525,7 +3525,7 @@
     "id": "P5_MATH_0212",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 8 rows of cards with 8 in each row. What is the total?",
+    "question": "There are 8 rows of stickers with 8 in each row. What is the total?",
     "options": [
       "72",
       "64",
@@ -3552,10 +3552,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0214_v2",
+    "id": "P5_MATH_0214",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Joyce bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -3582,10 +3582,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0216_v4",
+    "id": "P5_MATH_0216",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 4)",
+    "question": "Lina and Pei Ling shared $55 in the ratio 2:3. How much did Pei Ling get?",
     "options": [
       "$33",
       "$55",
@@ -3593,19 +3593,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Pei Ling = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Lina",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Pei Ling",
           "units": 3,
           "color": "#4facfe"
         }
@@ -3677,7 +3677,7 @@
     "id": "P5_MATH_0221",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 31437 pencils. Ravi has 3713 pencils. How many pencils do they have altogether?",
+    "question": "Sofia has 31437 balloons. Umar has 3713 balloons. How many balloons do they have altogether?",
     "options": [
       "35145",
       "35150",
@@ -3692,7 +3692,7 @@
     "id": "P5_MATH_0222",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 9 rows of stickers with 10 in each row. What is the total?",
+    "question": "There are 9 rows of cards with 10 in each row. What is the total?",
     "options": [
       "99",
       "80",
@@ -3719,10 +3719,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0224_v2",
+    "id": "P5_MATH_0224",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Vera bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -3749,10 +3749,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0226_v4",
+    "id": "P5_MATH_0226",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 4)",
+    "question": "Xuan and Zane shared $88 in the ratio 3:5. How much did Zane get?",
     "options": [
       "$50",
       "$33",
@@ -3760,19 +3760,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Zane = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Xuan",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Zane",
           "units": 5,
           "color": "#4facfe"
         }
@@ -3844,7 +3844,7 @@
     "id": "P5_MATH_0231",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 32407 balloons. Brandon has 4243 balloons. How many balloons do they have altogether?",
+    "question": "Carmen has 32407 crayons. Elena has 4243 crayons. How many crayons do they have altogether?",
     "options": [
       "36650",
       "36660",
@@ -3859,7 +3859,7 @@
     "id": "P5_MATH_0232",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of cards with 4 in each row. What is the total?",
+    "question": "There are 10 rows of keychains with 4 in each row. What is the total?",
     "options": [
       "14",
       "40",
@@ -3886,10 +3886,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0234_v2",
+    "id": "P5_MATH_0234",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 2)",
+    "question": "Farid bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -3916,10 +3916,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0236_v4",
+    "id": "P5_MATH_0236",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 4)",
+    "question": "Hassan and Joel shared $77 in the ratio 4:3. How much did Joel get?",
     "options": [
       "$77",
       "$44",
@@ -3927,19 +3927,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Joel = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Hassan",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Joel",
           "units": 3,
           "color": "#4facfe"
         }
@@ -4011,7 +4011,7 @@
     "id": "P5_MATH_0241",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 33377 pencils. Wei Jie has 4773 pencils. How many pencils do they have altogether?",
+    "question": "Mira has 33377 pencils. Owen has 4773 pencils. How many pencils do they have altogether?",
     "options": [
       "28604",
       "38150",
@@ -4053,10 +4053,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0244_v3",
+    "id": "P5_MATH_0244",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Ali bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -4083,10 +4083,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0246_v5",
+    "id": "P5_MATH_0246",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 5)",
+    "question": "Mei Ling and Siti shared $77 in the ratio 2:5. How much did Siti get?",
     "options": [
       "$55",
       "$77",
@@ -4094,19 +4094,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Siti = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Mei Ling",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Siti",
           "units": 5,
           "color": "#4facfe"
         }
@@ -4178,7 +4178,7 @@
     "id": "P5_MATH_0251",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 34347 balloons. Ravi has 5303 balloons. How many balloons do they have altogether?",
+    "question": "Sarah has 34347 balloons. Gopal has 5303 balloons. How many balloons do they have altogether?",
     "options": [
       "29044",
       "39660",
@@ -4220,10 +4220,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0254_v3",
+    "id": "P5_MATH_0254",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Huiling bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -4250,10 +4250,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0256_v5",
+    "id": "P5_MATH_0256",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 5)",
+    "question": "Nurul and Junjie shared $66 in the ratio 3:3. How much did Junjie get?",
     "options": [
       "$33",
       "$66",
@@ -4261,19 +4261,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Junjie = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Nurul",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Junjie",
           "units": 3,
           "color": "#4facfe"
         }
@@ -4345,7 +4345,7 @@
     "id": "P5_MATH_0261",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 35317 pencils. Brandon has 5833 pencils. How many pencils do they have altogether?",
+    "question": "Chloe has 35317 crayons. Xinyi has 5833 crayons. How many crayons do they have altogether?",
     "options": [
       "41150",
       "41145",
@@ -4360,7 +4360,7 @@
     "id": "P5_MATH_0262",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of stickers with 10 in each row. What is the total?",
+    "question": "There are 4 rows of keychains with 10 in each row. What is the total?",
     "options": [
       "14",
       "40",
@@ -4387,10 +4387,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0264_v3",
+    "id": "P5_MATH_0264",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Desmond bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -4417,10 +4417,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0266_v5",
+    "id": "P5_MATH_0266",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 5)",
+    "question": "Amira and Priya shared $99 in the ratio 4:5. How much did Priya get?",
     "options": [
       "$44",
       "$55",
@@ -4428,19 +4428,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Priya = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Amira",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Priya",
           "units": 5,
           "color": "#4facfe"
         }
@@ -4512,7 +4512,7 @@
     "id": "P5_MATH_0271",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 36287 balloons. Wei Jie has 6363 balloons. How many balloons do they have altogether?",
+    "question": "Ryan has 36287 pencils. Marcus has 6363 pencils. How many pencils do they have altogether?",
     "options": [
       "42660",
       "42650",
@@ -4527,7 +4527,7 @@
     "id": "P5_MATH_0272",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 5 rows of cards with 4 in each row. What is the total?",
+    "question": "There are 5 rows of stickers with 4 in each row. What is the total?",
     "options": [
       "25",
       "9",
@@ -4554,10 +4554,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0274_v3",
+    "id": "P5_MATH_0274",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Hafiz bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -4584,10 +4584,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0276_v5",
+    "id": "P5_MATH_0276",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 5)",
+    "question": "Kenji and Oscar shared $55 in the ratio 2:3. How much did Oscar get?",
     "options": [
       "$33",
       "$55",
@@ -4595,19 +4595,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Oscar = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Kenji",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Oscar",
           "units": 3,
           "color": "#4facfe"
         }
@@ -4679,7 +4679,7 @@
     "id": "P5_MATH_0281",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 37257 pencils. Ravi has 6893 pencils. How many pencils do they have altogether?",
+    "question": "Raj has 37257 balloons. Tanya has 6893 balloons. How many balloons do they have altogether?",
     "options": [
       "44160",
       "30364",
@@ -4694,7 +4694,7 @@
     "id": "P5_MATH_0282",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 6 rows of stickers with 6 in each row. What is the total?",
+    "question": "There are 6 rows of cards with 6 in each row. What is the total?",
     "options": [
       "30",
       "36",
@@ -4721,10 +4721,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0284_v3",
+    "id": "P5_MATH_0284",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Umar bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -4751,10 +4751,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0286_v5",
+    "id": "P5_MATH_0286",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 5)",
+    "question": "Wei Ming and Yasmin shared $88 in the ratio 3:5. How much did Yasmin get?",
     "options": [
       "$50",
       "$33",
@@ -4762,19 +4762,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Yasmin = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Wei Ming",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Yasmin",
           "units": 5,
           "color": "#4facfe"
         }
@@ -4846,7 +4846,7 @@
     "id": "P5_MATH_0291",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 38227 balloons. Brandon has 7423 balloons. How many balloons do they have altogether?",
+    "question": "Ben has 38227 crayons. Dinesh has 7423 crayons. How many crayons do they have altogether?",
     "options": [
       "30804",
       "45645",
@@ -4861,7 +4861,7 @@
     "id": "P5_MATH_0292",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of cards with 8 in each row. What is the total?",
+    "question": "There are 7 rows of keychains with 8 in each row. What is the total?",
     "options": [
       "15",
       "48",
@@ -4888,10 +4888,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0294_v3",
+    "id": "P5_MATH_0294",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Elena bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -4918,10 +4918,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0296_v5",
+    "id": "P5_MATH_0296",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 5)",
+    "question": "Gina and Irene shared $77 in the ratio 4:3. How much did Irene get?",
     "options": [
       "$77",
       "$44",
@@ -4929,19 +4929,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Irene = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Gina",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Irene",
           "units": 3,
           "color": "#4facfe"
         }
@@ -5013,7 +5013,7 @@
     "id": "P5_MATH_0301",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 39197 pencils. Wei Jie has 7953 pencils. How many pencils do they have altogether?",
+    "question": "Leo has 39197 pencils. Noah has 7953 pencils. How many pencils do they have altogether?",
     "options": [
       "47160",
       "31244",
@@ -5055,10 +5055,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0304_v3",
+    "id": "P5_MATH_0304",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Owen bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -5085,10 +5085,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0306_v6",
+    "id": "P5_MATH_0306",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 6)",
+    "question": "Bala and Wei Jie shared $77 in the ratio 2:5. How much did Wei Jie get?",
     "options": [
       "$55",
       "$77",
@@ -5096,19 +5096,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Wei Jie = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Bala",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Wei Jie",
           "units": 5,
           "color": "#4facfe"
         }
@@ -5180,7 +5180,7 @@
     "id": "P5_MATH_0311",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 40167 balloons. Ravi has 8483 balloons. How many balloons do they have altogether?",
+    "question": "David has 40167 balloons. Fatimah has 8483 balloons. How many balloons do they have altogether?",
     "options": [
       "48660",
       "31684",
@@ -5222,10 +5222,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0314_v3",
+    "id": "P5_MATH_0314",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Gopal bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -5252,10 +5252,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0316_v6",
+    "id": "P5_MATH_0316",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 6)",
+    "question": "Kumar and Ravi shared $66 in the ratio 3:3. How much did Ravi get?",
     "options": [
       "$33",
       "$66",
@@ -5263,19 +5263,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Ravi = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Kumar",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Ravi",
           "units": 3,
           "color": "#4facfe"
         }
@@ -5347,7 +5347,7 @@
     "id": "P5_MATH_0321",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 41137 pencils. Brandon has 9013 pencils. How many pencils do they have altogether?",
+    "question": "Ahmad has 41137 crayons. Zhi Hao has 9013 crayons. How many crayons do they have altogether?",
     "options": [
       "50145",
       "32124",
@@ -5362,7 +5362,7 @@
     "id": "P5_MATH_0322",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of stickers with 6 in each row. What is the total?",
+    "question": "There are 10 rows of keychains with 6 in each row. What is the total?",
     "options": [
       "54",
       "70",
@@ -5389,10 +5389,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0324_v3",
+    "id": "P5_MATH_0324",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Xinyi bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -5419,10 +5419,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0326_v6",
+    "id": "P5_MATH_0326",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 6)",
+    "question": "Yusof and Brandon shared $99 in the ratio 4:5. How much did Brandon get?",
     "options": [
       "$44",
       "$55",
@@ -5430,19 +5430,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Brandon = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Yusof",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Brandon",
           "units": 5,
           "color": "#4facfe"
         }
@@ -5514,7 +5514,7 @@
     "id": "P5_MATH_0331",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 42107 balloons. Wei Jie has 9543 balloons. How many balloons do they have altogether?",
+    "question": "Jia Hui has 42107 pencils. Aisha has 9543 pencils. How many pencils do they have altogether?",
     "options": [
       "51650",
       "32564",
@@ -5529,7 +5529,7 @@
     "id": "P5_MATH_0332",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 11 rows of cards with 8 in each row. What is the total?",
+    "question": "There are 11 rows of stickers with 8 in each row. What is the total?",
     "options": [
       "80",
       "88",
@@ -5556,10 +5556,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0334_v3",
+    "id": "P5_MATH_0334",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Marcus bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -5586,10 +5586,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0336_v6",
+    "id": "P5_MATH_0336",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 6)",
+    "question": "Joyce and Lina shared $55 in the ratio 2:3. How much did Lina get?",
     "options": [
       "$33",
       "$55",
@@ -5597,19 +5597,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Lina = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Joyce",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Lina",
           "units": 3,
           "color": "#4facfe"
         }
@@ -5681,7 +5681,7 @@
     "id": "P5_MATH_0341",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 43077 pencils. Ravi has 1073 pencils. How many pencils do they have altogether?",
+    "question": "Qistina has 43077 balloons. Sofia has 1073 balloons. How many balloons do they have altogether?",
     "options": [
       "44145",
       "44150",
@@ -5696,7 +5696,7 @@
     "id": "P5_MATH_0342",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 3 rows of stickers with 10 in each row. What is the total?",
+    "question": "There are 3 rows of cards with 10 in each row. What is the total?",
     "options": [
       "13",
       "33",
@@ -5723,10 +5723,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0344_v3",
+    "id": "P5_MATH_0344",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Tanya bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -5753,10 +5753,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0346_v6",
+    "id": "P5_MATH_0346",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 6)",
+    "question": "Vera and Xuan shared $88 in the ratio 3:5. How much did Xuan get?",
     "options": [
       "$50",
       "$33",
@@ -5764,19 +5764,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Xuan = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Vera",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Xuan",
           "units": 5,
           "color": "#4facfe"
         }
@@ -5848,7 +5848,7 @@
     "id": "P5_MATH_0351",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 44047 balloons. Brandon has 1603 balloons. How many balloons do they have altogether?",
+    "question": "Ananya has 44047 crayons. Carmen has 1603 crayons. How many crayons do they have altogether?",
     "options": [
       "45645",
       "42444",
@@ -5863,7 +5863,7 @@
     "id": "P5_MATH_0352",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of cards with 4 in each row. What is the total?",
+    "question": "There are 4 rows of keychains with 4 in each row. What is the total?",
     "options": [
       "16",
       "8",
@@ -5890,10 +5890,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0354_v3",
+    "id": "P5_MATH_0354",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 3)",
+    "question": "Dinesh bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -5920,10 +5920,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0356_v6",
+    "id": "P5_MATH_0356",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 6)",
+    "question": "Farid and Hassan shared $77 in the ratio 4:3. How much did Hassan get?",
     "options": [
       "$77",
       "$44",
@@ -5931,19 +5931,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Hassan = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Farid",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Hassan",
           "units": 3,
           "color": "#4facfe"
         }
@@ -6015,7 +6015,7 @@
     "id": "P5_MATH_0361",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 45017 pencils. Wei Jie has 2133 pencils. How many pencils do they have altogether?",
+    "question": "Keisha has 45017 pencils. Mira has 2133 pencils. How many pencils do they have altogether?",
     "options": [
       "47150",
       "47160",
@@ -6057,10 +6057,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0364_v4",
+    "id": "P5_MATH_0364",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Noah bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -6087,10 +6087,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0366_v7",
+    "id": "P5_MATH_0366",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 7)",
+    "question": "Ali and Mei Ling shared $77 in the ratio 2:5. How much did Mei Ling get?",
     "options": [
       "$55",
       "$77",
@@ -6098,19 +6098,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Mei Ling = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Ali",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Mei Ling",
           "units": 5,
           "color": "#4facfe"
         }
@@ -6182,7 +6182,7 @@
     "id": "P5_MATH_0371",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 45987 balloons. Ravi has 2663 balloons. How many balloons do they have altogether?",
+    "question": "Kavitha has 45987 balloons. Sarah has 2663 balloons. How many balloons do they have altogether?",
     "options": [
       "48650",
       "48660",
@@ -6224,10 +6224,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0374_v4",
+    "id": "P5_MATH_0374",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Fatimah bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -6254,10 +6254,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0376_v7",
+    "id": "P5_MATH_0376",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 7)",
+    "question": "Huiling and Nurul shared $66 in the ratio 3:3. How much did Nurul get?",
     "options": [
       "$33",
       "$66",
@@ -6265,19 +6265,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Nurul = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Huiling",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Nurul",
           "units": 3,
           "color": "#4facfe"
         }
@@ -6349,7 +6349,7 @@
     "id": "P5_MATH_0381",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 46957 pencils. Brandon has 3193 pencils. How many pencils do they have altogether?",
+    "question": "Sanjay has 46957 crayons. Chloe has 3193 crayons. How many crayons do they have altogether?",
     "options": [
       "43764",
       "50145",
@@ -6364,7 +6364,7 @@
     "id": "P5_MATH_0382_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of stickers with 10 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 7 rows of keychains with 10 in each row. What is the total?\n(Variant 2)",
     "options": [
       "70",
       "77",
@@ -6391,10 +6391,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0384_v4",
+    "id": "P5_MATH_0384",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Zhi Hao bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -6421,10 +6421,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0386_v7",
+    "id": "P5_MATH_0386",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 7)",
+    "question": "Desmond and Amira shared $99 in the ratio 4:5. How much did Amira get?",
     "options": [
       "$44",
       "$55",
@@ -6432,19 +6432,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Amira = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Desmond",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Amira",
           "units": 5,
           "color": "#4facfe"
         }
@@ -6516,7 +6516,7 @@
     "id": "P5_MATH_0391",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 47927 balloons. Wei Jie has 3723 balloons. How many balloons do they have altogether?",
+    "question": "Ethan has 47927 pencils. Ryan has 3723 pencils. How many pencils do they have altogether?",
     "options": [
       "51650",
       "51660",
@@ -6531,7 +6531,7 @@
     "id": "P5_MATH_0392_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 8 rows of cards with 4 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 8 rows of stickers with 4 in each row. What is the total?\n(Variant 2)",
     "options": [
       "40",
       "32",
@@ -6558,10 +6558,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0394_v4",
+    "id": "P5_MATH_0394",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Aisha bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -6588,10 +6588,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0396_v7",
+    "id": "P5_MATH_0396",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 7)",
+    "question": "Hafiz and Kenji shared $55 in the ratio 2:3. How much did Kenji get?",
     "options": [
       "$33",
       "$55",
@@ -6599,19 +6599,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Kenji = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Hafiz",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Kenji",
           "units": 3,
           "color": "#4facfe"
         }
@@ -6683,7 +6683,7 @@
     "id": "P5_MATH_0401",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 48897 pencils. Ravi has 4253 pencils. How many pencils do they have altogether?",
+    "question": "Pei Ling has 48897 balloons. Raj has 4253 balloons. How many balloons do they have altogether?",
     "options": [
       "53160",
       "53145",
@@ -6698,7 +6698,7 @@
     "id": "P5_MATH_0402_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 9 rows of stickers with 6 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 9 rows of cards with 6 in each row. What is the total?\n(Variant 2)",
     "options": [
       "48",
       "54",
@@ -6725,10 +6725,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0404_v4",
+    "id": "P5_MATH_0404",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Sofia bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -6755,10 +6755,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0406_v7",
+    "id": "P5_MATH_0406",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 7)",
+    "question": "Umar and Wei Ming shared $88 in the ratio 3:5. How much did Wei Ming get?",
     "options": [
       "$50",
       "$33",
@@ -6766,19 +6766,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Wei Ming = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Umar",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Wei Ming",
           "units": 5,
           "color": "#4facfe"
         }
@@ -6850,7 +6850,7 @@
     "id": "P5_MATH_0411",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 49867 balloons. Brandon has 4783 balloons. How many balloons do they have altogether?",
+    "question": "Zane has 49867 crayons. Ben has 4783 crayons. How many crayons do they have altogether?",
     "options": [
       "54645",
       "54660",
@@ -6865,7 +6865,7 @@
     "id": "P5_MATH_0412_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of cards with 8 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 10 rows of keychains with 8 in each row. What is the total?\n(Variant 2)",
     "options": [
       "72",
       "80",
@@ -6892,10 +6892,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0414_v4",
+    "id": "P5_MATH_0414",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Carmen bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -6922,10 +6922,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0416_v7",
+    "id": "P5_MATH_0416",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 7)",
+    "question": "Elena and Gina shared $77 in the ratio 4:3. How much did Gina get?",
     "options": [
       "$77",
       "$44",
@@ -6933,19 +6933,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Gina = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Elena",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Gina",
           "units": 3,
           "color": "#4facfe"
         }
@@ -7017,7 +7017,7 @@
     "id": "P5_MATH_0421",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 50837 pencils. Wei Jie has 5313 pencils. How many pencils do they have altogether?",
+    "question": "Joel has 50837 pencils. Leo has 5313 pencils. How many pencils do they have altogether?",
     "options": [
       "56150",
       "56160",
@@ -7059,10 +7059,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0424_v4",
+    "id": "P5_MATH_0424",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Mira bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -7089,10 +7089,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0426_v8",
+    "id": "P5_MATH_0426",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 8)",
+    "question": "Owen and Bala shared $77 in the ratio 2:5. How much did Bala get?",
     "options": [
       "$55",
       "$77",
@@ -7100,19 +7100,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Bala = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Owen",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Bala",
           "units": 5,
           "color": "#4facfe"
         }
@@ -7184,7 +7184,7 @@
     "id": "P5_MATH_0431",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 51807 balloons. Ravi has 5843 balloons. How many balloons do they have altogether?",
+    "question": "Siti has 51807 balloons. David has 5843 balloons. How many balloons do they have altogether?",
     "options": [
       "57660",
       "57645",
@@ -7226,10 +7226,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0434_v4",
+    "id": "P5_MATH_0434",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Sarah bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -7256,10 +7256,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0436_v8",
+    "id": "P5_MATH_0436",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 8)",
+    "question": "Gopal and Kumar shared $66 in the ratio 3:3. How much did Kumar get?",
     "options": [
       "$33",
       "$66",
@@ -7267,19 +7267,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Kumar = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Gopal",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Kumar",
           "units": 3,
           "color": "#4facfe"
         }
@@ -7351,7 +7351,7 @@
     "id": "P5_MATH_0441",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 52777 pencils. Brandon has 6373 pencils. How many pencils do they have altogether?",
+    "question": "Junjie has 52777 crayons. Ahmad has 6373 crayons. How many crayons do they have altogether?",
     "options": [
       "59145",
       "46404",
@@ -7366,7 +7366,7 @@
     "id": "P5_MATH_0442_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of stickers with 6 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 4 rows of keychains with 6 in each row. What is the total?\n(Variant 2)",
     "options": [
       "28",
       "10",
@@ -7393,10 +7393,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0444_v4",
+    "id": "P5_MATH_0444",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Chloe bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -7423,10 +7423,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0446_v8",
+    "id": "P5_MATH_0446",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 8)",
+    "question": "Xinyi and Yusof shared $99 in the ratio 4:5. How much did Yusof get?",
     "options": [
       "$44",
       "$55",
@@ -7434,19 +7434,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Yusof = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Xinyi",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Yusof",
           "units": 5,
           "color": "#4facfe"
         }
@@ -7518,7 +7518,7 @@
     "id": "P5_MATH_0451",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 53747 balloons. Wei Jie has 6903 balloons. How many balloons do they have altogether?",
+    "question": "Priya has 53747 pencils. Jia Hui has 6903 pencils. How many pencils do they have altogether?",
     "options": [
       "60645",
       "46844",
@@ -7533,7 +7533,7 @@
     "id": "P5_MATH_0452_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 5 rows of cards with 8 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 5 rows of stickers with 8 in each row. What is the total?\n(Variant 2)",
     "options": [
       "40",
       "32",
@@ -7560,10 +7560,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0454_v4",
+    "id": "P5_MATH_0454",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Ryan bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -7590,10 +7590,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0456_v8",
+    "id": "P5_MATH_0456",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 8)",
+    "question": "Marcus and Joyce shared $55 in the ratio 2:3. How much did Joyce get?",
     "options": [
       "$33",
       "$55",
@@ -7601,19 +7601,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Joyce = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Marcus",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Joyce",
           "units": 3,
           "color": "#4facfe"
         }
@@ -7685,7 +7685,7 @@
     "id": "P5_MATH_0461",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 54717 pencils. Ravi has 7433 pencils. How many pencils do they have altogether?",
+    "question": "Oscar has 54717 balloons. Qistina has 7433 balloons. How many balloons do they have altogether?",
     "options": [
       "62150",
       "47284",
@@ -7700,7 +7700,7 @@
     "id": "P5_MATH_0462_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 6 rows of stickers with 10 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 6 rows of cards with 10 in each row. What is the total?\n(Variant 2)",
     "options": [
       "60",
       "16",
@@ -7727,10 +7727,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0464_v4",
+    "id": "P5_MATH_0464",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Raj bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -7757,10 +7757,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0466_v8",
+    "id": "P5_MATH_0466",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 8)",
+    "question": "Tanya and Vera shared $88 in the ratio 3:5. How much did Vera get?",
     "options": [
       "$50",
       "$33",
@@ -7768,19 +7768,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Vera = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Tanya",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Vera",
           "units": 5,
           "color": "#4facfe"
         }
@@ -7852,7 +7852,7 @@
     "id": "P5_MATH_0471",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 55687 balloons. Brandon has 7963 balloons. How many balloons do they have altogether?",
+    "question": "Yasmin has 55687 crayons. Ananya has 7963 crayons. How many crayons do they have altogether?",
     "options": [
       "63650",
       "63660",
@@ -7867,7 +7867,7 @@
     "id": "P5_MATH_0472_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of cards with 4 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 7 rows of keychains with 4 in each row. What is the total?\n(Variant 2)",
     "options": [
       "11",
       "35",
@@ -7894,10 +7894,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0474_v4",
+    "id": "P5_MATH_0474",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 4)",
+    "question": "Ben bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -7924,10 +7924,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0476_v8",
+    "id": "P5_MATH_0476",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 8)",
+    "question": "Dinesh and Farid shared $77 in the ratio 4:3. How much did Farid get?",
     "options": [
       "$77",
       "$44",
@@ -7935,19 +7935,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Farid = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Dinesh",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Farid",
           "units": 3,
           "color": "#4facfe"
         }
@@ -8019,7 +8019,7 @@
     "id": "P5_MATH_0481",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 56657 pencils. Wei Jie has 8493 pencils. How many pencils do they have altogether?",
+    "question": "Irene has 56657 pencils. Keisha has 8493 pencils. How many pencils do they have altogether?",
     "options": [
       "65145",
       "65160",
@@ -8061,10 +8061,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0484_v5",
+    "id": "P5_MATH_0484",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Leo bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -8091,10 +8091,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0486_v9",
+    "id": "P5_MATH_0486",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 9)",
+    "question": "Noah and Ali shared $77 in the ratio 2:5. How much did Ali get?",
     "options": [
       "$55",
       "$77",
@@ -8102,19 +8102,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Ali = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Noah",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Ali",
           "units": 5,
           "color": "#4facfe"
         }
@@ -8186,7 +8186,7 @@
     "id": "P5_MATH_0491",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 57627 balloons. Ravi has 9023 balloons. How many balloons do they have altogether?",
+    "question": "Wei Jie has 57627 balloons. Kavitha has 9023 balloons. How many balloons do they have altogether?",
     "options": [
       "48604",
       "66660",
@@ -8228,10 +8228,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0494_v5",
+    "id": "P5_MATH_0494",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 5)",
+    "question": "David bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -8258,10 +8258,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0496_v9",
+    "id": "P5_MATH_0496",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 9)",
+    "question": "Fatimah and Huiling shared $66 in the ratio 3:3. How much did Huiling get?",
     "options": [
       "$33",
       "$66",
@@ -8269,19 +8269,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Huiling = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Fatimah",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Huiling",
           "units": 3,
           "color": "#4facfe"
         }
@@ -8353,7 +8353,7 @@
     "id": "P5_MATH_0501",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 58597 pencils. Brandon has 9553 pencils. How many pencils do they have altogether?",
+    "question": "Ravi has 58597 crayons. Sanjay has 9553 crayons. How many crayons do they have altogether?",
     "options": [
       "68145",
       "68150",
@@ -8368,7 +8368,7 @@
     "id": "P5_MATH_0502_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of stickers with 10 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 10 rows of keychains with 10 in each row. What is the total?\n(Variant 2)",
     "options": [
       "110",
       "90",
@@ -8395,10 +8395,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0504_v5",
+    "id": "P5_MATH_0504",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Ahmad bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -8425,10 +8425,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0506_v9",
+    "id": "P5_MATH_0506",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 9)",
+    "question": "Zhi Hao and Desmond shared $99 in the ratio 4:5. How much did Desmond get?",
     "options": [
       "$44",
       "$55",
@@ -8436,19 +8436,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Desmond = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Zhi Hao",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Desmond",
           "units": 5,
           "color": "#4facfe"
         }
@@ -8520,7 +8520,7 @@
     "id": "P5_MATH_0511",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 59567 balloons. Wei Jie has 1083 balloons. How many balloons do they have altogether?",
+    "question": "Brandon has 59567 pencils. Ethan has 1083 pencils. How many pencils do they have altogether?",
     "options": [
       "60645",
       "60660",
@@ -8535,7 +8535,7 @@
     "id": "P5_MATH_0512_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 11 rows of cards with 4 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 11 rows of stickers with 4 in each row. What is the total?\n(Variant 2)",
     "options": [
       "44",
       "55",
@@ -8562,10 +8562,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0514_v5",
+    "id": "P5_MATH_0514",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Jia Hui bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -8592,10 +8592,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0516_v9",
+    "id": "P5_MATH_0516",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 9)",
+    "question": "Aisha and Hafiz shared $55 in the ratio 2:3. How much did Hafiz get?",
     "options": [
       "$33",
       "$55",
@@ -8603,19 +8603,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Hafiz = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Aisha",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Hafiz",
           "units": 3,
           "color": "#4facfe"
         }
@@ -8687,7 +8687,7 @@
     "id": "P5_MATH_0521",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 60537 pencils. Ravi has 1613 pencils. How many pencils do they have altogether?",
+    "question": "Lina has 60537 balloons. Pei Ling has 1613 balloons. How many balloons do they have altogether?",
     "options": [
       "62145",
       "62160",
@@ -8702,7 +8702,7 @@
     "id": "P5_MATH_0522_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 3 rows of stickers with 6 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 3 rows of cards with 6 in each row. What is the total?\n(Variant 2)",
     "options": [
       "18",
       "9",
@@ -8729,10 +8729,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0524_v5",
+    "id": "P5_MATH_0524",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Qistina bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -8759,10 +8759,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0526_v9",
+    "id": "P5_MATH_0526",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 9)",
+    "question": "Sofia and Umar shared $88 in the ratio 3:5. How much did Umar get?",
     "options": [
       "$50",
       "$33",
@@ -8770,19 +8770,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Umar = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Sofia",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Umar",
           "units": 5,
           "color": "#4facfe"
         }
@@ -8854,7 +8854,7 @@
     "id": "P5_MATH_0531",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 61507 balloons. Brandon has 2143 balloons. How many balloons do they have altogether?",
+    "question": "Xuan has 61507 crayons. Zane has 2143 crayons. How many crayons do they have altogether?",
     "options": [
       "63645",
       "63660",
@@ -8869,7 +8869,7 @@
     "id": "P5_MATH_0532_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of cards with 8 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 4 rows of keychains with 8 in each row. What is the total?\n(Variant 2)",
     "options": [
       "36",
       "24",
@@ -8896,10 +8896,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0534_v5",
+    "id": "P5_MATH_0534",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Ananya bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -8926,10 +8926,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0536_v9",
+    "id": "P5_MATH_0536",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 9)",
+    "question": "Carmen and Elena shared $77 in the ratio 4:3. How much did Elena get?",
     "options": [
       "$77",
       "$44",
@@ -8937,19 +8937,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Elena = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Carmen",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Elena",
           "units": 3,
           "color": "#4facfe"
         }
@@ -9021,7 +9021,7 @@
     "id": "P5_MATH_0541",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 62477 pencils. Wei Jie has 2673 pencils. How many pencils do they have altogether?",
+    "question": "Hassan has 62477 pencils. Joel has 2673 pencils. How many pencils do they have altogether?",
     "options": [
       "65145",
       "59804",
@@ -9063,10 +9063,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0544_v5",
+    "id": "P5_MATH_0544",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Keisha bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -9093,10 +9093,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0546_v10",
+    "id": "P5_MATH_0546",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 10)",
+    "question": "Mira and Owen shared $77 in the ratio 2:5. How much did Owen get?",
     "options": [
       "$55",
       "$77",
@@ -9104,19 +9104,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Owen = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Mira",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Owen",
           "units": 5,
           "color": "#4facfe"
         }
@@ -9188,7 +9188,7 @@
     "id": "P5_MATH_0551",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 63447 balloons. Ravi has 3203 balloons. How many balloons do they have altogether?",
+    "question": "Mei Ling has 63447 balloons. Siti has 3203 balloons. How many balloons do they have altogether?",
     "options": [
       "66650",
       "60244",
@@ -9230,10 +9230,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0554_v5",
+    "id": "P5_MATH_0554",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Kavitha bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -9260,10 +9260,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0556_v10",
+    "id": "P5_MATH_0556",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 10)",
+    "question": "Sarah and Gopal shared $66 in the ratio 3:3. How much did Gopal get?",
     "options": [
       "$33",
       "$66",
@@ -9271,19 +9271,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Gopal = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Sarah",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Gopal",
           "units": 3,
           "color": "#4facfe"
         }
@@ -9355,7 +9355,7 @@
     "id": "P5_MATH_0561",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 64417 pencils. Brandon has 3733 pencils. How many pencils do they have altogether?",
+    "question": "Nurul has 64417 crayons. Junjie has 3733 crayons. How many crayons do they have altogether?",
     "options": [
       "68160",
       "68145",
@@ -9370,7 +9370,7 @@
     "id": "P5_MATH_0562_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of stickers with 6 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 7 rows of keychains with 6 in each row. What is the total?\n(Variant 2)",
     "options": [
       "13",
       "49",
@@ -9397,10 +9397,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0564_v5",
+    "id": "P5_MATH_0564",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Sanjay bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -9427,10 +9427,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0566_v10",
+    "id": "P5_MATH_0566",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 10)",
+    "question": "Chloe and Xinyi shared $99 in the ratio 4:5. How much did Xinyi get?",
     "options": [
       "$44",
       "$55",
@@ -9438,19 +9438,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Xinyi = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Chloe",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Xinyi",
           "units": 5,
           "color": "#4facfe"
         }
@@ -9522,7 +9522,7 @@
     "id": "P5_MATH_0571",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 65387 balloons. Wei Jie has 4263 balloons. How many balloons do they have altogether?",
+    "question": "Amira has 65387 pencils. Priya has 4263 pencils. How many pencils do they have altogether?",
     "options": [
       "69645",
       "69650",
@@ -9537,7 +9537,7 @@
     "id": "P5_MATH_0572_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 8 rows of cards with 8 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 8 rows of stickers with 8 in each row. What is the total?\n(Variant 2)",
     "options": [
       "72",
       "64",
@@ -9564,10 +9564,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0574_v5",
+    "id": "P5_MATH_0574",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Ethan bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -9594,10 +9594,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0576_v10",
+    "id": "P5_MATH_0576",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 10)",
+    "question": "Ryan and Marcus shared $55 in the ratio 2:3. How much did Marcus get?",
     "options": [
       "$33",
       "$55",
@@ -9605,19 +9605,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Marcus = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Ryan",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Marcus",
           "units": 3,
           "color": "#4facfe"
         }
@@ -9689,7 +9689,7 @@
     "id": "P5_MATH_0581",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 66357 pencils. Ravi has 4793 pencils. How many pencils do they have altogether?",
+    "question": "Kenji has 66357 balloons. Oscar has 4793 balloons. How many balloons do they have altogether?",
     "options": [
       "61564",
       "71150",
@@ -9704,7 +9704,7 @@
     "id": "P5_MATH_0582_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 9 rows of stickers with 10 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 9 rows of cards with 10 in each row. What is the total?\n(Variant 2)",
     "options": [
       "99",
       "80",
@@ -9731,10 +9731,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0584_v5",
+    "id": "P5_MATH_0584",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Pei Ling bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -9761,10 +9761,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0586_v10",
+    "id": "P5_MATH_0586",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 10)",
+    "question": "Raj and Tanya shared $88 in the ratio 3:5. How much did Tanya get?",
     "options": [
       "$50",
       "$33",
@@ -9772,19 +9772,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Tanya = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Raj",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Tanya",
           "units": 5,
           "color": "#4facfe"
         }
@@ -9856,7 +9856,7 @@
     "id": "P5_MATH_0591",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 67327 balloons. Brandon has 5323 balloons. How many balloons do they have altogether?",
+    "question": "Wei Ming has 67327 crayons. Yasmin has 5323 crayons. How many crayons do they have altogether?",
     "options": [
       "72650",
       "72660",
@@ -9871,7 +9871,7 @@
     "id": "P5_MATH_0592_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of cards with 4 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 10 rows of keychains with 4 in each row. What is the total?\n(Variant 2)",
     "options": [
       "14",
       "40",
@@ -9898,10 +9898,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0594_v5",
+    "id": "P5_MATH_0594",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 5)",
+    "question": "Zane bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -9928,10 +9928,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0596_v10",
+    "id": "P5_MATH_0596",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 10)",
+    "question": "Ben and Dinesh shared $77 in the ratio 4:3. How much did Dinesh get?",
     "options": [
       "$77",
       "$44",
@@ -9939,19 +9939,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Dinesh = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Ben",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Dinesh",
           "units": 3,
           "color": "#4facfe"
         }
@@ -10023,7 +10023,7 @@
     "id": "P5_MATH_0601",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 68297 pencils. Wei Jie has 5853 pencils. How many pencils do they have altogether?",
+    "question": "Gina has 68297 pencils. Irene has 5853 pencils. How many pencils do they have altogether?",
     "options": [
       "62444",
       "74150",
@@ -10065,10 +10065,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0604_v6",
+    "id": "P5_MATH_0604",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Joel bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -10095,10 +10095,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0606_v11",
+    "id": "P5_MATH_0606",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 11)",
+    "question": "Leo and Noah shared $77 in the ratio 2:5. How much did Noah get?",
     "options": [
       "$55",
       "$77",
@@ -10106,19 +10106,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Noah = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Leo",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Noah",
           "units": 5,
           "color": "#4facfe"
         }
@@ -10190,7 +10190,7 @@
     "id": "P5_MATH_0611",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 69267 balloons. Ravi has 6383 balloons. How many balloons do they have altogether?",
+    "question": "Bala has 69267 balloons. Wei Jie has 6383 balloons. How many balloons do they have altogether?",
     "options": [
       "75650",
       "75660",
@@ -10232,10 +10232,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0614_v6",
+    "id": "P5_MATH_0614",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -10262,10 +10262,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0616_v11",
+    "id": "P5_MATH_0616",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 11)",
+    "question": "David and Fatimah shared $66 in the ratio 3:3. How much did Fatimah get?",
     "options": [
       "$33",
       "$66",
@@ -10273,19 +10273,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Fatimah = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "David",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Fatimah",
           "units": 3,
           "color": "#4facfe"
         }
@@ -10357,7 +10357,7 @@
     "id": "P5_MATH_0621",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 70237 pencils. Brandon has 6913 pencils. How many pencils do they have altogether?",
+    "question": "Kumar has 70237 crayons. Ravi has 6913 crayons. How many crayons do they have altogether?",
     "options": [
       "63324",
       "77150",
@@ -10372,7 +10372,7 @@
     "id": "P5_MATH_0622_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of stickers with 10 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 4 rows of keychains with 10 in each row. What is the total?\n(Variant 2)",
     "options": [
       "14",
       "40",
@@ -10399,10 +10399,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0624_v6",
+    "id": "P5_MATH_0624",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -10429,10 +10429,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0626_v11",
+    "id": "P5_MATH_0626",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 11)",
+    "question": "Ahmad and Zhi Hao shared $99 in the ratio 4:5. How much did Zhi Hao get?",
     "options": [
       "$44",
       "$55",
@@ -10440,19 +10440,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Zhi Hao = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Ahmad",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Zhi Hao",
           "units": 5,
           "color": "#4facfe"
         }
@@ -10524,7 +10524,7 @@
     "id": "P5_MATH_0631",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 71207 balloons. Wei Jie has 7443 balloons. How many balloons do they have altogether?",
+    "question": "Yusof has 71207 pencils. Brandon has 7443 pencils. How many pencils do they have altogether?",
     "options": [
       "63764",
       "78645",
@@ -10539,7 +10539,7 @@
     "id": "P5_MATH_0632_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 5 rows of cards with 4 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 5 rows of stickers with 4 in each row. What is the total?\n(Variant 2)",
     "options": [
       "25",
       "9",
@@ -10566,10 +10566,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0634_v6",
+    "id": "P5_MATH_0634",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -10596,10 +10596,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0636_v11",
+    "id": "P5_MATH_0636",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 11)",
+    "question": "Jia Hui and Aisha shared $55 in the ratio 2:3. How much did Aisha get?",
     "options": [
       "$33",
       "$55",
@@ -10607,19 +10607,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Aisha = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Jia Hui",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Aisha",
           "units": 3,
           "color": "#4facfe"
         }
@@ -10691,7 +10691,7 @@
     "id": "P5_MATH_0641",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 72177 pencils. Ravi has 7973 pencils. How many pencils do they have altogether?",
+    "question": "Joyce has 72177 balloons. Lina has 7973 balloons. How many balloons do they have altogether?",
     "options": [
       "80145",
       "64204",
@@ -10706,7 +10706,7 @@
     "id": "P5_MATH_0642_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 6 rows of stickers with 6 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 6 rows of cards with 6 in each row. What is the total?\n(Variant 2)",
     "options": [
       "30",
       "36",
@@ -10733,10 +10733,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0644_v6",
+    "id": "P5_MATH_0644",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Oscar bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -10763,10 +10763,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0646_v11",
+    "id": "P5_MATH_0646",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 11)",
+    "question": "Qistina and Sofia shared $88 in the ratio 3:5. How much did Sofia get?",
     "options": [
       "$50",
       "$33",
@@ -10774,19 +10774,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Sofia = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Qistina",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Sofia",
           "units": 5,
           "color": "#4facfe"
         }
@@ -10858,7 +10858,7 @@
     "id": "P5_MATH_0651",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 73147 balloons. Brandon has 8503 balloons. How many balloons do they have altogether?",
+    "question": "Vera has 73147 crayons. Xuan has 8503 crayons. How many crayons do they have altogether?",
     "options": [
       "81660",
       "81645",
@@ -10873,7 +10873,7 @@
     "id": "P5_MATH_0652_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of cards with 8 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 7 rows of keychains with 8 in each row. What is the total?\n(Variant 2)",
     "options": [
       "15",
       "48",
@@ -10900,10 +10900,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0654_v6",
+    "id": "P5_MATH_0654",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Yasmin bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -10930,10 +10930,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0656_v11",
+    "id": "P5_MATH_0656",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 11)",
+    "question": "Ananya and Carmen shared $77 in the ratio 4:3. How much did Carmen get?",
     "options": [
       "$77",
       "$44",
@@ -10941,19 +10941,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Carmen = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Ananya",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Carmen",
           "units": 3,
           "color": "#4facfe"
         }
@@ -11025,7 +11025,7 @@
     "id": "P5_MATH_0661",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 74117 pencils. Wei Jie has 9033 pencils. How many pencils do they have altogether?",
+    "question": "Farid has 74117 pencils. Hassan has 9033 pencils. How many pencils do they have altogether?",
     "options": [
       "83145",
       "83160",
@@ -11067,10 +11067,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0664_v6",
+    "id": "P5_MATH_0664",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Irene bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -11097,10 +11097,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0666_v12",
+    "id": "P5_MATH_0666",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 12)",
+    "question": "Keisha and Mira shared $77 in the ratio 2:5. How much did Mira get?",
     "options": [
       "$55",
       "$77",
@@ -11108,19 +11108,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Mira = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Keisha",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Mira",
           "units": 5,
           "color": "#4facfe"
         }
@@ -11192,7 +11192,7 @@
     "id": "P5_MATH_0671",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 75087 balloons. Ravi has 9563 balloons. How many balloons do they have altogether?",
+    "question": "Ali has 75087 balloons. Mei Ling has 9563 balloons. How many balloons do they have altogether?",
     "options": [
       "65524",
       "84660",
@@ -11234,10 +11234,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0674_v6",
+    "id": "P5_MATH_0674",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Wei Jie bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -11264,10 +11264,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0676_v12",
+    "id": "P5_MATH_0676",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 12)",
+    "question": "Kavitha and Sarah shared $66 in the ratio 3:3. How much did Sarah get?",
     "options": [
       "$33",
       "$66",
@@ -11275,19 +11275,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Sarah = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Kavitha",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Sarah",
           "units": 3,
           "color": "#4facfe"
         }
@@ -11359,7 +11359,7 @@
     "id": "P5_MATH_0681",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 76057 pencils. Brandon has 1093 pencils. How many pencils do they have altogether?",
+    "question": "Huiling has 76057 crayons. Nurul has 1093 crayons. How many crayons do they have altogether?",
     "options": [
       "77145",
       "77150",
@@ -11374,7 +11374,7 @@
     "id": "P5_MATH_0682_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of stickers with 6 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 10 rows of keychains with 6 in each row. What is the total?\n(Variant 2)",
     "options": [
       "54",
       "70",
@@ -11401,10 +11401,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0684_v6",
+    "id": "P5_MATH_0684",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Ravi bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -11431,10 +11431,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0686_v12",
+    "id": "P5_MATH_0686",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 12)",
+    "question": "Sanjay and Chloe shared $99 in the ratio 4:5. How much did Chloe get?",
     "options": [
       "$44",
       "$55",
@@ -11442,19 +11442,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Chloe = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Sanjay",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Chloe",
           "units": 5,
           "color": "#4facfe"
         }
@@ -11526,7 +11526,7 @@
     "id": "P5_MATH_0691",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 77027 balloons. Wei Jie has 1623 balloons. How many balloons do they have altogether?",
+    "question": "Desmond has 77027 pencils. Amira has 1623 pencils. How many pencils do they have altogether?",
     "options": [
       "75404",
       "78645",
@@ -11541,7 +11541,7 @@
     "id": "P5_MATH_0692_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 11 rows of cards with 8 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 11 rows of stickers with 8 in each row. What is the total?\n(Variant 2)",
     "options": [
       "80",
       "88",
@@ -11568,10 +11568,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0694_v6",
+    "id": "P5_MATH_0694",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Brandon bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -11598,10 +11598,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0696_v12",
+    "id": "P5_MATH_0696",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 12)",
+    "question": "Ethan and Ryan shared $55 in the ratio 2:3. How much did Ryan get?",
     "options": [
       "$33",
       "$55",
@@ -11609,19 +11609,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Ryan = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Ethan",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Ryan",
           "units": 3,
           "color": "#4facfe"
         }
@@ -11693,7 +11693,7 @@
     "id": "P5_MATH_0701",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 77997 pencils. Ravi has 2153 pencils. How many pencils do they have altogether?",
+    "question": "Hafiz has 77997 balloons. Kenji has 2153 balloons. How many balloons do they have altogether?",
     "options": [
       "80150",
       "80145",
@@ -11708,7 +11708,7 @@
     "id": "P5_MATH_0702_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 3 rows of stickers with 10 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 3 rows of cards with 10 in each row. What is the total?\n(Variant 2)",
     "options": [
       "13",
       "33",
@@ -11735,10 +11735,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0704_v6",
+    "id": "P5_MATH_0704",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Lina bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -11765,10 +11765,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0706_v12",
+    "id": "P5_MATH_0706",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 12)",
+    "question": "Pei Ling and Raj shared $88 in the ratio 3:5. How much did Raj get?",
     "options": [
       "$50",
       "$33",
@@ -11776,19 +11776,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Raj = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Pei Ling",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Raj",
           "units": 5,
           "color": "#4facfe"
         }
@@ -11860,7 +11860,7 @@
     "id": "P5_MATH_0711",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 78967 balloons. Brandon has 2683 balloons. How many balloons do they have altogether?",
+    "question": "Umar has 78967 crayons. Wei Ming has 2683 crayons. How many crayons do they have altogether?",
     "options": [
       "81650",
       "81645",
@@ -11875,7 +11875,7 @@
     "id": "P5_MATH_0712_v2",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of cards with 4 in each row. What is the total?\n(Variant 2)",
+    "question": "There are 4 rows of keychains with 4 in each row. What is the total?\n(Variant 2)",
     "options": [
       "16",
       "8",
@@ -11902,10 +11902,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0714_v6",
+    "id": "P5_MATH_0714",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 6)",
+    "question": "Xuan bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -11932,10 +11932,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0716_v12",
+    "id": "P5_MATH_0716",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 12)",
+    "question": "Zane and Ben shared $77 in the ratio 4:3. How much did Ben get?",
     "options": [
       "$77",
       "$44",
@@ -11943,19 +11943,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Ben = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Zane",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Ben",
           "units": 3,
           "color": "#4facfe"
         }
@@ -12027,7 +12027,7 @@
     "id": "P5_MATH_0721",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 79937 pencils. Wei Jie has 3213 pencils. How many pencils do they have altogether?",
+    "question": "Elena has 79937 pencils. Gina has 3213 pencils. How many pencils do they have altogether?",
     "options": [
       "83160",
       "76724",
@@ -12069,10 +12069,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0724_v7",
+    "id": "P5_MATH_0724",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Hassan bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -12099,10 +12099,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0726_v13",
+    "id": "P5_MATH_0726",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 13)",
+    "question": "Joel and Leo shared $77 in the ratio 2:5. How much did Leo get?",
     "options": [
       "$55",
       "$77",
@@ -12110,19 +12110,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Leo = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Joel",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Leo",
           "units": 5,
           "color": "#4facfe"
         }
@@ -12194,7 +12194,7 @@
     "id": "P5_MATH_0731",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 80907 balloons. Ravi has 3743 balloons. How many balloons do they have altogether?",
+    "question": "Owen has 80907 balloons. Bala has 3743 balloons. How many balloons do they have altogether?",
     "options": [
       "84650",
       "84660",
@@ -12236,10 +12236,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0734_v7",
+    "id": "P5_MATH_0734",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Mei Ling bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -12266,10 +12266,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0736_v13",
+    "id": "P5_MATH_0736",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 13)",
+    "question": "Siti and David shared $66 in the ratio 3:3. How much did David get?",
     "options": [
       "$33",
       "$66",
@@ -12277,19 +12277,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. David = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Siti",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "David",
           "units": 3,
           "color": "#4facfe"
         }
@@ -12361,7 +12361,7 @@
     "id": "P5_MATH_0741",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 81877 pencils. Brandon has 4273 pencils. How many pencils do they have altogether?",
+    "question": "Gopal has 81877 crayons. Kumar has 4273 crayons. How many crayons do they have altogether?",
     "options": [
       "86145",
       "86160",
@@ -12376,7 +12376,7 @@
     "id": "P5_MATH_0742_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of stickers with 10 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 7 rows of keychains with 10 in each row. What is the total?\n(Variant 3)",
     "options": [
       "70",
       "77",
@@ -12403,10 +12403,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0744_v7",
+    "id": "P5_MATH_0744",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Nurul bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -12433,10 +12433,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0746_v13",
+    "id": "P5_MATH_0746",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 13)",
+    "question": "Junjie and Ahmad shared $99 in the ratio 4:5. How much did Ahmad get?",
     "options": [
       "$44",
       "$55",
@@ -12444,19 +12444,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Ahmad = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Junjie",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Ahmad",
           "units": 5,
           "color": "#4facfe"
         }
@@ -12528,7 +12528,7 @@
     "id": "P5_MATH_0751",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 82847 balloons. Wei Jie has 4803 balloons. How many balloons do they have altogether?",
+    "question": "Xinyi has 82847 pencils. Yusof has 4803 pencils. How many pencils do they have altogether?",
     "options": [
       "87645",
       "87660",
@@ -12543,7 +12543,7 @@
     "id": "P5_MATH_0752_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 8 rows of cards with 4 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 8 rows of stickers with 4 in each row. What is the total?\n(Variant 3)",
     "options": [
       "40",
       "32",
@@ -12570,10 +12570,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0754_v7",
+    "id": "P5_MATH_0754",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Amira bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -12600,10 +12600,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0756_v13",
+    "id": "P5_MATH_0756",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 13)",
+    "question": "Priya and Jia Hui shared $55 in the ratio 2:3. How much did Jia Hui get?",
     "options": [
       "$33",
       "$55",
@@ -12611,19 +12611,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Jia Hui = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Priya",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Jia Hui",
           "units": 3,
           "color": "#4facfe"
         }
@@ -12695,7 +12695,7 @@
     "id": "P5_MATH_0761",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 83817 pencils. Ravi has 5333 pencils. How many pencils do they have altogether?",
+    "question": "Marcus has 83817 balloons. Joyce has 5333 balloons. How many balloons do they have altogether?",
     "options": [
       "89160",
       "89150",
@@ -12710,7 +12710,7 @@
     "id": "P5_MATH_0762_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 9 rows of stickers with 6 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 9 rows of cards with 6 in each row. What is the total?\n(Variant 3)",
     "options": [
       "48",
       "54",
@@ -12737,10 +12737,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0764_v7",
+    "id": "P5_MATH_0764",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Kenji bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -12767,10 +12767,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0766_v13",
+    "id": "P5_MATH_0766",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 13)",
+    "question": "Oscar and Qistina shared $88 in the ratio 3:5. How much did Qistina get?",
     "options": [
       "$50",
       "$33",
@@ -12778,19 +12778,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Qistina = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Oscar",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Qistina",
           "units": 5,
           "color": "#4facfe"
         }
@@ -12862,7 +12862,7 @@
     "id": "P5_MATH_0771",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 84787 balloons. Brandon has 5863 balloons. How many balloons do they have altogether?",
+    "question": "Tanya has 84787 crayons. Vera has 5863 crayons. How many crayons do they have altogether?",
     "options": [
       "78924",
       "90660",
@@ -12877,7 +12877,7 @@
     "id": "P5_MATH_0772_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of cards with 8 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 10 rows of keychains with 8 in each row. What is the total?\n(Variant 3)",
     "options": [
       "72",
       "80",
@@ -12904,10 +12904,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0774_v7",
+    "id": "P5_MATH_0774",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Wei Ming bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -12934,10 +12934,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0776_v13",
+    "id": "P5_MATH_0776",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 13)",
+    "question": "Yasmin and Ananya shared $77 in the ratio 4:3. How much did Ananya get?",
     "options": [
       "$77",
       "$44",
@@ -12945,19 +12945,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Ananya = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Yasmin",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Ananya",
           "units": 3,
           "color": "#4facfe"
         }
@@ -13029,7 +13029,7 @@
     "id": "P5_MATH_0781",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 85757 pencils. Wei Jie has 6393 pencils. How many pencils do they have altogether?",
+    "question": "Dinesh has 85757 pencils. Farid has 6393 pencils. How many pencils do they have altogether?",
     "options": [
       "92150",
       "79364",
@@ -13071,10 +13071,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0784_v7",
+    "id": "P5_MATH_0784",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Gina bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -13101,10 +13101,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0786_v14",
+    "id": "P5_MATH_0786",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 14)",
+    "question": "Irene and Keisha shared $77 in the ratio 2:5. How much did Keisha get?",
     "options": [
       "$55",
       "$77",
@@ -13112,19 +13112,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Keisha = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Irene",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Keisha",
           "units": 5,
           "color": "#4facfe"
         }
@@ -13196,7 +13196,7 @@
     "id": "P5_MATH_0791",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 86727 balloons. Ravi has 6923 balloons. How many balloons do they have altogether?",
+    "question": "Noah has 86727 balloons. Ali has 6923 balloons. How many balloons do they have altogether?",
     "options": [
       "93660",
       "79804",
@@ -13238,10 +13238,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0794_v7",
+    "id": "P5_MATH_0794",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Bala bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -13268,10 +13268,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0796_v14",
+    "id": "P5_MATH_0796",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 14)",
+    "question": "Wei Jie and Kavitha shared $66 in the ratio 3:3. How much did Kavitha get?",
     "options": [
       "$33",
       "$66",
@@ -13279,19 +13279,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Kavitha = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Wei Jie",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Kavitha",
           "units": 3,
           "color": "#4facfe"
         }
@@ -13363,7 +13363,7 @@
     "id": "P5_MATH_0801",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 87697 pencils. Brandon has 7453 pencils. How many pencils do they have altogether?",
+    "question": "Fatimah has 87697 crayons. Huiling has 7453 crayons. How many crayons do they have altogether?",
     "options": [
       "95145",
       "95150",
@@ -13378,7 +13378,7 @@
     "id": "P5_MATH_0802_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of stickers with 6 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 4 rows of keychains with 6 in each row. What is the total?\n(Variant 3)",
     "options": [
       "28",
       "10",
@@ -13405,10 +13405,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0804_v7",
+    "id": "P5_MATH_0804",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Kumar bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -13435,10 +13435,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0806_v14",
+    "id": "P5_MATH_0806",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 14)",
+    "question": "Ravi and Sanjay shared $99 in the ratio 4:5. How much did Sanjay get?",
     "options": [
       "$44",
       "$55",
@@ -13446,19 +13446,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Sanjay = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Ravi",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Sanjay",
           "units": 5,
           "color": "#4facfe"
         }
@@ -13530,7 +13530,7 @@
     "id": "P5_MATH_0811",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 88667 balloons. Wei Jie has 7983 balloons. How many balloons do they have altogether?",
+    "question": "Zhi Hao has 88667 pencils. Desmond has 7983 pencils. How many pencils do they have altogether?",
     "options": [
       "96645",
       "96660",
@@ -13545,7 +13545,7 @@
     "id": "P5_MATH_0812_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 5 rows of cards with 8 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 5 rows of stickers with 8 in each row. What is the total?\n(Variant 3)",
     "options": [
       "40",
       "32",
@@ -13572,10 +13572,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0814_v7",
+    "id": "P5_MATH_0814",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Yusof bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -13602,10 +13602,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0816_v14",
+    "id": "P5_MATH_0816",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 14)",
+    "question": "Brandon and Ethan shared $55 in the ratio 2:3. How much did Ethan get?",
     "options": [
       "$33",
       "$55",
@@ -13613,19 +13613,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Ethan = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Brandon",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Ethan",
           "units": 3,
           "color": "#4facfe"
         }
@@ -13697,7 +13697,7 @@
     "id": "P5_MATH_0821",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 89637 pencils. Ravi has 8513 pencils. How many pencils do they have altogether?",
+    "question": "Aisha has 89637 balloons. Hafiz has 8513 balloons. How many balloons do they have altogether?",
     "options": [
       "98145",
       "81124",
@@ -13712,7 +13712,7 @@
     "id": "P5_MATH_0822_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 6 rows of stickers with 10 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 6 rows of cards with 10 in each row. What is the total?\n(Variant 3)",
     "options": [
       "60",
       "16",
@@ -13739,10 +13739,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0824_v7",
+    "id": "P5_MATH_0824",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Joyce bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -13769,10 +13769,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0826_v14",
+    "id": "P5_MATH_0826",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 14)",
+    "question": "Lina and Pei Ling shared $88 in the ratio 3:5. How much did Pei Ling get?",
     "options": [
       "$50",
       "$33",
@@ -13780,19 +13780,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Pei Ling = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Lina",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Pei Ling",
           "units": 5,
           "color": "#4facfe"
         }
@@ -13864,7 +13864,7 @@
     "id": "P5_MATH_0831",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 10607 balloons. Brandon has 9043 balloons. How many balloons do they have altogether?",
+    "question": "Sofia has 10607 crayons. Umar has 9043 crayons. How many crayons do they have altogether?",
     "options": [
       "19650",
       "1564",
@@ -13879,7 +13879,7 @@
     "id": "P5_MATH_0832_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of cards with 4 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 7 rows of keychains with 4 in each row. What is the total?\n(Variant 3)",
     "options": [
       "11",
       "35",
@@ -13906,10 +13906,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0834_v7",
+    "id": "P5_MATH_0834",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 7)",
+    "question": "Vera bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -13936,10 +13936,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0836_v14",
+    "id": "P5_MATH_0836",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 14)",
+    "question": "Xuan and Zane shared $77 in the ratio 4:3. How much did Zane get?",
     "options": [
       "$77",
       "$44",
@@ -13947,19 +13947,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Zane = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Xuan",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Zane",
           "units": 3,
           "color": "#4facfe"
         }
@@ -14031,7 +14031,7 @@
     "id": "P5_MATH_0841",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 11577 pencils. Wei Jie has 9573 pencils. How many pencils do they have altogether?",
+    "question": "Carmen has 11577 pencils. Elena has 9573 pencils. How many pencils do they have altogether?",
     "options": [
       "21160",
       "2004",
@@ -14073,10 +14073,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0844_v8",
+    "id": "P5_MATH_0844",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Farid bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -14103,10 +14103,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0846_v15",
+    "id": "P5_MATH_0846",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 15)",
+    "question": "Hassan and Joel shared $77 in the ratio 2:5. How much did Joel get?",
     "options": [
       "$55",
       "$77",
@@ -14114,19 +14114,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Joel = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Hassan",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Joel",
           "units": 5,
           "color": "#4facfe"
         }
@@ -14198,7 +14198,7 @@
     "id": "P5_MATH_0851",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 12547 balloons. Ravi has 1103 balloons. How many balloons do they have altogether?",
+    "question": "Mira has 12547 balloons. Owen has 1103 balloons. How many balloons do they have altogether?",
     "options": [
       "13645",
       "11444",
@@ -14240,10 +14240,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0854_v8",
+    "id": "P5_MATH_0854",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Ali bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -14270,10 +14270,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0856_v15",
+    "id": "P5_MATH_0856",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 15)",
+    "question": "Mei Ling and Siti shared $66 in the ratio 3:3. How much did Siti get?",
     "options": [
       "$33",
       "$66",
@@ -14281,19 +14281,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Siti = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Mei Ling",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Siti",
           "units": 3,
           "color": "#4facfe"
         }
@@ -14365,7 +14365,7 @@
     "id": "P5_MATH_0861",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 13517 pencils. Brandon has 1633 pencils. How many pencils do they have altogether?",
+    "question": "Sarah has 13517 crayons. Gopal has 1633 crayons. How many crayons do they have altogether?",
     "options": [
       "15150",
       "15160",
@@ -14380,7 +14380,7 @@
     "id": "P5_MATH_0862_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of stickers with 10 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 10 rows of keychains with 10 in each row. What is the total?\n(Variant 3)",
     "options": [
       "110",
       "90",
@@ -14407,10 +14407,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0864_v8",
+    "id": "P5_MATH_0864",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Huiling bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -14437,10 +14437,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0866_v15",
+    "id": "P5_MATH_0866",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 15)",
+    "question": "Nurul and Junjie shared $99 in the ratio 4:5. How much did Junjie get?",
     "options": [
       "$44",
       "$55",
@@ -14448,19 +14448,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Junjie = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Nurul",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Junjie",
           "units": 5,
           "color": "#4facfe"
         }
@@ -14532,7 +14532,7 @@
     "id": "P5_MATH_0871",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 14487 balloons. Wei Jie has 2163 balloons. How many balloons do they have altogether?",
+    "question": "Chloe has 14487 pencils. Xinyi has 2163 pencils. How many pencils do they have altogether?",
     "options": [
       "16645",
       "12324",
@@ -14547,7 +14547,7 @@
     "id": "P5_MATH_0872_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 11 rows of cards with 4 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 11 rows of stickers with 4 in each row. What is the total?\n(Variant 3)",
     "options": [
       "44",
       "55",
@@ -14574,10 +14574,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0874_v8",
+    "id": "P5_MATH_0874",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Desmond bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -14604,10 +14604,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0876_v15",
+    "id": "P5_MATH_0876",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 15)",
+    "question": "Amira and Priya shared $55 in the ratio 2:3. How much did Priya get?",
     "options": [
       "$33",
       "$55",
@@ -14615,19 +14615,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Priya = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Amira",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Priya",
           "units": 3,
           "color": "#4facfe"
         }
@@ -14699,7 +14699,7 @@
     "id": "P5_MATH_0881",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 15457 pencils. Ravi has 2693 pencils. How many pencils do they have altogether?",
+    "question": "Ryan has 15457 balloons. Marcus has 2693 balloons. How many balloons do they have altogether?",
     "options": [
       "18160",
       "18145",
@@ -14714,7 +14714,7 @@
     "id": "P5_MATH_0882_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 3 rows of stickers with 6 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 3 rows of cards with 6 in each row. What is the total?\n(Variant 3)",
     "options": [
       "18",
       "9",
@@ -14741,10 +14741,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0884_v8",
+    "id": "P5_MATH_0884",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Hafiz bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -14771,10 +14771,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0886_v15",
+    "id": "P5_MATH_0886",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 15)",
+    "question": "Kenji and Oscar shared $88 in the ratio 3:5. How much did Oscar get?",
     "options": [
       "$50",
       "$33",
@@ -14782,19 +14782,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Oscar = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Kenji",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Oscar",
           "units": 5,
           "color": "#4facfe"
         }
@@ -14866,7 +14866,7 @@
     "id": "P5_MATH_0891",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 16427 balloons. Brandon has 3223 balloons. How many balloons do they have altogether?",
+    "question": "Raj has 16427 crayons. Tanya has 3223 crayons. How many crayons do they have altogether?",
     "options": [
       "19650",
       "13204",
@@ -14881,7 +14881,7 @@
     "id": "P5_MATH_0892_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of cards with 8 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 4 rows of keychains with 8 in each row. What is the total?\n(Variant 3)",
     "options": [
       "36",
       "24",
@@ -14908,10 +14908,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0894_v8",
+    "id": "P5_MATH_0894",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Umar bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -14938,10 +14938,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0896_v15",
+    "id": "P5_MATH_0896",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 15)",
+    "question": "Wei Ming and Yasmin shared $77 in the ratio 4:3. How much did Yasmin get?",
     "options": [
       "$77",
       "$44",
@@ -14949,19 +14949,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Yasmin = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Wei Ming",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Yasmin",
           "units": 3,
           "color": "#4facfe"
         }
@@ -15033,7 +15033,7 @@
     "id": "P5_MATH_0901",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 17397 pencils. Wei Jie has 3753 pencils. How many pencils do they have altogether?",
+    "question": "Ben has 17397 pencils. Dinesh has 3753 pencils. How many pencils do they have altogether?",
     "options": [
       "21160",
       "13644",
@@ -15075,10 +15075,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0904_v8",
+    "id": "P5_MATH_0904",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Elena bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -15105,10 +15105,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0906_v16",
+    "id": "P5_MATH_0906",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 16)",
+    "question": "Gina and Irene shared $77 in the ratio 2:5. How much did Irene get?",
     "options": [
       "$55",
       "$77",
@@ -15116,19 +15116,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Irene = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Gina",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Irene",
           "units": 5,
           "color": "#4facfe"
         }
@@ -15200,7 +15200,7 @@
     "id": "P5_MATH_0911",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 18367 balloons. Ravi has 4283 balloons. How many balloons do they have altogether?",
+    "question": "Leo has 18367 balloons. Noah has 4283 balloons. How many balloons do they have altogether?",
     "options": [
       "14084",
       "22650",
@@ -15242,10 +15242,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0914_v8",
+    "id": "P5_MATH_0914",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Owen bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -15272,10 +15272,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0916_v16",
+    "id": "P5_MATH_0916",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 16)",
+    "question": "Bala and Wei Jie shared $66 in the ratio 3:3. How much did Wei Jie get?",
     "options": [
       "$33",
       "$66",
@@ -15283,19 +15283,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Wei Jie = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Bala",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Wei Jie",
           "units": 3,
           "color": "#4facfe"
         }
@@ -15367,7 +15367,7 @@
     "id": "P5_MATH_0921",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 19337 pencils. Brandon has 4813 pencils. How many pencils do they have altogether?",
+    "question": "David has 19337 crayons. Fatimah has 4813 crayons. How many crayons do they have altogether?",
     "options": [
       "24145",
       "24160",
@@ -15382,7 +15382,7 @@
     "id": "P5_MATH_0922_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 7 rows of stickers with 6 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 7 rows of keychains with 6 in each row. What is the total?\n(Variant 3)",
     "options": [
       "13",
       "49",
@@ -15409,10 +15409,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0924_v8",
+    "id": "P5_MATH_0924",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Gopal bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -15439,10 +15439,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0926_v16",
+    "id": "P5_MATH_0926",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 16)",
+    "question": "Kumar and Ravi shared $99 in the ratio 4:5. How much did Ravi get?",
     "options": [
       "$44",
       "$55",
@@ -15450,19 +15450,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Ravi = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Kumar",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Ravi",
           "units": 5,
           "color": "#4facfe"
         }
@@ -15534,7 +15534,7 @@
     "id": "P5_MATH_0931",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 20307 balloons. Wei Jie has 5343 balloons. How many balloons do they have altogether?",
+    "question": "Ahmad has 20307 pencils. Zhi Hao has 5343 pencils. How many pencils do they have altogether?",
     "options": [
       "14964",
       "25645",
@@ -15549,7 +15549,7 @@
     "id": "P5_MATH_0932_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 8 rows of cards with 8 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 8 rows of stickers with 8 in each row. What is the total?\n(Variant 3)",
     "options": [
       "72",
       "64",
@@ -15576,10 +15576,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0934_v8",
+    "id": "P5_MATH_0934",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Xinyi bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -15606,10 +15606,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0936_v16",
+    "id": "P5_MATH_0936",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 16)",
+    "question": "Yusof and Brandon shared $55 in the ratio 2:3. How much did Brandon get?",
     "options": [
       "$33",
       "$55",
@@ -15617,19 +15617,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Brandon = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Yusof",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Brandon",
           "units": 3,
           "color": "#4facfe"
         }
@@ -15701,7 +15701,7 @@
     "id": "P5_MATH_0941",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 21277 pencils. Ravi has 5873 pencils. How many pencils do they have altogether?",
+    "question": "Jia Hui has 21277 balloons. Aisha has 5873 balloons. How many balloons do they have altogether?",
     "options": [
       "27150",
       "15404",
@@ -15716,7 +15716,7 @@
     "id": "P5_MATH_0942_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 9 rows of stickers with 10 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 9 rows of cards with 10 in each row. What is the total?\n(Variant 3)",
     "options": [
       "99",
       "80",
@@ -15743,10 +15743,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0944_v8",
+    "id": "P5_MATH_0944",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Marcus bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -15773,10 +15773,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0946_v16",
+    "id": "P5_MATH_0946",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $88 in the ratio 3:5. How much did Zhi Hao get?\n(Variant 16)",
+    "question": "Joyce and Lina shared $88 in the ratio 3:5. How much did Lina get?",
     "options": [
       "$50",
       "$33",
@@ -15784,19 +15784,19 @@
       "$88"
     ],
     "answer": "$55",
-    "explanation": "Units = 8. 1 unit = $11. Zhi Hao = 5 units = $55.",
+    "explanation": "Units = 8. 1 unit = $11. Lina = 5 units = $55.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $88",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Joyce",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Lina",
           "units": 5,
           "color": "#4facfe"
         }
@@ -15868,7 +15868,7 @@
     "id": "P5_MATH_0951",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 22247 balloons. Brandon has 6403 balloons. How many balloons do they have altogether?",
+    "question": "Qistina has 22247 crayons. Sofia has 6403 crayons. How many crayons do they have altogether?",
     "options": [
       "28650",
       "28660",
@@ -15883,7 +15883,7 @@
     "id": "P5_MATH_0952_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 10 rows of cards with 4 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 10 rows of keychains with 4 in each row. What is the total?\n(Variant 3)",
     "options": [
       "14",
       "40",
@@ -15910,10 +15910,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0954_v8",
+    "id": "P5_MATH_0954",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 8)",
+    "question": "Tanya bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -15940,10 +15940,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0956_v16",
+    "id": "P5_MATH_0956",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $77 in the ratio 4:3. How much did Aisha get?\n(Variant 16)",
+    "question": "Vera and Xuan shared $77 in the ratio 4:3. How much did Xuan get?",
     "options": [
       "$77",
       "$44",
@@ -15951,19 +15951,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 7. 1 unit = $11. Aisha = 3 units = $33.",
+    "explanation": "Units = 7. 1 unit = $11. Xuan = 3 units = $33.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Vera",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Xuan",
           "units": 3,
           "color": "#4facfe"
         }
@@ -16035,7 +16035,7 @@
     "id": "P5_MATH_0961",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 23217 pencils. Wei Jie has 6933 pencils. How many pencils do they have altogether?",
+    "question": "Ananya has 23217 pencils. Carmen has 6933 pencils. How many pencils do they have altogether?",
     "options": [
       "30145",
       "16284",
@@ -16077,10 +16077,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0964_v9",
+    "id": "P5_MATH_0964",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 6.25 litres each. What is the total volume?\n(Variant 9)",
+    "question": "Dinesh bought 6 bottles of juice at 6.25 litres each. What is the total volume?",
     "options": [
       "38.0 L",
       "37.5 L",
@@ -16107,10 +16107,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0966_v17",
+    "id": "P5_MATH_0966",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $77 in the ratio 2:5. How much did Fatimah get?\n(Variant 17)",
+    "question": "Farid and Hassan shared $77 in the ratio 2:5. How much did Hassan get?",
     "options": [
       "$55",
       "$77",
@@ -16118,19 +16118,19 @@
       "$22"
     ],
     "answer": "$55",
-    "explanation": "Units = 7. 1 unit = $11. Fatimah = 5 units = $55.",
+    "explanation": "Units = 7. 1 unit = $11. Hassan = 5 units = $55.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $77",
       "bars": [
         {
-          "name": "David",
+          "name": "Farid",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Hassan",
           "units": 5,
           "color": "#4facfe"
         }
@@ -16202,7 +16202,7 @@
     "id": "P5_MATH_0971",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Kumar has 24187 balloons. Ravi has 7463 balloons. How many balloons do they have altogether?",
+    "question": "Keisha has 24187 balloons. Mira has 7463 balloons. How many balloons do they have altogether?",
     "options": [
       "31660",
       "31650",
@@ -16244,10 +16244,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0974_v9",
+    "id": "P5_MATH_0974",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Junjie bought 6 bottles of juice at 8.75 litres each. What is the total volume?\n(Variant 9)",
+    "question": "Noah bought 6 bottles of juice at 8.75 litres each. What is the total volume?",
     "options": [
       "52.5 L",
       "8.75 L",
@@ -16274,10 +16274,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0976_v17",
+    "id": "P5_MATH_0976",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Ahmad and Zhi Hao shared $66 in the ratio 3:3. How much did Zhi Hao get?\n(Variant 17)",
+    "question": "Ali and Mei Ling shared $66 in the ratio 3:3. How much did Mei Ling get?",
     "options": [
       "$33",
       "$66",
@@ -16285,19 +16285,19 @@
       "$33"
     ],
     "answer": "$33",
-    "explanation": "Units = 6. 1 unit = $11. Zhi Hao = 3 units = $33.",
+    "explanation": "Units = 6. 1 unit = $11. Mei Ling = 3 units = $33.",
     "difficulty": "Medium",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $66",
       "bars": [
         {
-          "name": "Ahmad",
+          "name": "Ali",
           "units": 3,
           "color": "#00f2fe"
         },
         {
-          "name": "Zhi Hao",
+          "name": "Mei Ling",
           "units": 3,
           "color": "#4facfe"
         }
@@ -16369,7 +16369,7 @@
     "id": "P5_MATH_0981",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Yusof has 25157 pencils. Brandon has 7993 pencils. How many pencils do they have altogether?",
+    "question": "Kavitha has 25157 crayons. Sarah has 7993 crayons. How many crayons do they have altogether?",
     "options": [
       "33150",
       "33145",
@@ -16384,7 +16384,7 @@
     "id": "P5_MATH_0982_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 4 rows of stickers with 10 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 4 rows of keychains with 10 in each row. What is the total?\n(Variant 3)",
     "options": [
       "14",
       "40",
@@ -16411,10 +16411,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0984_v9",
+    "id": "P5_MATH_0984",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Priya bought 6 bottles of juice at 1.25 litres each. What is the total volume?\n(Variant 9)",
+    "question": "Fatimah bought 6 bottles of juice at 1.25 litres each. What is the total volume?",
     "options": [
       "1.25 L",
       "8.0 L",
@@ -16441,10 +16441,10 @@
     "difficulty": "Medium"
   },
   {
-    "id": "P5_MATH_0986_v17",
+    "id": "P5_MATH_0986",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Jia Hui and Aisha shared $99 in the ratio 4:5. How much did Aisha get?\n(Variant 17)",
+    "question": "Huiling and Nurul shared $99 in the ratio 4:5. How much did Nurul get?",
     "options": [
       "$44",
       "$55",
@@ -16452,19 +16452,19 @@
       "$50"
     ],
     "answer": "$55",
-    "explanation": "Units = 9. 1 unit = $11. Aisha = 5 units = $55.",
+    "explanation": "Units = 9. 1 unit = $11. Nurul = 5 units = $55.",
     "difficulty": "Hard",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $99",
       "bars": [
         {
-          "name": "Jia Hui",
+          "name": "Huiling",
           "units": 4,
           "color": "#00f2fe"
         },
         {
-          "name": "Aisha",
+          "name": "Nurul",
           "units": 5,
           "color": "#4facfe"
         }
@@ -16536,7 +16536,7 @@
     "id": "P5_MATH_0991",
     "topic": "Numbers to 10 Million",
     "type": "mcq",
-    "question": "Bala has 26127 balloons. Wei Jie has 8523 balloons. How many balloons do they have altogether?",
+    "question": "Sanjay has 26127 pencils. Chloe has 8523 pencils. How many pencils do they have altogether?",
     "options": [
       "34660",
       "34645",
@@ -16551,7 +16551,7 @@
     "id": "P5_MATH_0992_v3",
     "topic": "Operations of Whole Numbers",
     "type": "mcq",
-    "question": "There are 5 rows of cards with 4 in each row. What is the total?\n(Variant 3)",
+    "question": "There are 5 rows of stickers with 4 in each row. What is the total?\n(Variant 3)",
     "options": [
       "25",
       "9",
@@ -16578,10 +16578,10 @@
     "difficulty": "Easy"
   },
   {
-    "id": "P5_MATH_0994_v9",
+    "id": "P5_MATH_0994",
     "topic": "Decimals",
     "type": "mcq",
-    "question": "Siti bought 6 bottles of juice at 3.75 litres each. What is the total volume?\n(Variant 9)",
+    "question": "Zhi Hao bought 6 bottles of juice at 3.75 litres each. What is the total volume?",
     "options": [
       "23.0 L",
       "6 L",
@@ -16608,10 +16608,10 @@
     "difficulty": "Hard"
   },
   {
-    "id": "P5_MATH_0996_v17",
+    "id": "P5_MATH_0996",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "David and Fatimah shared $55 in the ratio 2:3. How much did Fatimah get?\n(Variant 17)",
+    "question": "Desmond and Amira shared $55 in the ratio 2:3. How much did Amira get?",
     "options": [
       "$33",
       "$55",
@@ -16619,19 +16619,19 @@
       "$22"
     ],
     "answer": "$33",
-    "explanation": "Units = 5. 1 unit = $11. Fatimah = 3 units = $33.",
+    "explanation": "Units = 5. 1 unit = $11. Amira = 3 units = $33.",
     "difficulty": "Easy",
     "heuristicId": "constant-total",
     "barModel": {
       "title": "Ratio $55",
       "bars": [
         {
-          "name": "David",
+          "name": "Desmond",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Fatimah",
+          "name": "Amira",
           "units": 3,
           "color": "#4facfe"
         }

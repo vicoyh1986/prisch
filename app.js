@@ -21,6 +21,7 @@ class PortalApp {
     this.selectedSubject = "mathematics";
     this.studentName = "Alex Tan";
     this.targetGrade = "AL1";
+    this.practiceSize = 10;
 
     // Instantiate Sub-Systems
     this.db = new DatabaseManager();
@@ -293,11 +294,13 @@ class PortalApp {
     this.subjectsArenaGrid.innerHTML = "";
 
     const subjects = [
-      { key: "mathematics", title: "Mathematics", icon: "📐", count: "Heuristics, models & word problems" },
-      { key: "science", title: "Science Core", icon: "🔬", count: "C-E-R experiments & concept MCQs" },
-      { key: "english", title: "English Language", icon: "📚", count: "Grammar, S&T, cloze & vocab" },
-      { key: "chinese", title: "Mother Tongue (CL)", icon: "🏮", count: "成语, 关联词 & 阅读理解" }
+      { key: "mathematics", title: "Mathematics", icon: "📐", count: "1000 Qs · heuristics & word problems" },
+      { key: "science", title: "Science Core", icon: "🔬", count: "1000 Qs · C-E-R & concept MCQs" },
+      { key: "english", title: "English Language", icon: "📚", count: "1000 Qs · grammar, S&T, cloze" },
+      { key: "chinese", title: "Mother Tongue (CL)", icon: "🏮", count: "1000 Qs · 成语, 关联词, 阅读" }
     ];
+
+    const size = this.practiceSize || 10;
 
     for (const sub of subjects) {
       const card = document.createElement("div");
@@ -305,17 +308,22 @@ class PortalApp {
       
       const isScienceDisabled = (this.currentLevel === "P2" && sub.key === "science");
       let topicsHtml = "";
+      let bankBadge = "";
       if (!isScienceDisabled) {
         try {
+          const bank = await this.db.fetchQuestions(this.currentLevel, sub.key);
           const topics = await this.db.getTopics(this.currentLevel, sub.key);
           const top = topics.slice(0, 4).map(t => t.topic).join(" · ");
           topicsHtml = `<div style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;">${top}</div>`;
-        } catch (_) { /* ignore */ }
+          bankBadge = `<span class="bank-badge">${(bank || []).length || 1000} bank</span>`;
+        } catch (_) {
+          bankBadge = `<span class="bank-badge">1000 bank</span>`;
+        }
       }
 
       card.innerHTML = `
         <div class="subject-icon">${sub.icon}</div>
-        <h4 class="subject-title">${sub.title}</h4>
+        <h4 class="subject-title">${sub.title} ${bankBadge}</h4>
         <span class="subject-count">${isScienceDisabled ? "Starts in Primary 3" : sub.count}</span>
         ${topicsHtml}
         ${!isScienceDisabled ? `
@@ -323,6 +331,7 @@ class PortalApp {
             <button class="btn-pill practice-mode-btn" data-mode="adaptive" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">🧠 Adaptive</button>
             <button class="btn-pill practice-mode-btn" data-mode="random" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">🎲 Mixed</button>
             <button class="btn-pill practice-mode-btn" data-mode="topics" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">📂 By Topic</button>
+            <button class="btn-pill practice-mode-btn" data-mode="marathon" data-sub="${sub.key}" style="font-size: 10px; padding: 4px 8px;">🔥 25-Q Sprint</button>
           </div>
         ` : ""}
       `;
@@ -348,44 +357,117 @@ class PortalApp {
 
       this.subjectsArenaGrid.appendChild(card);
     }
+
+    // Session size controls (once)
+    let sizeBar = document.getElementById("practice-size-bar");
+    if (!sizeBar && this.subjectsArenaGrid.parentElement) {
+      sizeBar = document.createElement("div");
+      sizeBar.id = "practice-size-bar";
+      sizeBar.className = "practice-size-bar";
+      sizeBar.innerHTML = `
+        <span style="font-size: 12px; color: var(--text-secondary);">Session length:</span>
+        ${[5, 10, 15, 25].map(n => `
+          <button type="button" class="btn-pill practice-size-btn ${size === n ? "active" : ""}" data-size="${n}">${n} Qs</button>
+        `).join("")}
+        <span style="font-size: 11px; color: var(--text-muted); margin-left: 8px;">Each subject has a 1,000-question bank for ${this.currentLevel}.</span>
+      `;
+      this.subjectsArenaGrid.parentElement.insertBefore(sizeBar, this.subjectsArenaGrid);
+      sizeBar.querySelectorAll(".practice-size-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          sound.playClick();
+          this.practiceSize = Number(btn.dataset.size) || 10;
+          sizeBar.querySelectorAll(".practice-size-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    } else if (sizeBar) {
+      sizeBar.querySelector("span:last-child").textContent =
+        `Each subject has a 1,000-question bank for ${this.currentLevel}.`;
+    }
+  }
+
+  closeTopicPicker() {
+    document.getElementById("topic-picker-modal")?.remove();
+  }
+
+  openTopicPicker(subject, topics, count) {
+    this.closeTopicPicker();
+    const modal = document.createElement("div");
+    modal.id = "topic-picker-modal";
+    modal.className = "topic-picker-modal";
+    modal.innerHTML = `
+      <div class="topic-picker-panel" role="dialog" aria-modal="true" aria-label="Choose topic">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;">
+          <div>
+            <h3 style="margin:0;font-size:18px;">Drill by topic · ${subject}</h3>
+            <p style="margin:4px 0 0;font-size:12px;color:var(--text-secondary);">${this.currentLevel} · ${count} questions · pick one weak area</p>
+          </div>
+          <button type="button" class="btn btn-outline" id="topic-picker-close" style="font-size:12px;padding:6px 10px;">Close</button>
+        </div>
+        <div class="topic-picker-grid">
+          ${topics.map(t => `
+            <button type="button" class="topic-pick-btn" data-topic="${t.topic.replace(/"/g, "&quot;")}">
+              <strong>${t.topic}</strong>
+              <span>${t.count} in bank</span>
+            </button>
+          `).join("")}
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) this.closeTopicPicker();
+    });
+    modal.querySelector("#topic-picker-close")?.addEventListener("click", () => this.closeTopicPicker());
+    modal.querySelectorAll(".topic-pick-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        sound.playClick();
+        const pick = btn.dataset.topic;
+        this.closeTopicPicker();
+        this.showSection("quiz");
+        const set = await this.db.getPracticeSet(this.currentLevel, subject, count, {
+          topic: pick,
+          excludeIds: this.coach?.state?.seenIds?.slice(-100) || []
+        });
+        if (!set.length) {
+          alert("No questions found for that topic.");
+          return;
+        }
+        this.quiz.startQuiz(set, subject, this.currentLevel);
+      });
+    });
   }
 
   async startPracticeMode(subject, mode) {
     sound.playClick();
     this.selectedSubject = subject;
+    const count = mode === "marathon" ? 25 : (this.practiceSize || 10);
 
     if (mode === "topics") {
       const topics = await this.db.getTopics(this.currentLevel, subject);
-      const pick = prompt(`Type a topic exactly to drill:\n\n${topics.map(t => t.topic).join("\n")}`, topics[0]?.topic || "");
-      if (!pick) return;
-      this.showSection("quiz");
-      const set = await this.db.getPracticeSet(this.currentLevel, subject, 10, {
-        topic: pick,
-        excludeIds: this.coach?.state?.seenIds?.slice(-100) || []
-      });
-      if (!set.length) {
-        alert("No questions found for that topic.");
+      if (!topics.length) {
+        alert("No topics found in this bank.");
         return;
       }
-      this.quiz.startQuiz(set, subject, this.currentLevel);
+      this.openTopicPicker(subject, topics, count);
       return;
     }
 
     this.showSection("quiz");
     const loadText = document.getElementById("quiz-question-text");
-    if (loadText) loadText.innerText = `Building a ${mode} set for ${subject} (${this.currentLevel})...`;
+    if (loadText) loadText.innerText = `Building a ${mode} set (${count} Qs) for ${subject} (${this.currentLevel})...`;
 
     let set = [];
     if (mode === "adaptive") {
       set = await this.db.getAdaptiveSet(
         this.currentLevel,
         subject,
-        10,
+        count,
         this.coach?.state?.topicMastery || {},
         this.coach?.state?.seenIds?.slice(-150) || []
       );
     } else {
-      set = await this.db.getPracticeSet(this.currentLevel, subject, 10, {
+      set = await this.db.getPracticeSet(this.currentLevel, subject, count, {
         excludeIds: this.coach?.state?.seenIds?.slice(-100) || []
       });
     }

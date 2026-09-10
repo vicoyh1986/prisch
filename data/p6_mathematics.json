@@ -580,7 +580,7 @@
     "id": "P6_MATH_0032",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?",
+    "question": "Kenji had 40 stickers. She gave 3/8 of them to Pei Ling. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -590,7 +590,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Kenji",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -604,7 +604,7 @@
     "id": "P6_MATH_0033",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?",
+    "question": "The age difference between Lina's father and Lina is 42 years. In 3 years, father will be 3 times Lina's age. How old is Lina now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -612,7 +612,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Lina now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -624,7 +624,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Lina",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -780,7 +780,7 @@
     "id": "P6_MATH_0043",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?",
+    "question": "A box had red and blue beads in the ratio 2:3. After Xuan added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -960,7 +960,7 @@
     "id": "P6_MATH_0052",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?",
+    "question": "Gina had 40 keychains. She gave 3/8 of them to Joel. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -975,7 +975,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Gina",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -989,7 +989,7 @@
     "id": "P6_MATH_0053",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?",
+    "question": "Hassan, Keisha and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Hassan?",
     "options": [
       "$36",
       "$24",
@@ -1004,12 +1004,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Hassan",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Keisha",
           "units": 3,
           "color": "#4facfe"
         },
@@ -1026,7 +1026,7 @@
     "id": "P6_MATH_0054",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?",
+    "question": "A television cost $1100. Irene bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Irene pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -1042,7 +1042,7 @@
     "id": "P6_MATH_0055",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?",
+    "question": "Joel cycled at 50 km/h for 5 hours. How far did Joel travel?",
     "options": [
       "300 km",
       "250 km",
@@ -1162,10 +1162,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0063_v2",
+    "id": "P6_MATH_0063",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 2)",
+    "question": "The age difference between Mei Ling's father and Mei Ling is 42 years. In 5 years, father will be 3 times Mei Ling's age. How old is Mei Ling now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -1173,7 +1173,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Mei Ling now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -1185,7 +1185,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Mei Ling",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -1322,10 +1322,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0072_v2",
+    "id": "P6_MATH_0072",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 2)",
+    "question": "Kumar had 40 cards. She gave 3/8 of them to Junjie. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -1340,7 +1340,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Kumar",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -1351,10 +1351,10 @@
     }
   },
   {
-    "id": "P6_MATH_0073_v2",
+    "id": "P6_MATH_0073",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 2)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Nurul added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -1550,7 +1550,7 @@
     "id": "P6_MATH_0083",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?",
+    "question": "Amira, Ethan and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Amira?",
     "options": [
       "$18",
       "$30",
@@ -1565,12 +1565,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Amira",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Ethan",
           "units": 3,
           "color": "#4facfe"
         },
@@ -1587,7 +1587,7 @@
     "id": "P6_MATH_0084",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?",
+    "question": "A television cost $900. Brandon bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Brandon pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -1600,10 +1600,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0085_v2",
+    "id": "P6_MATH_0085",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 2)",
+    "question": "Priya cycled at 50 km/h for 3 hours. How far did Priya travel?",
     "options": [
       "200 km",
       "150 km",
@@ -1707,10 +1707,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0092_v2",
+    "id": "P6_MATH_0092",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 2)",
+    "question": "Joyce had 40 stickers. She gave 3/8 of them to Oscar. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -1720,7 +1720,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Joyce",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -1731,10 +1731,10 @@
     }
   },
   {
-    "id": "P6_MATH_0093_v2",
+    "id": "P6_MATH_0093",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 2)",
+    "question": "The age difference between Kenji's father and Kenji is 42 years. In 3 years, father will be 3 times Kenji's age. How old is Kenji now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -1742,7 +1742,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Kenji now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -1754,7 +1754,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Kenji",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -1907,10 +1907,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0103_v2",
+    "id": "P6_MATH_0103",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 2)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Wei Ming added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -2087,10 +2087,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0112_v2",
+    "id": "P6_MATH_0112",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 2)",
+    "question": "Farid had 40 keychains. She gave 3/8 of them to Irene. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -2105,7 +2105,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Farid",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -2116,10 +2116,10 @@
     }
   },
   {
-    "id": "P6_MATH_0113_v2",
+    "id": "P6_MATH_0113",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 2)",
+    "question": "Gina, Joel and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Gina?",
     "options": [
       "$45",
       "$18",
@@ -2134,12 +2134,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Gina",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Joel",
           "units": 3,
           "color": "#4facfe"
         },
@@ -2156,7 +2156,7 @@
     "id": "P6_MATH_0114",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?",
+    "question": "A television cost $700. Hassan bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Hassan pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -2169,10 +2169,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0115_v2",
+    "id": "P6_MATH_0115",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 2)",
+    "question": "Irene cycled at 50 km/h for 5 hours. How far did Irene travel?",
     "options": [
       "300 km",
       "250 km",
@@ -2292,10 +2292,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0123_v3",
+    "id": "P6_MATH_0123",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 3)",
+    "question": "The age difference between Bala's father and Bala is 42 years. In 5 years, father will be 3 times Bala's age. How old is Bala now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -2303,7 +2303,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Bala now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -2315,7 +2315,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Bala",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -2452,10 +2452,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0132_v3",
+    "id": "P6_MATH_0132",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 3)",
+    "question": "Huiling had 40 cards. She gave 3/8 of them to Ravi. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -2470,7 +2470,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Huiling",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -2481,10 +2481,10 @@
     }
   },
   {
-    "id": "P6_MATH_0133_v3",
+    "id": "P6_MATH_0133",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 3)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Kumar added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -2677,10 +2677,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0143_v2",
+    "id": "P6_MATH_0143",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 2)",
+    "question": "Yusof, Priya and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Yusof?",
     "options": [
       "$36",
       "$24",
@@ -2695,12 +2695,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Yusof",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Priya",
           "units": 3,
           "color": "#4facfe"
         },
@@ -2714,10 +2714,10 @@
     }
   },
   {
-    "id": "P6_MATH_0144_v2",
+    "id": "P6_MATH_0144",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 2)",
+    "question": "A television cost $500. Amira bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Amira pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -2730,10 +2730,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0145_v3",
+    "id": "P6_MATH_0145",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 3)",
+    "question": "Brandon cycled at 50 km/h for 3 hours. How far did Brandon travel?",
     "options": [
       "200 km",
       "150 km",
@@ -2837,10 +2837,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0152_v3",
+    "id": "P6_MATH_0152",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 3)",
+    "question": "Hafiz had 40 stickers. She gave 3/8 of them to Lina. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -2850,7 +2850,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Hafiz",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -2861,10 +2861,10 @@
     }
   },
   {
-    "id": "P6_MATH_0153_v3",
+    "id": "P6_MATH_0153",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 3)",
+    "question": "The age difference between Joyce's father and Joyce is 42 years. In 3 years, father will be 3 times Joyce's age. How old is Joyce now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -2872,7 +2872,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Joyce now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -2884,7 +2884,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Joyce",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -3037,10 +3037,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0163_v3",
+    "id": "P6_MATH_0163",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 3)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Vera added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -3217,10 +3217,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0172_v3",
+    "id": "P6_MATH_0172",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 3)",
+    "question": "Elena had 40 keychains. She gave 3/8 of them to Hassan. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -3235,7 +3235,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Elena",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -3246,10 +3246,10 @@
     }
   },
   {
-    "id": "P6_MATH_0173_v2",
+    "id": "P6_MATH_0173",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 2)",
+    "question": "Farid, Irene and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Farid?",
     "options": [
       "$18",
       "$30",
@@ -3264,12 +3264,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Farid",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Irene",
           "units": 3,
           "color": "#4facfe"
         },
@@ -3283,10 +3283,10 @@
     }
   },
   {
-    "id": "P6_MATH_0174_v2",
+    "id": "P6_MATH_0174",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 2)",
+    "question": "A television cost $1100. Gina bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Gina pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -3299,10 +3299,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0175_v3",
+    "id": "P6_MATH_0175",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 3)",
+    "question": "Hassan cycled at 50 km/h for 5 hours. How far did Hassan travel?",
     "options": [
       "300 km",
       "250 km",
@@ -3422,10 +3422,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0183_v4",
+    "id": "P6_MATH_0183",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 4)",
+    "question": "The age difference between Ali's father and Ali is 42 years. In 5 years, father will be 3 times Ali's age. How old is Ali now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -3433,7 +3433,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Ali now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -3445,7 +3445,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Ali",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -3582,10 +3582,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0192_v4",
+    "id": "P6_MATH_0192",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 4)",
+    "question": "Gopal had 40 cards. She gave 3/8 of them to Nurul. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -3600,7 +3600,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Gopal",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -3611,10 +3611,10 @@
     }
   },
   {
-    "id": "P6_MATH_0193_v4",
+    "id": "P6_MATH_0193",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 4)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Huiling added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -3807,10 +3807,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0203_v3",
+    "id": "P6_MATH_0203",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 3)",
+    "question": "Desmond, Brandon and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Desmond?",
     "options": [
       "$45",
       "$18",
@@ -3825,12 +3825,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Desmond",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Brandon",
           "units": 3,
           "color": "#4facfe"
         },
@@ -3844,10 +3844,10 @@
     }
   },
   {
-    "id": "P6_MATH_0204_v2",
+    "id": "P6_MATH_0204",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 2)",
+    "question": "A television cost $900. Yusof bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Yusof pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -3860,10 +3860,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0205_v4",
+    "id": "P6_MATH_0205",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 4)",
+    "question": "Amira cycled at 50 km/h for 3 hours. How far did Amira travel?",
     "options": [
       "200 km",
       "150 km",
@@ -3967,10 +3967,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0212_v4",
+    "id": "P6_MATH_0212",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 4)",
+    "question": "Marcus had 40 stickers. She gave 3/8 of them to Kenji. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -3980,7 +3980,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Marcus",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -3991,10 +3991,10 @@
     }
   },
   {
-    "id": "P6_MATH_0213_v4",
+    "id": "P6_MATH_0213",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 4)",
+    "question": "The age difference between Hafiz's father and Hafiz is 42 years. In 3 years, father will be 3 times Hafiz's age. How old is Hafiz now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -4002,7 +4002,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Hafiz now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -4014,7 +4014,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Hafiz",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -4167,10 +4167,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0223_v4",
+    "id": "P6_MATH_0223",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 4)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Umar added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -4347,10 +4347,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0232_v4",
+    "id": "P6_MATH_0232",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 4)",
+    "question": "Dinesh had 40 keychains. She gave 3/8 of them to Gina. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -4365,7 +4365,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Dinesh",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -4376,10 +4376,10 @@
     }
   },
   {
-    "id": "P6_MATH_0233_v3",
+    "id": "P6_MATH_0233",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 3)",
+    "question": "Elena, Hassan and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Elena?",
     "options": [
       "$36",
       "$24",
@@ -4394,12 +4394,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Elena",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Hassan",
           "units": 3,
           "color": "#4facfe"
         },
@@ -4413,10 +4413,10 @@
     }
   },
   {
-    "id": "P6_MATH_0234_v2",
+    "id": "P6_MATH_0234",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 2)",
+    "question": "A television cost $700. Farid bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Farid pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -4429,10 +4429,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0235_v4",
+    "id": "P6_MATH_0235",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 4)",
+    "question": "Gina cycled at 50 km/h for 5 hours. How far did Gina travel?",
     "options": [
       "300 km",
       "250 km",
@@ -4552,10 +4552,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0243_v5",
+    "id": "P6_MATH_0243",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 5)",
+    "question": "The age difference between Owen's father and Owen is 42 years. In 5 years, father will be 3 times Owen's age. How old is Owen now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -4563,7 +4563,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Owen now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -4575,7 +4575,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Owen",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -4712,10 +4712,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0252_v5",
+    "id": "P6_MATH_0252",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 5)",
+    "question": "Fatimah had 40 cards. She gave 3/8 of them to Kumar. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -4730,7 +4730,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Fatimah",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -4741,10 +4741,10 @@
     }
   },
   {
-    "id": "P6_MATH_0253_v5",
+    "id": "P6_MATH_0253",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 5)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Gopal added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -4937,10 +4937,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0263_v3",
+    "id": "P6_MATH_0263",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 3)",
+    "question": "Xinyi, Amira and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Xinyi?",
     "options": [
       "$18",
       "$30",
@@ -4955,12 +4955,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Xinyi",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Amira",
           "units": 3,
           "color": "#4facfe"
         },
@@ -4974,10 +4974,10 @@
     }
   },
   {
-    "id": "P6_MATH_0264_v3",
+    "id": "P6_MATH_0264",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 3)",
+    "question": "A television cost $500. Desmond bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Desmond pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -4990,10 +4990,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0265_v5",
+    "id": "P6_MATH_0265",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 5)",
+    "question": "Yusof cycled at 50 km/h for 3 hours. How far did Yusof travel?",
     "options": [
       "200 km",
       "150 km",
@@ -5097,10 +5097,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0272_v5",
+    "id": "P6_MATH_0272",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 5)",
+    "question": "Aisha had 40 stickers. She gave 3/8 of them to Joyce. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -5110,7 +5110,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Aisha",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -5121,10 +5121,10 @@
     }
   },
   {
-    "id": "P6_MATH_0273_v5",
+    "id": "P6_MATH_0273",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 5)",
+    "question": "The age difference between Marcus's father and Marcus is 42 years. In 3 years, father will be 3 times Marcus's age. How old is Marcus now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -5132,7 +5132,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Marcus now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -5144,7 +5144,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Marcus",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -5297,10 +5297,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0283_v5",
+    "id": "P6_MATH_0283",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 5)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Tanya added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -5477,10 +5477,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0292_v5",
+    "id": "P6_MATH_0292",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 5)",
+    "question": "Carmen had 40 keychains. She gave 3/8 of them to Farid. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -5495,7 +5495,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Carmen",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -5506,10 +5506,10 @@
     }
   },
   {
-    "id": "P6_MATH_0293_v4",
+    "id": "P6_MATH_0293",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 4)",
+    "question": "Dinesh, Gina and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Dinesh?",
     "options": [
       "$45",
       "$18",
@@ -5524,12 +5524,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Dinesh",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Gina",
           "units": 3,
           "color": "#4facfe"
         },
@@ -5543,10 +5543,10 @@
     }
   },
   {
-    "id": "P6_MATH_0294_v3",
+    "id": "P6_MATH_0294",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 3)",
+    "question": "A television cost $1100. Elena bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Elena pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -5559,10 +5559,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0295_v5",
+    "id": "P6_MATH_0295",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 5)",
+    "question": "Farid cycled at 50 km/h for 5 hours. How far did Farid travel?",
     "options": [
       "300 km",
       "250 km",
@@ -5682,10 +5682,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0303_v6",
+    "id": "P6_MATH_0303",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 6)",
+    "question": "The age difference between Noah's father and Noah is 42 years. In 5 years, father will be 3 times Noah's age. How old is Noah now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -5693,7 +5693,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Noah now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -5705,7 +5705,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Noah",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -5842,10 +5842,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0312_v6",
+    "id": "P6_MATH_0312",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 6)",
+    "question": "Sarah had 40 cards. She gave 3/8 of them to Huiling. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -5860,7 +5860,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Sarah",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -5871,10 +5871,10 @@
     }
   },
   {
-    "id": "P6_MATH_0313_v6",
+    "id": "P6_MATH_0313",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 6)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Fatimah added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -6067,10 +6067,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0323_v4",
+    "id": "P6_MATH_0323",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 4)",
+    "question": "Zhi Hao, Yusof and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Zhi Hao?",
     "options": [
       "$36",
       "$24",
@@ -6085,12 +6085,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Zhi Hao",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Yusof",
           "units": 3,
           "color": "#4facfe"
         },
@@ -6104,10 +6104,10 @@
     }
   },
   {
-    "id": "P6_MATH_0324_v3",
+    "id": "P6_MATH_0324",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 3)",
+    "question": "A television cost $900. Xinyi bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Xinyi pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -6120,10 +6120,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0325_v6",
+    "id": "P6_MATH_0325",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 6)",
+    "question": "Desmond cycled at 50 km/h for 3 hours. How far did Desmond travel?",
     "options": [
       "200 km",
       "150 km",
@@ -6227,10 +6227,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0332_v6",
+    "id": "P6_MATH_0332",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 6)",
+    "question": "Ryan had 40 stickers. She gave 3/8 of them to Hafiz. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -6240,7 +6240,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Ryan",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -6251,10 +6251,10 @@
     }
   },
   {
-    "id": "P6_MATH_0333_v6",
+    "id": "P6_MATH_0333",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 6)",
+    "question": "The age difference between Aisha's father and Aisha is 42 years. In 3 years, father will be 3 times Aisha's age. How old is Aisha now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -6262,7 +6262,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Aisha now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -6274,7 +6274,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Aisha",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -6427,10 +6427,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0343_v6",
+    "id": "P6_MATH_0343",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 6)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Sofia added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -6607,10 +6607,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0352_v6",
+    "id": "P6_MATH_0352",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 6)",
+    "question": "Ben had 40 keychains. She gave 3/8 of them to Elena. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -6625,7 +6625,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Ben",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -6636,10 +6636,10 @@
     }
   },
   {
-    "id": "P6_MATH_0353_v4",
+    "id": "P6_MATH_0353",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 4)",
+    "question": "Carmen, Farid and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Carmen?",
     "options": [
       "$18",
       "$30",
@@ -6654,12 +6654,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Carmen",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Farid",
           "units": 3,
           "color": "#4facfe"
         },
@@ -6673,10 +6673,10 @@
     }
   },
   {
-    "id": "P6_MATH_0354_v3",
+    "id": "P6_MATH_0354",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 3)",
+    "question": "A television cost $700. Dinesh bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Dinesh pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -6689,10 +6689,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0355_v6",
+    "id": "P6_MATH_0355",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 6)",
+    "question": "Elena cycled at 50 km/h for 5 hours. How far did Elena travel?",
     "options": [
       "300 km",
       "250 km",
@@ -6812,10 +6812,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0363_v7",
+    "id": "P6_MATH_0363",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 7)",
+    "question": "The age difference between Mira's father and Mira is 42 years. In 5 years, father will be 3 times Mira's age. How old is Mira now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -6823,7 +6823,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Mira now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -6835,7 +6835,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Mira",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -6972,10 +6972,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0372_v7",
+    "id": "P6_MATH_0372",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 7)",
+    "question": "David had 40 cards. She gave 3/8 of them to Gopal. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -6990,7 +6990,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "David",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -7001,10 +7001,10 @@
     }
   },
   {
-    "id": "P6_MATH_0373_v7",
+    "id": "P6_MATH_0373",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 7)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Sarah added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -7197,10 +7197,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0383_v5",
+    "id": "P6_MATH_0383",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 5)",
+    "question": "Chloe, Desmond and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Chloe?",
     "options": [
       "$45",
       "$18",
@@ -7215,12 +7215,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Chloe",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Desmond",
           "units": 3,
           "color": "#4facfe"
         },
@@ -7234,10 +7234,10 @@
     }
   },
   {
-    "id": "P6_MATH_0384_v4",
+    "id": "P6_MATH_0384",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 4)",
+    "question": "A television cost $500. Zhi Hao bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Zhi Hao pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -7250,10 +7250,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0385_v7",
+    "id": "P6_MATH_0385",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 7)",
+    "question": "Xinyi cycled at 50 km/h for 3 hours. How far did Xinyi travel?",
     "options": [
       "200 km",
       "150 km",
@@ -7357,10 +7357,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0392_v7",
+    "id": "P6_MATH_0392",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 7)",
+    "question": "Jia Hui had 40 stickers. She gave 3/8 of them to Marcus. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -7370,7 +7370,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Jia Hui",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -7381,10 +7381,10 @@
     }
   },
   {
-    "id": "P6_MATH_0393_v7",
+    "id": "P6_MATH_0393",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 7)",
+    "question": "The age difference between Ryan's father and Ryan is 42 years. In 3 years, father will be 3 times Ryan's age. How old is Ryan now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -7392,7 +7392,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Ryan now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -7404,7 +7404,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Ryan",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -7557,10 +7557,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0403_v7",
+    "id": "P6_MATH_0403",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 7)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Raj added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -7737,10 +7737,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0412_v7",
+    "id": "P6_MATH_0412",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 7)",
+    "question": "Ananya had 40 keychains. She gave 3/8 of them to Dinesh. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -7755,7 +7755,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Ananya",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -7766,10 +7766,10 @@
     }
   },
   {
-    "id": "P6_MATH_0413_v5",
+    "id": "P6_MATH_0413",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 5)",
+    "question": "Ben, Elena and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Ben?",
     "options": [
       "$36",
       "$24",
@@ -7784,12 +7784,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Ben",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Elena",
           "units": 3,
           "color": "#4facfe"
         },
@@ -7803,10 +7803,10 @@
     }
   },
   {
-    "id": "P6_MATH_0414_v4",
+    "id": "P6_MATH_0414",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 4)",
+    "question": "A television cost $1100. Carmen bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Carmen pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -7819,10 +7819,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0415_v7",
+    "id": "P6_MATH_0415",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 7)",
+    "question": "Dinesh cycled at 50 km/h for 5 hours. How far did Dinesh travel?",
     "options": [
       "300 km",
       "250 km",
@@ -7942,10 +7942,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0423_v8",
+    "id": "P6_MATH_0423",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 8)",
+    "question": "The age difference between Leo's father and Leo is 42 years. In 5 years, father will be 3 times Leo's age. How old is Leo now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -7953,7 +7953,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Leo now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -7965,7 +7965,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Leo",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -8102,10 +8102,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0432_v8",
+    "id": "P6_MATH_0432",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 8)",
+    "question": "Kavitha had 40 cards. She gave 3/8 of them to Fatimah. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -8120,7 +8120,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Kavitha",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -8131,10 +8131,10 @@
     }
   },
   {
-    "id": "P6_MATH_0433_v8",
+    "id": "P6_MATH_0433",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 8)",
+    "question": "A box had red and blue beads in the ratio 2:3. After David added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -8327,10 +8327,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0443_v5",
+    "id": "P6_MATH_0443",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 5)",
+    "question": "Ahmad, Xinyi and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Ahmad?",
     "options": [
       "$18",
       "$30",
@@ -8345,12 +8345,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Ahmad",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Xinyi",
           "units": 3,
           "color": "#4facfe"
         },
@@ -8364,10 +8364,10 @@
     }
   },
   {
-    "id": "P6_MATH_0444_v4",
+    "id": "P6_MATH_0444",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 4)",
+    "question": "A television cost $900. Chloe bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Chloe pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -8380,10 +8380,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0445_v8",
+    "id": "P6_MATH_0445",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 8)",
+    "question": "Zhi Hao cycled at 50 km/h for 3 hours. How far did Zhi Hao travel?",
     "options": [
       "200 km",
       "150 km",
@@ -8487,10 +8487,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0452_v8",
+    "id": "P6_MATH_0452",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 8)",
+    "question": "Ethan had 40 stickers. She gave 3/8 of them to Aisha. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -8500,7 +8500,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Ethan",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -8511,10 +8511,10 @@
     }
   },
   {
-    "id": "P6_MATH_0453_v8",
+    "id": "P6_MATH_0453",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 8)",
+    "question": "The age difference between Jia Hui's father and Jia Hui is 42 years. In 3 years, father will be 3 times Jia Hui's age. How old is Jia Hui now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -8522,7 +8522,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Jia Hui now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -8534,7 +8534,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Jia Hui",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -8687,10 +8687,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0463_v8",
+    "id": "P6_MATH_0463",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 8)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Qistina added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -8867,10 +8867,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0472_v8",
+    "id": "P6_MATH_0472",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 8)",
+    "question": "Zane had 40 keychains. She gave 3/8 of them to Carmen. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -8885,7 +8885,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Zane",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -8896,10 +8896,10 @@
     }
   },
   {
-    "id": "P6_MATH_0473_v6",
+    "id": "P6_MATH_0473",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 6)",
+    "question": "Ananya, Dinesh and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Ananya?",
     "options": [
       "$45",
       "$18",
@@ -8914,12 +8914,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Ananya",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Dinesh",
           "units": 3,
           "color": "#4facfe"
         },
@@ -8933,10 +8933,10 @@
     }
   },
   {
-    "id": "P6_MATH_0474_v4",
+    "id": "P6_MATH_0474",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 4)",
+    "question": "A television cost $700. Ben bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Ben pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -8949,10 +8949,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0475_v8",
+    "id": "P6_MATH_0475",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 8)",
+    "question": "Carmen cycled at 50 km/h for 5 hours. How far did Carmen travel?",
     "options": [
       "300 km",
       "250 km",
@@ -9072,10 +9072,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0483_v9",
+    "id": "P6_MATH_0483",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 9)",
+    "question": "The age difference between Keisha's father and Keisha is 42 years. In 5 years, father will be 3 times Keisha's age. How old is Keisha now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -9083,7 +9083,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Keisha now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -9095,7 +9095,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Keisha",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -9232,10 +9232,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0492_v9",
+    "id": "P6_MATH_0492",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 9)",
+    "question": "Siti had 40 cards. She gave 3/8 of them to Sarah. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -9250,7 +9250,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Siti",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -9261,10 +9261,10 @@
     }
   },
   {
-    "id": "P6_MATH_0493_v9",
+    "id": "P6_MATH_0493",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 9)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Kavitha added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -9457,10 +9457,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0503_v6",
+    "id": "P6_MATH_0503",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 6)",
+    "question": "Sanjay, Zhi Hao and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Sanjay?",
     "options": [
       "$36",
       "$24",
@@ -9475,12 +9475,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Sanjay",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Zhi Hao",
           "units": 3,
           "color": "#4facfe"
         },
@@ -9494,10 +9494,10 @@
     }
   },
   {
-    "id": "P6_MATH_0504_v5",
+    "id": "P6_MATH_0504",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 5)",
+    "question": "A television cost $500. Ahmad bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Ahmad pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -9510,10 +9510,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0505_v9",
+    "id": "P6_MATH_0505",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 9)",
+    "question": "Chloe cycled at 50 km/h for 3 hours. How far did Chloe travel?",
     "options": [
       "200 km",
       "150 km",
@@ -9617,10 +9617,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0512_v9",
+    "id": "P6_MATH_0512",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 9)",
+    "question": "Priya had 40 stickers. She gave 3/8 of them to Ryan. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -9630,7 +9630,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Priya",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -9641,10 +9641,10 @@
     }
   },
   {
-    "id": "P6_MATH_0513_v9",
+    "id": "P6_MATH_0513",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 9)",
+    "question": "The age difference between Ethan's father and Ethan is 42 years. In 3 years, father will be 3 times Ethan's age. How old is Ethan now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -9652,7 +9652,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Ethan now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -9664,7 +9664,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Ethan",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -9817,10 +9817,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0523_v9",
+    "id": "P6_MATH_0523",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 9)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Pei Ling added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -9997,10 +9997,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0532_v9",
+    "id": "P6_MATH_0532",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 9)",
+    "question": "Yasmin had 40 keychains. She gave 3/8 of them to Ben. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -10015,7 +10015,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Yasmin",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -10026,10 +10026,10 @@
     }
   },
   {
-    "id": "P6_MATH_0533_v6",
+    "id": "P6_MATH_0533",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 6)",
+    "question": "Zane, Carmen and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Zane?",
     "options": [
       "$18",
       "$30",
@@ -10044,12 +10044,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Zane",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Carmen",
           "units": 3,
           "color": "#4facfe"
         },
@@ -10063,10 +10063,10 @@
     }
   },
   {
-    "id": "P6_MATH_0534_v5",
+    "id": "P6_MATH_0534",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 5)",
+    "question": "A television cost $1100. Ananya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Ananya pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -10079,10 +10079,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0535_v9",
+    "id": "P6_MATH_0535",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 9)",
+    "question": "Ben cycled at 50 km/h for 5 hours. How far did Ben travel?",
     "options": [
       "300 km",
       "250 km",
@@ -10202,10 +10202,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0543_v10",
+    "id": "P6_MATH_0543",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 10)",
+    "question": "The age difference between Joel's father and Joel is 42 years. In 5 years, father will be 3 times Joel's age. How old is Joel now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -10213,7 +10213,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Joel now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -10225,7 +10225,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Joel",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -10362,10 +10362,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0552_v10",
+    "id": "P6_MATH_0552",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 10)",
+    "question": "Wei Jie had 40 cards. She gave 3/8 of them to David. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -10380,7 +10380,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Wei Jie",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -10391,10 +10391,10 @@
     }
   },
   {
-    "id": "P6_MATH_0553_v10",
+    "id": "P6_MATH_0553",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 10)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Siti added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -10587,10 +10587,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0563_v7",
+    "id": "P6_MATH_0563",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 7)",
+    "question": "Junjie, Chloe and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Junjie?",
     "options": [
       "$45",
       "$18",
@@ -10605,12 +10605,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Junjie",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Chloe",
           "units": 3,
           "color": "#4facfe"
         },
@@ -10624,10 +10624,10 @@
     }
   },
   {
-    "id": "P6_MATH_0564_v5",
+    "id": "P6_MATH_0564",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 5)",
+    "question": "A television cost $900. Sanjay bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Sanjay pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -10640,10 +10640,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0565_v10",
+    "id": "P6_MATH_0565",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 10)",
+    "question": "Ahmad cycled at 50 km/h for 3 hours. How far did Ahmad travel?",
     "options": [
       "200 km",
       "150 km",
@@ -10747,10 +10747,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0572_v10",
+    "id": "P6_MATH_0572",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 10)",
+    "question": "Brandon had 40 stickers. She gave 3/8 of them to Jia Hui. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -10760,7 +10760,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Brandon",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -10771,10 +10771,10 @@
     }
   },
   {
-    "id": "P6_MATH_0573_v10",
+    "id": "P6_MATH_0573",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 10)",
+    "question": "The age difference between Priya's father and Priya is 42 years. In 3 years, father will be 3 times Priya's age. How old is Priya now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -10782,7 +10782,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Priya now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -10794,7 +10794,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Priya",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -10947,10 +10947,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0583_v10",
+    "id": "P6_MATH_0583",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 10)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Oscar added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -11127,10 +11127,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0592_v10",
+    "id": "P6_MATH_0592",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 10)",
+    "question": "Xuan had 40 keychains. She gave 3/8 of them to Ananya. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -11145,7 +11145,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Xuan",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -11156,10 +11156,10 @@
     }
   },
   {
-    "id": "P6_MATH_0593_v7",
+    "id": "P6_MATH_0593",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 7)",
+    "question": "Yasmin, Ben and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Yasmin?",
     "options": [
       "$36",
       "$24",
@@ -11174,12 +11174,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Yasmin",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Ben",
           "units": 3,
           "color": "#4facfe"
         },
@@ -11193,10 +11193,10 @@
     }
   },
   {
-    "id": "P6_MATH_0594_v5",
+    "id": "P6_MATH_0594",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 5)",
+    "question": "A television cost $700. Zane bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Zane pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -11209,10 +11209,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0595_v10",
+    "id": "P6_MATH_0595",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 10)",
+    "question": "Ananya cycled at 50 km/h for 5 hours. How far did Ananya travel?",
     "options": [
       "300 km",
       "250 km",
@@ -11332,10 +11332,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0603_v11",
+    "id": "P6_MATH_0603",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 11)",
+    "question": "The age difference between Irene's father and Irene is 42 years. In 5 years, father will be 3 times Irene's age. How old is Irene now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -11343,7 +11343,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Irene now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -11355,7 +11355,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Irene",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -11492,10 +11492,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0612_v11",
+    "id": "P6_MATH_0612",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 11)",
+    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -11510,7 +11510,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Mei Ling",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -11521,10 +11521,10 @@
     }
   },
   {
-    "id": "P6_MATH_0613_v11",
+    "id": "P6_MATH_0613",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 11)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Wei Jie added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -11717,10 +11717,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0623_v7",
+    "id": "P6_MATH_0623",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 7)",
+    "question": "Ravi, Ahmad and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Ravi?",
     "options": [
       "$18",
       "$30",
@@ -11735,12 +11735,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Ravi",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Ahmad",
           "units": 3,
           "color": "#4facfe"
         },
@@ -11754,10 +11754,10 @@
     }
   },
   {
-    "id": "P6_MATH_0624_v6",
+    "id": "P6_MATH_0624",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 6)",
+    "question": "A television cost $500. Junjie bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Junjie pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -11770,10 +11770,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0625_v11",
+    "id": "P6_MATH_0625",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 11)",
+    "question": "Sanjay cycled at 50 km/h for 3 hours. How far did Sanjay travel?",
     "options": [
       "200 km",
       "150 km",
@@ -11877,10 +11877,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0632_v11",
+    "id": "P6_MATH_0632",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 11)",
+    "question": "Amira had 40 stickers. She gave 3/8 of them to Ethan. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -11890,7 +11890,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Amira",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -11901,10 +11901,10 @@
     }
   },
   {
-    "id": "P6_MATH_0633_v11",
+    "id": "P6_MATH_0633",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 11)",
+    "question": "The age difference between Brandon's father and Brandon is 42 years. In 3 years, father will be 3 times Brandon's age. How old is Brandon now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -11912,7 +11912,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Brandon now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -11924,7 +11924,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Brandon",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -12077,10 +12077,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0643_v11",
+    "id": "P6_MATH_0643",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 11)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Lina added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -12257,10 +12257,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0652_v11",
+    "id": "P6_MATH_0652",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 11)",
+    "question": "Wei Ming had 40 keychains. She gave 3/8 of them to Zane. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -12275,7 +12275,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Wei Ming",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -12286,10 +12286,10 @@
     }
   },
   {
-    "id": "P6_MATH_0653_v8",
+    "id": "P6_MATH_0653",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 8)",
+    "question": "Xuan, Ananya and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Xuan?",
     "options": [
       "$45",
       "$18",
@@ -12304,12 +12304,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Xuan",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Ananya",
           "units": 3,
           "color": "#4facfe"
         },
@@ -12323,10 +12323,10 @@
     }
   },
   {
-    "id": "P6_MATH_0654_v6",
+    "id": "P6_MATH_0654",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 6)",
+    "question": "A television cost $1100. Yasmin bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Yasmin pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -12339,10 +12339,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0655_v11",
+    "id": "P6_MATH_0655",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 11)",
+    "question": "Zane cycled at 50 km/h for 5 hours. How far did Zane travel?",
     "options": [
       "300 km",
       "250 km",
@@ -12462,10 +12462,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0663_v12",
+    "id": "P6_MATH_0663",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 12)",
+    "question": "The age difference between Hassan's father and Hassan is 42 years. In 5 years, father will be 3 times Hassan's age. How old is Hassan now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -12473,7 +12473,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Hassan now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -12485,7 +12485,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Hassan",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -12622,10 +12622,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0672_v12",
+    "id": "P6_MATH_0672",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 12)",
+    "question": "Bala had 40 cards. She gave 3/8 of them to Siti. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -12640,7 +12640,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Bala",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -12651,10 +12651,10 @@
     }
   },
   {
-    "id": "P6_MATH_0673_v12",
+    "id": "P6_MATH_0673",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 12)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Mei Ling added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -12847,10 +12847,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0683_v8",
+    "id": "P6_MATH_0683",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 8)",
+    "question": "Nurul, Sanjay and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Nurul?",
     "options": [
       "$36",
       "$24",
@@ -12865,12 +12865,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Nurul",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Sanjay",
           "units": 3,
           "color": "#4facfe"
         },
@@ -12884,10 +12884,10 @@
     }
   },
   {
-    "id": "P6_MATH_0684_v6",
+    "id": "P6_MATH_0684",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 6)",
+    "question": "A television cost $900. Ravi bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Ravi pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -12900,10 +12900,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0685_v12",
+    "id": "P6_MATH_0685",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 12)",
+    "question": "Junjie cycled at 50 km/h for 3 hours. How far did Junjie travel?",
     "options": [
       "200 km",
       "150 km",
@@ -13007,10 +13007,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0692_v12",
+    "id": "P6_MATH_0692",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 12)",
+    "question": "Yusof had 40 stickers. She gave 3/8 of them to Priya. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -13020,7 +13020,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Yusof",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -13031,10 +13031,10 @@
     }
   },
   {
-    "id": "P6_MATH_0693_v12",
+    "id": "P6_MATH_0693",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 12)",
+    "question": "The age difference between Amira's father and Amira is 42 years. In 3 years, father will be 3 times Amira's age. How old is Amira now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -13042,7 +13042,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Amira now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -13054,7 +13054,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Amira",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -13207,10 +13207,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0703_v12",
+    "id": "P6_MATH_0703",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 12)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Kenji added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -13387,10 +13387,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0712_v12",
+    "id": "P6_MATH_0712",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 12)",
+    "question": "Vera had 40 keychains. She gave 3/8 of them to Yasmin. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -13405,7 +13405,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Vera",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -13416,10 +13416,10 @@
     }
   },
   {
-    "id": "P6_MATH_0713_v8",
+    "id": "P6_MATH_0713",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 8)",
+    "question": "Wei Ming, Zane and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Wei Ming?",
     "options": [
       "$18",
       "$30",
@@ -13434,12 +13434,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Wei Ming",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Zane",
           "units": 3,
           "color": "#4facfe"
         },
@@ -13453,10 +13453,10 @@
     }
   },
   {
-    "id": "P6_MATH_0714_v6",
+    "id": "P6_MATH_0714",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 6)",
+    "question": "A television cost $700. Xuan bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Xuan pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -13469,10 +13469,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0715_v12",
+    "id": "P6_MATH_0715",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 12)",
+    "question": "Yasmin cycled at 50 km/h for 5 hours. How far did Yasmin travel?",
     "options": [
       "300 km",
       "250 km",
@@ -13592,10 +13592,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0723_v13",
+    "id": "P6_MATH_0723",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 13)",
+    "question": "The age difference between Gina's father and Gina is 42 years. In 5 years, father will be 3 times Gina's age. How old is Gina now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -13603,7 +13603,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Gina now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -13615,7 +13615,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Gina",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -13752,10 +13752,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0732_v13",
+    "id": "P6_MATH_0732",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 13)",
+    "question": "Ali had 40 cards. She gave 3/8 of them to Wei Jie. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -13770,7 +13770,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Ali",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -13781,10 +13781,10 @@
     }
   },
   {
-    "id": "P6_MATH_0733_v13",
+    "id": "P6_MATH_0733",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 13)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Bala added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -13977,10 +13977,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0743_v9",
+    "id": "P6_MATH_0743",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 9)",
+    "question": "Kumar, Junjie and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Kumar?",
     "options": [
       "$45",
       "$18",
@@ -13995,12 +13995,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Kumar",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Junjie",
           "units": 3,
           "color": "#4facfe"
         },
@@ -14014,10 +14014,10 @@
     }
   },
   {
-    "id": "P6_MATH_0744_v7",
+    "id": "P6_MATH_0744",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 7)",
+    "question": "A television cost $500. Nurul bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Nurul pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -14030,10 +14030,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0745_v13",
+    "id": "P6_MATH_0745",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 13)",
+    "question": "Ravi cycled at 50 km/h for 3 hours. How far did Ravi travel?",
     "options": [
       "200 km",
       "150 km",
@@ -14137,10 +14137,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0752_v13",
+    "id": "P6_MATH_0752",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 13)",
+    "question": "Desmond had 40 stickers. She gave 3/8 of them to Brandon. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -14150,7 +14150,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Desmond",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -14161,10 +14161,10 @@
     }
   },
   {
-    "id": "P6_MATH_0753_v13",
+    "id": "P6_MATH_0753",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 13)",
+    "question": "The age difference between Yusof's father and Yusof is 42 years. In 3 years, father will be 3 times Yusof's age. How old is Yusof now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -14172,7 +14172,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Yusof now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -14184,7 +14184,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Yusof",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -14337,10 +14337,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0763_v13",
+    "id": "P6_MATH_0763",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 13)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Joyce added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -14517,10 +14517,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0772_v13",
+    "id": "P6_MATH_0772",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 13)",
+    "question": "Umar had 40 keychains. She gave 3/8 of them to Xuan. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -14535,7 +14535,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Umar",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -14546,10 +14546,10 @@
     }
   },
   {
-    "id": "P6_MATH_0773_v9",
+    "id": "P6_MATH_0773",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 9)",
+    "question": "Vera, Yasmin and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Vera?",
     "options": [
       "$36",
       "$24",
@@ -14564,12 +14564,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Vera",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Yasmin",
           "units": 3,
           "color": "#4facfe"
         },
@@ -14583,10 +14583,10 @@
     }
   },
   {
-    "id": "P6_MATH_0774_v7",
+    "id": "P6_MATH_0774",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 7)",
+    "question": "A television cost $1100. Wei Ming bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Wei Ming pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -14599,10 +14599,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0775_v13",
+    "id": "P6_MATH_0775",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 13)",
+    "question": "Xuan cycled at 50 km/h for 5 hours. How far did Xuan travel?",
     "options": [
       "300 km",
       "250 km",
@@ -14722,10 +14722,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0783_v14",
+    "id": "P6_MATH_0783",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 14)",
+    "question": "The age difference between Farid's father and Farid is 42 years. In 5 years, father will be 3 times Farid's age. How old is Farid now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -14733,7 +14733,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Farid now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -14745,7 +14745,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Farid",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -14882,10 +14882,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0792_v14",
+    "id": "P6_MATH_0792",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 14)",
+    "question": "Owen had 40 cards. She gave 3/8 of them to Mei Ling. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -14900,7 +14900,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Owen",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -14911,10 +14911,10 @@
     }
   },
   {
-    "id": "P6_MATH_0793_v14",
+    "id": "P6_MATH_0793",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 14)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Ali added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -15107,10 +15107,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0803_v9",
+    "id": "P6_MATH_0803",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 9)",
+    "question": "Huiling, Ravi and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Huiling?",
     "options": [
       "$18",
       "$30",
@@ -15125,12 +15125,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Huiling",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Ravi",
           "units": 3,
           "color": "#4facfe"
         },
@@ -15144,10 +15144,10 @@
     }
   },
   {
-    "id": "P6_MATH_0804_v7",
+    "id": "P6_MATH_0804",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 7)",
+    "question": "A television cost $900. Kumar bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Kumar pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -15160,10 +15160,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0805_v14",
+    "id": "P6_MATH_0805",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 14)",
+    "question": "Nurul cycled at 50 km/h for 3 hours. How far did Nurul travel?",
     "options": [
       "200 km",
       "150 km",
@@ -15267,10 +15267,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0812_v14",
+    "id": "P6_MATH_0812",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 14)",
+    "question": "Xinyi had 40 stickers. She gave 3/8 of them to Amira. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -15280,7 +15280,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Xinyi",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -15291,10 +15291,10 @@
     }
   },
   {
-    "id": "P6_MATH_0813_v14",
+    "id": "P6_MATH_0813",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 14)",
+    "question": "The age difference between Desmond's father and Desmond is 42 years. In 3 years, father will be 3 times Desmond's age. How old is Desmond now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -15302,7 +15302,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Desmond now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -15314,7 +15314,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Desmond",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -15467,10 +15467,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0823_v14",
+    "id": "P6_MATH_0823",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 14)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Hafiz added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -15647,10 +15647,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0832_v14",
+    "id": "P6_MATH_0832",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 14)",
+    "question": "Tanya had 40 keychains. She gave 3/8 of them to Wei Ming. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -15665,7 +15665,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Tanya",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -15676,10 +15676,10 @@
     }
   },
   {
-    "id": "P6_MATH_0833_v10",
+    "id": "P6_MATH_0833",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 10)",
+    "question": "Umar, Xuan and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Umar?",
     "options": [
       "$45",
       "$18",
@@ -15694,12 +15694,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Umar",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Xuan",
           "units": 3,
           "color": "#4facfe"
         },
@@ -15713,10 +15713,10 @@
     }
   },
   {
-    "id": "P6_MATH_0834_v7",
+    "id": "P6_MATH_0834",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 7)",
+    "question": "A television cost $700. Vera bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Vera pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -15729,10 +15729,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0835_v14",
+    "id": "P6_MATH_0835",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 14)",
+    "question": "Wei Ming cycled at 50 km/h for 5 hours. How far did Wei Ming travel?",
     "options": [
       "300 km",
       "250 km",
@@ -15852,10 +15852,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0843_v15",
+    "id": "P6_MATH_0843",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 15)",
+    "question": "The age difference between Elena's father and Elena is 42 years. In 5 years, father will be 3 times Elena's age. How old is Elena now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -15863,7 +15863,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Elena now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -15875,7 +15875,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Elena",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -16012,10 +16012,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0852_v15",
+    "id": "P6_MATH_0852",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 15)",
+    "question": "Noah had 40 cards. She gave 3/8 of them to Bala. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -16030,7 +16030,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Noah",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -16041,10 +16041,10 @@
     }
   },
   {
-    "id": "P6_MATH_0853_v15",
+    "id": "P6_MATH_0853",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 15)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Owen added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -16237,10 +16237,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0863_v10",
+    "id": "P6_MATH_0863",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 10)",
+    "question": "Gopal, Nurul and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Gopal?",
     "options": [
       "$36",
       "$24",
@@ -16255,12 +16255,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Gopal",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Nurul",
           "units": 3,
           "color": "#4facfe"
         },
@@ -16274,10 +16274,10 @@
     }
   },
   {
-    "id": "P6_MATH_0864_v8",
+    "id": "P6_MATH_0864",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 8)",
+    "question": "A television cost $500. Huiling bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Huiling pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -16290,10 +16290,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0865_v15",
+    "id": "P6_MATH_0865",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 15)",
+    "question": "Kumar cycled at 50 km/h for 3 hours. How far did Kumar travel?",
     "options": [
       "200 km",
       "150 km",
@@ -16397,10 +16397,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0872_v15",
+    "id": "P6_MATH_0872",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 15)",
+    "question": "Zhi Hao had 40 stickers. She gave 3/8 of them to Yusof. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -16410,7 +16410,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Zhi Hao",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -16421,10 +16421,10 @@
     }
   },
   {
-    "id": "P6_MATH_0873_v15",
+    "id": "P6_MATH_0873",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 15)",
+    "question": "The age difference between Xinyi's father and Xinyi is 42 years. In 3 years, father will be 3 times Xinyi's age. How old is Xinyi now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -16432,7 +16432,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Xinyi now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -16444,7 +16444,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Xinyi",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -16597,10 +16597,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0883_v15",
+    "id": "P6_MATH_0883",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 15)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Marcus added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -16777,10 +16777,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0892_v15",
+    "id": "P6_MATH_0892",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 15)",
+    "question": "Sofia had 40 keychains. She gave 3/8 of them to Vera. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -16795,7 +16795,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Sofia",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -16806,10 +16806,10 @@
     }
   },
   {
-    "id": "P6_MATH_0893_v10",
+    "id": "P6_MATH_0893",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 10)",
+    "question": "Tanya, Wei Ming and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Tanya?",
     "options": [
       "$18",
       "$30",
@@ -16824,12 +16824,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Tanya",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Wei Ming",
           "units": 3,
           "color": "#4facfe"
         },
@@ -16843,10 +16843,10 @@
     }
   },
   {
-    "id": "P6_MATH_0894_v8",
+    "id": "P6_MATH_0894",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $1100. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 8)",
+    "question": "A television cost $1100. Umar bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Umar pay?",
     "options": [
       "$1100.00",
       "$880.00",
@@ -16859,10 +16859,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0895_v15",
+    "id": "P6_MATH_0895",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 15)",
+    "question": "Vera cycled at 50 km/h for 5 hours. How far did Vera travel?",
     "options": [
       "300 km",
       "250 km",
@@ -16982,10 +16982,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0903_v16",
+    "id": "P6_MATH_0903",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 16)",
+    "question": "The age difference between Dinesh's father and Dinesh is 42 years. In 5 years, father will be 3 times Dinesh's age. How old is Dinesh now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -16993,7 +16993,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Dinesh now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -17005,7 +17005,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Dinesh",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -17142,10 +17142,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0912_v16",
+    "id": "P6_MATH_0912",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 16)",
+    "question": "Mira had 40 cards. She gave 3/8 of them to Ali. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -17160,7 +17160,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Mira",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -17171,10 +17171,10 @@
     }
   },
   {
-    "id": "P6_MATH_0913_v16",
+    "id": "P6_MATH_0913",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 16)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Noah added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -17367,10 +17367,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0923_v11",
+    "id": "P6_MATH_0923",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 11)",
+    "question": "Fatimah, Kumar and Siti shared $90 in the ratio 2:3:5. How much more did Siti receive than Fatimah?",
     "options": [
       "$45",
       "$18",
@@ -17385,12 +17385,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Fatimah",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Kumar",
           "units": 3,
           "color": "#4facfe"
         },
@@ -17404,10 +17404,10 @@
     }
   },
   {
-    "id": "P6_MATH_0924_v8",
+    "id": "P6_MATH_0924",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $900. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 8)",
+    "question": "A television cost $900. Gopal bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Gopal pay?",
     "options": [
       "$900.00",
       "$720.00",
@@ -17420,10 +17420,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0925_v16",
+    "id": "P6_MATH_0925",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 16)",
+    "question": "Huiling cycled at 50 km/h for 3 hours. How far did Huiling travel?",
     "options": [
       "200 km",
       "150 km",
@@ -17527,10 +17527,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0932_v16",
+    "id": "P6_MATH_0932",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 16)",
+    "question": "Chloe had 40 stickers. She gave 3/8 of them to Desmond. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -17540,7 +17540,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Chloe",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -17551,10 +17551,10 @@
     }
   },
   {
-    "id": "P6_MATH_0933_v16",
+    "id": "P6_MATH_0933",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 16)",
+    "question": "The age difference between Zhi Hao's father and Zhi Hao is 42 years. In 3 years, father will be 3 times Zhi Hao's age. How old is Zhi Hao now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -17562,7 +17562,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Zhi Hao now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -17574,7 +17574,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Zhi Hao",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -17727,10 +17727,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0943_v16",
+    "id": "P6_MATH_0943",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 8 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 16)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Aisha added 8 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "40",
       "48",
@@ -17907,10 +17907,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0952_v16",
+    "id": "P6_MATH_0952",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Amira had 40 cards. She gave 3/8 of them to Ethan. How many did she have left?\n(Variant 16)",
+    "question": "Raj had 40 keychains. She gave 3/8 of them to Umar. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -17925,7 +17925,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Amira",
+          "name": "Raj",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -17936,10 +17936,10 @@
     }
   },
   {
-    "id": "P6_MATH_0953_v11",
+    "id": "P6_MATH_0953",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 11)",
+    "question": "Sofia, Vera and Siti shared $120 in the ratio 2:3:5. How much more did Siti receive than Sofia?",
     "options": [
       "$36",
       "$24",
@@ -17954,12 +17954,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Sofia",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Vera",
           "units": 3,
           "color": "#4facfe"
         },
@@ -17973,10 +17973,10 @@
     }
   },
   {
-    "id": "P6_MATH_0954_v8",
+    "id": "P6_MATH_0954",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $700. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 8)",
+    "question": "A television cost $700. Tanya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Tanya pay?",
     "options": [
       "$623.00",
       "$560.00",
@@ -17989,10 +17989,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0955_v16",
+    "id": "P6_MATH_0955",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 5 hours. How far did Ethan travel?\n(Variant 16)",
+    "question": "Umar cycled at 50 km/h for 5 hours. How far did Umar travel?",
     "options": [
       "300 km",
       "250 km",
@@ -18112,10 +18112,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0963_v17",
+    "id": "P6_MATH_0963",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 5 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 17)",
+    "question": "The age difference between Carmen's father and Carmen is 42 years. In 5 years, father will be 3 times Carmen's age. How old is Carmen now?",
     "options": [
       "21 years old",
       "58 years old",
@@ -18123,7 +18123,7 @@
       "21 years old"
     ],
     "answer": "16 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 5 = 16.",
+    "explanation": "1. Difference constant = 42.\n2. In 5 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Carmen now = 21 − 5 = 16.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -18135,7 +18135,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Carmen",
           "units": 1,
           "color": "#00f2fe"
         }
@@ -18272,10 +18272,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0972_v17",
+    "id": "P6_MATH_0972",
     "topic": "Fractions",
     "type": "mcq",
-    "question": "Nurul had 40 cards. She gave 3/8 of them to Sanjay. How many did she have left?\n(Variant 17)",
+    "question": "Leo had 40 cards. She gave 3/8 of them to Owen. How many did she have left?",
     "options": [
       "40",
       "15",
@@ -18290,7 +18290,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Nurul",
+          "name": "Leo",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -18301,10 +18301,10 @@
     }
   },
   {
-    "id": "P6_MATH_0973_v17",
+    "id": "P6_MATH_0973",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "A box had red and blue beads in the ratio 2:3. After Ravi added 4 red beads, the ratio became 4:5. How many blue beads were there?\n(Variant 17)",
+    "question": "A box had red and blue beads in the ratio 2:3. After Mira added 4 red beads, the ratio became 4:5. How many blue beads were there?",
     "options": [
       "34",
       "24",
@@ -18497,10 +18497,10 @@
     "heuristicId": "equal-fractions"
   },
   {
-    "id": "P6_MATH_0983_v11",
+    "id": "P6_MATH_0983",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "Brandon, Jia Hui and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Brandon?\n(Variant 11)",
+    "question": "Sarah, Huiling and Siti shared $60 in the ratio 2:3:5. How much more did Siti receive than Sarah?",
     "options": [
       "$18",
       "$30",
@@ -18515,12 +18515,12 @@
       "title": "Ratio share",
       "bars": [
         {
-          "name": "Brandon",
+          "name": "Sarah",
           "units": 2,
           "color": "#00f2fe"
         },
         {
-          "name": "Jia Hui",
+          "name": "Huiling",
           "units": 3,
           "color": "#4facfe"
         },
@@ -18534,10 +18534,10 @@
     }
   },
   {
-    "id": "P6_MATH_0984_v9",
+    "id": "P6_MATH_0984",
     "topic": "Percentage",
     "type": "mcq",
-    "question": "A television cost $500. Priya bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Priya pay?\n(Variant 9)",
+    "question": "A television cost $500. Fatimah bought it at 20% discount. GST of 9% was charged on the discounted price. How much did Fatimah pay?",
     "options": [
       "$436.00",
       "$500.00",
@@ -18550,10 +18550,10 @@
     "heuristicId": "number-value"
   },
   {
-    "id": "P6_MATH_0985_v17",
+    "id": "P6_MATH_0985",
     "topic": "Speed",
     "type": "mcq",
-    "question": "Ethan cycled at 50 km/h for 3 hours. How far did Ethan travel?\n(Variant 17)",
+    "question": "Gopal cycled at 50 km/h for 3 hours. How far did Gopal travel?",
     "options": [
       "200 km",
       "150 km",
@@ -18657,10 +18657,10 @@
     "heuristicId": "algebra"
   },
   {
-    "id": "P6_MATH_0992_v17",
+    "id": "P6_MATH_0992",
     "topic": "Fractions",
     "type": "short_answer",
-    "question": "Mei Ling had 40 cards. She gave 3/8 of them to Kavitha. How many did she have left?\n(Variant 17)",
+    "question": "Ahmad had 40 stickers. She gave 3/8 of them to Xinyi. How many did she have left?",
     "options": [],
     "answer": "25",
     "explanation": "1. Given away = 3/8 × 40 = 15.\n2. Left = 40 − 15 = 25.",
@@ -18670,7 +18670,7 @@
       "title": "Fraction of 40",
       "bars": [
         {
-          "name": "Mei Ling",
+          "name": "Ahmad",
           "units": 8,
           "color": "#00f2fe",
           "highlightUnits": 5,
@@ -18681,10 +18681,10 @@
     }
   },
   {
-    "id": "P6_MATH_0993_v17",
+    "id": "P6_MATH_0993",
     "topic": "Ratio",
     "type": "mcq",
-    "question": "The age difference between Wei Jie's father and Wei Jie is 42 years. In 3 years, father will be 3 times Wei Jie's age. How old is Wei Jie now?\n(Variant 17)",
+    "question": "The age difference between Chloe's father and Chloe is 42 years. In 3 years, father will be 3 times Chloe's age. How old is Chloe now?",
     "options": [
       "18 years old",
       "21 years old",
@@ -18692,7 +18692,7 @@
       "60 years old"
     ],
     "answer": "18 years old",
-    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Wei Jie now = 21 − 3 = 18.",
+    "explanation": "1. Difference constant = 42.\n2. In 3 years ratio 3:1 → 2 units = 42 → 1 unit = 21.\n3. Chloe now = 21 − 3 = 18.",
     "difficulty": "Easy",
     "heuristicId": "constant-difference",
     "barModel": {
@@ -18704,7 +18704,7 @@
           "color": "#4facfe"
         },
         {
-          "name": "Wei Jie",
+          "name": "Chloe",
           "units": 1,
           "color": "#00f2fe"
         }

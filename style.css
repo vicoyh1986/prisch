@@ -1037,3 +1037,82 @@ body.light-theme .stat-item {
     display: block !important;
   }
 }
+
+.bank-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--success);
+  border: 1px solid rgba(0, 242, 161, 0.35);
+  background: rgba(0, 242, 161, 0.08);
+  padding: 1px 6px;
+  border-radius: 999px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.practice-size-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.topic-picker-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(2, 6, 23, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.topic-picker-panel {
+  width: min(720px, 100%);
+  max-height: min(80vh, 640px);
+  overflow: auto;
+  background: var(--bg-panel, #0f172a);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.topic-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.topic-pick-btn {
+  text-align: left;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: var(--transition-smooth, 0.2s ease);
+}
+
+.topic-pick-btn span {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.topic-pick-btn:hover {
+  border-color: rgba(0, 242, 254, 0.45);
+  transform: translateY(-1px);
+  box-shadow: var(--glow-primary, 0 0 12px rgba(0, 242, 254, 0.15));
+}
