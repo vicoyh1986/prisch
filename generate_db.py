@@ -966,53 +966,58 @@ def _fmt_grammar(stem, index, name, name2):
 def generate_english_question(level, qid, index):
     difficulty = diff_of(index)
     mode = index % 5
+    # Offsets chosen so name/item/place periods do not lock to mode step (5)
     name = nname(index)
-    name2 = nname(index, 5)
-    name3 = nname(index, 11)
-    item = nitem(index)
-    item2 = nitem(index, 3)
-    place = _place(index)
-    place2 = _place(index, 4)
-    when = _time(index)
-    count = 2 + (index % 17)
-    count2 = 3 + (index % 11)
+    name2 = nname(index * 7 + 3)
+    name3 = nname(index * 11 + 13)
+    item = nitem(index * 3 + 1)
+    item2 = nitem(index * 5 + 8)
+    place = _place(index * 3)
+    place2 = _place(index * 5 + 2)
+    when = _time(index * 3 + 1)
+    count = 2 + (index * 3) % 19
+    count2 = 3 + (index * 7) % 13
+    year = 2012 + (index * 3) % 12
+    lead = f"{name} and {name2} · {place} · {when}"
 
     if mode == 0:
         rules = GRAMMAR[level]
         stem, ans, bad, exp = rules[index % len(rules)]
         q = _fmt_grammar(stem, index, name, name2)
         frames = [
-            q,
-            f"Choose the correct option to complete the sentence {when}:\n{q}",
-            f"{name3} is revising grammar. Fill in the blank:\n{q}",
-            f"At {place}, the class discussed this sentence. Complete it:\n{q}",
-            f"Pick the best word for the blank in this PSLE-style item:\n{q}",
-            f"While waiting at {place2}, {name} practised this structure:\n{q}",
-            f"Complete the sentence correctly ({count} marks worth of practice):\n{q}",
+            f"[{lead}] Complete:\n{q}",
+            f"Choose the correct option to complete the sentence {when} near {place}:\n{q}",
+            f"{name3} is revising grammar with {name} after {count} examples. Fill in the blank:\n{q}",
+            f"At {place}, the class of {count2} discussed this sentence. Complete it:\n{q}",
+            f"Pick the best word for the blank in this PSLE-style item about {item}:\n{q}",
+            f"While waiting at {place2}, {name} practised this structure with {name2}:\n{q}",
+            f"Complete the sentence correctly (practice round {count} at {place2}):\n{q}",
+            f"Grammar focus for {name3} travelling via {place}:\n{q}",
         ]
-        q2 = frames[(index // len(rules)) % len(frames)]
+        q2 = frames[index % len(frames)]
         return pack(qid, "Grammar MCQ", "mcq", q2, ans, exp, difficulty, shuffle_opts(ans, bad))
 
     if mode == 1:
         words = VOCAB[level]
         word, definition, antonym = words[index % len(words)]
         others = [w[0] for w in words if w[0] != word]
-        # rotate distractors by index for variety
         start = (index // len(words)) % max(1, len(others))
         distractors = (others[start:] + others[:start])[:3]
         while len(distractors) < 3:
             distractors.append(antonym if antonym not in distractors else f"option{len(distractors)}")
         frames = [
-            f'Choose the word closest in meaning to: "{definition}".',
-            f'{name} looked up a word meaning "{definition}" {when}. Which word fits best?',
+            f'[{lead}] Choose the word closest in meaning to: "{definition}".',
+            f'{name} looked up a word meaning "{definition}" {when} at {place}. Which word fits best?',
             f'In the sentence "{name} remained _____ during the setback at {place}", which word meaning "{definition}" fits?',
-            f'Which word best matches this definition used in a PSLE cloze about {item}: "{definition}"?',
-            f'{name2} described something near {place2} as "{definition}". Pick the best word.',
-            f'The teacher asked {name} for a synonym of an idea meaning "{definition}".',
-            f'During reading at {place}, {name3} met a word that means "{definition}". Choose it.',
-            f'Fill the blank: The pupils showed a _____ attitude (meaning "{definition}") towards the {count} tasks.',
-            f'{name} wrote about {item2} and needed a word meaning "{definition}". Which is best?',
-            f'Closest in meaning to "{definition}" (opposite idea: not like "{antonym}"):',
+            f'Which word best matches this definition used in a PSLE cloze about {count} {item}: "{definition}"?',
+            f'{name2} described something near {place2} as "{definition}" while talking to {name3}. Pick the best word.',
+            f'The teacher asked {name} for a synonym of an idea meaning "{definition}" before going to {place}.',
+            f'During reading at {place}, {name3} met a word that means "{definition}" (notes page {count2}). Choose it.',
+            f'Fill the blank: The pupils showed a _____ attitude (meaning "{definition}") towards the {count} tasks at {place2}.',
+            f'{name} wrote about {item2} near {place} and needed a word meaning "{definition}". Which is best?',
+            f'Closest in meaning to "{definition}" for {name2}\'s draft about {item} (not like "{antonym}"):',
+            f'Vocabulary practice ({lead}): word meaning "{definition}".',
+            f'{name3} compared "{antonym}" with a better fit for "{definition}" after {count} trials at {place}. Choose the fit.',
         ]
         q = frames[index % len(frames)]
         exp = f"'{word}' means '{definition}'. Opposite idea: '{antonym}'."
@@ -1021,7 +1026,6 @@ def generate_english_question(level, qid, index):
     if mode == 2:
         sent, joiner, ans = SYNTHESIS[index % len(SYNTHESIS)]
         parts = [p.strip() for p in sent.split(".") if p.strip()]
-        # parametric name swaps
         repl = {
             "The boy": name, "Siti": name, "Bala": name, "David": name, "Mei Ling": name,
             "Tom": name, "Ravi": name, "Aisha": name, "Kumar": name, "John": name,
@@ -1035,7 +1039,6 @@ def generate_english_question(level, qid, index):
         for k, v in repl.items():
             p0 = p0.replace(k, v)
             p1 = p1.replace(k, v)
-        # rebuild answer with lowercase name
         ans2 = ans
         for old in ["the boy", "siti", "bala", "david", "mei ling", "tom", "ravi", "aisha", "kumar", "john", "priya", "marcus", "fatimah"]:
             ans2 = ans2.replace(old, name.lower())
@@ -1043,75 +1046,85 @@ def generate_english_question(level, qid, index):
         ans2 = ans2.replace("the pupils", f"{name.lower()} and {name2.lower()}")
         ans2 = ans2.replace("the children", f"{name.lower()} and {name2.lower()}")
         frames = [
-            f"Combine into one sentence using the word(s) given.\n\n1) {p0}.\n2) {p1}.\n\nUse: {joiner}",
-            f"{name3} practised synthesis {when} at {place}. Combine using '{joiner}':\n1) {p0}.\n2) {p1}.",
-            f"Rewrite as one sentence with the given connector ({joiner}). Context: {place2}.\nA. {p0}.\nB. {p1}.",
-            f"Sentence combining — use '{joiner}' only once:\n• {p0}\n• {p1}",
-            f"Join these ideas about {item} practice using '{joiner}':\n1) {p0}.\n2) {p1}.",
+            f"[{lead}] Combine into one sentence using the word(s) given.\n\n1) {p0}.\n2) {p1}.\n\nUse: {joiner}",
+            f"{name3} practised synthesis {when} at {place} (round {count}). Combine using '{joiner}':\n1) {p0}.\n2) {p1}.",
+            f"Rewrite as one sentence with the given connector ({joiner}). Context: {place2} with {name2}.\nA. {p0}.\nB. {p1}.",
+            f"Sentence combining for {name} — use '{joiner}' only once (about {item}):\n• {p0}\n• {p1}",
+            f"Join these ideas about {item} practice at {place} using '{joiner}':\n1) {p0}.\n2) {p1}.",
+            f"{name} met {name3} at {place2} {when}. Combine with '{joiner}':\n1) {p0}.\n2) {p1}.",
+            f"Synthesis drill #{count2} near {place}: use '{joiner}'.\n1) {p0}.\n2) {p1}.",
         ]
-        q = frames[(index // len(SYNTHESIS)) % len(frames)]
+        q = frames[index % len(frames)]
         topic = "Sentence Combining" if level == "P2" else "Synthesis & Transformation"
         return pack(qid, topic, "short_answer", q, ans2, f"Model: {ans2}", difficulty, [])
 
     if mode == 3:
         w, bad, tip = SPELLING[index % len(SPELLING)]
         frames = [
-            f"Choose the correctly spelt word for {name}'s editing exercise involving '{item}'. Which spelling is correct?",
-            f"Editing practice at {place}: {name} circled a misspelt word meaning related to school work. Which is correct?",
-            f"{when.capitalize() if when[:1].islower() else when}, {name2} proofread a paragraph about {item2}. Select the correct spelling.",
-            f"In an editing passage set near {place2}, which spelling should {name} keep?",
-            f"{name} found {count} errors but one word is already correct. Which spelling is right?",
-            f"Pick the accurate spelling for the blank in {name3}'s homework about {item}:",
-            f"Spelling check before submitting work from {place}: which form is correct?",
+            f"[{lead}] Choose the correctly spelt word for {name}'s editing exercise involving '{item}'. Which spelling is correct?",
+            f"Editing practice at {place}: {name} circled a misspelt word while packing {count} {item}. Which is correct?",
+            f"{when[0].upper() + when[1:]}, {name2} proofread a paragraph about {item2} near {place2}. Select the correct spelling of the target word.",
+            f"In an editing passage set near {place2}, which spelling should {name} keep after checking with {name3}?",
+            f"{name} found {count} errors in a text about {place} but one listed word is already correct. Which spelling is right?",
+            f"Pick the accurate spelling for the blank in {name3}'s homework about {item} (class {count2}):",
+            f"Spelling check before submitting work from {place} about {item2}: which form is correct?",
+            f"{name2} and {name} edited notes from {place2} {when}. Choose the correct spelling.",
         ]
         q = frames[index % len(frames)]
-        # lightly vary distractor order via shuffle_opts hash
         topic = "Editing for Spelling & Punctuation" if level == "P2" else "Editing"
         return pack(qid, topic, "mcq", q, w, f"Correct spelling is '{w}' ({tip}).", difficulty, shuffle_opts(w, bad))
 
     # mode 4: short comprehension / cloze with SG places, times, counts
+    him_her = "himself" if (index * 3) % 2 == 0 else "herself"
     cloze_bank = [
         (f"{name} and {name2} _____ going to {place} {when}.", "are", ["is", "was", "be"], "Plural compound subject → are."),
         (f"Neither {name} nor {name2} _____ late for the trip to {place2}.", "was", ["were", "are", "be"], "Neither nor → singular when both singular."),
-        (f"The box of {item} _____ on the table in the canteen.", "is", ["are", "were", "be"], "Head noun 'box' is singular."),
-        (f"{name} completed the {count} sums by _____.", "himself" if index % 2 == 0 else "herself", ["themselves", "myself", "itself"], "Reflexive matches subject."),
-        (f"There _____ many {item} in the drawer at {place}.", "are", ["is", "was", "be"], "Many + plural noun → are."),
-        (f"Last week, {name} _____ {count2} books from the library.", "borrowed", ["borrow", "borrows", "borrowing"], "Past time marker → simple past."),
-        (f"Every pupil in the class _____ a badge for CCA.", "has", ["have", "having", "had"], "Every + singular verb."),
-        (f"{name} walks to the MRT station _____ than {name2}.", "more quickly", ["quick", "more quick", "quickly"], "Comparative adverb."),
-        (f"The news about the {count}-day camp _____ exciting.", "was", ["were", "are", "be"], "'News' is uncountable/singular."),
-        (f"While {name} _____ at {place}, {name2} bought drinks.", "was waiting", ["waited", "waits", "waiting"], "Past continuous for background."),
-        (f"A flock of birds _____ over Marina Bay at dusk.", "was flying", ["were flying", "fly", "flown"], "Collective 'flock' often singular."),
-        (f"{name} has lived near {place} _____ {2015 + (index % 8)}.", "since", ["for", "from", "during"], "Since + point in time."),
-        (f"Please remind {name2} _____ the form before recess.", "to submit", ["submitting", "submit", "submitted"], "Remind + to-infinitive."),
-        (f"The pair of {item} _____ under the bench at school.", "was", ["were", "are", "be"], "'Pair' is singular."),
-        (f"If it rains, the class _____ cancel the outing to {place2}.", "will", ["would", "should", "can"], "First conditional."),
-        (f"{name} prefers {item} _____ {item2}.", "to", ["than", "from", "for"], "Prefer A to B."),
-        (f"Someone _____ left a water bottle on the MRT.", "has", ["have", "had", "having"], "Someone → singular."),
-        (f"By the time the bus arrived at {place}, {name} _____ already left.", "had", ["has", "have", "was"], "Past perfect for earlier action."),
-        (f"The number of visitors to Gardens by the Bay _____ rising.", "is", ["are", "were", "be"], "'The number of' → singular."),
-        (f"{name} and the rest of the team _____ proud of the result.", "are", ["is", "was", "be"], "Compound/plural idea → are."),
+        (f"The box of {item} belonging to {name} _____ on the table in the canteen at {place}.", "is", ["are", "were", "be"], "Head noun 'box' is singular."),
+        (f"{name} completed the {count} sums by _____ before leaving for {place2}.", him_her, ["themselves", "myself", "itself"], "Reflexive matches subject."),
+        (f"There _____ many {item} in the drawer at {place} when {name2} looked.", "are", ["is", "was", "be"], "Many + plural noun → are."),
+        (f"Last week, {name} _____ {count2} books from the library near {place}.", "borrowed", ["borrow", "borrows", "borrowing"], "Past time marker → simple past."),
+        (f"Every pupil in {name3}'s class _____ a badge for CCA at {place2}.", "has", ["have", "having", "had"], "Every + singular verb."),
+        (f"{name} walks to the MRT station _____ than {name2} after lessons at {place}.", "more quickly", ["quick", "more quick", "quickly"], "Comparative adverb."),
+        (f"The news about the {count}-day camp at {place} _____ exciting for {name}.", "was", ["were", "are", "be"], "'News' is uncountable/singular."),
+        (f"While {name} _____ at {place}, {name2} bought {count2} drinks.", "was waiting", ["waited", "waits", "waiting"], "Past continuous for background."),
+        (f"A flock of birds _____ over Marina Bay at dusk as {name} watched from {place2}.", "was flying", ["were flying", "fly", "flown"], "Collective 'flock' often singular."),
+        (f"{name} has lived near {place} _____ {year}.", "since", ["for", "from", "during"], "Since + point in time."),
+        (f"Please remind {name2} _____ the form before recess at {place}.", "to submit", ["submitting", "submit", "submitted"], "Remind + to-infinitive."),
+        (f"The pair of {item} under the bench at school near {place2} _____ {name}'s.", "was", ["were", "are", "be"], "'Pair' is singular."),
+        (f"If it rains, the class _____ cancel the outing to {place2} with {name}.", "will", ["would", "should", "can"], "First conditional."),
+        (f"{name} prefers {item} _____ {item2} when shopping at {place}.", "to", ["than", "from", "for"], "Prefer A to B."),
+        (f"Someone in {name}'s cabin _____ left a water bottle on the MRT to {place}.", "has", ["have", "had", "having"], "Someone → singular."),
+        (f"By the time the bus arrived at {place}, {name} _____ already left with {name2}.", "had", ["has", "have", "was"], "Past perfect for earlier action."),
+        (f"The number of visitors to Gardens by the Bay with {name3} _____ rising this month.", "is", ["are", "were", "be"], "'The number of' → singular."),
+        (f"{name} and the rest of the team from {place} _____ proud of the result.", "are", ["is", "was", "be"], "Compound/plural idea → are."),
         (f"Reading passage: {name} visited {place} {when} and bought {count} {item}. The word closest to 'bought' is _____.", "purchased", ["sold", "borrowed", "lost"], "Bought ≈ purchased."),
-        (f"Cloze: The children were _____ when they reached East Coast Park.", "delighted", ["delight", "delighting", "delights"], "Adjective after linking verb."),
-        (f"At {place}, {name} spoke so softly _____ few could hear.", "that", ["than", "then", "when"], "So... that."),
-        (f"{name} is interested _____ learning about Tampines heritage.", "in", ["on", "at", "for"], "Interested in."),
-        (f"Hardly had {name} entered the library _____ the lights flickered.", "when", ["than", "then", "before"], "Hardly... when."),
-        (f"Comprehension detail: {name2} waited {count} minutes at Bishan MRT. How long did {name2} wait?", f"{count} minutes", [f"{count2} minutes", f"{count+5} minutes", f"{count2+2} minutes"], "Direct detail from the stem."),
-        (f"Vocabulary cloze: The view from Marina Bay was truly _____.", "spectacular", ["spectacle", "spectate", "spectator"], "Adjective form."),
-        (f"{name} insisted _____ finishing the project before CCA.", "on", ["to", "for", "in"], "Insist on + gerund."),
-        (f"Neither of the answers about {place2} _____ correct.", "is", ["are", "were", "be"], "Neither of → singular."),
-        (f"After _____ lunch in the canteen, {name} went to the hall.", "having", ["have", "had", "has"], "After + gerund."),
+        (f"Cloze: {name} and {name2} were _____ when they reached East Coast Park after {count} stops.", "delighted", ["delight", "delighting", "delights"], "Adjective after linking verb."),
+        (f"At {place}, {name} spoke so softly _____ few of the {count2} listeners could hear.", "that", ["than", "then", "when"], "So... that."),
+        (f"{name} is interested _____ learning about Tampines heritage with {name2}.", "in", ["on", "at", "for"], "Interested in."),
+        (f"Hardly had {name} entered the library at {place} _____ the lights flickered {count} times.", "when", ["than", "then", "before"], "Hardly... when."),
+        (f"Vocabulary cloze: From {place}, {name} said the view from Marina Bay was truly _____.", "spectacular", ["spectacle", "spectate", "spectator"], "Adjective form."),
+        (f"{name} insisted _____ finishing the project before CCA at {place2}.", "on", ["to", "for", "in"], "Insist on + gerund."),
+        (f"Neither of the answers about {place2} from {name}'s group _____ correct.", "is", ["are", "were", "be"], "Neither of → singular."),
+        (f"After _____ lunch in the canteen near {place}, {name} went to the hall with {name3}.", "having", ["have", "had", "has"], "After + gerund."),
+        (f"{name} saw {count} {item} at {place} and said the stall was _____ crowded than yesterday.", "more", ["most", "many", "much"], "Comparative with than."),
+        (f"During assembly at {place2}, {name2} spoke _____ so the back row could hear.", "clearly", ["clear", "clearer", "clearest"], "Adverb of manner."),
+        (f"Cloze story: {name} took the MRT to Jurong with {count2} friends. They _____ excited.", "were", ["was", "is", "be"], "Plural subject → were."),
+        (f"{name3} kept the {item} _____ the bag before boarding at {place}.", "in", ["on", "at", "by"], "In the bag."),
+        (f"Short text: At Gardens by the Bay, {name} counted {count} orchids. How many orchids?", str(count),
+         [str(count + 2), str(count + 5), str(count + 9)], "Detail retrieval."),
+        (f"Comprehension: {name2} waited {count} minutes at Bishan MRT for {name}. How long did {name2} wait?", f"{count} minutes",
+         [f"{count + 2} minutes", f"{count + 5} minutes", f"{count + 8} minutes"], "Direct detail from the stem."),
     ]
     stem, ans, bad, exp = cloze_bank[index % len(cloze_bank)]
-    # extra frame wrappers for uniqueness without fake Variant tags
     wraps = [
-        stem,
-        f"Read and complete:\n{stem}",
-        f"Short cloze set {when}:\n{stem}",
-        f"Based on a short text about {place}:\n{stem}",
-        f"{name3}'s worksheet item:\n{stem}",
+        f"[{lead}]\n{stem}",
+        f"Read and complete ({name3}'s card from {place2}):\n{stem}",
+        f"Short cloze set {when} — focus on {item}:\n{stem}",
+        f"Based on a short text about {place} (scene {count}):\n{stem}",
+        f"{name3}'s worksheet item after {count2} minutes at {place2}:\n{stem}",
+        f"PSLE-style cloze for {name} travelling through {place}:\n{stem}",
     ]
-    q = wraps[(index // len(cloze_bank)) % len(wraps)]
+    q = wraps[index % len(wraps)]
     if level in ("P4", "P5", "P6"):
         topic = "Vocabulary Cloze"
     else:
