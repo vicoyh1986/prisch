@@ -89,6 +89,23 @@ def pack(qid, topic, qtype, question, answer, explanation, difficulty, options=N
 
 # -------------------- MATH GENERATORS --------------------
 
+def _math_wrap(q, i, a, topic):
+    """Frame variants so identical number patterns still read as different stems."""
+    places = ["the canteen", "the school hall", "Jurong library", "Bishan park", "the classroom", "East Coast Park"]
+    place = places[i % len(places)]
+    frames = [
+        q,
+        f"Word problem #{i} ({topic}): {q}",
+        f"{a} worked on this at {place}. {q}",
+        f"PSLE-style practice: {q}",
+        f"Show your working. {q}",
+        f"Heuristic check ({place}): {q}",
+        f"Drill set {(i % 40) + 1}: {q}",
+        f"Read carefully before choosing. {q}",
+    ]
+    return frames[i % len(frames)]
+
+
 def math_p6(topic, i, qid):
     difficulty = diff_of(i)
     a, b = nname(i), nname(i, 3)
@@ -97,38 +114,44 @@ def math_p6(topic, i, qid):
     if topic == "Algebra":
         mode = i % 5
         if mode == 0:
-            c1, c2, k1, k2 = 2 + i % 6, 1 + i % 4, 3 + i % 9, 1 + i % 5
+            c1, c2, k1, k2 = 2 + (i * 3) % 6, 1 + (i * 5) % 4, 3 + (i * 7) % 9, 1 + (i * 2) % 5
             ans_c, ans_k = c1 + c2, k1 - k2
             ans = f"{ans_c}x + {ans_k}" if ans_k >= 0 else f"{ans_c}x - {abs(ans_k)}"
-            q = f"Simplify: {c1}x + {k1} + {c2}x - {k2}"
+            raw = f"Simplify: {c1}x + {k1} + {c2}x - {k2}"
+            q = _math_wrap(raw, i, a, topic)
             exp = f"1. x-terms: {c1}x + {c2}x = {ans_c}x.\n2. Constants: {k1} - {k2} = {ans_k}.\n3. Result: {ans}."
             opts = shuffle_opts(ans, [f"{ans_c}x - {ans_k}", f"{c1}x + {k1}", f"{ans_c + 1}x + {ans_k}"])
             return pack(qid, topic, "mcq", q, ans, exp, difficulty, opts, "algebra")
         if mode == 1:
-            c, k, w = 2 + i % 7, 4 + i % 11, 2 + i % 6
+            c, k, w = 2 + (i * 3) % 7, 4 + (i * 5) % 11, 2 + (i * 7) % 6
             val = c * w + k
-            q = f"Find the value of {c}w + {k} when w = {w}."
+            raw = f"Find the value of {c}w + {k} when w = {w}."
+            q = _math_wrap(raw, i, a, topic)
             exp = f"Substitute w = {w}: {c} × {w} + {k} = {c*w} + {k} = {val}."
             if difficulty == "Hard" and i % 2 == 0:
                 return pack(qid, topic, "short_answer", q, str(val), exp, difficulty, [], "algebra")
             return pack(qid, topic, "mcq", q, str(val), exp, difficulty, shuffle_opts(str(val), [str(c+k), str(c*(w+k)), str(val+3)]), "algebra")
         if mode == 2:
-            c, k = 2 + i % 5, 5 + i % 12
+            c, k = 2 + (i * 3) % 5, 5 + (i * 5) % 12
             ans = f"{3*c}m - {k}"
-            q = f"{a} had {c}m {item}. {b} had twice as many as {a}. After they gave away {k} {item}, express the remaining number in terms of m."
+            raw = f"{a} had {c}m {item}. {b} had twice as many as {a}. After they gave away {k} {item}, express the remaining number in terms of m."
+            q = _math_wrap(raw, i, a, topic)
             exp = f"1. {a}: {c}m. {b}: {2*c}m.\n2. Total = {3*c}m.\n3. Remaining = {3*c}m - {k}."
             return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{2*c}m - {k}", f"{3*c}m + {k}", f"{c}m - {k}"]), "algebra")
         if mode == 3:
-            c, k, x = 3 + i % 5, 2 + i % 8, 4 + i % 7
-            # cx - k = x  => solve? Use evaluate expression
+            c, k, x = 3 + (i * 2) % 5, 2 + (i * 3) % 8, 4 + (i * 5) % 7
             left = c * x - k
-            q = f"If n = {x}, evaluate {c}n − {k}."
+            raw = f"If n = {x}, evaluate {c}n − {k}."
+            q = _math_wrap(raw, i, a, topic)
             exp = f"{c} × {x} − {k} = {c*x} − {k} = {left}."
             return pack(qid, topic, "mcq", q, str(left), exp, difficulty, shuffle_opts(str(left), [str(left+c), str(c*x+k), str(x-k)]), "algebra")
         # mode 4
-        p, qv = 2 + i % 6, 3 + i % 5
+        p, qv = 2 + (i * 3) % 6, 3 + (i * 5) % 5
+        if qv < p:
+            qv = p + (i % 4) + 1
         ans = f"{p}y + {qv}"
-        q = f"Expand and simplify: {p}(y + 1) + {qv - p}"
+        raw = f"Expand and simplify: {p}(y + 1) + {qv - p}"
+        q = _math_wrap(raw, i, a, topic)
         exp = f"{p}(y + 1) = {p}y + {p}. Then + {qv-p} → {p}y + {qv}."
         return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{p}y + {p}", f"{p}y - {qv}", f"y + {qv}"]), "algebra")
 
@@ -139,7 +162,7 @@ def math_p6(topic, i, qid):
             num, den = 3, 8
             given = whole * num // den
             left = whole - given
-            q = f"{a} had {whole} {item}. She gave {num}/{den} of them to {b}. How many did she have left?"
+            q = _math_wrap(f"{a} had {whole} {item}. She gave {num}/{den} of them to {b}. How many did she have left?", i, a, topic)
             exp = f"1. Given away = {num}/{den} × {whole} = {given}.\n2. Left = {whole} − {given} = {left}."
             bar = {"title": f"Fraction of {whole}", "bars": [{"name": a, "units": den, "color": "#00f2fe", "highlightUnits": den-num, "highlightColor": "#ffd166"}], "bracketText": f"{num}/{den} given away"}
             if difficulty == "Hard" and i % 2 == 0:
@@ -154,21 +177,21 @@ def math_p6(topic, i, qid):
             g = gcd(n, d)
             n, d = n // g, d // g
             ans = f"{n}/{d}"
-            q = f"Find the sum of 1/{d1} and 1/{d2}. Give your answer in simplest form."
+            q = _math_wrap(f"Find the sum of 1/{d1} and 1/{d2}. Give your answer in simplest form.", i, a, topic)
             exp = f"1/{d1} + 1/{d2} = {d2}/{d1*d2} + {d1}/{d1*d2} = {d1+d2}/{d1*d2} = {ans}."
             return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"1/{d1+d2}", f"{d1+d2}/{d1*d2}", f"2/{d1}"]), "equal-fractions")
         if mode == 2:
             tot = (i % 6 + 4) * 12
             used = tot * 5 // 12
             rem = tot - used
-            q = f"A tank was 5/12 full. It contained {used} litres of water. What is the capacity of the tank?"
+            q = _math_wrap(f"A tank was 5/12 full. It contained {used} litres of water. What is the capacity of the tank?", i, a, topic)
             exp = f"5/12 of capacity = {used} L → 1/12 = {used//5} L → capacity = 12 × {used//5} = {tot} L."
             return pack(qid, topic, "mcq", q, f"{tot} L", exp, difficulty, shuffle_opts(f"{tot} L", [f"{used} L", f"{rem} L", f"{tot+12} L"]), "equal-fractions")
         # mode 3
         u = 3 + i % 5
         of_what = u * 7
         ans = of_what * 3 // 7
-        q = f"What is 3/7 of {of_what}?"
+        q = _math_wrap(f"What is 3/7 of {of_what}?", i, a, topic)
         exp = f"3/7 × {of_what} = 3 × {of_what//7} = {ans}."
         return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(of_what), str(ans+u), str(of_what//7)]), "equal-fractions")
 
@@ -179,7 +202,7 @@ def math_p6(topic, i, qid):
             years = 2 + i % 4
             one_u = diff // 2
             son_now = one_u - years
-            q = f"The age difference between {a}'s father and {a} is {diff} years. In {years} years, father will be 3 times {a}'s age. How old is {a} now?"
+            q = _math_wrap(f"The age difference between {a}'s father and {a} is {diff} years. In {years} years, father will be 3 times {a}'s age. How old is {a} now?", i, a, topic)
             exp = f"1. Difference constant = {diff}.\n2. In {years} years ratio 3:1 → 2 units = {diff} → 1 unit = {one_u}.\n3. {a} now = {one_u} − {years} = {son_now}."
             bar = {"title": f"Constant Difference ({diff} yrs)", "bars": [{"name": "Father", "units": 3, "color": "#4facfe"}, {"name": a, "units": 1, "color": "#00f2fe"}], "bracketText": f"2 units = {diff}"}
             ans = f"{son_now} years old"
@@ -195,7 +218,7 @@ def math_p6(topic, i, qid):
             blue = 15 * (1 + i % 4)
             unit = blue // 15
             added = 2 * unit
-            q = f"A box had red and blue beads in the ratio 2:3. After {a} added {added} red beads, the ratio became 4:5. How many blue beads were there?"
+            q = _math_wrap(f"A box had red and blue beads in the ratio 2:3. After {a} added {added} red beads, the ratio became 4:5. How many blue beads were there?", i, a, topic)
             exp = f"Blue constant. LCM of 3 and 5 = 15.\nInitial 2:3 = 10:15. New 4:5 = 12:15.\nRed increased by 2 units = {added}. 1 unit = {unit}. Blue = 15 units = {blue}."
             bar = {"title": "Constant Part (Blue fixed)", "bars": [{"name": "Red after", "units": 4, "color": "#ff6b6b", "highlightUnits": 1, "highlightColor": "#ffd166"}, {"name": "Blue", "units": 5, "color": "#4facfe"}], "bracketText": f"Blue = {blue}"}
             return pack(qid, topic, "mcq", q, str(blue), exp, difficulty, shuffle_opts(str(blue), [str(10*unit), str(blue+added), str(12*unit)]), "constant-part", bar)
@@ -204,7 +227,7 @@ def math_p6(topic, i, qid):
         unit = 4 + i % 9
         total = (r1+r2+r3) * unit
         diffv = (r3 - r1) * unit
-        q = f"{a}, {b} and Siti shared ${total} in the ratio {r1}:{r2}:{r3}. How much more did Siti receive than {a}?"
+        q = _math_wrap(f"{a}, {b} and Siti shared ${total} in the ratio {r1}:{r2}:{r3}. How much more did Siti receive than {a}?", i, a, topic)
         exp = f"Total units = 10. 1 unit = ${total}//10 = ${unit}. Difference = 3 units = ${diffv}."
         bar = {"title": "Ratio share", "bars": [{"name": a, "units": 2, "color": "#00f2fe"}, {"name": b, "units": 3, "color": "#4facfe"}, {"name": "Siti", "units": 5, "color": "#a855f7"}], "bracketText": f"1 unit = ${unit}"}
         return pack(qid, topic, "mcq", q, f"${diffv}", exp, difficulty, shuffle_opts(f"${diffv}", [f"${r3*unit}", f"${r1*unit}", f"${r2*unit}"]), "constant-total", bar)
@@ -218,7 +241,7 @@ def math_p6(topic, i, qid):
             after = price - disc
             gst = round(after * 0.09, 2)
             final = round(after + gst, 2)
-            q = f"A television cost ${price}. {a} bought it at {pct}% discount. GST of 9% was charged on the discounted price. How much did {a} pay?"
+            q = _math_wrap(f"A television cost ${price}. {a} bought it at {pct}% discount. GST of 9% was charged on the discounted price. How much did {a} pay?", i, a, topic)
             exp = f"1. Discount = {pct}% of ${price} = ${disc}.\n2. Discounted = ${after}.\n3. GST = 9% of ${after} = ${gst}.\n4. Final = ${final:.2f}."
             ans = f"${final:.2f}"
             return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"${after:.2f}", f"${price - disc + price*9//100:.2f}", f"${price:.2f}"]), "number-value")
@@ -226,7 +249,7 @@ def math_p6(topic, i, qid):
             base = (i % 7 + 4) * 50
             pct = 10 + (i % 5) * 5
             part = base * pct // 100
-            q = f"{pct}% of a number is {part}. What is the number?"
+            q = _math_wrap(f"{pct}% of a number is {part}. What is the number?", i, a, topic)
             exp = f"{pct}% → {part}, so 1% → {part // pct}, 100% → {base}."
             return pack(qid, topic, "mcq", q, str(base), exp, difficulty, shuffle_opts(str(base), [str(part), str(base+pct), str(base//2)]), "number-value")
         # mode 2
@@ -234,7 +257,7 @@ def math_p6(topic, i, qid):
         if new == old: new += 10
         change = new - old
         pct = round(change / old * 100, 1)
-        q = f"A quantity increased from {old} to {new}. Find the percentage increase."
+        q = _math_wrap(f"A quantity increased from {old} to {new}. Find the percentage increase.", i, a, topic)
         exp = f"Increase = {change}. Percentage increase = {change}/{old} × 100% = {pct}%."
         ans = f"{pct}%"
         return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{change}%", f"{round(change/new*100,1)}%", f"{pct+5}%"]), "number-value")
@@ -246,7 +269,7 @@ def math_p6(topic, i, qid):
             hrs = 2 + i % 3
             dist = (s1 + s2) * hrs
             meet = 8 + hrs
-            q = f"Town A and Town B are {dist} km apart. At 0800 a truck left A at {s1} km/h and a van left B at {s2} km/h towards each other. When did they meet?"
+            q = _math_wrap(f"Town A and Town B are {dist} km apart. At 0800 a truck left A at {s1} km/h and a van left B at {s2} km/h towards each other. When did they meet?", i, a, topic)
             exp = f"Combined speed = {s1+s2} km/h. Time = {dist}/{s1+s2} = {hrs} h. Meeting time = 0800 + {hrs} h = {meet:02d}00."
             ans = f"{meet:02d}00"
             bar = {"title": f"Opposite directions ({dist} km)", "bars": [{"name": "Truck", "units": 4, "color": "#00f2fe", "totalLabel": f"{s1} km/h"}, {"name": "Van", "units": 3, "color": "#ffd166", "totalLabel": f"{s2} km/h"}], "bracketText": f"Time = {hrs} h"}
@@ -255,7 +278,7 @@ def math_p6(topic, i, qid):
             speed = 40 + (i % 6) * 10
             time_h = 2 + i % 4
             dist = speed * time_h
-            q = f"{a} cycled at {speed} km/h for {time_h} hours. How far did {a} travel?"
+            q = _math_wrap(f"{a} cycled at {speed} km/h for {time_h} hours. How far did {a} travel?", i, a, topic)
             exp = f"Distance = Speed × Time = {speed} × {time_h} = {dist} km."
             return pack(qid, topic, "mcq", q, f"{dist} km", exp, difficulty, shuffle_opts(f"{dist} km", [f"{speed} km", f"{dist+speed} km", f"{time_h} km"]), "speed-circles")
         # mode 2
@@ -266,7 +289,7 @@ def math_p6(topic, i, qid):
         hrs = int(t)
         mins = int(round((t - hrs) * 60))
         ans = f"{hrs} h {mins} min" if mins else f"{hrs} h"
-        q = f"A bus travels {dist} km at {speed} km/h. How long does the journey take?"
+        q = _math_wrap(f"A bus travels {dist} km at {speed} km/h. How long does the journey take?", i, a, topic)
         exp = f"Time = Distance ÷ Speed = {dist} ÷ {speed} = {t} h = {ans}."
         return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{hrs+1} h", f"{speed} h", f"{mins} min"]), "speed-circles")
 
@@ -275,7 +298,7 @@ def math_p6(topic, i, qid):
         quad = 22 * r * r // (7 * 4)
         tri = r * r // 2
         shaded = quad - tri
-        q = f"A quadrant of radius {r} cm sits inside a square of side {r} cm. A right-angled isosceles triangle of legs {r} cm is drawn inside the quadrant. Find the shaded area (quadrant − triangle). Take π = 22/7."
+        q = _math_wrap(f"A quadrant of radius {r} cm sits inside a square of side {r} cm. A right-angled isosceles triangle of legs {r} cm is drawn inside the quadrant. Find the shaded area (quadrant − triangle). Take π = 22/7.", i, a, topic)
         exp = f"1. Quadrant area = ¼ × 22/7 × {r}² = {quad} cm².\n2. Triangle = ½ × {r} × {r} = {tri} cm².\n3. Shaded = {quad} − {tri} = {shaded} cm²."
         ans = f"{shaded} cm²"
         if difficulty == "Hard" and i % 2 == 0:
@@ -288,13 +311,13 @@ def math_p6(topic, i, qid):
             n = 3 + i % 8
             side = 2 + i % 4
             vol = n * side ** 3
-            q = f"A solid is made of {n} identical cubes of side {side} cm. Find the total volume."
+            q = _math_wrap(f"A solid is made of {n} identical cubes of side {side} cm. Find the total volume.", i, a, topic)
             exp = f"Volume of 1 cube = {side}³ = {side**3} cm³. Total = {n} × {side**3} = {vol} cm³."
             return pack(qid, topic, "mcq", q, f"{vol} cm³", exp, difficulty, shuffle_opts(f"{vol} cm³", [f"{n*side*side} cm³", f"{vol-side**3} cm³", f"{vol+side**3} cm³"]), "number-value")
         if mode == 1:
             l, w, h = 4 + i % 5, 3 + i % 4, 5 + i % 6
             vol = l * w * h
-            q = f"Find the volume of a cuboid {l} cm by {w} cm by {h} cm."
+            q = _math_wrap(f"Find the volume of a cuboid {l} cm by {w} cm by {h} cm.", i, a, topic)
             exp = f"V = l × w × h = {l} × {w} × {h} = {vol} cm³."
             return pack(qid, topic, "mcq", q, f"{vol} cm³", exp, difficulty, shuffle_opts(f"{vol} cm³", [f"{l*w} cm³", f"{vol+10} cm³", f"{vol-5} cm³"]), "number-value")
         # tank
@@ -303,7 +326,7 @@ def math_p6(topic, i, qid):
         # remaining height
         base = L * W
         h_filled = filled / base
-        q = f"A rectangular tank is {L} cm long and {W} cm wide. It contains {filled} cm³ of water. What is the height of the water?"
+        q = _math_wrap(f"A rectangular tank is {L} cm long and {W} cm wide. It contains {filled} cm³ of water. What is the height of the water?", i, a, topic)
         exp = f"Height = Volume ÷ Base area = {filled} ÷ ({L}×{W}) = {filled/base} cm."
         ans = f"{filled/base:g} cm"
         return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{H} cm", f"{filled} cm", f"{L} cm"]), "number-value")
@@ -315,26 +338,26 @@ def math_p6(topic, i, qid):
         angle = pct * 360 // 100
         mode = i % 2
         if mode == 0:
-            q = f"In a pie chart of {total} pupils, {pct}% liked Science. How many pupils liked Science?"
+            q = _math_wrap(f"In a pie chart of {total} pupils, {pct}% liked Science. How many pupils liked Science?", i, a, topic)
             exp = f"{pct}% of {total} = {val}."
             return pack(qid, topic, "mcq", q, str(val), exp, difficulty, shuffle_opts(str(val), [str(pct), str(total-val), str(angle)]), "number-value")
-        q = f"A sector representing {pct}% of a pie chart has what angle at the centre?"
+        q = _math_wrap(f"A sector representing {pct}% of a pie chart has what angle at the centre?", i, a, topic)
         exp = f"Angle = {pct}/100 × 360° = {angle}°."
         return pack(qid, topic, "mcq", q, f"{angle}°", exp, difficulty, shuffle_opts(f"{angle}°", [f"{pct}°", f"{360-angle}°", f"{angle+10}°"]), "number-value")
 
     if topic == "Net of Solids":
         mode = i % 3
         if mode == 0:
-            q = f"How many faces does a cube have?"
+            q = _math_wrap(f"How many faces does a cube have?", i, a, topic)
             return pack(qid, topic, "mcq", q, "6", "A cube has 6 square faces.", difficulty, shuffle_opts("6", ["4", "8", "12"]), "number-value")
         if mode == 1:
             edge = 3 + i % 5
             # cube net area
             area = 6 * edge * edge
-            q = f"A cube of edge {edge} cm is unfolded into a net. What is the total surface area of the net?"
+            q = _math_wrap(f"A cube of edge {edge} cm is unfolded into a net. What is the total surface area of the net?", i, a, topic)
             exp = f"6 faces × {edge}² = 6 × {edge*edge} = {area} cm²."
             return pack(qid, topic, "mcq", q, f"{area} cm²", exp, difficulty, shuffle_opts(f"{area} cm²", [f"{edge*edge} cm²", f"{4*edge*edge} cm²", f"{area+edge} cm²"]), "number-value")
-        q = f"Which solid can be formed from a net of 4 triangles and 1 square?"
+        q = _math_wrap(f"Which solid can be formed from a net of 4 triangles and 1 square?", i, a, topic)
         ans = "Square pyramid"
         return pack(qid, topic, "mcq", q, ans, "A square base with 4 triangular faces forms a square pyramid.", difficulty, shuffle_opts(ans, ["Cube", "Triangular prism", "Cylinder"]), "number-value")
 
@@ -342,171 +365,371 @@ def math_p6(topic, i, qid):
     return math_generic(topic, i, qid, "P6")
 
 
+
 def math_generic(topic, i, qid, level):
-    """Faithful fallbacks for lower levels."""
+    """Faithful fallbacks for lower levels — high parametric uniqueness."""
     difficulty = diff_of(i)
     a, b = nname(i), nname(i, 2)
+    c = nname(i, 5)
     item = nitem(i)
+    item2 = nitem(i, 4)
 
     if "Addition" in topic or topic.startswith("Numbers"):
-        n1 = 100 + (i * 7) % 900
-        n2 = 50 + (i * 11) % 400
+        n1 = 100 + (i * 7) % 900 + (i % 13)
+        n2 = 50 + (i * 11) % 400 + (i % 9)
         if "100000" in topic or "Million" in topic:
-            n1 = 10000 + (i * 97) % 80000
-            n2 = 1000 + (i * 53) % 9000
+            n1 = 10000 + (i * 97) % 80000 + i
+            n2 = 1000 + (i * 53) % 9000 + (i % 17)
         ans = n1 + n2
-        q = f"{a} has {n1} {item}. {b} has {n2} {item}. How many {item} do they have altogether?"
+        variants = [
+            f"{a} has {n1} {item}. {b} has {n2} {item}. How many {item} do they have altogether?",
+            f"Find the sum of {n1} and {n2}.",
+            f"{a} collected {n1} {item} on Monday and {n2} more on Tuesday. What is the total?",
+            f"A shop sold {n1} {item} in the morning and {n2} in the afternoon. How many were sold in all?",
+            f"{a}, {b} and a helper counted {n1} + {n2} {item}. What is the total count?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{n1} + {n2} = {ans}."
-        return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(n1-n2), str(ans+10), str(ans-5)]))
+        return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(abs(n1-n2)), str(ans+10), str(ans-5)]))
 
     if "Subtraction" in topic:
-        n1 = 200 + (i * 9) % 700
-        n2 = 40 + (i * 5) % 150
+        n1 = 200 + (i * 9) % 700 + (i % 11)
+        n2 = 40 + (i * 5) % 150 + (i % 7)
+        if n2 >= n1:
+            n1, n2 = n2 + 20, n1
         ans = n1 - n2
-        q = f"{a} had {n1} {item}. {a} gave {n2} to {b}. How many did {a} have left?"
+        variants = [
+            f"{a} had {n1} {item}. {a} gave {n2} to {b}. How many did {a} have left?",
+            f"Subtract {n2} from {n1}.",
+            f"A box held {n1} {item}. After {n2} were used, how many remained?",
+            f"{a}'s score was {n1}. {a} lost {n2} points. What is the new score?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{n1} − {n2} = {ans}."
         return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(n1+n2), str(n2), str(ans+2)]))
 
-    if "Multiplication" in topic or "Operations" in topic:
-        x, y = 3 + i % 9, 4 + i % 8
+    if "Multiplication" in topic or "Operations" in topic or "Division" in topic:
+        x, y = 3 + (i * 3) % 9, 4 + (i * 2) % 8
+        if "Division" in topic and i % 2 == 1:
+            y = 2 + i % 9
+            ans = x * y
+            q = _math_wrap(f"{a} packed {ans} {item} equally into {y} boxes. How many in each box?", i, a, topic)
+            exp = f"{ans} ÷ {y} = {x}."
+            return pack(qid, topic, "mcq", q, str(x), exp, difficulty, shuffle_opts(str(x), [str(y), str(ans), str(x+y)]))
         ans = x * y
-        q = f"There are {x} rows of {item} with {y} in each row. What is the total?"
+        variants = [
+            f"There are {x} rows of {item} with {y} in each row. What is the total?",
+            f"Calculate {x} × {y}.",
+            f"{a} bought {x} packs of {item}. Each pack has {y}. How many {item} in all?",
+            f"A array has {x} groups of {y} {item2}. Find the product.",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{x} × {y} = {ans}."
         return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(x+y), str(ans+x), str(ans-y)]))
 
     if topic == "Factors & Multiples":
-        num = 24 + (i % 5) * 12
+        num = 24 + (i % 12) * 6 + (i % 5)
         factors = [k for k in range(1, num+1) if num % k == 0]
-        non = [k for k in [5,7,9,11,13,14] if num % k != 0][0]
-        q = f"Which of the following is NOT a factor of {num}?"
-        exp = f"Factors of {num}: {factors}. {non} does not divide {num}."
-        opts = shuffle_opts(str(non), [str(f) for f in factors[:3]])
-        return pack(qid, topic, "mcq", q, str(non), exp, difficulty, opts)
+        non_cands = [k for k in range(2, 20) if num % k != 0]
+        non = non_cands[i % len(non_cands)]
+        if i % 2 == 0:
+            q = _math_wrap(f"Which of the following is NOT a factor of {num}?", i, a, topic)
+            exp = f"Factors of {num}: {factors}. {non} does not divide {num}."
+            opts = shuffle_opts(str(non), [str(f) for f in factors[:3]])
+            return pack(qid, topic, "mcq", q, str(non), exp, difficulty, opts)
+        mult = num * (2 + i % 4)
+        q = _math_wrap(f"Which number is a multiple of {num}?", i, a, topic)
+        exp = f"{mult} = {num} × {mult // num}, so it is a multiple."
+        bad = [str(num + 1), str(num + 3), str(num - 1 if num > 2 else num + 5)]
+        return pack(qid, topic, "mcq", q, str(mult), exp, difficulty, shuffle_opts(str(mult), bad))
 
     if topic == "Decimals":
-        v = round((1 + i % 8) * 1.25, 2)
-        qn = 2 + i % 5
+        v = round((1 + (i * 3) % 8) * 1.25 + (i % 7) * 0.01, 2)
+        qn = 2 + i % 6
         tot = round(v * qn, 2)
-        q = f"{a} bought {qn} bottles of juice at {v} litres each. What is the total volume?"
+        variants = [
+            f"{a} bought {qn} bottles of juice at {v} litres each. What is the total volume?",
+            f"Find {qn} × {v}.",
+            f"Each bottle holds {v} L. {qn} bottles hold how many litres?",
+            f"At the shop, {a} paid for {qn} items costing {v} units each. Total measure?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{v} × {qn} = {tot} L."
         return pack(qid, topic, "mcq", q, f"{tot} L", exp, difficulty, shuffle_opts(f"{tot} L", [f"{round(tot+0.5,2)} L", f"{v} L", f"{qn} L"]))
 
     if "Area" in topic and "Triangle" in topic:
-        base, h = 6 + (i % 6) * 2, 5 + i % 7
+        base, h = 6 + (i % 8) * 2, 5 + (i * 3) % 9
         area = base * h // 2
-        q = f"A triangle has base {base} cm and height {h} cm. Find its area."
+        variants = [
+            f"A triangle has base {base} cm and height {h} cm. Find its area.",
+            f"Find the area of △ with base {base} cm and perpendicular height {h} cm.",
+            f"{a} drew a triangle ({base} cm base, {h} cm height). What is its area?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"Area = ½ × {base} × {h} = {area} cm²."
         return pack(qid, topic, "mcq", q, f"{area} cm²", exp, difficulty, shuffle_opts(f"{area} cm²", [f"{base*h} cm²", f"{base+h} cm²", f"{area+5} cm²"]))
 
-    if "Area" in topic or "Perimeter" in topic:
-        l, w = 8 + i % 7, 4 + i % 5
-        if "Perimeter" in topic and i % 2 == 0:
+    if "Area" in topic or "Perimeter" in topic or "Composite" in topic:
+        l, w = 8 + (i * 2) % 9, 4 + (i * 3) % 7
+        if ("Perimeter" in topic and i % 2 == 0) or (i % 3 == 0 and "Area" not in topic):
             per = 2 * (l + w)
-            q = f"A rectangle is {l} cm by {w} cm. Find its perimeter."
+            variants = [
+                f"A rectangle is {l} cm by {w} cm. Find its perimeter.",
+                f"Find the perimeter of a {l} cm × {w} cm rectangle.",
+                f"{a} fenced a {l} by {w} cm rectangle. What length of fence is needed?",
+            ]
+            q = _math_wrap(variants[i % len(variants)], i, a, topic)
             exp = f"Perimeter = 2 × ({l} + {w}) = {per} cm."
             return pack(qid, topic, "mcq", q, f"{per} cm", exp, difficulty, shuffle_opts(f"{per} cm", [f"{l*w} cm", f"{l+w} cm", f"{per+2} cm"]))
         area = l * w
-        q = f"Find the area of a rectangle {l} cm by {w} cm."
+        variants = [
+            f"Find the area of a rectangle {l} cm by {w} cm.",
+            f"A card measures {l} cm × {w} cm. What is its area?",
+            f"{a} painted a {l} cm by {w} cm board. Area painted?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"Area = {l} × {w} = {area} cm²."
         return pack(qid, topic, "mcq", q, f"{area} cm²", exp, difficulty, shuffle_opts(f"{area} cm²", [f"{2*(l+w)} cm", f"{area+4} cm²", f"{l+w} cm²"]))
 
     if topic == "Average":
-        n = 4 + i % 4
-        avg = 140 + i % 20
-        extra = 150 + i % 25
+        n = 4 + i % 5
+        avg = 140 + (i * 3) % 25
+        extra = 150 + (i * 5) % 30
         new_avg = round(((n * avg) + extra) / (n + 1), 1)
-        q = f"The average height of {n} pupils is {avg} cm. A new pupil of height {extra} cm joins. What is the new average?"
+        variants = [
+            f"The average height of {n} pupils is {avg} cm. A new pupil of height {extra} cm joins. What is the new average?",
+            f"{n} scores average {avg}. One more score of {extra} is added. New average?",
+            f"{a}'s group of {n} has mean {avg}. {b} joins with {extra}. Find the new mean.",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"Total = {n*avg}. New total = {n*avg+extra}. New average = {new_avg} cm."
         return pack(qid, topic, "mcq", q, f"{new_avg} cm", exp, difficulty, shuffle_opts(f"{new_avg} cm", [f"{avg} cm", f"{extra} cm", f"{new_avg+1} cm"]))
 
     if topic == "Ratio":
-        u1, u2 = 2 + i % 3, 3 + i % 4
-        mult = 5 + i % 10
+        u1, u2 = 2 + i % 4, 3 + (i * 2) % 5
+        mult = 5 + (i * 3) % 12
         tot = (u1 + u2) * mult
         v2 = u2 * mult
-        q = f"{a} and {b} shared ${tot} in the ratio {u1}:{u2}. How much did {b} get?"
+        variants = [
+            f"{a} and {b} shared ${tot} in the ratio {u1}:{u2}. How much did {b} get?",
+            f"Share {tot} in the ratio {u1}:{u2}. Find the larger share if u2≥u1 else the second share (for {b}).",
+            f"Ratio {u1}:{u2}. Total ${tot}. {b}'s amount?",
+        ]
+        # clarify second share always b = u2*mult
+        variants[1] = f"Amount ${tot} is shared in the ratio {u1}:{u2} between {a} and {b}. How much does {b} receive?"
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"Units = {u1+u2}. 1 unit = ${mult}. {b} = {u2} units = ${v2}."
         bar = {"title": f"Ratio ${tot}", "bars": [{"name": a, "units": u1, "color": "#00f2fe"}, {"name": b, "units": u2, "color": "#4facfe"}], "bracketText": f"1u=${mult}"}
-        return pack(qid, topic, "mcq", q, f"${v2}", exp, difficulty, shuffle_opts(f"${v2}", [f"${u1*mult}", f"${tot}", f"${v2-5}"]), "constant-total", bar)
+        return pack(qid, topic, "mcq", q, f"${v2}", exp, difficulty, shuffle_opts(f"${v2}", [f"${u1*mult}", f"${tot}", f"${v2+mult}"]), "constant-total", bar)
 
     if topic == "Percentage":
-        price = (3 + i % 6) * 50
-        pct = 10 + (i % 5) * 5
+        price = (3 + i % 8) * 50 + (i % 3) * 10
+        pct = 10 + (i % 7) * 5
         disc = price * pct // 100
-        q = f"A bicycle costs ${price}. A {pct}% discount is given. What is the discount amount?"
+        variants = [
+            f"A bicycle costs ${price}. A {pct}% discount is given. What is the discount amount?",
+            f"Find {pct}% of ${price}.",
+            f"{a} saw a ${price} item with {pct}% off. How much is the discount?",
+            f"Discount rate {pct}% on ${price}. Discount value?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"Discount = {pct}% of ${price} = ${disc}."
         return pack(qid, topic, "mcq", q, f"${disc}", exp, difficulty, shuffle_opts(f"${disc}", [f"${price-disc}", f"${pct}", f"${disc+5}"]))
 
-    if topic == "Volume of Cube & Cuboid" or topic == "Volume":
-        l, w, h = 4 + i % 5, 3 + i % 4, 5 + i % 5
+    if topic in ("Volume of Cube & Cuboid", "Volume", "Volume of Composite Solids") or "Volume" in topic:
+        l, w, h = 4 + (i * 2) % 6, 3 + (i * 3) % 5, 5 + (i * 5) % 6
         vol = l * w * h
-        q = f"Find the volume of a cuboid {l} cm × {w} cm × {h} cm."
+        variants = [
+            f"Find the volume of a cuboid {l} cm × {w} cm × {h} cm.",
+            f"A box is {l} by {w} by {h} cm. What is its volume?",
+            f"{a} filled a {l}×{w}×{h} cm container. Volume of space?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"V = {l}×{w}×{h} = {vol} cm³."
         return pack(qid, topic, "mcq", q, f"{vol} cm³", exp, difficulty, shuffle_opts(f"{vol} cm³", [f"{l*w} cm³", f"{vol+10} cm³", f"{vol-8} cm³"]))
 
     if topic == "Money":
-        cost = 2 + i % 8
-        qty = 3 + i % 5
+        cost = 2 + (i * 3) % 9
+        qty = 3 + (i * 2) % 6
         tot = cost * qty
-        q = f"{a} bought {qty} erasers at ${cost} each. How much did {a} spend?"
+        variants = [
+            f"{a} bought {qty} erasers at ${cost} each. How much did {a} spend?",
+            f"Cost of {qty} items at ${cost} each?",
+            f"{a} paid for {qty} {item} @ ${cost}. Total cost?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{qty} × ${cost} = ${tot}."
         return pack(qid, topic, "mcq", q, f"${tot}", exp, difficulty, shuffle_opts(f"${tot}", [f"${cost}", f"${tot+cost}", f"${qty}"]))
 
-    if topic == "Time":
-        start_h, start_m = 8 + i % 5, (i * 5) % 60
-        add = 20 + (i % 6) * 10
+    if topic == "Time" or topic == "Speed":
+        start_h, start_m = 8 + i % 6, (i * 7) % 60
+        add = 15 + (i % 8) * 10
         end_m = start_m + add
         end_h = start_h + end_m // 60
         end_m %= 60
-        q = f"A lesson starts at {start_h:02d}:{start_m:02d} and lasts {add} minutes. When does it end?"
+        if topic == "Speed" and i % 2 == 0:
+            dist = 30 + (i * 5) % 90
+            time_h = 2 + i % 4
+            speed = dist // time_h
+            q = _math_wrap(f"{a} travelled {dist} km in {time_h} hours. What was the average speed?", i, a, topic)
+            exp = f"Speed = distance ÷ time = {dist} ÷ {time_h} = {speed} km/h."
+            return pack(qid, topic, "mcq", q, f"{speed} km/h", exp, difficulty, shuffle_opts(f"{speed} km/h", [f"{dist} km/h", f"{time_h} km/h", f"{speed+2} km/h"]))
         ans = f"{end_h:02d}:{end_m:02d}"
+        variants = [
+            f"A lesson starts at {start_h:02d}:{start_m:02d} and lasts {add} minutes. When does it end?",
+            f"Start {start_h:02d}:{start_m:02d}, duration {add} min. End time?",
+            f"{a}'s activity begins at {start_h:02d}:{start_m:02d} for {add} minutes. Finishing time?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"Add {add} minutes to {start_h:02d}:{start_m:02d} → {ans}."
         return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{start_h:02d}:{start_m:02d}", f"{end_h:02d}:00", f"{(end_h+1)%24:02d}:{end_m:02d}"]))
 
     if topic == "Length" or topic == "Mass":
         unit = "cm" if topic == "Length" else "g"
-        x, y = 12 + i % 20, 5 + i % 10
+        x, y = 12 + (i * 5) % 30, 5 + (i * 3) % 15
         ans = x + y
-        q = f"A ribbon is {x} {unit} long. Another is {y} {unit}. What is the total length?" if topic=="Length" else f"A bag of flour is {x} {unit}. Another is {y} {unit}. What is the total mass?"
+        if topic == "Length":
+            variants = [
+                f"A ribbon is {x} {unit} long. Another is {y} {unit}. What is the total length?",
+                f"Add lengths {x} {unit} and {y} {unit}.",
+                f"{a} joined two sticks ({x} {unit} and {y} {unit}). Total length?",
+            ]
+        else:
+            variants = [
+                f"A bag of flour is {x} {unit}. Another is {y} {unit}. What is the total mass?",
+                f"Masses {x} {unit} and {y} {unit}. Total?",
+                f"{a} combined {x} {unit} and {y} {unit} of sugar. Total mass?",
+            ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{x} + {y} = {ans} {unit}."
         return pack(qid, topic, "mcq", q, f"{ans} {unit}", exp, difficulty, shuffle_opts(f"{ans} {unit}", [f"{x} {unit}", f"{abs(x-y)} {unit}", f"{ans+2} {unit}"]))
 
     if topic == "Fractions":
-        den = 5 + i % 4
+        den = 5 + i % 6
         num = 1 + i % (den - 1)
-        q = f"Which fraction is shown when {num} out of {den} equal parts are shaded?"
+        if i % 3 == 0:
+            whole = den * (2 + i % 5)
+            ans = whole * num // den
+            q = _math_wrap(f"What is {num}/{den} of {whole}?", i, a, topic)
+            exp = f"{num}/{den} × {whole} = {ans}."
+            return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(whole), str(num), str(ans+den)]))
+        variants = [
+            f"Which fraction is shown when {num} out of {den} equal parts are shaded?",
+            f"{num} of {den} equal parts are red. What fraction is red?",
+            f"Express {num} shaded parts out of {den} as a fraction.",
+        ]
         ans = f"{num}/{den}"
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         return pack(qid, topic, "mcq", q, ans, f"{num} shaded parts out of {den} = {ans}.", difficulty, shuffle_opts(ans, [f"1/{den}", f"{den-num}/{den}", f"{num}/{den+1}"]))
 
     if topic == "Angles":
-        a1 = 30 + (i % 5) * 10
-        a2 = 180 - a1
-        q = f"Two angles on a straight line are {a1}° and x. Find x."
-        exp = f"Angles on a straight line sum to 180°. x = 180 − {a1} = {a2}."
-        return pack(qid, topic, "mcq", q, f"{a2}°", exp, difficulty, shuffle_opts(f"{a2}°", [f"{a1}°", f"90°", f"{a2+10}°"]))
+        a1 = 30 + (i * 7) % 50
+        mode = i % 3
+        if mode == 0:
+            a2 = 180 - a1
+            q = _math_wrap(f"Two angles on a straight line are {a1}° and x. Find x.", i, a, topic)
+            exp = f"Angles on a straight line sum to 180°. x = 180 − {a1} = {a2}."
+            return pack(qid, topic, "mcq", q, f"{a2}°", exp, difficulty, shuffle_opts(f"{a2}°", [f"{a1}°", f"90°", f"{a2+10}°"]))
+        if mode == 1:
+            a2 = 360 - a1
+            q = _math_wrap(f"Angles at a point: one angle is {a1}°. The reflex adjacent measure around the point for the rest is?", i, a, topic)
+            exp = f"Angles at a point sum to 360°. Remaining = 360 − {a1} = {a2}."
+            return pack(qid, topic, "mcq", q, f"{a2}°", exp, difficulty, shuffle_opts(f"{a2}°", [f"{a1}°", f"180°", f"{180-a1}°"]))
+        a2 = 90 - (a1 % 90 if a1 < 90 else a1 - 90)
+        if a2 <= 0:
+            a2 = 90 - (a1 % 80)
+        q = _math_wrap(f"Complement of {90-a2}° is?", i, a, topic)
+        exp = f"Complementary angles sum to 90°. Answer {a2}°."
+        return pack(qid, topic, "mcq", q, f"{a2}°", exp, difficulty, shuffle_opts(f"{a2}°", [f"{90+a2}°", f"90°", f"{a2+5}°"]))
 
     if topic == "Symmetry":
-        q = f"How many lines of symmetry does a square have?"
-        return pack(qid, topic, "mcq", q, "4", "A square has 4 lines of symmetry.", difficulty, shuffle_opts("4", ["1", "2", "8"]))
+        shapes = [
+            ("square", "4"),
+            ("equilateral triangle", "3"),
+            ("rectangle that is not a square", "2"),
+            ("isosceles triangle that is not equilateral", "1"),
+            ("circle", "infinite"),
+            ("regular pentagon", "5"),
+            ("regular hexagon", "6"),
+            ("parallelogram that is not a rhombus/rectangle", "0"),
+        ]
+        shape, ans = shapes[i % len(shapes)]
+        q = _math_wrap(f"How many lines of symmetry does a {shape} have?", i, a, topic)
+        exp = f"A {shape} has {ans} line(s) of symmetry."
+        bad = [x for x in ["0", "1", "2", "3", "4", "5", "6", "8"] if x != ans][:3]
+        return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, bad))
 
-    if "Graph" in topic or topic == "Tables & Line Graphs":
-        v1, v2, v3 = 10 + i % 10, 15 + i % 12, 8 + i % 9
-        q = f"A bar graph shows {a} scored {v1}, {b} scored {v2}, and Siti scored {v3} points. What is the total?"
-        ans = str(v1+v2+v3)
+    if "Graph" in topic or topic == "Tables & Line Graphs" or topic == "Pie Charts":
+        v1, v2, v3 = 10 + (i * 3) % 15, 15 + (i * 5) % 18, 8 + (i * 7) % 12
+        if topic == "Pie Charts" and i % 2 == 0:
+            total = v1 + v2 + v3
+            q = _math_wrap(f"In a pie chart, {a} has {v1} votes out of {total}. About what fraction of the chart is that?", i, a, topic)
+            ans = f"{v1}/{total}"
+            exp = f"Fraction = {v1}/{total}."
+            return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{v2}/{total}", f"{v1}/{v2}", f"1/{total}"]))
+        variants = [
+            f"A bar graph shows {a} scored {v1}, {b} scored {v2}, and {c} scored {v3} points. What is the total?",
+            f"Read the table: {a}={v1}, {b}={v2}, {c}={v3}. Sum?",
+            f"Points: {v1}, {v2}, {v3}. Find the total.",
+        ]
+        ans = str(v1 + v2 + v3)
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
         exp = f"{v1}+{v2}+{v3}={ans}."
         return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [str(v2), str(v1+v2), str(v1+v2+v3+5)]))
 
-    if topic == "Shapes":
-        q = f"How many sides does a hexagon have?"
-        return pack(qid, topic, "mcq", q, "6", "A hexagon has 6 sides.", difficulty, shuffle_opts("6", ["5", "7", "8"]))
+    if topic == "Shapes" or topic == "Net of Solids":
+        shapes = [
+            ("triangle", "3"), ("quadrilateral", "4"), ("pentagon", "5"),
+            ("hexagon", "6"), ("octagon", "8"), ("heptagon", "7"),
+        ]
+        if topic == "Net of Solids":
+            nets = [
+                ("cube", "6 faces"),
+                ("cuboid", "6 faces"),
+                ("triangular prism", "5 faces"),
+                ("square pyramid", "5 faces"),
+            ]
+            solid, ans = nets[i % len(nets)]
+            q = _math_wrap(f"A net of a {solid} folds into how many faces?", i, a, topic)
+            exp = f"A {solid} has {ans}."
+            return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, ["4 faces", "8 faces", "3 faces"]))
+        shape, ans = shapes[i % len(shapes)]
+        q = _math_wrap(f"How many sides does a {shape} have?", i, a, topic)
+        exp = f"A {shape} has {ans} sides."
+        bad = [x for x in ["3", "4", "5", "6", "7", "8"] if x != ans][:3]
+        return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, bad))
 
-    if topic == "Money" or True:
-        # ultimate safe fallback unique by i
-        n1, n2 = 15 + i % 40, 7 + i % 20
-        ans = n1 + n2
-        q = f"[{topic}] {a} collected {n1} points and then earned {n2} more. What is {a}'s total?"
-        exp = f"{n1} + {n2} = {ans}."
-        return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(n1), str(n2), str(abs(n1-n2))]))
+    if topic == "Circles":
+        r = 3 + (i * 2) % 10
+        # use 22/7 when r multiple of 7 else leave in terms of π
+        if r % 7 == 0:
+            area = (22 * r * r) // 7
+            q = _math_wrap(f"Taking π = 22/7, find the area of a circle radius {r} cm.", i, a, topic)
+            exp = f"Area = πr² = 22/7 × {r}² = {area} cm²."
+            return pack(qid, topic, "mcq", q, f"{area} cm²", exp, difficulty, shuffle_opts(f"{area} cm²", [f"{2*r} cm²", f"{r*r} cm²", f"{area+22} cm²"]))
+        q = _math_wrap(f"Express the circumference of a circle radius {r} cm in terms of π.", i, a, topic)
+        ans = f"{2*r}π cm"
+        exp = f"C = 2πr = 2π×{r} = {2*r}π cm."
+        return pack(qid, topic, "mcq", q, ans, exp, difficulty, shuffle_opts(ans, [f"{r}π cm", f"{r*r}π cm", f"{2*r} cm"]))
+
+    if topic == "Algebra":
+        c, k, w = 2 + i % 8, 3 + (i * 3) % 12, 2 + (i * 5) % 7
+        val = c * w + k
+        variants = [
+            f"Find the value of {c}w + {k} when w = {w}.",
+            f"If w = {w}, evaluate {c}w + {k}.",
+            f"{a} uses formula {c}w + {k}. When w = {w}, what is the value?",
+        ]
+        q = _math_wrap(variants[i % len(variants)], i, a, topic)
+        exp = f"{c}×{w}+{k}={val}."
+        return pack(qid, topic, "mcq", q, str(val), exp, difficulty, shuffle_opts(str(val), [str(c+k), str(c*w), str(val+2)]), "algebra")
+
+    # ultimate safe fallback unique by i
+    n1, n2 = 15 + (i * 7) % 80, 7 + (i * 5) % 40
+    ans = n1 + n2
+    q = _math_wrap(f"[{topic}] {a} collected {n1} points and then earned {n2} more. What is {a}'s total?", i, a, topic)
+    exp = f"{n1} + {n2} = {ans}."
+    return pack(qid, topic, "mcq", q, str(ans), exp, difficulty, shuffle_opts(str(ans), [str(n1), str(n2), str(abs(n1-n2))]))
 
 
 def generate_math_question(level, qid, index):
@@ -1470,18 +1693,29 @@ def generate_chinese_question(level, qid, index):
     bank = CHINESE_BANK[level] + CHINESE_EXTRA
     t = bank[index % len(bank)]
     topic, q, ans, bad, exp = t
-    name = ["小明", "小华", "美玲", "志豪", "丽芬", "伟杰", "淑慧", "俊杰"][index % 8]
-    name2 = ["老师", "妈妈", "同学", "校长", "爸爸", "朋友"][index % 6]
+    names = ["小明", "小华", "美玲", "志豪", "丽芬", "伟杰", "淑慧", "俊杰", "雅婷", "国强", "慧敏", "建华"]
+    name = names[index % len(names)]
+    name2 = ["老师", "妈妈", "同学", "校长", "爸爸", "朋友", "班主任", "邻居"][index % 8]
+    places = ["学校", "图书馆", "操场", "教室", "公园", "家里", "社区中心", "巴士上"]
+    place = places[index % len(places)]
+    n = 1 + index % 20
     # parametric personalisation
-    q2 = q.replace("小明", name).replace("他", name if index % 5 == 0 else "他").replace("王校长", name2 if "校长" in name2 else "王校长")
+    q2 = q.replace("小明", name).replace("王校长", name2 if "校长" in name2 else "王校长")
+    if index % 5 == 0:
+        q2 = q2.replace("他", name).replace("她", name)
     frames = [
         q2,
         f"请选择正确的答案：{q2}",
-        f"（{name}的练习）{q2}",
+        f"（{name}的练习 · 第{n}题）{q2}",
         f"阅读并作答：{q2}",
         f"根据句意填空：{q2}",
+        f"在{place}完成练习：{q2}",
+        f"{name2}出题：{q2}",
+        f"华文巩固（{level}）：{q2}",
+        f"仔细阅读后作答（场景：{place}）：{q2}",
+        f"第{n}题 · {name}作答：{q2}",
     ]
-    qf = frames[index % len(frames)]
+    qf = frames[(index * 3) % len(frames)]
     if "拼音" in topic or topic == "Hanyu Pinyin":
         extras = [
             ("‘学习’ 的拼音是？", "xué xí", ["xué xì", "xuē xí", "xué xǐ"], "xué xí。"),
@@ -1489,10 +1723,17 @@ def generate_chinese_question(level, qid, index):
             ("‘中国’ 的拼音是？", "zhōng guó", ["zōng guó", "zhōng guo", "zhòng guó"], "zhōng guó。"),
             ("‘谢谢’ 的拼音是？", "xiè xie", ["xiē xie", "xiè xiē", "xie xie"], "xiè xie。"),
             ("‘老师’ 的拼音是？", "lǎo shī", ["lǎo sī", "láo shī", "lǎo shí"], "lǎo shī。"),
+            ("‘朋友’ 的拼音是？", "péng yǒu", ["péng yóu", "pēng yǒu", "péng yòu"], "péng yǒu。"),
+            ("‘学校’ 的拼音是？", "xué xiào", ["xué xiáo", "xuē xiào", "xué xiāo"], "xué xiào。"),
+            ("‘家庭’ 的拼音是？", "jiā tíng", ["jiā tīng", "jiá tíng", "jia tíng"], "jiā tíng。"),
+            ("‘认真’ 的拼音是？", "rèn zhēn", ["rěn zhēn", "rèn zēn", "rèn zen"], "rèn zhēn。"),
+            ("‘成功’ 的拼音是？", "chéng gōng", ["chéng gòng", "chén gōng", "chéng gong"], "chéng gōng。"),
         ]
-        if index % 3 == 0:
-            topic, qf, ans, bad, exp = "Hanyu Pinyin", extras[index % len(extras)][0], extras[index % len(extras)][1], extras[index % len(extras)][2], extras[index % len(extras)][3]
-            qf = f"{name}问：{qf}"
+        # expand pinyin coverage
+        ex = extras[index % len(extras)]
+        if index % 2 == 0:
+            topic, qf, ans, bad, exp = "Hanyu Pinyin", ex[0], ex[1], ex[2], ex[3]
+            qf = f"{name}在{place}问：{qf}（练习{n}）"
     return pack(qid, topic, "mcq", qf, ans, exp, difficulty, shuffle_opts(ans, bad))
 
 
