@@ -290,6 +290,18 @@ export class QuizPlayer {
     this.explainBtn.style.display = "inline-block";
     this.showExplanation(q.explanation);
 
+    // Feed Anti-Cram Mastery Coach (topic mastery + spaced repetition)
+    const subjectForCoach = q.subject || this.subject || "mathematics";
+    if (this.app.coach) {
+      this.app.coach.recordAnswer({
+        subject: subjectForCoach,
+        topic: q.topic || "General",
+        questionId: q.id,
+        correct: isCorrect,
+        difficulty: q.difficulty || "Medium"
+      });
+    }
+
     if (isCorrect) {
       this.score++;
       this.currentStreak++;
@@ -299,7 +311,7 @@ export class QuizPlayer {
         sound.playCorrect();
       }
 
-      this.app.addXP(10);
+      this.app.addXP(this.hintTier > 0 ? 6 : 10);
       this.submitBtn.innerText = "Correct! Next →";
       this.submitBtn.style.background = "linear-gradient(135deg, var(--success), #059669)";
     } else {
@@ -308,7 +320,7 @@ export class QuizPlayer {
 
       // Log to Mistake Notebook
       if (this.app.notebook) {
-        this.app.notebook.addMistake(q, userAns, this.subject, this.level);
+        this.app.notebook.addMistake(q, userAns, subjectForCoach, this.level);
       }
 
       this.submitBtn.innerText = "Incorrect. Next →";
@@ -345,8 +357,12 @@ export class QuizPlayer {
     this.progressFill.style.width = "100%";
     this.app.recordQuizCompletion(this.score, this.questions.length, this.subject);
 
+    const elapsedMins = Math.max(1, Math.round(elapsed / 60));
+    if (this.app.coach) this.app.coach.recordSessionMinutes(elapsedMins);
+
     const accuracy = Math.round((this.score / this.questions.length) * 100);
     const xpGained = this.score * 10 + (this.score === this.questions.length ? 50 : 0);
+    const weak = this.app.coach ? this.app.coach.getWeakTopics(2) : [];
 
     // Audio & Confetti Celebrations
     if (accuracy >= 90) {
@@ -366,9 +382,11 @@ export class QuizPlayer {
     this.questionText.innerHTML = `
       <div style="text-align: center; display: flex; flex-direction: column; gap: 20px;">
         <div style="font-size: 64px;">${accuracy >= 90 ? '🌟' : '🏆'}</div>
-        <h2>${accuracy >= 90 ? 'Outstanding AL1 Performance!' : 'Practice Session Complete!'}</h2>
-        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto; font-size: 15px;">
-          ${accuracy >= 90 ? 'You demonstrated flawless mastery matching Singapore MOE top-school distinction standard!' : 'Great effort! Review any mistakes in your Mistake Notebook to achieve 100% precision.'}
+        <h2>${accuracy >= 90 ? 'Outstanding AL1 Performance!' : 'Deliberate Practice Complete!'}</h2>
+        <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto; font-size: 15px;">
+          ${accuracy >= 90
+            ? 'Mastery locked in. Spaced review will keep this sharp — no need to cram the same topic tonight.'
+            : 'Mistakes are gold. They are scheduled for spaced review so you learn them permanently instead of re-drilling today.'}
         </p>
         
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 12px 0;">
@@ -386,7 +404,8 @@ export class QuizPlayer {
           </div>
         </div>
 
-        <p style="font-size: 13px; color: var(--text-muted);">Time Taken: ${mins}m ${secs}s</p>
+        <p style="font-size: 13px; color: var(--text-muted);">Time Taken: ${mins}m ${secs}s · Anti-cram tip: stop here if you have done ~25 focused minutes today.</p>
+        ${weak.length ? `<p style="font-size: 12px; color: var(--warning);">Next focus: ${weak.map(w => w.topic).join(" · ")}</p>` : ""}
       </div>
     `;
 
@@ -394,13 +413,13 @@ export class QuizPlayer {
     this.explanationCard.style.display = "none";
     this.explainBtn.style.display = "none";
 
-    this.submitBtn.innerText = "Back to Dashboard";
+    this.submitBtn.innerText = "Back to Mastery Coach";
     this.submitBtn.style.background = "";
     this.isAnswerSubmitted = true;
 
     this.submitBtn.onclick = () => {
       this.resetQuestionCard();
-      this.app.showSection("dashboard");
+      this.app.showSection(this.app.coach ? "coach" : "dashboard");
     };
   }
 

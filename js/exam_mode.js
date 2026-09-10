@@ -22,15 +22,26 @@ export class MockExamSimulator {
   }
 
   renderLobby(container) {
+    this.lobbySubject = this.lobbySubject || this.app.selectedSubject || "mathematics";
+    const level = this.app.selectedLevel || this.app.currentLevel || "P6";
+    const subjects = level === "P2"
+      ? ["mathematics", "english", "chinese"]
+      : ["mathematics", "english", "science", "chinese"];
+
     container.innerHTML = `
       <div class="exam-lobby-wrapper">
         <div class="panel" style="margin-bottom: 20px; background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.05)); border-color: rgba(0, 242, 254, 0.3);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
             <div>
               <h2 style="font-size: 22px; color: var(--text-primary); margin-bottom: 4px;">🏆 Singapore Top-School Mock Exam Arena</h2>
-              <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">Simulate official PSLE & Top-School Prelim Examination conditions with timed OMR bubble sheets and instant AL1-AL8 diagnostic reports.</p>
+              <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">Timed OMR prelims with instant AL diagnostics. Use after Smart Coach sessions — mocks measure mastery, they are not a cram tool.</p>
             </div>
-            <span class="tag tag-easy" style="font-size: 13px; padding: 6px 14px;">Official MOE Format</span>
+            <span class="tag tag-easy" style="font-size: 13px; padding: 6px 14px;">${level} · Official Format</span>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;">
+            ${subjects.map(s => `
+              <button class="btn-pill exam-sub-pick ${this.lobbySubject === s ? 'active' : ''}" data-sub="${s}">${s.charAt(0).toUpperCase() + s.slice(1)}</button>
+            `).join("")}
           </div>
         </div>
 
@@ -43,7 +54,7 @@ export class MockExamSimulator {
                   <span class="tag tag-hard" style="font-size: 10px;">${s.difficulty}</span>
                 </div>
                 <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--text-primary);">${s.name}</h3>
-                <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">Complete 15-Question Timed Paper with Booklet A (MCQ OMR) and Booklet B (Short Answer / Heuristics).</p>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 14px;">15-question timed paper · ${this.lobbySubject} · Booklet A MCQ + Booklet B short answer.</p>
               </div>
 
               <div style="display: flex; justify-content: space-between; align-items: center; pt: 10px; border-top: 1px solid var(--border-color); padding-top: 10px;">
@@ -58,6 +69,15 @@ export class MockExamSimulator {
       </div>
     `;
 
+    container.querySelectorAll(".exam-sub-pick").forEach(btn => {
+      btn.addEventListener("click", () => {
+        sound.playClick();
+        this.lobbySubject = btn.dataset.sub;
+        this.app.selectedSubject = this.lobbySubject;
+        this.renderLobby(container);
+      });
+    });
+
     container.querySelectorAll(".start-exam-btn").forEach(btn => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -70,8 +90,8 @@ export class MockExamSimulator {
   async startExam(schoolId, container) {
     sound.playClick();
     const school = TOP_SCHOOLS.find(s => s.id === schoolId) || TOP_SCHOOLS[0];
-    const level = this.app.selectedLevel;
-    const subject = this.app.selectedSubject;
+    const level = this.app.selectedLevel || this.app.currentLevel || "P6";
+    const subject = this.lobbySubject || this.app.selectedSubject || "mathematics";
 
     const questions = await this.app.db.getRandomQuestions(level, subject, 15);
     if (!questions || questions.length === 0) {
